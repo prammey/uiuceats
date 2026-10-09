@@ -25,9 +25,9 @@ export default function PurposeButton() {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="brut brut-press flex items-center justify-center rounded-2xl bg-b-yellow px-4 py-5 text-center font-swash text-lg text-brut transition-colors hover:bg-white"
+        className="brut brut-press flex items-center justify-center gap-2 rounded-2xl bg-[#4ea8ff] px-4 py-5 text-center font-swash text-lg text-white transition-colors hover:bg-illini-blue"
       >
-        Our purpose
+        Our purpose <span aria-hidden>→</span>
       </button>
 
       {open && (
@@ -43,15 +43,15 @@ export default function PurposeButton() {
             onClick={(event) => event.stopPropagation()}
             className="brut w-full max-w-lg animate-pop rounded-2xl bg-white font-body-f text-brut"
           >
-            <div className="flex items-center justify-between rounded-t-[13px] border-b-[3px] border-brut bg-b-yellow px-4 py-2">
-              <h2 id="purpose-title" className="font-swash text-2xl">
+            <div className="flex items-stretch rounded-t-[13px] border-b-[3px] border-brut">
+              <h2 id="purpose-title" className="flex-1 px-4 py-2 font-swash text-2xl">
                 Purpose
               </h2>
               <button
                 type="button"
                 onClick={() => setOpen(false)}
                 aria-label="Close"
-                className="flex h-8 w-8 items-center justify-center rounded-md border-[3px] border-red-600 bg-white text-base font-black text-red-600 transition-colors hover:bg-red-600 hover:text-white"
+                className="flex w-14 items-center justify-center rounded-tr-[13px] border-l-[3px] border-brut bg-red-600 text-lg font-black text-white transition-colors hover:bg-red-700"
               >
                 ✕
               </button>
@@ -69,9 +69,9 @@ export default function PurposeButton() {
                 Every listing points to a real event on campus, so you can grab a meal, walk into a room you&apos;d never
                 have found, meet new people, and maybe discover a club or an interest you didn&apos;t know you had.
               </p>
-              <p className="font-bold">Free food brings people together. That&apos;s the whole idea. 🧡💙</p>
+              <p className="font-bold">Free food brings people together. 🧡💙</p>
             </div>
-            <div className="flex justify-end border-t-[3px] border-brut px-4 py-3">
+            <div className="flex justify-center px-4 pb-5">
               <button
                 type="button"
                 onClick={() => setOpen(false)}

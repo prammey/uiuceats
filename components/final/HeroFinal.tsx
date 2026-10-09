@@ -108,7 +108,7 @@ export default function HeroFinal() {
             <br />
             on campus
           </h1>
-          <p key={lineIndex} aria-live="polite" className="mt-5 animate-pop font-swash text-2xl text-white drop-shadow-[2px_2px_0_#13294b] sm:text-4xl lg:text-5xl">
+          <p key={lineIndex} aria-live="polite" className="mt-5 animate-pop font-body-f text-2xl font-extrabold text-white drop-shadow-[2px_2px_0_#13294b] sm:text-3xl lg:text-4xl">
             {LINES[lineIndex]}
           </p>
           {/* Keep room for the mascot on phones so it never sits on the text. */}

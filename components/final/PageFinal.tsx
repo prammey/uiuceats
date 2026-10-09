@@ -9,7 +9,7 @@ import data from "@/data/events.json";
 
 // Fonts page pairing 05: Shrikhand display, DM Sans body.
 const shrikhand = Shrikhand({ variable: "--font-shrikhand", subsets: ["latin"], weight: "400" });
-const dmSans = DM_Sans({ variable: "--font-dm-sans", subsets: ["latin"], weight: ["400", "500", "700"] });
+const dmSans = DM_Sans({ variable: "--font-dm-sans", subsets: ["latin"], weight: ["400", "500", "700", "800"] });
 
 const events = data as EventsFile;
 const ADVERTISE_URL = process.env.NEXT_PUBLIC_ADVERTISE_FORM_URL;
@@ -33,11 +33,11 @@ export default function PageFinal() {
             columns, from under the hero to the bottom. Behind everything. */}
         <div
           aria-hidden
-          className="checker-neon pointer-events-none absolute inset-y-0 left-0 z-0 w-9 [background-size:12px_12px] sm:w-12 sm:[background-size:16px_16px] lg:w-[60px] lg:[background-size:20px_20px]"
+          className="checker-neon pointer-events-none absolute inset-y-0 left-0 z-0 w-9 [background-size:24px_24px] sm:w-12 sm:[background-size:32px_32px] lg:w-[60px] lg:[background-size:40px_40px]"
         />
         <div
           aria-hidden
-          className="checker-neon pointer-events-none absolute inset-y-0 right-0 z-0 w-9 [background-size:12px_12px] sm:w-12 sm:[background-size:16px_16px] lg:w-[60px] lg:[background-size:20px_20px]"
+          className="checker-neon pointer-events-none absolute inset-y-0 right-0 z-0 w-9 [background-size:24px_24px] sm:w-12 sm:[background-size:32px_32px] lg:w-[60px] lg:[background-size:40px_40px]"
         />
 
         <main className="relative z-10 mx-auto w-full max-w-6xl px-4 pb-16 pt-10 sm:px-8 sm:pt-14">
@@ -51,33 +51,31 @@ export default function PageFinal() {
                 href={REPORT_URL}
                 target={REPORT_TEMPLATE ? "_blank" : undefined}
                 rel={REPORT_TEMPLATE ? "noopener noreferrer" : undefined}
-                className="brut brut-press flex items-center justify-center rounded-2xl bg-white px-4 py-5 text-center font-swash text-lg text-brut transition-colors hover:bg-b-yellow"
+                className="brut brut-press flex items-center justify-center gap-2 rounded-2xl bg-[#ff9f55] px-4 py-5 text-center font-swash text-lg text-white transition-colors hover:bg-orange-bright"
               >
-                Report a problem
+                Report a problem <span aria-hidden>↗</span>
               </a>
             </div>
 
-            <div className="group brut flex flex-wrap items-center gap-x-8 gap-y-5 rounded-2xl bg-illini-blue p-6 text-white sm:p-8">
-              <div className="max-w-md">
-                <h2 className="font-swash text-2xl sm:text-3xl">
-                  Want to advertise your event?
-                  <span
-                    aria-hidden
-                    className="ml-4 inline-block transition duration-300 group-hover:-translate-y-1.5 group-hover:scale-125 group-hover:rotate-12"
-                  >
-                    📣
-                  </span>
-                </h2>
-                <p className="mt-2 font-medium text-white/85">
-                  Hosting a free-food event? We&apos;ll include it and highlight it on the day it happens. Free and
-                  walk-in only.
-                </p>
-              </div>
+            <div className="group brut rounded-2xl bg-illini-blue p-6 text-white sm:p-8">
+              <h2 className="font-swash text-2xl sm:whitespace-nowrap sm:text-3xl">
+                Want to advertise your event?
+                <span
+                  aria-hidden
+                  className="ml-4 inline-block transition duration-300 group-hover:-translate-y-1.5 group-hover:scale-125 group-hover:rotate-12"
+                >
+                  📣
+                </span>
+              </h2>
+              <p className="mt-2 max-w-xl font-medium text-white/85">
+                Hosting a free-food event? We&apos;ll include it and highlight it on the day it happens. Free and
+                walk-in only.
+              </p>
               <a
                 href={ADVERTISE_URL || "#"}
                 target={ADVERTISE_URL ? "_blank" : undefined}
                 rel={ADVERTISE_URL ? "noopener noreferrer" : undefined}
-                className="brut brut-press rounded-xl bg-orange-bright px-6 py-3 font-swash text-lg text-white"
+                className="brut brut-press mt-6 inline-block rounded-xl bg-orange-bright px-6 py-3 font-swash text-lg text-white"
               >
                 Submit your event!
               </a>
