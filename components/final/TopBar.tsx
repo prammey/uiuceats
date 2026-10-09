@@ -10,23 +10,20 @@ function Heart() {
   );
 }
 
-// Diner sign across the very top.
+// Diner sign across the very top. Two identical copies so the -50% loop is
+// seamless; equal padding on each phrase keeps the stars centered between them.
 export default function TopBar() {
-  // Two identical copies so the marquee's -50% loop is seamless; each phrase
-  // carries equal padding on both sides so the stars sit centered between them.
   const loop = [...PHRASES, ...PHRASES];
   return (
-    <>
-      <div aria-hidden className="overflow-hidden border-b-[3px] border-brut bg-brut py-2 text-b-cream">
-        <div className="flex w-max animate-marquee items-center whitespace-nowrap font-mono-b text-xs font-bold uppercase tracking-[0.3em]">
-          {loop.map((phrase, index) => (
-            <Fragment key={index}>
-              <span className="px-6">{phrase === "I ♥ Food" ? <>I <Heart /> Food</> : phrase}</span>
-              <span className="text-illini-orange">★</span>
-            </Fragment>
-          ))}
-        </div>
+    <div aria-hidden className="overflow-hidden border-b-[3px] border-brut bg-brut py-2.5 text-b-cream">
+      <div className="flex w-max animate-marquee items-center whitespace-nowrap font-sign text-[11px] uppercase tracking-[0.2em]">
+        {loop.map((phrase, index) => (
+          <Fragment key={index}>
+            <span className="px-6">{phrase === "I ♥ Food" ? <>I <Heart /> Food</> : phrase}</span>
+            <span className="text-illini-orange">★</span>
+          </Fragment>
+        ))}
       </div>
-    </>
+    </div>
   );
 }

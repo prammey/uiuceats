@@ -43,12 +43,12 @@ export default function EventListFinal({ events, reportTemplate }: Props) {
   return (
     <section id="menu" className="scroll-mt-6">
       <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
-        <h2 className="font-slab text-3xl uppercase text-illini-blue sm:text-4xl">Pick a day 👇</h2>
+        <h2 className="font-sign text-2xl uppercase text-illini-blue sm:text-3xl">Pick a day 👇</h2>
         <button
           type="button"
           onClick={surpriseMe}
           disabled={view.upcoming.length === 0}
-          className="brut-sm brut-press rounded-xl bg-illini-orange px-4 py-2 font-slab text-sm uppercase text-white hover:bg-illini-blue disabled:opacity-40"
+          className="brut-sm brut-press rounded-xl bg-illini-orange px-4 py-2 font-swash text-base text-white hover:bg-illini-blue disabled:opacity-40"
         >
           🎲 Surprise me
         </button>
@@ -56,12 +56,12 @@ export default function EventListFinal({ events, reportTemplate }: Props) {
 
       <DayStripFinal days={view.days} counts={view.counts} selected={view.selected} onSelect={setPicked} />
 
-      <div className="mt-8 flex items-center gap-3">
-        <h3 className="font-mono-b text-xs font-bold uppercase tracking-[0.3em] text-brut">
+      <div className="mt-8 flex items-center gap-3 font-body-f">
+        <h3 className="text-xs font-bold uppercase tracking-[0.25em] text-brut">
           {formatDayHeading(view.selected, view.todayKey, view.tomorrowKey)}
         </h3>
         <div aria-hidden className="h-[3px] flex-1 bg-brut" />
-        <span className="shrink-0 whitespace-nowrap font-mono-b text-xs font-bold uppercase text-ink-muted">
+        <span className="shrink-0 whitespace-nowrap text-xs font-bold uppercase text-ink-muted">
           {view.list.length} {view.list.length === 1 ? "listing" : "listings"}
         </span>
       </div>
@@ -79,15 +79,15 @@ export default function EventListFinal({ events, reportTemplate }: Props) {
           ))}
         </div>
       ) : (
-        <div className="brut mt-5 rounded-2xl bg-white px-6 py-12 text-center">
-          <p className="font-slab text-5xl uppercase text-illini-orange">Shoot.</p>
-          <p className="mt-2 font-mono-b text-xs font-bold uppercase tracking-widest text-brut">Nothing free on this day (yet)</p>
+        <div className="brut mt-5 rounded-2xl bg-white px-6 py-12 text-center font-body-f">
+          <p className="font-swash text-5xl text-illini-orange">Shoot.</p>
+          <p className="mt-2 text-xs font-bold uppercase tracking-widest text-brut">Nothing free on this day (yet)</p>
           <p className="mt-1 text-sm text-ink-muted">The calendar refreshes every 3 hours.</p>
           {view.nextWithFood && (
             <button
               type="button"
               onClick={() => setPicked(view.nextWithFood!.key)}
-              className="brut-sm brut-press mt-5 rounded-xl bg-illini-orange px-5 py-2 font-slab text-sm uppercase text-white"
+              className="brut-sm brut-press mt-5 rounded-xl bg-illini-orange px-5 py-2 font-sign text-xs uppercase tracking-wider text-white"
             >
               Next: {view.nextWithFood.weekday} {view.nextWithFood.dayNumber} →
             </button>

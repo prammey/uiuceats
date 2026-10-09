@@ -9,7 +9,7 @@ type Props = {
   onSelect: (key: string) => void;
 };
 
-// Version B's menu-board boxes with rounded corners and version A's hover jiggle.
+// Menu-board boxes with the hover lift-and-jiggle. Same radius and shadow as every other control.
 export default function DayStripFinal({ days, counts, selected, onSelect }: Props) {
   return (
     <div role="tablist" aria-label="Pick a day" className="grid grid-cols-7 gap-2 sm:gap-4">
@@ -29,13 +29,13 @@ export default function DayStripFinal({ days, counts, selected, onSelect }: Prop
             aria-selected={active}
             aria-label={`${day.isToday ? "Today, " : ""}${day.weekday} ${day.dayNumber}, ${count} ${count === 1 ? "event" : "events"}`}
             onClick={() => onSelect(day.key)}
-            className={`brut-sm relative flex flex-col items-center rounded-xl py-2 transition-all duration-200 hover:-translate-y-1 hover:animate-wiggle sm:py-3 ${fill}`}
+            className={`brut-sm flex flex-col items-center rounded-xl py-2 transition-all duration-200 hover:-translate-y-1 hover:animate-wiggle sm:py-3 ${fill}`}
           >
-            <span className="font-mono-b text-[10px] font-bold uppercase tracking-widest sm:text-xs">
+            <span className="font-body-f text-[10px] font-bold uppercase tracking-widest sm:text-xs">
               {day.isToday ? "Today" : day.weekday}
             </span>
-            <span className="font-slab text-2xl leading-none sm:text-4xl">{day.dayNumber}</span>
-            <span className="mt-1 font-mono-b text-[10px] font-bold sm:text-xs">{count > 0 ? `×${count}` : "—"}</span>
+            <span className="font-sign text-xl leading-none sm:text-3xl">{day.dayNumber}</span>
+            <span className="mt-1 font-body-f text-[10px] font-bold sm:text-xs">{count > 0 ? `×${count}` : "—"}</span>
           </button>
         );
       })}

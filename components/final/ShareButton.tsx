@@ -28,7 +28,7 @@ export default function ShareButton({ className = "" }: { className?: string }) 
     <button
       type="button"
       onClick={share}
-      className={`brut-press rounded-full border-[3px] border-brut bg-white px-5 py-2 font-mono-b text-[11px] font-bold uppercase tracking-wider text-brut shadow-[4px_4px_0_#111] transition-colors hover:bg-b-yellow sm:text-xs ${className}`}
+      className={`brut-press rounded-lg border-2 border-brut bg-white/90 px-3 py-1.5 font-body-f text-[10px] font-bold uppercase tracking-wider text-brut shadow-[3px_3px_0_#111] transition-colors hover:bg-b-yellow sm:text-xs ${className}`}
     >
       {copied ? "Link copied 🎉" : "Share with a hungry friend 📣"}
     </button>

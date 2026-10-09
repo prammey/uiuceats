@@ -16,7 +16,7 @@ type Props = {
   spotlight?: boolean;
 };
 
-// Version B's receipt card, rounded, with version A's emoji pop on hover.
+// Receipt card: checker tile, signage labels, swash title, button bar.
 export default function EventCardFinal({ event, now, reportTemplate, spotlight = false }: Props) {
   const live = isHappeningNow(event, now);
   const report = reportLink(reportTemplate, event.id);
@@ -38,7 +38,7 @@ export default function EventCardFinal({ event, now, reportTemplate, spotlight =
             {event.icon}
           </span>
         </div>
-        <div className="flex flex-1 flex-col justify-center gap-1 px-3 py-2 font-mono-b text-[11px] font-bold uppercase tracking-wider">
+        <div className="flex flex-1 flex-col justify-center gap-1 px-3 py-2 font-body-f text-[11px] font-bold uppercase tracking-wider">
           <div className="flex items-center justify-between gap-2">
             <span>
               {period.emoji} {period.label}
@@ -47,20 +47,20 @@ export default function EventCardFinal({ event, now, reportTemplate, spotlight =
           </div>
           {(live || event.promoted) && (
             <div className="flex flex-wrap gap-1.5">
-              {live && <span className="rounded bg-illini-orange px-1.5 py-0.5 text-white">● Now</span>}
-              {event.promoted && <span className="rounded bg-brut px-1.5 py-0.5 text-b-yellow">Highlighted</span>}
+              {live && <span className="rounded-md bg-illini-orange px-1.5 py-0.5 text-white">● Now</span>}
+              {event.promoted && <span className="rounded-md bg-brut px-1.5 py-0.5 text-b-yellow">Highlighted</span>}
             </div>
           )}
         </div>
       </div>
 
-      <div className="flex-1 p-4">
-        <h3 className="font-slab text-xl leading-tight text-brut">{event.title}</h3>
+      <div className="flex-1 p-4 font-body-f">
+        <h3 className="font-swash text-2xl leading-tight text-brut">{event.title}</h3>
         {event.host && <p className="mt-1 text-sm font-semibold text-ink-muted">{event.host}</p>}
 
         <dl className="mt-3 space-y-1.5 text-sm">
           <div className="flex gap-3">
-            <dt className="w-12 shrink-0 pt-0.5 font-mono-b text-[11px] font-bold uppercase tracking-wider text-ink-muted">Where</dt>
+            <dt className="w-12 shrink-0 pt-0.5 text-[11px] font-bold uppercase tracking-wider text-ink-muted">Where</dt>
             <dd>
               <a
                 href={event.maps_url}
@@ -73,13 +73,13 @@ export default function EventCardFinal({ event, now, reportTemplate, spotlight =
             </dd>
           </div>
           <div className="flex gap-3">
-            <dt className="w-12 shrink-0 pt-0.5 font-mono-b text-[11px] font-bold uppercase tracking-wider text-ink-muted">What</dt>
+            <dt className="w-12 shrink-0 pt-0.5 text-[11px] font-bold uppercase tracking-wider text-ink-muted">What</dt>
             <dd>
-              <span className="font-slab text-illini-orange">{event.food_text}</span>
+              <span className="font-sign text-sm tracking-wide text-illini-orange">{event.food_text}</span>
               {event.dietary.map((tag) => {
                 const meta = DIETARY_META[tag] ?? { label: tag, emoji: "✅" };
                 return (
-                  <span key={tag} className="ml-2 rounded border-2 border-brut bg-white px-1.5 py-0.5 font-mono-b text-[10px] font-bold uppercase">
+                  <span key={tag} className="ml-2 rounded-md border-2 border-brut bg-white px-1.5 py-0.5 text-[10px] font-bold uppercase">
                     {meta.emoji} {meta.label}
                   </span>
                 );
@@ -88,17 +88,17 @@ export default function EventCardFinal({ event, now, reportTemplate, spotlight =
           </div>
         </dl>
 
-        <p className="mt-3 border-t-[3px] border-dashed border-brut pt-2 font-mono-b text-[11px] leading-snug text-ink-muted">
-          <span className="font-bold uppercase text-brut">Source says:</span> “{event.evidence}”
+        <p className="mt-3 border-t-[3px] border-dashed border-brut pt-2 text-xs leading-snug text-ink-muted">
+          <span className="font-bold uppercase tracking-wider text-brut">Source says:</span> “{event.evidence}”
         </p>
       </div>
 
-      <div className="flex divide-x-[3px] divide-brut border-t-[3px] border-brut font-slab text-sm uppercase">
+      <div className="flex divide-x-[3px] divide-brut border-t-[3px] border-brut font-sign text-xs uppercase tracking-wider">
         <a
           href={event.proof_url}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 bg-illini-blue py-2.5 text-center text-white transition-colors hover:bg-illini-orange"
+          className="flex-1 bg-illini-blue py-3 text-center text-white transition-colors hover:bg-illini-orange"
         >
           Proof ↗
         </a>
@@ -106,7 +106,7 @@ export default function EventCardFinal({ event, now, reportTemplate, spotlight =
           href={googleCalendarUrl(event)}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 py-2.5 text-center text-brut transition-colors hover:bg-b-yellow"
+          className="flex-1 py-3 text-center text-brut transition-colors hover:bg-b-yellow"
         >
           + Calendar
         </a>
@@ -117,7 +117,7 @@ export default function EventCardFinal({ event, now, reportTemplate, spotlight =
             rel="noopener noreferrer"
             aria-label="Report a problem with this listing"
             title="Report a problem"
-            className="px-4 py-2.5 text-brut transition-colors hover:bg-illini-orange hover:text-white"
+            className="px-4 py-3 text-brut transition-colors hover:bg-illini-orange hover:text-white"
           >
             ⚑
           </a>
