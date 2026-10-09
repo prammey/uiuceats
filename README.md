@@ -29,7 +29,8 @@ on one.illinois.edu).
 | `collector/tests/` | pytest suite with fixture feeds |
 | `data/events.json` | Published listings (committed by the bot) |
 | `data/details-cache.json` | Cached sponsor names for calendars.illinois.edu events |
-| `app/` | Routes: `/` and `/A` serve version A, `/B` serves version B. Swap the import in `app/page.tsx` to change which one the root shows. |
+| `app/` | Routes: `/` serves the final merged version (`components/final/`), `/A` the playful emoji version, `/B` the neo-brutalist version. Swap the import in `app/page.tsx` to change which one the root shows. |
+| `components/final/` | Final look: B's marquee and menu board with A's hero energy (`PageFinal`, `TopBar`, `ShareButton`, `HeroFinal`, `DayStripFinal`, `EventCardFinal`, `EventListFinal`). |
 | `components/a/` | Version A, the playful emoji look (`PageA`, `Hero`, `Ticker`, `Banner`, `DayStrip`, `EventCard`, `EventList`). |
 | `components/b/` | Version B, neo-brutalist retro fast food (`PageB`, `HeroB`, `DayStripB`, `EventCardB`, `EventListB`). |
 | `components/FunLayer.tsx`, `lib/week.ts` | Shared easter eggs and the day-grouping hook both versions use. |

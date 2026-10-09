@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
-import PageA from "@/components/a/PageA";
+import PageFinal from "@/components/final/PageFinal";
 
 export const metadata: Metadata = {
-  title: "UIUC Eats 🍕 Free food on campus this week",
+  title: "UIUC Eats · Free food on campus",
   openGraph: {
-    title: "UIUC Eats 🍕 Free food on campus this week",
-    description: "Out of swipes? Here's where to eat for free on campus this week. Every listing links to its source.",
+    title: "UIUC Eats · Free food on campus",
+    description: "Out of swipes? Here's where to eat for free on campus. Every listing links to its source.",
     type: "website",
   },
 };
 
-// The root currently serves version A. Swap the import to PageB to flip it.
+// The root serves the final merged version. /A and /B keep the earlier looks.
 export default function Home() {
-  return <PageA />;
+  return <PageFinal />;
 }
