@@ -115,9 +115,9 @@ export default function HeroFinal() {
           <div className="h-36 sm:hidden" />
 
           {/* Mascot with the food floating in front of its open hand. */}
-          <div className="absolute bottom-3 right-2 h-40 w-40 sm:bottom-auto sm:right-8 sm:top-1/2 sm:h-64 sm:w-64 sm:-translate-y-1/2 lg:right-16 lg:h-72 lg:w-72">
-            <Mascot className="h-full w-full drop-shadow-lg" />
-            <div className="absolute left-[12%] top-[38%] animate-bounce-soft">
+          <div className="absolute bottom-3 right-2 h-40 w-40 sm:bottom-auto sm:right-6 sm:top-1/2 sm:h-56 sm:w-56 sm:-translate-y-1/2 lg:right-10 lg:h-64 lg:w-64 xl:h-72 xl:w-72">
+            <Mascot className="h-full w-full object-contain drop-shadow-lg" />
+            <div className="absolute left-[10%] top-[44%] animate-bounce-soft">
               <button
                 key={foodIndex}
                 type="button"
