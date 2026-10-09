@@ -1,4 +1,4 @@
-# FoodPlease 🍕
+# UIUC Eats
 
 Free, walk-in food events at UIUC for the next 7 days, pulled automatically from
 official campus calendars. Every listing shows the sentence from its own source
@@ -17,8 +17,8 @@ GitHub Actions (every 3 hours)
 Vercel rebuilds the static Next.js site on every push
 ```
 
-No database, no server, no AI. Nothing is written by a person; the "Source says" line
-on each card is quoted from the event's own description (or the host's "Free Food" tag
+No database, no server, no AI. Nothing is written by a person; the quoted line
+on each card comes from the event's own description (or the host's "Free Food" tag
 on one.illinois.edu).
 
 ## Project layout
@@ -29,7 +29,7 @@ on one.illinois.edu).
 | `collector/tests/` | pytest suite with fixture feeds |
 | `data/events.json` | Published listings (committed by the bot) |
 | `data/details-cache.json` | Cached sponsor names for calendars.illinois.edu events |
-| `app/`, `components/`, `lib/` | Next.js 16 static site (App Router, Tailwind v4) |
+| `app/`, `components/`, `lib/` | Next.js 16 static site (App Router, Tailwind v4). `DayStrip` is the 7-day picker, `EventCard` the listing |
 | `.github/workflows/collect.yml` | Scheduled collector run |
 
 ## Run locally

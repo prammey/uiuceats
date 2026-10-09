@@ -143,7 +143,7 @@ def promoted_events(csv_url, now, rows=None):
       "all_day": False,
       "location": location,
       "url": proof,
-      "evidence": "Submitted directly by the host through the FoodPlease form",
+      "evidence": "Submitted directly by the host through the UIUC Eats form",
       "food_text": food,
       "dietary": [d for d in ("vegetarian", "vegan", "halal", "kosher", "gluten-free") if d in _col(row, "diet").lower()],
       "icon": "✨",

@@ -2,28 +2,22 @@
 
 @theme {
   --color-illini-orange: #ff5f05;
-  --color-illini-orange-soft: #ffe9d9;
   --color-illini-blue: #13294b;
-  --color-illini-blue-soft: #e4e9f2;
-  --color-cream: #fff8f0;
+  --color-illini-blue-light: #1f3a66;
   --color-ink: #1f2430;
   --color-ink-muted: #5b6474;
-  --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+  --color-line: #e3e5e8;
+  --font-sans: var(--font-source-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
 }
 
 html {
-  background: var(--color-cream);
+  background: #ffffff;
 }
 
 body {
-  background: var(--color-cream);
+  background: #ffffff;
   color: var(--color-ink);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
-}
-
-/* Promoted (host-submitted) cards get a warm gradient frame. */
-.promoted-frame {
-  background: linear-gradient(135deg, #ff5f05, #ffb347 55%, #13294b);
-  padding: 2px;
 }
