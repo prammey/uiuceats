@@ -2,6 +2,7 @@ import { DM_Sans, Shrikhand } from "next/font/google";
 import EventListFinal from "@/components/final/EventListFinal";
 import FunLayer from "@/components/FunLayer";
 import HeroFinal from "@/components/final/HeroFinal";
+import PurposeButton from "@/components/final/PurposeButton";
 import TopBar from "@/components/final/TopBar";
 import { formatUpdated, type EventsFile } from "@/lib/events";
 import data from "@/data/events.json";
@@ -13,6 +14,8 @@ const dmSans = DM_Sans({ variable: "--font-dm-sans", subsets: ["latin"], weight:
 const events = data as EventsFile;
 const ADVERTISE_URL = process.env.NEXT_PUBLIC_ADVERTISE_FORM_URL;
 const REPORT_TEMPLATE = process.env.NEXT_PUBLIC_REPORT_FORM_URL;
+// The general report link is the same form without a pre-filled event id.
+const REPORT_URL = REPORT_TEMPLATE ? REPORT_TEMPLATE.replace("EVENT_ID", "") : "#";
 
 // Final version. Served at /.
 export default function PageFinal() {
@@ -23,53 +26,73 @@ export default function PageFinal() {
 
       <TopBar />
       <HeroFinal />
-      <div aria-hidden className="retro-stripes h-5 border-b-[3px] border-brut" />
+      <div aria-hidden className="retro-stripes-bright h-5 border-b-[3px] border-brut" />
 
       <div className="relative">
-        {/* Green checkerboard columns, three cells wide, from under the hero to the bottom. Behind everything. */}
-        <div aria-hidden className="checker-neon pointer-events-none absolute inset-y-0 left-0 z-0 w-12" />
-        <div aria-hidden className="checker-neon pointer-events-none absolute inset-y-0 right-0 z-0 w-12" />
+        {/* Green checkerboard columns, exactly three cells wide, same width as the hero's stripe
+            columns, from under the hero to the bottom. Behind everything. */}
+        <div
+          aria-hidden
+          className="checker-neon pointer-events-none absolute inset-y-0 left-0 z-0 w-9 [background-size:12px_12px] sm:w-12 sm:[background-size:16px_16px] lg:w-[60px] lg:[background-size:20px_20px]"
+        />
+        <div
+          aria-hidden
+          className="checker-neon pointer-events-none absolute inset-y-0 right-0 z-0 w-9 [background-size:12px_12px] sm:w-12 sm:[background-size:16px_16px] lg:w-[60px] lg:[background-size:20px_20px]"
+        />
 
-      <main className="relative z-10 mx-auto w-full max-w-6xl px-4 pb-16 pt-10 sm:pt-14">
-        <EventListFinal events={events.events} reportTemplate={REPORT_TEMPLATE} />
+        <main className="relative z-10 mx-auto w-full max-w-6xl px-4 pb-16 pt-10 sm:px-8 sm:pt-14">
+          <EventListFinal events={events.events} reportTemplate={REPORT_TEMPLATE} />
 
-        <section className="group brut mt-16 rounded-2xl bg-illini-blue p-6 text-white sm:p-8">
-          <div className="flex flex-wrap items-center justify-between gap-6">
-            <div>
-              <h2 className="font-swash text-2xl sm:text-3xl">
-                Want to advertise your event?{" "}
-                <span
-                  aria-hidden
-                  className="inline-block transition duration-300 group-hover:-translate-y-1.5 group-hover:scale-125 group-hover:rotate-12"
-                >
-                  📣
-                </span>
-              </h2>
-              <p className="mt-2 max-w-lg font-medium text-white/85">
-                Hosting a free-food event? We&apos;ll include it and highlight it on the day it happens. Free and walk-in
-                only.
-              </p>
+          {/* One block: two stacked buttons on the left, the advertise panel on the right. */}
+          <section className="mt-16 grid gap-4 sm:grid-cols-[15rem_1fr]">
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-1">
+              <PurposeButton />
+              <a
+                href={REPORT_URL}
+                target={REPORT_TEMPLATE ? "_blank" : undefined}
+                rel={REPORT_TEMPLATE ? "noopener noreferrer" : undefined}
+                className="brut brut-press flex items-center justify-center rounded-2xl bg-white px-4 py-5 text-center font-swash text-lg text-brut transition-colors hover:bg-b-yellow"
+              >
+                Report a problem
+              </a>
             </div>
-            <a
-              href={ADVERTISE_URL || "#"}
-              target={ADVERTISE_URL ? "_blank" : undefined}
-              rel={ADVERTISE_URL ? "noopener noreferrer" : undefined}
-              className="brut brut-press rounded-xl bg-illini-orange px-6 py-3 font-swash text-lg text-white"
-            >
-              Submit your event
-            </a>
-          </div>
-        </section>
 
-        <footer className="mt-16 text-center">
-          <p className="text-xs font-bold uppercase tracking-widest text-brut">Made with 🧡💙 in Urbana-Champaign 🤗</p>
-          <p className="mx-auto mt-4 max-w-2xl text-[11px] leading-relaxed text-ink-muted/80">
-            New and experimental. Listings come from official campus calendars and appear only when the source says
-            food is provided, so confirm with the host before you go. Last checked {formatUpdated(events.generated_at)}{" "}
-            (campus time) · Not affiliated with the University of Illinois.
-          </p>
-        </footer>
-      </main>
+            <div className="group brut flex flex-wrap items-center gap-x-8 gap-y-5 rounded-2xl bg-illini-blue p-6 text-white sm:p-8">
+              <div className="max-w-md">
+                <h2 className="font-swash text-2xl sm:text-3xl">
+                  Want to advertise your event?
+                  <span
+                    aria-hidden
+                    className="ml-4 inline-block transition duration-300 group-hover:-translate-y-1.5 group-hover:scale-125 group-hover:rotate-12"
+                  >
+                    📣
+                  </span>
+                </h2>
+                <p className="mt-2 font-medium text-white/85">
+                  Hosting a free-food event? We&apos;ll include it and highlight it on the day it happens. Free and
+                  walk-in only.
+                </p>
+              </div>
+              <a
+                href={ADVERTISE_URL || "#"}
+                target={ADVERTISE_URL ? "_blank" : undefined}
+                rel={ADVERTISE_URL ? "noopener noreferrer" : undefined}
+                className="brut brut-press rounded-xl bg-orange-bright px-6 py-3 font-swash text-lg text-white"
+              >
+                Submit your event!
+              </a>
+            </div>
+          </section>
+
+          <footer className="mt-16 text-center">
+            <p className="text-xs font-bold uppercase tracking-widest text-brut">Made with 🧡💙 in Urbana-Champaign 🤗</p>
+            <p className="mx-auto mt-4 max-w-2xl text-[11px] leading-relaxed text-ink-muted/80">
+              New and experimental. Listings come from official campus calendars and appear only when the source says
+              food is provided, so confirm with the host before you go. Last checked {formatUpdated(events.generated_at)}{" "}
+              (campus time) · Not affiliated with the University of Illinois.
+            </p>
+          </footer>
+        </main>
       </div>
     </div>
   );

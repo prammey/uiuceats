@@ -48,7 +48,7 @@ export default function EventListFinal({ events, reportTemplate }: Props) {
           type="button"
           onClick={surpriseMe}
           disabled={view.upcoming.length === 0}
-          className="brut-sm brut-press rounded-xl bg-illini-orange px-4 py-2 font-swash text-base text-white hover:bg-illini-blue disabled:opacity-40"
+          className="brut-sm brut-press rounded-xl bg-orange-bright px-4 py-2 font-swash text-base text-white hover:bg-illini-blue disabled:opacity-40"
         >
           🎲 Surprise me
         </button>
@@ -87,7 +87,7 @@ export default function EventListFinal({ events, reportTemplate }: Props) {
             <button
               type="button"
               onClick={() => setPicked(view.nextWithFood!.key)}
-              className="brut-sm brut-press mt-5 rounded-xl bg-illini-orange px-5 py-2 font-swash text-base text-white"
+              className="brut-sm brut-press mt-5 rounded-xl bg-orange-bright px-5 py-2 font-swash text-base text-white"
             >
               Next: {view.nextWithFood.weekday} {view.nextWithFood.dayNumber} →
             </button>

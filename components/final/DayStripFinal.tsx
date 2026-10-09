@@ -17,7 +17,7 @@ export default function DayStripFinal({ days, counts, selected, onSelect }: Prop
         const active = day.key === selected;
         const count = counts[day.key] ?? 0;
         const fill = active
-          ? "bg-illini-orange text-white"
+          ? "bg-orange-bright text-white"
           : day.isToday
             ? "bg-illini-blue text-white"
             : "bg-white text-brut hover:bg-b-yellow";

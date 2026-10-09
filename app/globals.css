@@ -15,6 +15,7 @@
   --color-b-cream: #fff6e5;
   --color-b-yellow: #ffd166;
   --color-neon: #58ff6a;
+  --color-orange-bright: #ff6a14;
 
   --animate-float: float 7s ease-in-out infinite;
   --animate-float-slow: float 11s ease-in-out infinite;
@@ -142,10 +143,19 @@ body {
 .diag-stripes {
   background: repeating-linear-gradient(135deg, var(--color-b-cream) 0 12px, var(--color-illini-blue) 12px 24px);
 }
-/* Static green checkerboard columns, three cells wide, behind the content below the hero. */
+/* Static green checkerboard columns, exactly three cells wide, behind the content below the hero.
+   Cell size and column width are set together in the markup so the columns line up with the
+   hero's diagonal stripe columns. */
 .checker-neon {
   background-image: conic-gradient(var(--color-neon) 25%, var(--color-b-cream) 0 50%, var(--color-neon) 0 75%, var(--color-b-cream) 0);
-  background-size: 16px 16px;
+}
+.retro-stripes-bright {
+  background: repeating-linear-gradient(
+    90deg,
+    var(--color-orange-bright) 0 36px,
+    var(--color-b-cream) 36px 72px,
+    var(--color-illini-blue) 72px 108px
+  );
 }
 .b-spotlight {
   outline: 4px solid var(--color-illini-orange);

@@ -33,7 +33,7 @@ export default function EventCardFinal({ event, now, reportTemplate, spotlight =
         <div className="checker-light flex w-20 shrink-0 items-center justify-center rounded-tl-[13px] border-r-[3px] border-brut">
           <span
             aria-hidden
-            className="relative z-10 select-none text-4xl drop-shadow-sm transition duration-300 group-hover:-translate-y-3 group-hover:scale-150 group-hover:-rotate-12"
+            className="relative z-10 select-none text-4xl drop-shadow-sm transition duration-300 group-hover:scale-[1.6] group-hover:-rotate-12"
           >
             {event.icon}
           </span>
@@ -98,7 +98,7 @@ export default function EventCardFinal({ event, now, reportTemplate, spotlight =
           href={event.proof_url}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 rounded-bl-[13px] bg-illini-blue py-2.5 text-center text-white transition-colors hover:bg-illini-orange"
+          className="flex-1 rounded-bl-[13px] bg-illini-blue py-2.5 text-center text-white transition-colors hover:bg-orange-bright"
         >
           Proof ↗
         </a>
@@ -117,7 +117,7 @@ export default function EventCardFinal({ event, now, reportTemplate, spotlight =
             rel="noopener noreferrer"
             aria-label="Report a problem with this listing"
             title="Report a problem"
-            className="rounded-br-[13px] px-4 py-2.5 text-brut transition-colors hover:bg-illini-orange hover:text-white"
+            className="rounded-br-[13px] px-4 py-2.5 text-brut transition-colors hover:bg-orange-bright hover:text-white"
           >
             ⚑
           </a>
