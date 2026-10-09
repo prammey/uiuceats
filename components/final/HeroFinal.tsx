@@ -93,7 +93,7 @@ export default function HeroFinal() {
           </span>
         ))}
 
-        <div className="relative mx-auto max-w-6xl px-4 pb-12 pt-8 sm:px-8 sm:pb-24 sm:pt-16 lg:pb-28 lg:pt-20">
+        <div className="relative mx-auto max-w-6xl px-4 pb-14 pt-8 sm:px-8 sm:pb-28 sm:pt-16 lg:pb-32 lg:pt-20">
           {/* Share is a secondary action: thin two-line box, top-right, out of the headline's way. */}
           <div className="mb-4 flex justify-end sm:absolute sm:right-8 sm:top-8 sm:mb-0">
             <ShareButton />
@@ -108,7 +108,7 @@ export default function HeroFinal() {
             <br />
             on campus
           </h1>
-          <p key={lineIndex} aria-live="polite" className="mt-5 animate-pop font-body-f text-2xl font-extrabold text-white drop-shadow-[2px_2px_0_#13294b] sm:text-3xl lg:text-4xl">
+          <p key={lineIndex} aria-live="polite" className="mt-8 animate-pop font-soft text-2xl font-bold text-white drop-shadow-[2px_2px_0_#13294b] sm:mt-10 sm:text-3xl lg:text-4xl">
             {LINES[lineIndex]}
           </p>
           {/* Keep room for the mascot on phones so it never sits on the text. */}

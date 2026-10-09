@@ -25,7 +25,7 @@ export default function PurposeButton() {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="brut brut-press flex items-center justify-center gap-2 rounded-2xl bg-[#4ea8ff] px-4 py-5 text-center font-swash text-lg text-white transition-colors hover:bg-illini-blue"
+        className="brut brut-press flex items-center justify-center gap-2 rounded-2xl bg-[#4ea8ff] px-4 py-4 text-center font-swash text-lg text-white transition-colors hover:bg-[#2f8fe6]"
       >
         Our purpose <span aria-hidden>→</span>
       </button>

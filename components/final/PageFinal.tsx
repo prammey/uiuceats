@@ -1,4 +1,4 @@
-import { DM_Sans, Shrikhand } from "next/font/google";
+import { DM_Sans, Fredoka, Shrikhand } from "next/font/google";
 import EventListFinal from "@/components/final/EventListFinal";
 import FunLayer from "@/components/FunLayer";
 import HeroFinal from "@/components/final/HeroFinal";
@@ -10,6 +10,8 @@ import data from "@/data/events.json";
 // Fonts page pairing 05: Shrikhand display, DM Sans body.
 const shrikhand = Shrikhand({ variable: "--font-shrikhand", subsets: ["latin"], weight: "400" });
 const dmSans = DM_Sans({ variable: "--font-dm-sans", subsets: ["latin"], weight: ["400", "500", "700", "800"] });
+// Version A's title font, used only for the rotating hero line.
+const fredoka = Fredoka({ variable: "--font-fredoka", subsets: ["latin"], weight: ["600", "700"] });
 
 const events = data as EventsFile;
 const ADVERTISE_URL = process.env.NEXT_PUBLIC_ADVERTISE_FORM_URL;
@@ -20,7 +22,7 @@ const REPORT_URL = REPORT_TEMPLATE ? REPORT_TEMPLATE.replace("EVENT_ID", "") : "
 // Final version. Served at /.
 export default function PageFinal() {
   return (
-    <div className={`${shrikhand.variable} ${dmSans.variable} relative min-h-dvh bg-cream font-body-f text-brut`}>
+    <div className={`${shrikhand.variable} ${dmSans.variable} ${fredoka.variable} relative min-h-dvh bg-cream font-body-f text-brut`}>
       <div aria-hidden className="bg-dots pointer-events-none fixed inset-0 -z-10" />
       <FunLayer />
 
@@ -51,13 +53,13 @@ export default function PageFinal() {
                 href={REPORT_URL}
                 target={REPORT_TEMPLATE ? "_blank" : undefined}
                 rel={REPORT_TEMPLATE ? "noopener noreferrer" : undefined}
-                className="brut brut-press flex items-center justify-center gap-2 rounded-2xl bg-[#ff9f55] px-4 py-5 text-center font-swash text-lg text-white transition-colors hover:bg-orange-bright"
+                className="brut brut-press flex items-center justify-center gap-2 rounded-2xl bg-[#ff9f55] px-4 py-4 text-center font-swash text-lg text-white transition-colors hover:bg-[#f0812e]"
               >
-                Report a problem <span aria-hidden>↗</span>
+                Report a problem <span aria-hidden>→</span>
               </a>
             </div>
 
-            <div className="group brut rounded-2xl bg-illini-blue p-6 text-white sm:p-8">
+            <div className="group brut rounded-2xl bg-illini-blue p-6 text-white">
               <h2 className="font-swash text-2xl sm:whitespace-nowrap sm:text-3xl">
                 Want to advertise your event?
                 <span
@@ -67,18 +69,20 @@ export default function PageFinal() {
                   📣
                 </span>
               </h2>
-              <p className="mt-2 max-w-xl font-medium text-white/85">
-                Hosting a free-food event? We&apos;ll include it and highlight it on the day it happens. Free and
-                walk-in only.
-              </p>
-              <a
-                href={ADVERTISE_URL || "#"}
-                target={ADVERTISE_URL ? "_blank" : undefined}
-                rel={ADVERTISE_URL ? "noopener noreferrer" : undefined}
-                className="brut brut-press mt-6 inline-block rounded-xl bg-orange-bright px-6 py-3 font-swash text-lg text-white"
-              >
-                Submit your event!
-              </a>
+              <div className="mt-3 flex flex-wrap items-center justify-between gap-x-6 gap-y-4">
+                <p className="max-w-md font-medium text-white/85">
+                  Hosting a free-food event? We&apos;ll include it and highlight it on the day it happens. Free and
+                  walk-in only.
+                </p>
+                <a
+                  href={ADVERTISE_URL || "#"}
+                  target={ADVERTISE_URL ? "_blank" : undefined}
+                  rel={ADVERTISE_URL ? "noopener noreferrer" : undefined}
+                  className="brut brut-press shrink-0 rounded-xl bg-orange-bright px-6 py-3 font-swash text-lg text-white"
+                >
+                  Submit your event!
+                </a>
+              </div>
             </div>
           </section>
 

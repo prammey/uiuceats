@@ -76,6 +76,7 @@
   /* Final version: Shrikhand display + DM Sans body (fonts page pairing 05) */
   --font-swash: var(--font-shrikhand), "Shrikhand", Georgia, serif;
   --font-body-f: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-soft: var(--font-fredoka), ui-sans-serif, system-ui, sans-serif;
 }
 
 html {
