@@ -34,7 +34,7 @@ export default function DayStripFinal({ days, counts, selected, onSelect }: Prop
             <span className="font-body-f text-[10px] font-bold uppercase tracking-widest sm:text-xs">
               {day.isToday ? "Today" : day.weekday}
             </span>
-            <span className="font-sign text-xl leading-none sm:text-3xl">{day.dayNumber}</span>
+            <span className="font-swash text-2xl leading-none sm:text-4xl">{day.dayNumber}</span>
             <span className="mt-1 font-body-f text-[10px] font-bold sm:text-xs">{count > 0 ? `×${count}` : "—"}</span>
           </button>
         );

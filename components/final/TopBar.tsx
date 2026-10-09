@@ -16,7 +16,7 @@ export default function TopBar() {
   const loop = [...PHRASES, ...PHRASES];
   return (
     <div aria-hidden className="overflow-hidden border-b-[3px] border-brut bg-brut py-2.5 text-b-cream">
-      <div className="flex w-max animate-marquee items-center whitespace-nowrap font-sign text-[11px] uppercase tracking-[0.2em]">
+      <div className="flex w-max animate-marquee items-center whitespace-nowrap font-body-f text-[11px] font-bold uppercase tracking-[0.25em]">
         {loop.map((phrase, index) => (
           <Fragment key={index}>
             <span className="px-6">{phrase === "I ♥ Food" ? <>I <Heart /> Food</> : phrase}</span>

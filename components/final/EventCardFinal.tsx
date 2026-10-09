@@ -25,15 +25,15 @@ export default function EventCardFinal({ event, now, reportTemplate, spotlight =
   return (
     <article
       id={`card-${event.id}`}
-      className={`brut brut-hover group flex flex-col overflow-hidden rounded-2xl ${event.promoted ? "bg-b-yellow" : "bg-white"} ${
+      className={`brut brut-hover group flex flex-col rounded-2xl ${event.promoted ? "bg-b-yellow" : "bg-white"} ${
         spotlight ? "b-spotlight" : ""
       }`}
     >
       <div className="flex items-stretch border-b-[3px] border-brut">
-        <div className="checker-light flex w-20 shrink-0 items-center justify-center border-r-[3px] border-brut">
+        <div className="checker-light flex w-20 shrink-0 items-center justify-center rounded-tl-[13px] border-r-[3px] border-brut">
           <span
             aria-hidden
-            className="select-none text-4xl drop-shadow-sm transition duration-300 group-hover:-translate-y-1 group-hover:scale-125 group-hover:-rotate-6"
+            className="relative z-10 select-none text-4xl drop-shadow-sm transition duration-300 group-hover:-translate-y-3 group-hover:scale-150 group-hover:-rotate-12"
           >
             {event.icon}
           </span>
@@ -75,7 +75,7 @@ export default function EventCardFinal({ event, now, reportTemplate, spotlight =
           <div className="flex gap-3">
             <dt className="w-12 shrink-0 pt-0.5 text-[11px] font-bold uppercase tracking-wider text-ink-muted">What</dt>
             <dd>
-              <span className="font-sign text-sm tracking-wide text-illini-orange">{event.food_text}</span>
+              <span className="font-swash text-base text-illini-orange">{event.food_text}</span>
               {event.dietary.map((tag) => {
                 const meta = DIETARY_META[tag] ?? { label: tag, emoji: "✅" };
                 return (
@@ -93,12 +93,12 @@ export default function EventCardFinal({ event, now, reportTemplate, spotlight =
         </p>
       </div>
 
-      <div className="flex divide-x-[3px] divide-brut border-t-[3px] border-brut font-sign text-xs uppercase tracking-wider">
+      <div className="flex divide-x-[3px] divide-brut border-t-[3px] border-brut font-swash text-base">
         <a
           href={event.proof_url}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 bg-illini-blue py-3 text-center text-white transition-colors hover:bg-illini-orange"
+          className="flex-1 rounded-bl-[13px] bg-illini-blue py-2.5 text-center text-white transition-colors hover:bg-illini-orange"
         >
           Proof ↗
         </a>
@@ -106,7 +106,7 @@ export default function EventCardFinal({ event, now, reportTemplate, spotlight =
           href={googleCalendarUrl(event)}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 py-3 text-center text-brut transition-colors hover:bg-b-yellow"
+          className="flex-1 py-2.5 text-center text-brut transition-colors last:rounded-br-[13px] hover:bg-b-yellow"
         >
           + Calendar
         </a>
@@ -117,7 +117,7 @@ export default function EventCardFinal({ event, now, reportTemplate, spotlight =
             rel="noopener noreferrer"
             aria-label="Report a problem with this listing"
             title="Report a problem"
-            className="px-4 py-3 text-brut transition-colors hover:bg-illini-orange hover:text-white"
+            className="rounded-br-[13px] px-4 py-2.5 text-brut transition-colors hover:bg-illini-orange hover:text-white"
           >
             ⚑
           </a>

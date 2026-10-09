@@ -46,8 +46,8 @@ export default function HeroFinal() {
       {/* Awning columns on both sides of the gradient. */}
       <div aria-hidden className="diag-stripes w-6 shrink-0 border-r-[3px] border-brut sm:w-10 lg:w-14" />
 
-      <div className="relative min-w-0 flex-1 overflow-hidden bg-linear-to-br from-[#ff9f55] via-[#ffc46b] to-[#ffe7a3] text-illini-blue">
-        <div aria-hidden className="pointer-events-none absolute -right-16 -top-16 h-72 w-72 rounded-full bg-white/30 blur-3xl animate-blob" />
+      <div className="relative min-w-0 flex-1 overflow-hidden bg-linear-to-br from-illini-orange via-[#ff8a3d] to-b-yellow text-white">
+        <div aria-hidden className="pointer-events-none absolute -right-16 -top-16 h-72 w-72 rounded-full bg-white/20 blur-3xl animate-blob" />
         <div aria-hidden className="pointer-events-none absolute -bottom-24 left-1/3 h-64 w-64 rounded-full bg-illini-orange/20 blur-3xl animate-blob [animation-delay:-8s]" />
         {FLOATERS.map((f) => (
           <span
@@ -68,15 +68,15 @@ export default function HeroFinal() {
             <ShareButton />
           </div>
 
-          <p className="font-body-f text-[11px] font-bold uppercase tracking-[0.3em] sm:text-xs">
+          <p className="font-body-f text-[11px] font-bold uppercase tracking-[0.3em] text-white/90 sm:text-xs">
             ★ University of Illinois · Free food finder ★
           </p>
-          <h1 className="mt-3 font-sign text-[2.75rem] uppercase leading-[0.95] sm:text-7xl lg:text-8xl xl:text-9xl">
+          <h1 className="mt-3 font-swash text-5xl uppercase leading-[0.95] drop-shadow-[3px_3px_0_#13294b] sm:text-7xl lg:text-8xl xl:text-9xl">
             Free food
             <br />
             on campus
           </h1>
-          <p key={line} aria-live="polite" className="mt-5 animate-pop font-swash text-2xl text-illini-orange drop-shadow-[2px_2px_0_#fff] sm:text-4xl lg:text-5xl">
+          <p key={line} aria-live="polite" className="mt-5 animate-pop font-swash text-2xl text-white drop-shadow-[2px_2px_0_#13294b] sm:text-4xl lg:text-5xl">
             {LINES[line]}
           </p>
           {/* Keep room for the emoji on phones so it never sits on the text. */}
