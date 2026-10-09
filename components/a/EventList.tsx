@@ -1,37 +1,16 @@
 "use client";
 
-import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
-import DayStrip from "@/components/DayStrip";
-import EventCard from "@/components/EventCard";
-import {
-  dayKey,
-  formatDayHeading,
-  hasEnded,
-  isHappeningNow,
-  shiftDays,
-  weekDays,
-  type FoodEvent,
-} from "@/lib/events";
+import { useEffect, useState } from "react";
+import DayStrip from "@/components/a/DayStrip";
+import EventCard from "@/components/a/EventCard";
+import { dayKey, formatDayHeading } from "@/lib/events";
+import type { FoodEvent } from "@/lib/events";
+import { useNow, useWeekView } from "@/lib/week";
 
 type Props = {
   events: FoodEvent[];
   reportTemplate?: string;
 };
-
-// The clock only exists in the browser. The server snapshot is null, so the static
-// HTML and the first client render both show the placeholder, then the real time
-// arrives without a hydration mismatch. Ticks once a minute.
-function subscribeToMinute(onChange: () => void) {
-  const id = window.setInterval(onChange, 60_000);
-  return () => window.clearInterval(id);
-}
-const minuteNow = () => Math.floor(Date.now() / 60_000);
-const minuteOnServer = () => null;
-
-function useNow(): Date | null {
-  const minute = useSyncExternalStore(subscribeToMinute, minuteNow, minuteOnServer);
-  return useMemo(() => (minute === null ? null : new Date(minute * 60_000)), [minute]);
-}
 
 const EMPTY_LINES = [
   "Nothing free on this day (yet). The feeds refresh every 3 hours.",
@@ -43,28 +22,7 @@ export default function EventList({ events, reportTemplate }: Props) {
   const now = useNow();
   const [picked, setPicked] = useState<string | null>(null);
   const [spotlight, setSpotlight] = useState<string | null>(null);
-
-  const view = useMemo(() => {
-    if (!now) return null;
-    const days = weekDays(now);
-    const todayKey = days[0].key;
-    const tomorrowKey = dayKey(shiftDays(now, 1));
-    const counts: Record<string, number> = {};
-    const byDay: Record<string, FoodEvent[]> = {};
-    const upcoming: FoodEvent[] = [];
-    for (const event of events) {
-      if (hasEnded(event, now)) continue;
-      upcoming.push(event);
-      const key = dayKey(new Date(event.start));
-      counts[key] = (counts[key] ?? 0) + 1;
-      (byDay[key] ??= []).push(event);
-    }
-    // Fall back to today if the picked day scrolled out of the 7-day window overnight.
-    const selected = picked && days.some((d) => d.key === picked) ? picked : todayKey;
-    const live = upcoming.filter((event) => isHappeningNow(event, now));
-    const nextWithFood = days.find((d) => d.key > selected && (counts[d.key] ?? 0) > 0) ?? null;
-    return { days, todayKey, tomorrowKey, counts, selected, list: byDay[selected] ?? [], upcoming, live, nextWithFood };
-  }, [events, now, picked]);
+  const view = useWeekView(events, picked, now);
 
   // Scroll the spotlighted card into view once it exists, then let the glow fade.
   useEffect(() => {

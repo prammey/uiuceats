@@ -29,7 +29,11 @@ on one.illinois.edu).
 | `collector/tests/` | pytest suite with fixture feeds |
 | `data/events.json` | Published listings (committed by the bot) |
 | `data/details-cache.json` | Cached sponsor names for calendars.illinois.edu events |
-| `app/`, `components/`, `lib/` | Next.js 16 static site (App Router, Tailwind v4). `Hero` (floating food, rotating line, share), `Ticker` (CSS marquee), `DayStrip` (7-day picker, today ringed), `EventCard` (emoji, meal-time stripe, proof, add-to-calendar), `EventList` (live section, Surprise me), `FunLayer` (Konami / pizza-click confetti, tab-title nudge). All motion respects `prefers-reduced-motion`. |
+| `app/` | Routes: `/` and `/A` serve version A, `/B` serves version B. Swap the import in `app/page.tsx` to change which one the root shows. |
+| `components/a/` | Version A, the playful emoji look (`PageA`, `Hero`, `Ticker`, `Banner`, `DayStrip`, `EventCard`, `EventList`). |
+| `components/b/` | Version B, neo-brutalist retro fast food (`PageB`, `HeroB`, `DayStripB`, `EventCardB`, `EventListB`). |
+| `components/FunLayer.tsx`, `lib/week.ts` | Shared easter eggs and the day-grouping hook both versions use. |
+| `lib/events.ts` | Next.js 16 static site helpers (App Router, Tailwind v4). `Hero` (floating food, rotating line, share), `Ticker` (CSS marquee), `DayStrip` (7-day picker, today ringed), `EventCard` (emoji, meal-time stripe, proof, add-to-calendar), `EventList` (live section, Surprise me), `FunLayer` (Konami / pizza-click confetti, tab-title nudge). All motion respects `prefers-reduced-motion`. |
 | `.github/workflows/collect.yml` | Scheduled collector run |
 
 ## Run locally

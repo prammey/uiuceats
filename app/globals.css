@@ -9,8 +9,11 @@
   --color-mint: #22b573;
   --color-ink: #1f2430;
   --color-ink-muted: #5b6474;
-  --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-fredoka), var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+
+  /* Version B: neo-brutalist retro fast food */
+  --color-brut: #111111;
+  --color-b-cream: #fff6e5;
+  --color-b-yellow: #ffd166;
 
   --animate-float: float 7s ease-in-out infinite;
   --animate-float-slow: float 11s ease-in-out infinite;
@@ -62,6 +65,14 @@
   }
 }
 
+@theme inline {
+  --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fredoka), var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+  --font-slab: var(--font-alfa), "Alfa Slab One", Georgia, serif;
+  --font-body-b: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-mono-b: var(--font-space-mono), ui-monospace, "SF Mono", Menlo, monospace;
+}
+
 html {
   background: var(--color-cream);
   scroll-behavior: smooth;
@@ -70,7 +81,7 @@ html {
 body {
   background: var(--color-cream);
   color: var(--color-ink);
-  font-family: var(--font-sans);
+  font-family: ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -78,6 +89,54 @@ body {
 .bg-dots {
   background-image: radial-gradient(rgba(19, 41, 75, 0.09) 1.2px, transparent 1.2px);
   background-size: 20px 20px;
+}
+
+/* ---------- Version B: neo-brutalist retro fast food ---------- */
+.brut {
+  border: 3px solid var(--color-brut);
+  box-shadow: 6px 6px 0 var(--color-brut);
+}
+.brut-sm {
+  border: 3px solid var(--color-brut);
+  box-shadow: 4px 4px 0 var(--color-brut);
+}
+.brut-hover {
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+.brut-hover:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 var(--color-brut);
+}
+.brut-press:active {
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0 var(--color-brut);
+}
+.retro-stripes {
+  background: repeating-linear-gradient(
+    90deg,
+    var(--color-illini-orange) 0 36px,
+    var(--color-b-cream) 36px 72px,
+    var(--color-illini-blue) 72px 108px
+  );
+}
+.checker-light {
+  background-image: conic-gradient(var(--color-b-yellow) 25%, #ffffff 0 50%, var(--color-b-yellow) 0 75%, #ffffff 0);
+  background-size: 14px 14px;
+}
+.checker-dark {
+  background-image: conic-gradient(var(--color-brut) 25%, transparent 0 50%, var(--color-brut) 0 75%, transparent 0);
+  background-size: 18px 18px;
+}
+.starburst {
+  clip-path: polygon(
+    50% 0%, 61% 12%, 76% 6%, 80% 21%, 95% 25%, 90% 40%, 100% 50%, 90% 60%, 95% 75%, 80% 79%,
+    76% 94%, 61% 88%, 50% 100%, 39% 88%, 24% 94%, 20% 79%, 5% 75%, 10% 60%, 0% 50%, 10% 40%,
+    5% 25%, 20% 21%, 24% 6%, 39% 12%
+  );
+}
+.b-spotlight {
+  outline: 4px solid var(--color-illini-orange);
+  outline-offset: 4px;
 }
 
 /* Highlight pulse used by "Surprise me". */
