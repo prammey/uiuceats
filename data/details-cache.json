@@ -11,10 +11,6 @@
   "calendar": "Dish It Up",
   "sponsor": "Women's Resources Center"
  },
- "cal-33557545": {
-  "calendar": "Center for Civic Education & Justice",
-  "sponsor": "Center for Civic Education & Justice and the University YMCA"
- },
  "cal-33558682": {
   "calendar": "La Casa Cultural Latina",
   "sponsor": "La Casa Cultural Latina and Student Cultural Programming Fee."
@@ -26,6 +22,10 @@
  "cal-33559863": {
   "calendar": "iSEE Sustainability Calendar",
   "sponsor": "Institute for Sustainability, Energy, and Environment"
+ },
+ "cal-33560562": {
+  "calendar": "Center for the Study of Global Gender Equity",
+  "sponsor": "YMCA of the University of Illinois, co-sponsored by the Center for the Study of Global Gender Equity and others"
  },
  "cal-33562043": {
   "calendar": "Library Calendar",
@@ -54,9 +54,5 @@
  "cal-33564627": {
   "calendar": "CEAPS Events Calendar",
   "sponsor": "Center for East Asian and Pacific Studies"
- },
- "cal-33564731": {
-  "calendar": "Siebel School Speakers Calendar",
-  "sponsor": "Siebel School of Computing and Data Science"
  }
 }
