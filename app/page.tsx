@@ -1,5 +1,8 @@
 import Banner from "@/components/Banner";
 import EventList from "@/components/EventList";
+import FunLayer from "@/components/FunLayer";
+import Hero from "@/components/Hero";
+import Ticker from "@/components/Ticker";
 import { formatUpdated, type EventsFile } from "@/lib/events";
 import data from "@/data/events.json";
 
@@ -10,49 +13,58 @@ const REPORT_TEMPLATE = process.env.NEXT_PUBLIC_REPORT_FORM_URL;
 export default function Home() {
   return (
     <>
-      {/* Slim blue and orange bands, as on illinois.edu sites. No wordmark. */}
-      <div aria-hidden className="h-2 bg-illini-blue" />
-      <div aria-hidden className="h-1 bg-illini-orange" />
+      <div aria-hidden className="bg-dots pointer-events-none fixed inset-0 -z-10" />
+      <FunLayer />
 
-      <main className="mx-auto w-full max-w-4xl flex-1 px-4 pb-16 pt-8 sm:pt-10">
-        <header className="mb-5">
-          <h1 className="font-heading text-2xl font-bold leading-tight text-illini-blue sm:text-3xl">
-            Free food on campus this week
-          </h1>
-          <p className="mt-1.5 text-sm text-ink-muted sm:text-base">
-            Walk-in events with free food at UIUC, from official campus calendars. No sign-ups, no swipes.
-          </p>
-        </header>
-
+      <main className="mx-auto w-full max-w-5xl flex-1 px-4 pb-20 pt-5 sm:pt-8">
+        <Hero count={events.count} />
+        <Ticker />
         <Banner />
 
         <EventList events={events.events} reportTemplate={REPORT_TEMPLATE} />
 
-        <footer className="mt-12 border-t border-line pt-4 text-xs text-ink-muted">
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
-            <span>Last checked {formatUpdated(events.generated_at)} (campus time)</span>
-            <span>{events.count} listings this week</span>
-            {ADVERTISE_URL && (
+        <section className="mt-12 overflow-hidden rounded-[2rem] bg-illini-blue px-6 py-7 text-white shadow-xl sm:px-10">
+          <div className="flex flex-wrap items-center justify-between gap-5">
+            <div>
+              <h2 className="font-display text-2xl font-bold">Hosting a free-food event? 📣</h2>
+              <p className="mt-1 max-w-md text-sm text-white/80">
+                Clubs and departments get a highlighted ✨ spot on the day it happens. Free and walk-in only.
+              </p>
+            </div>
+            {ADVERTISE_URL ? (
               <a
                 href={ADVERTISE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-semibold text-illini-blue underline underline-offset-2 hover:text-illini-orange"
+                className="rounded-full bg-illini-orange px-5 py-2.5 font-display font-bold shadow-lg transition hover:-translate-y-0.5 hover:bg-white hover:text-illini-orange"
               >
-                Advertise your free-food event
+                Advertise your event
               </a>
+            ) : (
+              <span className="rounded-full border-2 border-white/30 px-5 py-2.5 font-display text-sm font-bold text-white/70">
+                Submission form coming soon
+              </span>
             )}
-            <span>Student-made. Not affiliated with the University of Illinois.</span>
           </div>
-          <details className="mt-3">
-            <summary className="cursor-pointer font-semibold text-illini-blue">How this works</summary>
-            <p className="mt-2 max-w-2xl leading-relaxed">
+        </section>
+
+        <footer className="mt-10 space-y-3 text-center text-xs text-ink-muted">
+          <p className="font-semibold">
+            Last checked {formatUpdated(events.generated_at)} (campus time) · {events.count} listings this week
+          </p>
+          <details className="mx-auto max-w-2xl rounded-2xl bg-white/70 px-4 py-3 text-left">
+            <summary className="cursor-pointer text-center font-extrabold text-illini-blue">🤔 How this works</summary>
+            <p className="mt-2 leading-relaxed">
               Every few hours a script reads the public campus calendar feeds (calendars.illinois.edu and
               one.illinois.edu), keeps the next 7 days, and drops anything that mentions RSVPs, registration,
               tickets, or a price. An event is listed only when a sentence in its own description says food is
               provided; that sentence is quoted on the card. Nothing is written by a person or an AI.
             </p>
           </details>
+          <p>
+            Made with 🧡💙 by a hungry Illini · Not affiliated with the University of Illinois ·{" "}
+            <span className="opacity-60">psst: ↑ ↑ ↓ ↓ ← → ← → B A</span>
+          </p>
         </footer>
       </main>
     </>

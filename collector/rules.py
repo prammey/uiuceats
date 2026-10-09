@@ -98,9 +98,9 @@ ICONS = [
   ("☕", re.compile(r"\b(?:coffee|chai|hot chocolate|cider)\b", re.I)),
   ("🍪", re.compile(r"\b(?:cookie|cupcake|cake|dessert|treat|snack)", re.I)),
   ("🥪", re.compile(r"\b(?:lunch|sandwich)", re.I)),
-  ("🍽️", re.compile(r"\b(?:dinner|meal|catered|catering)\b", re.I)),
+  ("🍲", re.compile(r"\b(?:dinner|meal|catered|catering)\b", re.I)),
 ]
-DEFAULT_ICON = "🍽️"
+DEFAULT_ICON = "🍱"
 
 FOOD_WORD = re.compile(rf"\b{FOOD}\b", re.I)
 

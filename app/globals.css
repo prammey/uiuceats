@@ -3,21 +3,94 @@
 @theme {
   --color-illini-orange: #ff5f05;
   --color-illini-blue: #13294b;
-  --color-illini-blue-light: #1f3a66;
+  --color-cream: #fff7ed;
+  --color-sun: #ffc53d;
+  --color-grape: #6d4aff;
+  --color-mint: #22b573;
   --color-ink: #1f2430;
   --color-ink-muted: #5b6474;
-  --color-line: #e3e5e8;
-  --font-sans: var(--font-source-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-heading: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fredoka), var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-float-slow: float 11s ease-in-out infinite;
+  --animate-marquee: marquee 45s linear infinite;
+  --animate-pop: pop 0.45s cubic-bezier(0.2, 1.4, 0.4, 1) both;
+  --animate-pulse-ring: pulse-ring 1.6s ease-out infinite;
+  --animate-fall: fall 3.5s linear forwards;
+  --animate-blob: blob 16s ease-in-out infinite alternate;
+  --animate-wiggle: wiggle 0.5s ease-in-out;
+  --animate-bounce-soft: bounce-soft 2.2s ease-in-out infinite;
+  --animate-shine: shine 2.4s ease-in-out infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-4deg); }
+    50% { transform: translateY(-14px) rotate(5deg); }
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes pop {
+    from { transform: translateY(6px) scale(0.96); opacity: 0; }
+    to { transform: translateY(0) scale(1); opacity: 1; }
+  }
+  @keyframes pulse-ring {
+    0% { box-shadow: 0 0 0 0 rgba(255, 95, 5, 0.6); }
+    100% { box-shadow: 0 0 0 14px rgba(255, 95, 5, 0); }
+  }
+  @keyframes fall {
+    from { transform: translateY(-12vh) rotate(0deg); opacity: 1; }
+    to { transform: translateY(112vh) rotate(420deg); opacity: 0.9; }
+  }
+  @keyframes blob {
+    from { transform: translate(0, 0) scale(1); }
+    to { transform: translate(36px, 28px) scale(1.18); }
+  }
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+  }
+  @keyframes bounce-soft {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+  @keyframes shine {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
 }
 
 html {
-  background: #ffffff;
+  background: var(--color-cream);
+  scroll-behavior: smooth;
 }
 
 body {
-  background: #ffffff;
+  background: var(--color-cream);
   color: var(--color-ink);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+}
+
+/* Soft dot grid behind everything, like a picnic blanket seen from far away. */
+.bg-dots {
+  background-image: radial-gradient(rgba(19, 41, 75, 0.09) 1.2px, transparent 1.2px);
+  background-size: 20px 20px;
+}
+
+/* Highlight pulse used by "Surprise me". */
+.card-spotlight {
+  animation: pulse-ring 1.2s ease-out 2;
+  border-color: var(--color-illini-orange) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

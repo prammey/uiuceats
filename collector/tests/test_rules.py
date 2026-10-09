@@ -74,7 +74,7 @@ def test_dietary_icon_and_food_text():
   assert rules.dietary_tags(text) == ["vegetarian", "halal"]
   assert rules.food_icon(text) == "🍕"
   assert rules.food_icon("boba social") == "🧋"
-  assert rules.food_icon("a lecture") == "🍽️"
+  assert rules.food_icon("a lecture") == "🍱"
   assert rules.food_text("Pizza will be served.", text) == "Pizza"
   assert rules.food_text("Free food and giveaways", "Free food and giveaways") == "Free food"
   assert rules.food_text("Coffee, snacks, and donuts provided", "") == "Coffee, Snacks, Donuts"

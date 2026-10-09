@@ -29,7 +29,7 @@ on one.illinois.edu).
 | `collector/tests/` | pytest suite with fixture feeds |
 | `data/events.json` | Published listings (committed by the bot) |
 | `data/details-cache.json` | Cached sponsor names for calendars.illinois.edu events |
-| `app/`, `components/`, `lib/` | Next.js 16 static site (App Router, Tailwind v4). `DayStrip` is the 7-day picker, `EventCard` the listing |
+| `app/`, `components/`, `lib/` | Next.js 16 static site (App Router, Tailwind v4). `Hero` (floating food, rotating line, share), `Ticker` (CSS marquee), `DayStrip` (7-day picker, today ringed), `EventCard` (emoji, meal-time stripe, proof, add-to-calendar), `EventList` (live section, Surprise me), `FunLayer` (Konami / pizza-click confetti, tab-title nudge). All motion respects `prefers-reduced-motion`. |
 | `.github/workflows/collect.yml` | Scheduled collector run |
 
 ## Run locally

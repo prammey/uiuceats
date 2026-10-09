@@ -33,6 +33,23 @@ export type DayInfo = {
   isToday: boolean;
 };
 
+export type MealPeriod = "breakfast" | "lunch" | "dinner" | "late";
+
+export const PERIOD_META: Record<MealPeriod, { label: string; emoji: string; stripe: string }> = {
+  breakfast: { label: "Breakfast", emoji: "🌅", stripe: "bg-sun" },
+  lunch: { label: "Lunch", emoji: "☀️", stripe: "bg-illini-orange" },
+  dinner: { label: "Dinner", emoji: "🌆", stripe: "bg-illini-blue" },
+  late: { label: "Late night", emoji: "🌙", stripe: "bg-grape" },
+};
+
+export const DIETARY_META: Record<string, { label: string; emoji: string }> = {
+  vegetarian: { label: "Vegetarian", emoji: "🌱" },
+  vegan: { label: "Vegan", emoji: "🌿" },
+  halal: { label: "Halal", emoji: "✅" },
+  kosher: { label: "Kosher", emoji: "✅" },
+  "gluten-free": { label: "Gluten-free", emoji: "🌾" },
+};
+
 // Days are always campus days, even if someone opens the site from elsewhere.
 export const CAMPUS_TZ = "America/Chicago";
 
@@ -47,6 +64,13 @@ const timeFormatter = new Intl.DateTimeFormat("en-US", {
   timeZone: CAMPUS_TZ,
   hour: "numeric",
   minute: "2-digit",
+});
+
+const hour23Formatter = new Intl.DateTimeFormat("en-US", {
+  timeZone: CAMPUS_TZ,
+  hour: "numeric",
+  minute: "numeric",
+  hourCycle: "h23",
 });
 
 const weekdayFormatter = new Intl.DateTimeFormat("en-US", { timeZone: CAMPUS_TZ, weekday: "short" });
@@ -107,6 +131,18 @@ export function formatTimeRange(event: FoodEvent): string {
   return `${start.hm} ${start.period}–${end.hm} ${end.period}`;
 }
 
+export function mealPeriod(event: FoodEvent): MealPeriod {
+  if (event.all_day) return "lunch";
+  const parts = hour23Formatter.formatToParts(new Date(event.start));
+  const hour = Number(parts.find((p) => p.type === "hour")?.value ?? 12);
+  const minute = Number(parts.find((p) => p.type === "minute")?.value ?? 0);
+  const decimal = hour + minute / 60;
+  if (decimal < 10.5) return "breakfast";
+  if (decimal < 15) return "lunch";
+  if (decimal < 21) return "dinner";
+  return "late";
+}
+
 export function formatDayHeading(key: string, todayKey: string, tomorrowKey: string): string {
   const [year, month, day] = key.split("-").map(Number);
   const long = longDayFormatter.format(new Date(Date.UTC(year, month - 1, day, 18)));
@@ -131,4 +167,23 @@ export function reportLink(template: string | undefined, eventId: string): strin
   if (!template) return null;
   if (template.includes("EVENT_ID")) return template.replace("EVENT_ID", encodeURIComponent(eventId));
   return template;
+}
+
+function gcalStamp(iso: string): string {
+  return new Date(iso).toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
+}
+
+export function googleCalendarUrl(event: FoodEvent): string {
+  const dates = event.all_day
+    ? `${dayKey(new Date(event.start)).replace(/-/g, "")}/${dayKey(new Date(event.end)).replace(/-/g, "")}`
+    : `${gcalStamp(event.start)}/${gcalStamp(event.end)}`;
+  const details = `${event.food_text}. Found on UIUC Eats. Source: ${event.proof_url}`;
+  const params = new URLSearchParams({
+    action: "TEMPLATE",
+    text: event.title,
+    dates,
+    details,
+    location: event.location,
+  });
+  return `https://calendar.google.com/calendar/render?${params.toString()}`;
 }
