@@ -57,7 +57,7 @@ export default function PageFinal() {
         </section>
 
         <footer className="mt-12 text-center">
-          <p className="font-mono-b text-xs font-bold uppercase tracking-widest text-brut">Made with 🧡💙 in Urbana-Champaign</p>
+          <p className="font-mono-b text-xs font-bold uppercase tracking-widest text-brut">Made with 🧡💙 in Urbana-Champaign 🤗</p>
           <p className="mx-auto mt-4 max-w-2xl text-[11px] leading-relaxed text-ink-muted/80">
             New and experimental. Listings come from official campus calendars and appear only when the source says
             food is provided, so confirm with the host before you go. Last checked {formatUpdated(events.generated_at)}{" "}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import ShareButton from "@/components/final/ShareButton";
 
 const LINES = [
   "Out of meal swipes? 🍽️",
@@ -13,14 +14,14 @@ const LINES = [
 
 const FOODS = ["🍕", "🧋", "🍪", "🌮", "🍜", "🍔", "🌯", "🥞", "🧁", "🍣", "🍽️", "🍩", "🥟", "🍛", "🌭", "🍦", "🍉", "🥨", "🍱", "🍗"];
 
-// Faint food drifting in the panel, kept to the right half so it never covers text.
+// Faint food drifting in the panel, on every screen size.
 const FLOATERS = [
-  { emoji: "🍪", left: "62%", top: "8%", size: "text-3xl", slow: true, mobile: false },
-  { emoji: "🌮", left: "72%", top: "58%", size: "text-5xl", slow: true, mobile: true },
-  { emoji: "🥟", left: "66%", top: "64%", size: "text-3xl", slow: false, mobile: false },
-  { emoji: "🧋", left: "88%", top: "72%", size: "text-4xl", slow: false, mobile: true },
-  { emoji: "🍩", left: "64%", top: "86%", size: "text-3xl", slow: true, mobile: false },
-  { emoji: "🍜", left: "80%", top: "26%", size: "text-4xl", slow: true, mobile: false },
+  { emoji: "🍪", left: "62%", top: "8%", size: "text-3xl", slow: true },
+  { emoji: "🌮", left: "74%", top: "56%", size: "text-4xl", slow: true },
+  { emoji: "🥟", left: "58%", top: "66%", size: "text-3xl", slow: false },
+  { emoji: "🧋", left: "90%", top: "70%", size: "text-4xl", slow: false },
+  { emoji: "🍩", left: "66%", top: "88%", size: "text-3xl", slow: true },
+  { emoji: "🍜", left: "82%", top: "22%", size: "text-4xl", slow: true },
 ];
 
 export default function HeroFinal() {
@@ -50,35 +51,40 @@ export default function HeroFinal() {
           aria-hidden
           className={`pointer-events-none absolute select-none opacity-40 drop-shadow ${f.size} ${
             f.slow ? "animate-float-slow" : "animate-float"
-          } ${f.mobile ? "" : "hidden sm:inline"}`}
+          }`}
           style={{ left: f.left, top: f.top }}
         >
           {f.emoji}
         </span>
       ))}
 
-      <div className="relative mx-auto max-w-6xl px-4 py-10 sm:py-16">
+      <div className="relative mx-auto max-w-6xl px-4 py-14 sm:py-24">
         <div className="pr-24 sm:pr-56">
           <p className="font-mono-b text-[11px] font-bold uppercase tracking-[0.3em] text-white/90 sm:text-xs">
             ★ University of Illinois · Free food finder ★
           </p>
-          <h1 className="mt-3 font-slab text-5xl uppercase leading-[0.92] drop-shadow-sm sm:text-7xl lg:text-8xl">
-            Free food
-            <br />
-            on campus
-          </h1>
-          <p key={line} aria-live="polite" className="mt-5 animate-pop text-xl font-bold text-illini-blue sm:text-2xl">
-            {LINES[line]}
-          </p>
+          {/* Headline, rotating line, and share button share one column so the
+              button's right edge lines up with the end of "CAMPUS". */}
+          <div className="inline-flex w-fit max-w-full flex-col">
+            <h1 className="mt-3 font-slab text-5xl uppercase leading-[0.92] drop-shadow-sm sm:text-7xl lg:text-8xl">
+              Free food
+              <br />
+              on campus
+            </h1>
+            <p key={line} aria-live="polite" className="mt-5 animate-pop text-xl font-bold text-illini-blue sm:text-2xl">
+              {LINES[line]}
+            </p>
+            <ShareButton className="mt-7 w-full" />
+          </div>
         </div>
 
-        <div className="absolute right-4 top-8 animate-bounce-soft sm:right-8 sm:top-12">
+        <div className="absolute right-4 top-12 animate-bounce-soft sm:right-10 sm:top-20">
           <button
             key={food}
             type="button"
             onClick={nextFood}
             aria-label="Food emoji. Tap to change it."
-            className="animate-pop select-none text-7xl leading-none drop-shadow-lg transition hover:scale-110 active:scale-95 sm:text-[9rem]"
+            className="animate-pop select-none text-6xl leading-none drop-shadow-lg transition hover:scale-110 active:scale-95 sm:text-[6.5rem]"
           >
             {FOODS[food]}
           </button>

@@ -1,7 +1,6 @@
 import { Fragment } from "react";
-import ShareButton from "@/components/final/ShareButton";
 
-const PHRASES = ["No swipes, 100% free", "Oh no, free food", "Meet new clubs", "Order up", "Now serving, Urbana-Champaign", "I ♥ Food"];
+const PHRASES = ["No swipes", "100% free", "Oh yeahhh, free food!", "Meet new clubs", "Order up", "Now serving", "Urbana-Champaign", "I ♥ Food"];
 
 function Heart() {
   return (
@@ -11,7 +10,7 @@ function Heart() {
   );
 }
 
-// Diner sign on top, then a slim bar that holds the share button.
+// Diner sign across the very top.
 export default function TopBar() {
   // Two identical copies so the marquee's -50% loop is seamless; each phrase
   // carries equal padding on both sides so the stars sit centered between them.
@@ -26,11 +25,6 @@ export default function TopBar() {
               <span className="text-illini-orange">★</span>
             </Fragment>
           ))}
-        </div>
-      </div>
-      <div className="border-b-[3px] border-brut bg-b-cream">
-        <div className="mx-auto flex max-w-6xl items-center justify-end px-4 py-2">
-          <ShareButton />
         </div>
       </div>
     </>

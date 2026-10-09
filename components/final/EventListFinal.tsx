@@ -48,7 +48,7 @@ export default function EventListFinal({ events, reportTemplate }: Props) {
           type="button"
           onClick={surpriseMe}
           disabled={view.upcoming.length === 0}
-          className="brut-sm brut-press rounded-xl bg-white px-4 py-2 font-slab text-sm uppercase text-brut hover:bg-b-yellow disabled:opacity-40"
+          className="brut-sm brut-press rounded-xl bg-illini-orange px-4 py-2 font-slab text-sm uppercase text-white hover:bg-illini-blue disabled:opacity-40"
         >
           🎲 Surprise me
         </button>
@@ -80,9 +80,9 @@ export default function EventListFinal({ events, reportTemplate }: Props) {
         </div>
       ) : (
         <div className="brut mt-5 rounded-2xl bg-white px-6 py-12 text-center">
-          <p className="font-slab text-5xl uppercase text-illini-orange">86&apos;d</p>
+          <p className="font-slab text-5xl uppercase text-illini-orange">Shoot.</p>
           <p className="mt-2 font-mono-b text-xs font-bold uppercase tracking-widest text-brut">Nothing free on this day (yet)</p>
-          <p className="mt-1 text-sm text-ink-muted">The calendars are re-read every 3 hours.</p>
+          <p className="mt-1 text-sm text-ink-muted">The calendar refreshes every 3 hours.</p>
           {view.nextWithFood && (
             <button
               type="button"
