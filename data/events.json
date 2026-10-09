@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-09T03:22:21.379249-05:00",
+ "generated_at": "2026-10-09T09:25:31.722627-05:00",
  "timezone": "America/Chicago",
  "window_days": 7,
- "count": 13,
+ "count": 14,
  "events": [
   {
    "id": "cal-33557545",
@@ -250,6 +250,25 @@
    "icon": "🍽️",
    "dietary": [],
    "proof_url": "https://calendars.illinois.edu/detail/6991/33562043?key=200001012000010133562043",
+   "also_urls": [],
+   "source": "calendars",
+   "source_label": "calendars.illinois.edu",
+   "promoted": false
+  },
+  {
+   "id": "cal-33564627",
+   "title": "Student Coffee Talk with Austin Strange",
+   "host": "Center for East Asian and Pacific Studies",
+   "start": "2026-10-16T09:00:00-05:00",
+   "end": "2026-10-16T10:00:00-05:00",
+   "all_day": false,
+   "location": "404 David Kinley Hall",
+   "maps_url": "https://www.google.com/maps/search/?api=1&query=404%20David%20Kinley%20Hall%2C%20University%20of%20Illinois%20Urbana-Champaign",
+   "food_text": "Coffee, Treats",
+   "evidence": "\" Coffee and treats will be provided.",
+   "icon": "☕",
+   "dietary": [],
+   "proof_url": "https://calendars.illinois.edu/detail/6991/33564627?key=200001012000010133564627",
    "also_urls": [],
    "source": "calendars",
    "source_label": "calendars.illinois.edu",
