@@ -1,0 +1,56 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CampusGroups//EN
+BEGIN:VEVENT
+DTSTAMP:20261008T210041Z
+ORGANIZER;CN="Grainger James Scholar (Honors Students)":mailto:noreply@one.illinois.edu
+CATEGORIES;X-CG-CATEGORY=club_acronym:GRAINGERJSCHOLAR
+CATEGORIES;X-CG-CATEGORY=event_type:Grainger College of Engineering Event
+CATEGORIES;X-CG-CATEGORY=event_tags:Free Food,Info Session,Welcome Event
+DTSTART:20261010T213000Z
+DTEND:20261010T230000Z
+UID:aaa1@campusgroups.com
+SUMMARY;ENCODING=QUOTED-PRINTABLE:Welcome Event Invitation
+LOCATION: Sign in to download the location
+URL:https://one.illinois.edu/rsvp?id=484581
+DESCRIPTION:You are invited! Starting college can be exciting.
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20261008T210041Z
+ORGANIZER;CN="Gender & Sexuality Resource Center":mailto:noreply@one.illinois.edu
+CATEGORIES;X-CG-CATEGORY=club_acronym:GSRC
+CATEGORIES;X-CG-CATEGORY=event_tags:Free Food,Building Community
+DTSTART:20261012T170000Z
+DTEND:20261012T180000Z
+UID:aaa2@campusgroups.com
+SUMMARY;ENCODING=QUOTED-PRINTABLE:Quench Series (Lunch On US)
+LOCATION:Illini Union Room 314
+URL:https://one.illinois.edu/rsvp?id=492852
+DESCRIPTION:Come connect with other students over a midday meal.
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20261008T210041Z
+ORGANIZER;CN="Illinois International":mailto:noreply@one.illinois.edu
+CATEGORIES;X-CG-CATEGORY=club_acronym:INTL
+CATEGORIES;X-CG-CATEGORY=event_tags:Social,International
+DTSTART:20261013T220000Z
+DTEND:20261013T233000Z
+UID:aaa3@campusgroups.com
+SUMMARY;ENCODING=QUOTED-PRINTABLE:Incoming Exchange Boba Social =F0=9F=A7=8B
+LOCATION:Coble Hall Lobby
+URL:https://one.illinois.edu/rsvp?id=500001
+DESCRIPTION:Free boba for the first 50 students who show up. Halal snacks too.
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20261008T210041Z
+ORGANIZER;CN="American Chemical Society":mailto:noreply@one.illinois.edu
+CATEGORIES;X-CG-CATEGORY=club_acronym:ACS
+DTSTART:20261014T230000Z
+DTEND:20261015T000000Z
+UID:aaa4@campusgroups.com
+SUMMARY;ENCODING=QUOTED-PRINTABLE:ACS Pizza Lecture
+LOCATION:Noyes Lab 100
+URL:https://one.illinois.edu/rsvp?id=500002
+DESCRIPTION:Pizza will be served. Please RSVP so we order enough.
+END:VEVENT
+END:VCALENDAR

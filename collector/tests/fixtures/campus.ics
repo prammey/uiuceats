@@ -1,0 +1,100 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//University of Illinois//Web Services Calendar//EN
+BEGIN:VEVENT
+DTSTART:20261010T120000
+DTEND:20261010T130000
+SUMMARY:Friday Forum: Pathways to Redemption
+TZID:America/Chicago
+DESCRIPTION:Join us for a lunchtime series. Lunch is provided from the Y Thai Eatery at no cost\, so come ready to eat. Open to all.
+LOCATION:University YMCA\, 1001 S. Wright St.
+CATEGORIES:Lecture
+ORGANIZER:ccej@illinois.edu
+URL:https://calendars.illinois.edu/detail/7/1001?key=1
+UID:1001@illinois.edu
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261011T090000
+DTEND:20261011T150000
+SUMMARY:Call to Care Mental Health Symposium
+TZID:America/Chicago
+DESCRIPTION:Cost: Free\; lunch provided. Registration is required by October 8.
+LOCATION:SDRP Rooms 2025 A/B/C
+CATEGORIES:Conference/Workshop
+URL:https://calendars.illinois.edu/detail/7/1002
+UID:1002@illinois.edu
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261012T160000
+DTEND:20261012T170000
+SUMMARY:FSHN Seminar: Food safety in dairy processing
+TZID:America/Chicago
+DESCRIPTION:Dr. Example presents recent food science results. Food and drinks will be served.
+LOCATION:Bevier Hall 180
+CATEGORIES:Seminar/Symposium
+URL:https://calendars.illinois.edu/detail/7/1003
+UID:1003@illinois.edu
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20261013
+DTEND;VALUE=DATE:20261013
+SUMMARY:Graduate Midterm Studio Reviews
+TZID:America/Chicago
+DESCRIPTION:
+LOCATION:Temple Hoyne Buell Hall
+CATEGORIES:Professional Development
+URL:https://calendars.illinois.edu/detail/6991/1004
+UID:1004@illinois.edu
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261001T180000
+DTEND:20261001T190000
+SUMMARY:September Pizza Night
+TZID:America/Chicago
+DESCRIPTION:Free pizza for everyone who stops by!
+LOCATION:Illini Union Room 104
+URL:https://calendars.illinois.edu/detail/7/1005
+UID:1005@illinois.edu
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261014T170000
+DTEND:20261014T170000
+SUMMARY:WIE Snowflake Info Session & Networking Event
+TZID:America/Chicago
+DESCRIPTION:Pizza will be served. 5:00-5:30 Check In and Pizza. Vegetarian options available.
+LOCATION:2015 ECEB
+CATEGORIES:Informational
+URL:https://calendars.illinois.edu/detail/2568/1006
+UID:1006@illinois.edu
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261015T110000
+DTEND:20261015T140000
+SUMMARY:RSO Fair on the Quad
+TZID:America/Chicago
+DESCRIPTION:Meet every registered student organization on campus. Free food and giveaways all afternoon.
+LOCATION:Main Quad
+URL:https://calendars.illinois.edu/detail/7/1007
+UID:1007@illinois.edu
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261015T180000
+DTEND:20261015T200000
+SUMMARY:Taco Tuesday Fundraiser
+TZID:America/Chicago
+DESCRIPTION:Tacos will be served. $5 per plate\, proceeds go to charity.
+LOCATION:Illini Union Courtyard Cafe
+URL:https://calendars.illinois.edu/detail/7/1008
+UID:1008@illinois.edu
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261016T120000
+DTEND:20261016T130000
+SUMMARY:Lunch & Learn: Career Paths
+TZID:America/Chicago
+DESCRIPTION:Bring your own lunch and hear from alumni about their careers.
+LOCATION:Gregory Hall 100
+URL:https://calendars.illinois.edu/detail/7/1009
+UID:1009@illinois.edu
+END:VEVENT
+END:VCALENDAR

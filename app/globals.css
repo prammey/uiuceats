@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+  --color-illini-orange: #ff5f05;
+  --color-illini-orange-soft: #ffe9d9;
+  --color-illini-blue: #13294b;
+  --color-illini-blue-soft: #e4e9f2;
+  --color-cream: #fff8f0;
+  --color-ink: #1f2430;
+  --color-ink-muted: #5b6474;
+  --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  background: var(--color-cream);
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Promoted (host-submitted) cards get a warm gradient frame. */
+.promoted-frame {
+  background: linear-gradient(135deg, #ff5f05, #ffb347 55%, #13294b);
+  padding: 2px;
+}
