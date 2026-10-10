@@ -4,6 +4,7 @@ import "./globals.css";
 
 // Fonts are loaded in components/final/PageFinal.tsx so the page only ships the type it uses.
 export const metadata: Metadata = {
+  metadataBase: new URL("https://uiuceats.vercel.app"),
   title: "UIUC Eats · Free food on campus this week",
   description:
     "Free, walk-in food events at the University of Illinois Urbana-Champaign for the next 7 days, pulled from official campus calendars with a source link on every listing.",
