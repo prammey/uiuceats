@@ -1,28 +1,9 @@
 {
- "generated_at": "2026-10-10T04:53:50.227179-05:00",
+ "generated_at": "2026-10-10T12:21:57.385864-05:00",
  "timezone": "America/Chicago",
  "window_days": 7,
- "count": 19,
+ "count": 18,
  "events": [
-  {
-   "id": "cal-33562615",
-   "title": "Reentry Simulation",
-   "host": "Centers and Strategic Initiatives, College of Education",
-   "start": "2026-10-10T09:15:00-05:00",
-   "end": "2026-10-10T09:45:00-05:00",
-   "all_day": false,
-   "location": "Campus YMCA, 1001 S. Wright Street, Champaign",
-   "maps_url": "https://www.google.com/maps/search/?api=1&query=Campus%20YMCA%2C%201001%20S.%20Wright%20Street%2C%20Champaign",
-   "food_text": "Breakfast",
-   "evidence": "Complimentary continental breakfast served between 9:15 - 9:45am; the simulation will start promptly at 10am.",
-   "icon": "🥞",
-   "dietary": [],
-   "proof_url": "https://calendars.illinois.edu/detail/6991/33562615?key=200001012000010133562615",
-   "also_urls": [],
-   "source": "calendars",
-   "source_label": "calendars.illinois.edu",
-   "promoted": false
-  },
   {
    "id": "cal-33564877",
    "title": "Dish It Up: A House Doesn’t Make a Home: Domestic Violence & Housing in Champaign-Urbana  |  Katie Harmon, Courage Connection",
