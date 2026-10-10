@@ -114,10 +114,10 @@ export default function HeroFinal() {
           {/* Keep room for the mascot on phones so it never sits on the text. */}
           <div className="h-36 sm:hidden" />
 
-          {/* Mascot with the food floating in front of its open hand. */}
-          <div className="absolute bottom-3 right-2 h-40 w-40 sm:bottom-auto sm:right-6 sm:top-1/2 sm:h-56 sm:w-56 sm:-translate-y-1/2 lg:right-10 lg:h-64 lg:w-64 xl:h-72 xl:w-72">
-            <Mascot className="h-full w-full object-contain drop-shadow-lg" />
-            <div className="absolute left-[10%] top-[44%] animate-bounce-soft">
+          {/* Mascot stands on the bottom edge. The food is centered on the raised hand's cup and
+              painted behind the bird, so the thumb and fingers wrap in front of it. */}
+          <div className="absolute bottom-0 right-2 h-40 w-40 sm:right-6 sm:h-56 sm:w-56 lg:right-12 lg:h-64 lg:w-64 xl:right-16 xl:h-72 xl:w-72">
+            <div className="absolute left-[86%] top-[28%] -translate-x-1/2 -translate-y-1/2 animate-bounce-soft">
               <button
                 key={foodIndex}
                 type="button"
@@ -128,6 +128,7 @@ export default function HeroFinal() {
                 {FOODS[foodIndex]}
               </button>
             </div>
+            <Mascot className="pointer-events-none relative z-10 h-full w-full object-contain drop-shadow-lg" />
           </div>
         </div>
       </div>
