@@ -52,7 +52,7 @@ export default function FunLayer() {
 
     const originalTitle = document.title;
     const onVisibility = () => {
-      document.title = document.hidden ? "👀 free food is waiting…" : originalTitle;
+      document.title = document.hidden ? "free food is waiting…  👀" : originalTitle;
     };
 
     window.addEventListener("keydown", onKey);

@@ -67,9 +67,9 @@ export default function PurposeButton() {
               </p>
               <p>
                 Every listing points to a real event on campus, so you can grab a meal, walk into a room you&apos;d never
-                have found, meet new people, and maybe discover a club or an interest you didn&apos;t know you had.
+                have found, meet new people, and maybe discover a club or an interest you never knew you had.
               </p>
-              <p className="font-bold">Free food brings people together. 🧡💙</p>
+              <p className="font-bold">Free food brings people together!!!! 🧡💙</p>
             </div>
             <div className="flex justify-center px-4 pb-5">
               <button
