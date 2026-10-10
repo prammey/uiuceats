@@ -77,8 +77,8 @@ const PHONE_QUERY = "(max-width: 639px)";
 
 // Timings (ms).
 const LINE_INTERVAL = 1700; // rotating line
-const JIGGLE_MIN = 7000; // the hand food jiggles every 7–10 s until tapped
-const JIGGLE_SPREAD = 3000;
+const JIGGLE_MIN = 3000; // the hand food jiggles every 3–5 s until tapped
+const JIGGLE_SPREAD = 2000;
 
 // ═══════════════════════════════════════════════════════════════════════════
 // Component
@@ -152,7 +152,7 @@ export default function HeroFinal() {
     return () => cancelAnimationFrame(frame);
   }, [placed]);
 
-  // Until the food is tapped once, jiggle it every 7–10 s to hint that it's a button.
+  // Until the food is tapped once, jiggle it every 3–5 s to hint that it's a button.
   useEffect(() => {
     if (!ready || noticed) return;
     let timer = 0;
@@ -236,7 +236,7 @@ export default function HeroFinal() {
                   track("find_food_clicked");
                   document.getElementById("menu")?.scrollIntoView({ behavior: "smooth", block: "start" });
                 }}
-                className="brut-press flex items-center justify-center py-3 sm:justify-start sm:py-0 rounded-lg border-2 border-brut bg-[#6cbcff] px-3 sm:px-5 font-swash text-base leading-none text-[#ffa05c] shadow-[3px_3px_0_#111] [text-shadow:0_1px_3px_rgba(255,255,255,0.7)] transition-colors hover:bg-[#4faeff] sm:text-2xl"
+                className="brut-press flex items-center justify-center py-3 sm:justify-start sm:py-0 rounded-lg border-2 border-brut bg-[#6cbcff] px-3 sm:px-5 font-swash text-base leading-none text-white shadow-[3px_3px_0_#111] [text-shadow:0_1px_3px_rgba(255,255,255,0.7)] transition-colors hover:bg-[#4faeff] sm:text-2xl"
               >
                 Find Food&thinsp; 👀
               </a>
