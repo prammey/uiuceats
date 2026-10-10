@@ -16,7 +16,7 @@ const fredoka = Fredoka({ variable: "--font-fredoka", subsets: ["latin"], weight
 const events = data as EventsFile;
 
 // Where "Support Us" at the bottom of the page goes. Paste the Buy Me a Coffee page link here.
-const SUPPORT_URL = "https://buymeacoffee.com/";
+const SUPPORT_URL = "https://buymeacoffee.com/uiuceats";
 
 // Takeaway cup, in the spirit of the Buy Me a Coffee mark.
 function CoffeeCupIcon() {
