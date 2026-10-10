@@ -141,3 +141,8 @@ def test_rsvp_only_for_the_zoom_link_is_not_an_exclusion():
   assert rules.exclusion_reason("Lecture", "Pizza provided. Please register to attend.") == "rsvp"
   assert rules.exclusion_reason("Lecture", "Pizza provided. RSVP appreciated but not required.") is None
   assert rules.exclusion_reason("Lecture", "Pizza provided. Walk-ins welcome.") is None
+
+
+def test_placeholder_titles_are_excluded():
+  assert rules.exclusion_reason("TBD", "Stay afterward for lunch.") == "placeholder_title"
+  assert rules.exclusion_reason("Title TBA", "Pizza provided.") is None

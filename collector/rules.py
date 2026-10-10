@@ -149,9 +149,14 @@ def location_problem(location):
   return None
 
 
+PLACEHOLDER_TITLE = re.compile(r"^\W*(?:tbd|tba|to be determined|to be announced|untitled)\W*$", re.I)
+
+
 def exclusion_reason(title, description, status=""):
   if status == "CANCELLED":
     return "cancelled"
+  if PLACEHOLDER_TITLE.match(title or ""):
+    return "placeholder_title"
   text = f"{title}\n{description}"
   for reason, pattern in EXCLUSIONS:
     if reason == "rsvp":
