@@ -1,63 +1,64 @@
 @import "tailwindcss";
 
+/* ── Design tokens ───────────────────────────────────────────────────────────
+   Colors: Illini orange and blue, plus the "brut" (ink) palette the whole site
+   uses. `cream` is the page background; `b-cream` is the lighter card cream. */
 @theme {
   --color-illini-orange: #ff5f05;
   --color-illini-blue: #13294b;
   --color-cream: #fff7ed;
-  --color-sun: #ffc53d;
-  --color-grape: #6d4aff;
-  --color-mint: #22b573;
   --color-ink: #1f2430;
   --color-ink-muted: #5b6474;
 
-  /* Version B: neo-brutalist retro fast food */
   --color-brut: #111111;
   --color-b-cream: #fff6e5;
   --color-b-yellow: #ffd166;
   --color-neon: #58ff6a;
   --color-orange-bright: #ff6a14;
 
+  /* Motion. Each `--animate-*` becomes an `animate-*` utility. */
   --animate-float: float 7s ease-in-out infinite;
   --animate-float-slow: float 11s ease-in-out infinite;
   --animate-marquee: marquee 45s linear infinite;
   --animate-pop: pop 0.45s cubic-bezier(0.2, 1.4, 0.4, 1) both;
-  --animate-pulse-ring: pulse-ring 1.6s ease-out infinite;
   --animate-fall: fall 3.5s linear forwards;
   --animate-blob: blob 16s ease-in-out infinite alternate;
   --animate-wiggle: wiggle 0.5s ease-in-out;
   --animate-jiggle: jiggle 0.7s ease-in-out;
   --animate-bounce-soft: bounce-soft 2.2s ease-in-out infinite;
-  --animate-shine: shine 2.4s ease-in-out infinite;
 
+  /* Hero background emojis drift and tilt. */
   @keyframes float {
     0%, 100% { transform: translateY(0) rotate(-4deg); }
     50% { transform: translateY(-14px) rotate(5deg); }
   }
+  /* Top bar: the phrase list is rendered twice, so -50% loops seamlessly. */
   @keyframes marquee {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
   }
+  /* Elements that change (rotating line, food emoji, pop-up) enter with a pop. */
   @keyframes pop {
     from { transform: translateY(6px) scale(0.96); opacity: 0; }
     to { transform: translateY(0) scale(1); opacity: 1; }
   }
-  @keyframes pulse-ring {
-    0% { box-shadow: 0 0 0 0 rgba(255, 95, 5, 0.6); }
-    100% { box-shadow: 0 0 0 14px rgba(255, 95, 5, 0); }
-  }
+  /* Easter-egg food rain. */
   @keyframes fall {
     from { transform: translateY(-12vh) rotate(0deg); opacity: 1; }
     to { transform: translateY(112vh) rotate(420deg); opacity: 0.9; }
   }
+  /* Soft blurred blobs behind the hero. */
   @keyframes blob {
     from { transform: translate(0, 0) scale(1); }
     to { transform: translate(36px, 28px) scale(1.18); }
   }
+  /* Day buttons on hover. */
   @keyframes wiggle {
     0%, 100% { transform: rotate(0deg); }
     25% { transform: rotate(-5deg); }
     75% { transform: rotate(5deg); }
   }
+  /* The food in the mascot's hand, every few seconds until it is tapped. */
   @keyframes jiggle {
     0%, 100% { transform: rotate(0deg) scale(1); }
     20% { transform: rotate(-12deg) scale(1.12); }
@@ -65,28 +66,23 @@
     60% { transform: rotate(-6deg) scale(1.06); }
     80% { transform: rotate(4deg) scale(1.02); }
   }
+  /* The food in the mascot's hand, always. */
   @keyframes bounce-soft {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-6px); }
   }
-  @keyframes shine {
-    0% { background-position: -200% 0; }
-    100% { background-position: 200% 0; }
-  }
 }
 
+/* Fonts are loaded in components/final/PageFinal.tsx (next/font sets the variables). */
 @theme inline {
-  --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-fredoka), var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
-  --font-slab: var(--font-alfa), "Alfa Slab One", Georgia, serif;
-  --font-body-b: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
-  --font-mono-b: var(--font-space-mono), ui-monospace, "SF Mono", Menlo, monospace;
-  /* Final version: Shrikhand display + DM Sans body (fonts page pairing 05) */
+  --font-sans: ui-sans-serif, system-ui, sans-serif;
   --font-swash: var(--font-shrikhand), "Shrikhand", Georgia, serif;
   --font-body-f: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
   --font-soft: var(--font-fredoka), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fredoka), ui-sans-serif, system-ui, sans-serif;
 }
 
+/* ── Base ─────────────────────────────────────────────────────────────────── */
 html {
   background: var(--color-cream);
   scroll-behavior: smooth;
@@ -99,13 +95,15 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Soft dot grid behind everything, like a picnic blanket seen from far away. */
+/* ── Reusable looks ───────────────────────────────────────────────────────── */
+
+/* Soft dot grid behind the whole page. */
 .bg-dots {
   background-image: radial-gradient(rgba(19, 41, 75, 0.09) 1.2px, transparent 1.2px);
   background-size: 20px 20px;
 }
 
-/* ---------- Version B: neo-brutalist retro fast food ---------- */
+/* Thick ink border with a hard offset shadow: cards, panels, buttons. */
 .brut {
   border: 3px solid var(--color-brut);
   box-shadow: 6px 6px 0 var(--color-brut);
@@ -114,6 +112,7 @@ body {
   border: 3px solid var(--color-brut);
   box-shadow: 4px 4px 0 var(--color-brut);
 }
+/* Lifts on hover (cards). */
 .brut-hover {
   transition: transform 120ms ease, box-shadow 120ms ease;
 }
@@ -121,43 +120,27 @@ body {
   transform: translate(-2px, -2px);
   box-shadow: 8px 8px 0 var(--color-brut);
 }
+/* Presses in while clicked (buttons). */
 .brut-press:active {
   transform: translate(3px, 3px);
   box-shadow: 2px 2px 0 var(--color-brut);
 }
-.retro-stripes {
-  background: repeating-linear-gradient(
-    90deg,
-    var(--color-illini-orange) 0 36px,
-    var(--color-b-cream) 36px 72px,
-    var(--color-illini-blue) 72px 108px
-  );
-}
+
+/* Yellow-and-white checkerboard behind each card's emoji tile. */
 .checker-light {
   background-image: conic-gradient(var(--color-b-yellow) 25%, #ffffff 0 50%, var(--color-b-yellow) 0 75%, #ffffff 0);
   background-size: 14px 14px;
 }
-.checker-dark {
-  background-image: conic-gradient(var(--color-brut) 25%, transparent 0 50%, var(--color-brut) 0 75%, transparent 0);
-  background-size: 18px 18px;
-}
-.starburst {
-  clip-path: polygon(
-    50% 0%, 61% 12%, 76% 6%, 80% 21%, 95% 25%, 90% 40%, 100% 50%, 90% 60%, 95% 75%, 80% 79%,
-    76% 94%, 61% 88%, 50% 100%, 39% 88%, 24% 94%, 20% 79%, 5% 75%, 10% 60%, 0% 50%, 10% 40%,
-    5% 25%, 20% 21%, 24% 6%, 39% 12%
-  );
-}
-/* Final version extras */
-.diag-stripes {
-  background: repeating-linear-gradient(135deg, var(--color-b-cream) 0 12px, var(--color-illini-blue) 12px 24px);
-}
-/* Static green checkerboard columns, exactly three cells wide, behind the content below the hero.
-   Cell size and column width are set together in the markup so the columns line up with the
-   hero's diagonal stripe columns. */
+/* Green checkerboard columns beside the content below the hero. The markup sets the
+   cell size per breakpoint so the columns line up with the hero's stripe columns. */
 .checker-neon {
   background-image: conic-gradient(var(--color-neon) 25%, var(--color-b-cream) 0 50%, var(--color-neon) 0 75%, var(--color-b-cream) 0);
 }
+/* Diagonal awning stripes on both sides of the hero. */
+.diag-stripes {
+  background: repeating-linear-gradient(135deg, var(--color-b-cream) 0 12px, var(--color-illini-blue) 12px 24px);
+}
+/* Orange, cream, and blue bars under the hero. */
 .retro-stripes-bright {
   background: repeating-linear-gradient(
     90deg,
@@ -166,8 +149,9 @@ body {
     var(--color-illini-blue) 72px 108px
   );
 }
-/* "Surprise me" ring: orange while the card is spotlighted, then fades out.
-   Repeats brut-hover's transitions because the shorthand replaces them. */
+
+/* "Surprise me" ring around a card: orange while spotlighted, then fades out.
+   Lists brut-hover's transitions again because the shorthand replaces them. */
 .b-spotlight-ready {
   outline: 4px solid transparent;
   outline-offset: 4px;
@@ -177,12 +161,7 @@ body {
   outline-color: var(--color-illini-orange);
 }
 
-/* Highlight pulse used by "Surprise me". */
-.card-spotlight {
-  animation: pulse-ring 1.2s ease-out 2;
-  border-color: var(--color-illini-orange) !important;
-}
-
+/* ── Accessibility ────────────────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;

@@ -1,16 +1,15 @@
 import Image from "next/image";
 
-// Retro cartoon kingfisher drawn after the Illinois mascot logo (public/mascot.svg is the
-// source; public/mascot.png is the export used here). The raised wing is an open hand so a
-// food emoji can float in front of it.
+// The kingfisher mascot (public/mascot.png, 1254×1254). Its raised wing is an open hand;
+// the hero floats a food emoji in front of it. The hero's CSS sets the rendered size.
 export default function Mascot({ className = "" }: { className?: string }) {
   return (
     <Image
       src="/mascot.png"
       alt=""
       aria-hidden
-      width={1000}
-      height={970}
+      width={1254}
+      height={1254}
       priority
       className={className}
     />

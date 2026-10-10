@@ -8,11 +8,10 @@ import TopBar from "@/components/final/TopBar";
 import { formatUpdated, type EventsFile } from "@/lib/events";
 import data from "@/data/events.json";
 
-// Fonts page pairing 05: Shrikhand display, DM Sans body.
-const shrikhand = Shrikhand({ variable: "--font-shrikhand", subsets: ["latin"], weight: "400" });
-const dmSans = DM_Sans({ variable: "--font-dm-sans", subsets: ["latin"], weight: ["400", "500", "700", "800"] });
-// Version A's title font, used only for the rotating hero line.
-const fredoka = Fredoka({ variable: "--font-fredoka", subsets: ["latin"], weight: ["600", "700"] });
+// The site's three fonts. globals.css maps them to font-swash, font-body-f, and font-soft.
+const shrikhand = Shrikhand({ variable: "--font-shrikhand", subsets: ["latin"], weight: "400" }); // headlines, buttons
+const dmSans = DM_Sans({ variable: "--font-dm-sans", subsets: ["latin"], weight: ["400", "500", "700", "800"] }); // body
+const fredoka = Fredoka({ variable: "--font-fredoka", subsets: ["latin"], weight: ["600", "700"] }); // the rotating hero line
 
 const events = data as EventsFile;
 
@@ -23,12 +22,15 @@ const SUPPORT_URL = "https://buymeacoffee.com/uiuceats";
 function CoffeeCupIcon() {
   return <Image src="/coffee-cup.png" alt="" aria-hidden width={24} height={24} className="h-6 w-6" />;
 }
+
+// Google Form links, set in Vercel's environment variables (see README).
 const ADVERTISE_URL = process.env.NEXT_PUBLIC_ADVERTISE_FORM_URL;
 const REPORT_TEMPLATE = process.env.NEXT_PUBLIC_REPORT_FORM_URL;
-// The general report link is the same form without a pre-filled event id.
+// The general "Report a problem" button opens the same form with no event pre-filled.
 const REPORT_URL = REPORT_TEMPLATE ? REPORT_TEMPLATE.replace("EVENT_ID", "") : "#";
 
-// Final version. Served at /.
+// The whole page, top to bottom: marquee, hero, stripes, day picker and cards, the
+// purpose/report/advertise block, footer.
 export default function PageFinal() {
   return (
     <div className={`${shrikhand.variable} ${dmSans.variable} ${fredoka.variable} relative min-h-dvh bg-cream font-body-f text-brut`}>

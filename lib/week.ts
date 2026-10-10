@@ -1,5 +1,5 @@
 import { useMemo, useSyncExternalStore } from "react";
-import { dayKey, hasEnded, isHappeningNow, shiftDays, weekDays, type DayInfo, type FoodEvent } from "@/lib/events";
+import { dayKey, hasEnded, shiftDays, weekDays, type DayInfo, type FoodEvent } from "@/lib/events";
 
 // The clock only exists in the browser. The server snapshot is null, so the static
 // HTML and the first client render both show a placeholder, then the real time
@@ -16,6 +16,7 @@ export function useNow(): Date | null {
   return useMemo(() => (minute === null ? null : new Date(minute * 60_000)), [minute]);
 }
 
+// Everything the event list needs for the selected day.
 export type WeekView = {
   days: DayInfo[];
   todayKey: string;
@@ -24,12 +25,10 @@ export type WeekView = {
   selected: string;
   list: FoodEvent[];
   upcoming: FoodEvent[];
-  live: FoodEvent[];
   nextWithFood: DayInfo | null;
 };
 
 // Groups the published events by campus day and resolves which day is selected.
-// Shared by every version of the page so A and B always agree on the data.
 export function useWeekView(events: FoodEvent[], picked: string | null, now: Date | null): WeekView | null {
   return useMemo(() => {
     if (!now) return null;
@@ -48,8 +47,7 @@ export function useWeekView(events: FoodEvent[], picked: string | null, now: Dat
     }
     // Fall back to today if the picked day scrolled out of the 7-day window overnight.
     const selected = picked && days.some((d) => d.key === picked) ? picked : todayKey;
-    const live = upcoming.filter((event) => isHappeningNow(event, now));
     const nextWithFood = days.find((d) => d.key > selected && (counts[d.key] ?? 0) > 0) ?? null;
-    return { days, todayKey, tomorrowKey, counts, selected, list: byDay[selected] ?? [], upcoming, live, nextWithFood };
+    return { days, todayKey, tomorrowKey, counts, selected, list: byDay[selected] ?? [], upcoming, nextWithFood };
   }, [events, now, picked]);
 }

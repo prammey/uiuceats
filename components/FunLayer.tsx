@@ -7,8 +7,8 @@ const PARTY_EMOJI = ["🍕", "🌮", "🧋", "🍩", "🥟", "🍛", "🍪", "�
 
 type Piece = { id: number; left: number; delay: number; duration: number; emoji: string; size: number };
 
-// Site-wide easter eggs: Konami code or five pizza clicks rain food; leaving the
-// tab changes the title so people come back.
+// Site-wide easter eggs: the Konami code rains food, and leaving the tab changes
+// its title so people come back.
 export default function FunLayer() {
   const [pieces, setPieces] = useState<Piece[]>([]);
   const [toast, setToast] = useState(false);
@@ -56,11 +56,9 @@ export default function FunLayer() {
     };
 
     window.addEventListener("keydown", onKey);
-    window.addEventListener("uiuceats:party", party);
     document.addEventListener("visibilitychange", onVisibility);
     return () => {
       window.removeEventListener("keydown", onKey);
-      window.removeEventListener("uiuceats:party", party);
       document.removeEventListener("visibilitychange", onVisibility);
       window.clearTimeout(timer);
       document.title = originalTitle;

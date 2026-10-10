@@ -19,8 +19,8 @@ export default function EventListFinal({ events, reportTemplate }: Props) {
   const [spotlight, setSpotlight] = useState<{ id: string; at: number } | null>(null);
   const lastSurprise = useRef<string | null>(null);
   const view = useWeekView(events, picked, now);
-  // A day's list is held back for a beat the first time it is opened; after that it
-  // shows at once. Days with nothing on them hesitate every time.
+  // The list is held back for a beat ("Loading…") the first time a day is opened; after
+  // that it shows at once. Days with nothing on them hesitate every time.
   const [settledKey, setSettledKey] = useState<string | null>(null);
   const [seenKeys, setSeenKeys] = useState<Set<string>>(() => new Set());
   const selectedKey = view?.selected ?? null;

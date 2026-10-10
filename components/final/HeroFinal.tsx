@@ -4,8 +4,14 @@ import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react"
 import Mascot from "@/components/final/Mascot";
 import ShareButton from "@/components/final/ShareButton";
 import { track } from "@/lib/analytics";
+import { placeFloaters, type Floater, type FloaterPick, type FloaterRules } from "@/lib/floaters";
 import { mulberry32, useClientSeed } from "@/lib/seed";
 
+// ═══════════════════════════════════════════════════════════════════════════
+// Settings. Everything tunable about the hero lives in this block.
+// ═══════════════════════════════════════════════════════════════════════════
+
+// Rotating line under the headline; one is shown at a time.
 const LINES = [
   "Out of meal swipes? 🍽️",
   "Broke but hungry? 🫠",
@@ -15,18 +21,19 @@ const LINES = [
   "Dining hall closed? We got you 🫶",
 ];
 
+// The food in the mascot's hand; a tap steps to the next one.
 const FOODS = ["🍕", "🧋", "🍪", "🌮", "🍜", "🍔", "🌯", "🥞", "🧁", "🍩", "🥟", "🍛", "🌭", "🍦", "🍉", "🥨", "🍱"];
+// Background emojis are drawn from this pool, each at one of these font sizes (px).
 const FLOAT_POOL = ["🍪", "🌮", "🥟", "🧋", "🍩", "🍜", "🍕", "🥐", "🍟", "🧁", "🥪"];
-const FLOAT_SIZES = [30, 36, 48]; // font px
+const FLOAT_SIZES = [30, 36, 48];
 
-// ── Mascot settings ───────────────────────────────────────────────────────────
-// Change these numbers to move or resize the bird; nothing else needs editing.
+// ── Mascot ───────────────────────────────────────────────────────────────────
 // The bird is a square box. `size` is its width and height on wide screens; it
 // shrinks on narrower screens but never below `minSize`. The food is placed from
 // the box's top-left corner and its size follows the bird's.
 const MASCOT = {
   size: 415, // px on wide screens
-  minSize: 160, // px floor on phones
+  minSize: 160, // px floor (tablet)
   raise: 40, // px between the feet and the hero's bottom border
   inset: -40, // px between the bird and the right awning (tablet and up)
   phoneInset: 0, // same, on phones, where the bird must stay fully in view
@@ -39,10 +46,11 @@ const MASCOT = {
     scale: 0.17, // food size as a fraction of the bird's size
   },
 };
-// Shrinks with the screen (30% of its width) between the two limits above.
+// Tablet and up: shrinks with the screen (30% of its width) between the two limits.
 const MASCOT_SIZE = `clamp(${MASCOT.minSize}px, 30vw, ${MASCOT.size}px)`;
 const MASCOT_PHONE_SIZE = `clamp(${MASCOT.phoneSize.min}px, ${MASCOT.phoneSize.vw}vw, ${MASCOT.phoneSize.max}px)`;
 
+// ── Phone typography ─────────────────────────────────────────────────────────
 // Phone text sizes scale with the width left for text (the screen minus the two 36 px
 // awnings and the 16 px padding each side), so nothing wraps on narrow phones. The factors
 // come from measured widths: "ON CAMPUS" is 6.18 × its font size wide in Shrikhand and the
@@ -60,85 +68,21 @@ const HERO_PHONE_LINE_GAP = 12; // px between "ON CAMPUS" and the rotating line 
 // smaller line gives up, so the hero's height stays where it was.
 const HERO_PHONE_LINE_SHRINK = "(1.5 * (5vw - var(--line-size)))";
 
-// ── Floater rules ─────────────────────────────────────────────────────────────
-// Background emojis land only in empty space: at least FLOATER_PAD px from anything
-// marked data-keepout (text, button, mascot), FLOATER_GAP px from each other, and
-// FLOATER_EDGE px inside the panel. Spots are tried at random; an emoji that finds
-// no room after FLOATER_TRIES attempts is left out.
-const FLOATER_PAD = 36; // 20 clear + 14 of float-animation travel + wiggle room
-const FLOATER_GAP = 56;
-const FLOATER_EDGE = 24;
-const FLOATER_TRIES = 80;
-const FLOATER_COUNT = 6;
-// Phones: background floaters are switched off for now (set a count to bring them back; they
-// would be smaller and allowed behind the text, but never on the buttons or bird).
-const PHONE_FLOATER_COUNT = 0;
-const PHONE_FLOATER_SCALE = 0.7;
-const PHONE_FLOATER_PAD = 10;
-const PHONE_FLOATER_GAP = 36;
+// ── Background emojis ────────────────────────────────────────────────────────
+// They land only in empty space (see lib/floaters.ts). `pad` includes the 14 px the
+// float animation travels. Phones are off for now: set `count` to bring them back.
+const FLOATER_RULES: FloaterRules = { count: 6, scale: 1, pad: 36, gap: 56, edge: 24, tries: 80, textKeepOut: true };
+const PHONE_FLOATER_RULES: FloaterRules = { count: 0, scale: 0.7, pad: 10, gap: 36, edge: 24, tries: 80, textKeepOut: false };
 const PHONE_QUERY = "(max-width: 639px)";
 
-type FloaterPick = { emoji: string; size: number; slow: boolean };
-type Floater = FloaterPick & { left: number; top: number };
-type Rect = { left: number; top: number; right: number; bottom: number };
+// Timings (ms).
+const LINE_INTERVAL = 1700; // rotating line
+const JIGGLE_MIN = 7000; // the hand food jiggles every 7–10 s until tapped
+const JIGGLE_SPREAD = 3000;
 
-const overlaps = (a: Rect, b: Rect, margin: number) =>
-  a.left < b.right + margin && a.right > b.left - margin && a.top < b.bottom + margin && a.bottom > b.top - margin;
-
-// An emoji glyph draws a little wider than its font size.
-const floaterRect = (left: number, top: number, size: number): Rect => {
-  const box = size * 1.25;
-  return { left, top, right: left + box, bottom: top + box };
-};
-
-// Everything the floaters must avoid, relative to the panel's top-left corner.
-// `data-keepout="text"` measures the glyphs line by line, so the space beside a
-// short line stays usable; anything else blocks its whole box.
-function keepOutRects(panel: HTMLElement, phone: boolean): Rect[] {
-  const origin = panel.getBoundingClientRect();
-  const rects: Rect[] = [];
-  panel.querySelectorAll<HTMLElement>("[data-keepout]").forEach((el) => {
-    if (phone && el.tagName !== "DIV") return; // on phones only the buttons and the bird are kept clear
-    let boxes: DOMRect[];
-    if (el.dataset.keepout === "text") {
-      const range = document.createRange();
-      range.selectNodeContents(el);
-      boxes = Array.from(range.getClientRects());
-    } else {
-      boxes = [el.getBoundingClientRect()];
-    }
-    for (const b of boxes) {
-      if (b.width === 0 || b.height === 0) continue;
-      rects.push({ left: b.left - origin.left, top: b.top - origin.top, right: b.right - origin.left, bottom: b.bottom - origin.top });
-    }
-  });
-  return rects;
-}
-
-function placeFloaters(panel: HTMLElement, picks: FloaterPick[], rand: () => number): Floater[] {
-  const phone = window.matchMedia(PHONE_QUERY).matches;
-  const keepOut = keepOutRects(panel, phone);
-  const pad = phone ? PHONE_FLOATER_PAD : FLOATER_PAD;
-  const gap = phone ? PHONE_FLOATER_GAP : FLOATER_GAP;
-  const placed: Floater[] = [];
-  const wanted = picks.slice(0, phone ? PHONE_FLOATER_COUNT : FLOATER_COUNT);
-  for (const rawPick of wanted) {
-    const pick = phone ? { ...rawPick, size: Math.round(rawPick.size * PHONE_FLOATER_SCALE) } : rawPick;
-    const box = pick.size * 1.25;
-    const spanX = Math.max(0, panel.clientWidth - box - FLOATER_EDGE * 2);
-    const spanY = Math.max(0, panel.clientHeight - box - FLOATER_EDGE * 2);
-    for (let attempt = 0; attempt < FLOATER_TRIES; attempt++) {
-      const left = Math.round(FLOATER_EDGE + rand() * spanX);
-      const top = Math.round(FLOATER_EDGE + rand() * spanY);
-      const rect = floaterRect(left, top, pick.size);
-      if (keepOut.some((k) => overlaps(rect, k, pad))) continue;
-      if (placed.some((p) => overlaps(rect, floaterRect(p.left, p.top, p.size), gap))) continue;
-      placed.push({ ...pick, left, top });
-      break;
-    }
-  }
-  return placed;
-}
+// ═══════════════════════════════════════════════════════════════════════════
+// Component
+// ═══════════════════════════════════════════════════════════════════════════
 
 export default function HeroFinal() {
   const seed = useClientSeed();
@@ -147,8 +91,8 @@ export default function HeroFinal() {
   const [jiggling, setJiggling] = useState(false);
   const [noticed, setNoticed] = useState(false); // the food has been tapped once
   const [floaters, setFloaters] = useState<Floater[]>([]);
-  const [placed, setPlaced] = useState(false);
-  const [ready, setReady] = useState(false);
+  const [placed, setPlaced] = useState(false); // floaters have been laid out at least once
+  const [ready, setReady] = useState(false); // the hero may fade in
   const panelRef = useRef<HTMLDivElement>(null);
 
   // Every page load gets its own opening line, starting emoji, and set of floaters.
@@ -156,7 +100,7 @@ export default function HeroFinal() {
     if (seed === null) return { line: 0, food: 0, picks: [] as FloaterPick[] };
     const rand = mulberry32(seed);
     const pool = [...FLOAT_POOL];
-    const picks: FloaterPick[] = Array.from({ length: Math.max(FLOATER_COUNT, PHONE_FLOATER_COUNT) }, () => ({
+    const picks: FloaterPick[] = Array.from({ length: Math.max(FLOATER_RULES.count, PHONE_FLOATER_RULES.count) }, () => ({
       emoji: pool.splice(Math.floor(rand() * pool.length), 1)[0],
       size: FLOAT_SIZES[Math.floor(rand() * FLOAT_SIZES.length)],
       slow: rand() > 0.5,
@@ -179,7 +123,8 @@ export default function HeroFinal() {
     const place = () => {
       if (cancelled || panel.clientWidth === lastWidth) return;
       lastWidth = panel.clientWidth;
-      setFloaters(placeFloaters(panel, start.picks, mulberry32(seed + 1)));
+      const rules = window.matchMedia(PHONE_QUERY).matches ? PHONE_FLOATER_RULES : FLOATER_RULES;
+      setFloaters(placeFloaters(panel, start.picks, mulberry32(seed + 1), rules));
       setPlaced(true);
     };
     const schedule = () => {
@@ -215,14 +160,15 @@ export default function HeroFinal() {
       timer = window.setTimeout(() => {
         setJiggling(true);
         schedule();
-      }, 7000 + Math.random() * 3000);
+      }, JIGGLE_MIN + Math.random() * JIGGLE_SPREAD);
     };
     schedule();
     return () => window.clearTimeout(timer);
   }, [ready, noticed]);
 
+  // Advance the rotating line.
   useEffect(() => {
-    const id = window.setInterval(() => setTick((current) => current + 1), 1700);
+    const id = window.setInterval(() => setTick((current) => current + 1), LINE_INTERVAL);
     return () => window.clearInterval(id);
   }, []);
 
@@ -279,8 +225,8 @@ export default function HeroFinal() {
             <p key={lineIndex} data-keepout="box" aria-live="polite" className="mt-(--line-gap) animate-pop font-soft text-(length:--line-size) font-bold text-white drop-shadow-[2px_2px_0_#13294b] sm:mt-10 sm:text-3xl lg:text-4xl">
               {LINES[lineIndex]}
             </p>
-            {/* Actions sit under the line instead of competing with the headline. Both buttons
-                share one height: the Share button sets it, Find food stretches to match. */}
+            {/* Actions: stacked and left-aligned on phones, a row from tablet up (where the
+                Share button sets the height and Find Food stretches to match). */}
             <div data-keepout="box" className="mt-6 flex w-fit flex-col items-stretch gap-3 sm:mt-[47px] sm:flex-row">
               <a
                 href="#menu"
@@ -296,7 +242,8 @@ export default function HeroFinal() {
               </a>
               <ShareButton />
             </div>
-            {/* Keep room for the mascot on phones so it never sits on the text (56 is the pb-14 below). */}
+            {/* Phone-only spacer that keeps the buttons clear of the bird; see "Phone typography"
+                above for why it gives back what the headline takes (56 is the pb-14 below). */}
             <div className="sm:hidden" style={{ height: `calc(var(--mascot-size) + ${MASCOT.raise + MASCOT.phoneGap - MASCOT.phoneLift - 56 + (32 - HERO_PHONE_LINE_GAP)}px + ${HERO_PHONE_LINE_SHRINK} - ${HERO_PHONE_GROWTH})` }} />
 
             {/* Mascot box and the food in front of its raised hand; all numbers come from MASCOT above. */}

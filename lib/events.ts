@@ -1,3 +1,4 @@
+// One published listing, as written by the collector into data/events.json.
 export type FoodEvent = {
   id: string;
   title: string;
@@ -18,6 +19,7 @@ export type FoodEvent = {
   promoted: boolean;
 };
 
+// The whole data/events.json file.
 export type EventsFile = {
   generated_at: string;
   timezone: string;
@@ -26,6 +28,7 @@ export type EventsFile = {
   events: FoodEvent[];
 };
 
+// One box in the day strip.
 export type DayInfo = {
   key: string;
   weekday: string;
@@ -33,15 +36,17 @@ export type DayInfo = {
   isToday: boolean;
 };
 
+// Card header label, chosen by the event's start time (see mealPeriod).
 export type MealPeriod = "breakfast" | "lunch" | "dinner" | "late";
 
-export const PERIOD_META: Record<MealPeriod, { label: string; emoji: string; stripe: string }> = {
-  breakfast: { label: "Breakfast", emoji: "🌅", stripe: "bg-sun" },
-  lunch: { label: "Lunch", emoji: "☀️", stripe: "bg-illini-orange" },
-  dinner: { label: "Dinner", emoji: "🌆", stripe: "bg-illini-blue" },
-  late: { label: "Late night", emoji: "🌙", stripe: "bg-grape" },
+export const PERIOD_META: Record<MealPeriod, { label: string; emoji: string }> = {
+  breakfast: { label: "Breakfast", emoji: "🌅" },
+  lunch: { label: "Lunch", emoji: "☀️" },
+  dinner: { label: "Dinner", emoji: "🌆" },
+  late: { label: "Late night", emoji: "🌙" },
 };
 
+// Chips next to the food text; the collector only emits these keys.
 export const DIETARY_META: Record<string, { label: string; emoji: string }> = {
   vegetarian: { label: "Vegetarian", emoji: "🌱" },
   vegan: { label: "Vegan", emoji: "🌿" },
@@ -50,8 +55,8 @@ export const DIETARY_META: Record<string, { label: string; emoji: string }> = {
   "gluten-free": { label: "Gluten-free", emoji: "🌾" },
 };
 
-// Days are always campus days, even if someone opens the site from elsewhere.
-export const CAMPUS_TZ = "America/Chicago";
+// Days and times are always campus time, even if someone opens the site from elsewhere.
+const CAMPUS_TZ = "America/Chicago";
 
 const dayFormatter = new Intl.DateTimeFormat("en-CA", {
   timeZone: CAMPUS_TZ,
@@ -90,6 +95,7 @@ const updatedFormatter = new Intl.DateTimeFormat("en-US", {
   minute: "2-digit",
 });
 
+// "2026-10-10" style key for a campus day; the day strip and the data agree on it.
 export function dayKey(date: Date): string {
   return dayFormatter.format(date);
 }
@@ -98,6 +104,7 @@ export function shiftDays(date: Date, days: number): Date {
   return new Date(date.getTime() + days * 86_400_000);
 }
 
+// Today plus the next six days.
 export function weekDays(now: Date, count = 7): DayInfo[] {
   return Array.from({ length: count }, (_, index) => {
     const date = shiftDays(now, index);
@@ -118,11 +125,7 @@ function clockParts(date: Date): { hm: string; period: string } {
   return { hm: `${hour}:${minute}`, period };
 }
 
-export function formatClock(iso: string): string {
-  const { hm, period } = clockParts(new Date(iso));
-  return `${hm} ${period}`;
-}
-
+// "9:15–9:45 AM" or "11:30 AM–1:00 PM".
 export function formatTimeRange(event: FoodEvent): string {
   if (event.all_day) return "All day";
   const start = clockParts(new Date(event.start));
@@ -131,6 +134,7 @@ export function formatTimeRange(event: FoodEvent): string {
   return `${start.hm} ${start.period}–${end.hm} ${end.period}`;
 }
 
+// Breakfast before 10:30, lunch before 3, dinner before 9, late after that.
 export function mealPeriod(event: FoodEvent): MealPeriod {
   if (event.all_day) return "lunch";
   const parts = hour23Formatter.formatToParts(new Date(event.start));
@@ -143,6 +147,7 @@ export function mealPeriod(event: FoodEvent): MealPeriod {
   return "late";
 }
 
+// "Today · Saturday, October 10" above the list.
 export function formatDayHeading(key: string, todayKey: string, tomorrowKey: string): string {
   const [year, month, day] = key.split("-").map(Number);
   const long = longDayFormatter.format(new Date(Date.UTC(year, month - 1, day, 18)));
@@ -151,6 +156,7 @@ export function formatDayHeading(key: string, todayKey: string, tomorrowKey: str
   return long;
 }
 
+// "Sat 3:00 AM" in the footer's "Last checked".
 export function formatUpdated(iso: string): string {
   return updatedFormatter.format(new Date(iso));
 }
@@ -163,6 +169,7 @@ export function hasEnded(event: FoodEvent, now: Date): boolean {
   return new Date(event.end) <= now;
 }
 
+// The Report form link; a template containing EVENT_ID gets the id filled in.
 export function reportLink(template: string | undefined, eventId: string): string | null {
   if (!template) return null;
   if (template.includes("EVENT_ID")) return template.replace("EVENT_ID", encodeURIComponent(eventId));
@@ -173,6 +180,7 @@ function gcalStamp(iso: string): string {
   return new Date(iso).toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
 }
 
+// "+ Calendar" button: a prefilled Google Calendar event.
 export function googleCalendarUrl(event: FoodEvent): string {
   const dates = event.all_day
     ? `${dayKey(new Date(event.start)).replace(/-/g, "")}/${dayKey(new Date(event.end)).replace(/-/g, "")}`

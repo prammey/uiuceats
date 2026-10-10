@@ -32,6 +32,7 @@ on one.illinois.edu).
 | `app/` | Routes: `/` serves the site (`components/final/`). |
 | `components/final/` | Final look: B's marquee and menu board with A's hero energy (`PageFinal`, `TopBar`, `ShareButton`, `HeroFinal`, `DayStripFinal`, `EventCardFinal`, `EventListFinal`). |
 | `components/FunLayer.tsx`, `lib/week.ts` | Easter eggs and the day-grouping hook the page uses. |
+| `lib/floaters.ts`, `lib/analytics.ts` | Placement of the hero's background emojis; PostHog event helper. |
 | `lib/events.ts` | Next.js 16 static site helpers (App Router, Tailwind v4). `Hero` (floating food, rotating line, share), `Ticker` (CSS marquee), `DayStrip` (7-day picker, today ringed), `EventCard` (emoji, meal-time stripe, proof, add-to-calendar), `EventList` (live section, Surprise me), `FunLayer` (Konami / pizza-click confetti, tab-title nudge). All motion respects `prefers-reduced-motion`. |
 | `.github/workflows/collect.yml` | Scheduled collector run |
 
