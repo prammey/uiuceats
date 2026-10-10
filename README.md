@@ -64,12 +64,13 @@ npm run build      # static export to out/
 4. Vercel → Project → Settings → Environment Variables → add
    `NEXT_PUBLIC_ADVERTISE_FORM_URL` = the form's share link. Redeploy.
 
-**Report a problem** → events with 2+ reports are hidden automatically.
-1. Create a Google Form with two questions: `Event ID` (short answer), `What's wrong` (paragraph).
-2. Get a pre-filled link (⋮ menu → Get pre-filled link), type `EVENT_ID` into the Event ID
-   field, copy the link.
-3. Publish the responses Sheet as CSV → GitHub variable `REPORTS_CSV_URL`.
-4. Vercel env var `NEXT_PUBLIC_REPORT_FORM_URL` = the pre-filled link (keep `EVENT_ID` in it).
+**Report a problem** → reports arrive by email and are handled by hand.
+1. Create a Google Form with two questions: `Which listing?` (short answer), `What's wrong`
+   (paragraph). Collect verified email addresses and turn on email notifications.
+2. Vercel env var `NEXT_PUBLIC_REPORT_FORM_URL` = the form's share link. Redeploy.
+
+The collector can still hide listings automatically from a reports sheet: publish it as CSV
+and set the GitHub variable `REPORTS_CSV_URL`. Leave it unset to keep reports manual.
 
 ## Adding the AI step later
 

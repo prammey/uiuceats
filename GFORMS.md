@@ -7,9 +7,10 @@ Question titles must match exactly because the collector reads spreadsheet colum
 Tip: create the forms while signed in to your illinois.edu Google account. The Settings tab
 then offers "Restrict to users in University of Illinois", which blocks outside spam.
 
-When both forms exist, send back the four links (PROMOTED_CSV_URL, ADVERTISE_FORM_URL,
-REPORTS_CSV_URL, REPORT_FORM_URL). The CSV links go in GitHub repository variables, the form
-links go in Vercel environment variables, then redeploy.
+When both forms exist, send back the three links (PROMOTED_CSV_URL, ADVERTISE_FORM_URL,
+REPORT_FORM_URL). The CSV link goes in a GitHub repository variable, the form links go in
+Vercel environment variables, then redeploy. Reports are not read by code: they arrive by
+email and are handled by hand.
 
 ---
 
@@ -57,21 +58,20 @@ You are editing a blank Google Form. Do the following in order.
 
 1. Click "Untitled form" and set the title to: UIUC Eats: Report a problem
 2. Set the form description to:
-   Went somewhere from uiuceats.vercel.app and there was no food, or the listing was wrong? Tell us. Listings with two or more reports are hidden automatically.
+   Went somewhere from UIUC Eats and there was no food? Or the listing was wrong? Tell us.
 
 3. Add these questions in this order:
 
-   a. Title: Event ID        Type: Short answer    Required: yes
-      Description: This is filled in automatically when you click Report on the website.
-   b. Title: What's wrong    Type: Paragraph       Required: yes
-      Description: For example "No food", "Event was cancelled", "Required registration", "Wrong room".
+   a. Title: Which listing?   Type: Short answer    Required: yes
+      Description: The event name and day. Type N/A if this isn't about a listing.
+   b. Title: What's wrong     Type: Paragraph       Required: yes
+      Description: For example "No food", "Event was cancelled", "Required registration", "Wrong room", but please be as specific as possible!
 
-4. Click the "Responses" tab. Click "Link to Sheets", choose "Create a new spreadsheet", click "Create". A Google Sheet opens.
+4. Click the "Settings" tab. Under "Responses", turn on "Collect email addresses" and choose "Verified".
 
-5. In that Google Sheet: File → Share → Publish to web. On the "Link" tab set the first dropdown to "Form Responses 1" and the second to "Comma-separated values (.csv)". Click "Publish", confirm. Copy the link and report it back as: REPORTS_CSV_URL = <link>
+5. Click the "Responses" tab. Click the three-dot menu → "Get email notifications for new responses".
 
-6. Go back to the form tab. Click the three-dot menu (top right, next to Send) → "Get pre-filled link". In the "Event ID" field type exactly: EVENT_ID
-   Leave "What's wrong" empty. Click "Get link" at the bottom, then "Copy link". Report it back as: REPORT_FORM_URL = <link>
+6. Click "Send" (top right), click the link icon, click "Copy". Report it back as: REPORT_FORM_URL = <link>
 ```
 
 ---
@@ -81,6 +81,5 @@ You are editing a blank Google Form. Do the following in order.
 | Link | Where to set it | Name |
 |---|---|---|
 | Promoted sheet CSV | GitHub → repo → Settings → Secrets and variables → Actions → Variables | `PROMOTED_CSV_URL` |
-| Reports sheet CSV | same place | `REPORTS_CSV_URL` |
 | Advertise form link | Vercel → uiucfood → Settings → Environment Variables | `NEXT_PUBLIC_ADVERTISE_FORM_URL` |
-| Report pre-filled link (keep `EVENT_ID` in it) | same place | `NEXT_PUBLIC_REPORT_FORM_URL` |
+| Report form link | same place | `NEXT_PUBLIC_REPORT_FORM_URL` |
