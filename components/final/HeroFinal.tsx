@@ -42,16 +42,22 @@ const MASCOT = {
 const MASCOT_SIZE = `clamp(${MASCOT.minSize}px, 30vw, ${MASCOT.size}px)`;
 const MASCOT_PHONE_SIZE = `clamp(${MASCOT.phoneSize.min}px, ${MASCOT.phoneSize.vw}vw, ${MASCOT.phoneSize.max}px)`;
 
-// Phone headline: "FREE" and "FOOD" each take a line at the big size, "ON CAMPUS" the base
-// size. The space under the buttons gives up exactly what the headline grows, so the hero's
-// height and the bird do not move. Tablet and up ignore both values.
-const HERO_PHONE_BASE = "clamp(2.1rem, 11vw, 3rem)";
+// Phone text sizes scale with the width left for text (the screen minus the two 36 px
+// awnings and the 16 px padding each side), so nothing wraps on narrow phones. The factors
+// come from measured widths: "ON CAMPUS" is 6.18 × its font size wide in Shrikhand and the
+// longest rotating message is 14.98 × its font size in Fredoka; both get a 6-7% margin.
+// "FREE" and "FOOD" take a line each at the big size. The space under the buttons gives up
+// exactly what the headline grows, so the hero's height and the bird do not move. Tablet
+// and up ignore all of these.
+const PHONE_TEXT_INSET = 104; // px: 2 × 36 awning + 2 × 16 padding
+const HERO_PHONE_BASE = `min(calc((100vw - ${PHONE_TEXT_INSET}px) * 0.15), 3rem)`;
 const HERO_PHONE_BIG = "clamp(3rem, 18vw, 4.5rem)";
+const LINE_PHONE_SIZE = `min(calc((100vw - ${PHONE_TEXT_INSET}px) * 0.0627), 1.5rem)`;
 const HERO_PHONE_GROWTH = "(1.9 * var(--hero-big) - 0.95 * var(--hero-base))";
 const HERO_PHONE_LINE_GAP = 12; // px between "ON CAMPUS" and the rotating line on phones (32 from tablet up)
-// The rotating line's box is 1.5 × 0.4vw shorter since its font went from 5vw to 4.6vw;
-// the spacer takes that back so the hero's height stays where it was.
-const HERO_PHONE_LINE_SHRINK = "0.6vw";
+// The rotating line's box used to be 1.5 × 5vw tall; the spacer takes back whatever the
+// smaller line gives up, so the hero's height stays where it was.
+const HERO_PHONE_LINE_SHRINK = "(1.5 * (5vw - var(--line-size)))";
 
 // ── Floater rules ─────────────────────────────────────────────────────────────
 // Background emojis land only in empty space: at least FLOATER_PAD px from anything
@@ -254,7 +260,7 @@ export default function HeroFinal() {
 
           <div
             className="relative mx-auto max-w-6xl px-4 pb-14 pt-8 [--mascot-size:var(--mascot-phone)] sm:px-8 sm:pb-[97px] sm:pt-16 sm:[--mascot-size:var(--mascot-full)] lg:pb-[81px] lg:pt-20"
-            style={{ "--mascot-phone": MASCOT_PHONE_SIZE, "--mascot-full": MASCOT_SIZE, "--hero-base": HERO_PHONE_BASE, "--hero-big": HERO_PHONE_BIG, "--line-gap": `${HERO_PHONE_LINE_GAP}px` } as CSSProperties}
+            style={{ "--mascot-phone": MASCOT_PHONE_SIZE, "--mascot-full": MASCOT_SIZE, "--hero-base": HERO_PHONE_BASE, "--hero-big": HERO_PHONE_BIG, "--line-gap": `${HERO_PHONE_LINE_GAP}px`, "--line-size": LINE_PHONE_SIZE } as CSSProperties}
           >
             <p data-keepout="text" className="font-body-f text-[11px] font-bold uppercase tracking-[0.3em] text-white/90 sm:text-xs">
               ★ University of Illinois · Free food finder ★
@@ -267,7 +273,7 @@ export default function HeroFinal() {
               on campus
             </h1>
             {/* The line changes width as it rotates, so its whole row is kept clear. */}
-            <p key={lineIndex} data-keepout="box" aria-live="polite" className="mt-(--line-gap) animate-pop font-soft text-[clamp(0.95rem,4.6vw,1.5rem)] font-bold text-white drop-shadow-[2px_2px_0_#13294b] sm:mt-10 sm:text-3xl lg:text-4xl">
+            <p key={lineIndex} data-keepout="box" aria-live="polite" className="mt-(--line-gap) animate-pop font-soft text-(length:--line-size) font-bold text-white drop-shadow-[2px_2px_0_#13294b] sm:mt-10 sm:text-3xl lg:text-4xl">
               {LINES[lineIndex]}
             </p>
             {/* Actions sit under the line instead of competing with the headline. Both buttons
