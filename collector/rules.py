@@ -36,6 +36,26 @@ EVIDENCE_PATTERNS = [
   ),
 ]
 
+# Specific foods only (no bare "food"/"meal"), for the looser phrasings below, so a talk
+# "on food policy" or a "lunch talk" never counts as evidence.
+TREATS = (
+  r"(?:refreshments|snacks?|pizza|coffee|lunch|dinner|breakfast|brunch|boba|bubble tea|"
+  r"donuts?|doughnuts?|cookies|cupcakes|cake|ice cream|tacos?|burritos?|sandwiches|bagels?|"
+  r"pastries|desserts?|treats|chai|samosas|dumplings|wings|hot ?dogs?|burgers?|popcorn|"
+  r"smoothies|hot chocolate|cider)"
+  r"(?!\s*(?:talk|series|seminar|time|hour|skate|meeting|lecture|break|bunch|club)\b)"
+)
+EVIDENCE_PATTERNS += [
+  # "followed by refreshments", "with light refreshments", "(with pizza)"
+  re.compile(rf"\b(?:followed by|with)\s+(?:light\s+|some\s+|free\s+|complimentary\s+|delicious\s+)?{TREATS}\b", re.I),
+  # "enjoy coffee, cookies, and conversation"
+  re.compile(rf"\benjoy\s+(?:\w+[\s,-]+){{0,3}}?{TREATS}\b", re.I),
+  # "stay afterward for lunch"
+  re.compile(rf"\bstay\s+(?:afterwards?|after|around|late)?\s*for\s+(?:\w+[\s,-]+){{0,2}}?{TREATS}\b", re.I),
+  # "join members of the community for coffee and cookies"
+  re.compile(rf"\b(?:join (?:us|them|members|the \w+ community)|come)\b[^.!?\n]{{0,50}}?\bfor\s+(?:\w+[\s,-]+){{0,3}}?{TREATS}\b", re.I),
+]
+
 FREE_FOOD_TAG = "free food"
 
 # Each exclusion is (reason, pattern). Patterns are checked against title + description.
@@ -74,6 +94,19 @@ EXCLUSIONS = [
 ]
 
 VIRTUAL_LOCATION = re.compile(r"\b(?:zoom|online|virtual|webinar|teams|remote)\b", re.I)
+
+# Registration that is only for watching remotely does not stop walk-ins; neither does an
+# optional one. Sentences about the Zoom link are dropped before the RSVP check.
+REMOTE_SENTENCE = re.compile(r"[^.!?\n]*\b(?:zoom|virtual(?:ly)?|livestream|remote(?:ly)?)\b[^.!?\n]*[.!?]?", re.I)
+# A hybrid event still has food in the room, so a Zoom mention alone does not make it virtual.
+IN_PERSON = re.compile(r"\b(?:in[- ]person|hybrid)\b", re.I)
+RSVP_OPTIONAL = re.compile(
+  r"\b(?:rsvps?|registration|sign[- ]?ups?)\b[^.!?\n]{0,30}?\b(?:encouraged|appreciated|optional|recommended|"
+  r"not required|not necessary|not needed)\b|"
+  r"\bno (?:rsvp|registration|sign[- ]?up) (?:is )?(?:required|needed|necessary)\b|"
+  r"\bwalk-?ins? (?:are )?welcome\b|\bdrop[- ]ins? welcome\b|\bno need to (?:rsvp|register)\b",
+  re.I,
+)
 HIDDEN_LOCATION = re.compile(r"sign in to (?:download|see|view) the location", re.I)
 
 SENTENCE_SPLIT = re.compile(r"(?<=[.!?])\s+|(?<=[.!?])(?=[A-Z\u201c\"])|\n+")
@@ -121,6 +154,12 @@ def exclusion_reason(title, description, status=""):
     return "cancelled"
   text = f"{title}\n{description}"
   for reason, pattern in EXCLUSIONS:
+    if reason == "rsvp":
+      if RSVP_OPTIONAL.search(text) or not pattern.search(REMOTE_SENTENCE.sub(" ", text)):
+        continue
+      return reason
+    if reason == "virtual" and IN_PERSON.search(text):
+      continue
     if pattern.search(text):
       return reason
   return None

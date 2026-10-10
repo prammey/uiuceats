@@ -110,3 +110,34 @@ def test_food_window_leaves_events_alone_without_a_fitting_range():
   assert rules.food_window("Dinner is served from 7-8pm.", _at(13), _at(15)) is None
   assert rules.food_window("Refreshments for between 10 - 20 people.", _at(9), _at(12)) is None
   assert rules.food_window("Free food!", _at(9), _at(12)) is None
+
+
+
+def test_evidence_catches_looser_food_phrasings():
+  cases = [
+    "A tour for people living with dementia, followed by refreshments and artmaking.",
+    "The talk takes place in the Archives (with light refreshments).",
+    "Come enjoy coffee, cookies, and good conversation with the CS community.",
+    "Stay afterward for lunch and a chance to meet the speaker.",
+    "Join members of the Beckman community for coffee and cookies in the atrium.",
+  ]
+  for sentence in cases:
+    assert rules.find_evidence("Event", sentence) == sentence, sentence
+
+
+def test_looser_phrasings_do_not_match_food_as_a_topic():
+  for text in [
+    "A seminar on packaging materials for food and medicine.",
+    "Join us for a lunch talk on gendered silence at work.",
+    "Come to the Lunch Skate at the Ice Arena.",
+    "Participants with food allergies should contact the host.",
+  ]:
+    assert rules.find_evidence("Event", text) is None, text
+
+
+def test_rsvp_only_for_the_zoom_link_is_not_an_exclusion():
+  text = "Light refreshments provided for in-person attendees. Register for the Zoom link to attend remotely."
+  assert rules.exclusion_reason("Lecture", text) is None
+  assert rules.exclusion_reason("Lecture", "Pizza provided. Please register to attend.") == "rsvp"
+  assert rules.exclusion_reason("Lecture", "Pizza provided. RSVP appreciated but not required.") is None
+  assert rules.exclusion_reason("Lecture", "Pizza provided. Walk-ins welcome.") is None
