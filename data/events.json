@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-09T15:08:02.202615-05:00",
+ "generated_at": "2026-10-09T19:54:35.147705-05:00",
  "timezone": "America/Chicago",
  "window_days": 7,
- "count": 14,
+ "count": 15,
  "events": [
   {
    "id": "cal-33563754",
@@ -270,6 +270,25 @@
    "also_urls": [
     "https://calendars.illinois.edu/detail/6991/33557547?key=200001012000010133557547"
    ],
+   "source": "calendars",
+   "source_label": "calendars.illinois.edu",
+   "promoted": false
+  },
+  {
+   "id": "cal-33561297",
+   "title": "AWM Craft Circle/Math & Art Talk Series",
+   "host": "Association for Women in Mathematics",
+   "start": "2026-10-16T17:00:00-05:00",
+   "end": "2026-10-16T18:00:00-05:00",
+   "all_day": false,
+   "location": "Harker Hall, Room 300",
+   "maps_url": "https://www.google.com/maps/search/?api=1&query=Harker%20Hall%2C%20Room%20300%2C%20University%20of%20Illinois%20Urbana-Champaign",
+   "food_text": "Snacks",
+   "evidence": "Supplies and small snacks will be provided.",
+   "icon": "🍪",
+   "dietary": [],
+   "proof_url": "https://calendars.illinois.edu/detail/6991/33561297?key=200001012000010133561297",
+   "also_urls": [],
    "source": "calendars",
    "source_label": "calendars.illinois.edu",
    "promoted": false
