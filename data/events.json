@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-10T12:43:14.338921-05:00",
+ "generated_at": "2026-10-10T16:47:28.646856-05:00",
  "timezone": "America/Chicago",
  "window_days": 7,
- "count": 18,
+ "count": 19,
  "events": [
   {
    "id": "cal-33564877",
@@ -345,6 +345,25 @@
    "icon": "🍪",
    "dietary": [],
    "proof_url": "https://calendars.illinois.edu/detail/6991/33561297?key=200001012000010133561297",
+   "also_urls": [],
+   "source": "calendars",
+   "source_label": "calendars.illinois.edu",
+   "promoted": false
+  },
+  {
+   "id": "cal-33562267",
+   "title": "Pumpkin Fest",
+   "host": "Family & Graduate Housing",
+   "start": "2026-10-17T14:00:00-05:00",
+   "end": "2026-10-17T16:00:00-05:00",
+   "all_day": false,
+   "location": "Orchard Downs Community Center",
+   "maps_url": "https://www.google.com/maps/search/?api=1&query=Orchard%20Downs%20Community%20Center%2C%20University%20of%20Illinois%20Urbana-Champaign",
+   "food_text": "Treats",
+   "evidence": "Celebrate the season with your family and neighbors as we enjoy delicious fall treats and get creative with pumpkin decorating and games.",
+   "icon": "🍪",
+   "dietary": [],
+   "proof_url": "https://calendars.illinois.edu/detail/6991/33562267?key=200001012000010133562267",
    "also_urls": [],
    "source": "calendars",
    "source_label": "calendars.illinois.edu",
