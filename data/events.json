@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-10T02:33:04.665008-05:00",
+ "generated_at": "2026-10-10T02:34:02.481731-05:00",
  "timezone": "America/Chicago",
  "window_days": 7,
- "count": 25,
+ "count": 24,
  "events": [
   {
    "id": "cal-33562615",
@@ -172,25 +172,6 @@
    "icon": "🥪",
    "dietary": [],
    "proof_url": "https://calendars.illinois.edu/detail/6991/33556159?key=200001012000010133556159",
-   "also_urls": [],
-   "source": "calendars",
-   "source_label": "calendars.illinois.edu",
-   "promoted": false
-  },
-  {
-   "id": "cal-33556100",
-   "title": "TBD",
-   "host": "Department of Crop Sciences, University of Illinois",
-   "start": "2026-10-14T12:00:00-05:00",
-   "end": "2026-10-14T13:00:00-05:00",
-   "all_day": false,
-   "location": "W109 - Turner Hall",
-   "maps_url": "https://www.google.com/maps/search/?api=1&query=W109%20-%20Turner%20Hall%2C%20University%20of%20Illinois%20Urbana-Champaign",
-   "food_text": "Lunch",
-   "evidence": "Stay afterward for lunch and an oppertunity to meet and interact with the speaker.",
-   "icon": "🥪",
-   "dietary": [],
-   "proof_url": "https://calendars.illinois.edu/detail/6991/33556100?key=200001012000010133556100",
    "also_urls": [],
    "source": "calendars",
    "source_label": "calendars.illinois.edu",
