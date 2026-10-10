@@ -14,6 +14,21 @@ const dmSans = DM_Sans({ variable: "--font-dm-sans", subsets: ["latin"], weight:
 const fredoka = Fredoka({ variable: "--font-fredoka", subsets: ["latin"], weight: ["600", "700"] });
 
 const events = data as EventsFile;
+
+// Where "Support Us" at the bottom of the page goes. Paste the Buy Me a Coffee page link here.
+const SUPPORT_URL = "https://buymeacoffee.com/";
+
+// Takeaway cup, in the spirit of the Buy Me a Coffee mark.
+function CoffeeCupIcon() {
+  return (
+    <svg aria-hidden viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M5 8h13l-1.2 11a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 8Z" fill="#ffffff" />
+      <path d="M4 8h15" />
+      <path d="M6.6 12.5h9.8" />
+      <path d="M9 3.5c0 1 .8 1.2.8 2.2S9 6.8 9 7.5M12.5 3.5c0 1 .8 1.2.8 2.2s-.8 1.1-.8 1.8" />
+    </svg>
+  );
+}
 const ADVERTISE_URL = process.env.NEXT_PUBLIC_ADVERTISE_FORM_URL;
 const REPORT_TEMPLATE = process.env.NEXT_PUBLIC_REPORT_FORM_URL;
 // The general report link is the same form without a pre-filled event id.
@@ -93,6 +108,15 @@ export default function PageFinal() {
               food is provided, so confirm with the host before you go. Last checked {formatUpdated(events.generated_at)}{" "}
               (campus time) · Not affiliated with the University of Illinois.
             </p>
+            <a
+              href={SUPPORT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="brut-sm brut-press mt-8 inline-flex items-center gap-2 rounded-xl bg-[#ffdd00] px-5 py-2.5 font-swash text-base text-brut transition-colors hover:bg-b-yellow"
+            >
+              <CoffeeCupIcon />
+              Support Us
+            </a>
           </footer>
         </main>
       </div>
