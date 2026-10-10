@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 
-const PHRASES = ["No swipes", "100% free", "Oh yeahhh, free food!", "Meet new clubs", "Order up", "Now serving", "Urbana-Champaign", "I ♥ Food"];
+const PHRASES = ["No swipes", "100% free", "Oh yeahhh, free food!", "Meet new clubs", "Order up", "Now serving", "Urbana-Champaign", "I ♥ Free Food"];
 
 function Heart() {
   return (
@@ -19,7 +19,7 @@ export default function TopBar() {
       <div className="flex w-max animate-marquee items-center whitespace-nowrap font-body-f text-[11px] font-bold uppercase tracking-[0.25em]">
         {loop.map((phrase, index) => (
           <Fragment key={index}>
-            <span className="px-6">{phrase === "I ♥ Food" ? <>I <Heart /> Food</> : phrase}</span>
+            <span className="px-6">{phrase === "I ♥ Free Food" ? <>I <Heart /> Free Food</> : phrase}</span>
             <span className="text-illini-orange">★</span>
           </Fragment>
         ))}
