@@ -7,10 +7,6 @@
   "calendar": "International Education",
   "sponsor": "International Education, Nepali Student Association, and Asian American Cultural Center"
  },
- "cal-33557214": {
-  "calendar": "Dish It Up",
-  "sponsor": "Women's Resources Center"
- },
  "cal-33558682": {
   "calendar": "La Casa Cultural Latina",
   "sponsor": "La Casa Cultural Latina and Student Cultural Programming Fee."
@@ -39,10 +35,6 @@
   "calendar": "Campus Humanities Calendar",
   "sponsor": "Centers and Strategic Initiatives, College of Education"
  },
- "cal-33563754": {
-  "calendar": "IU Board Events",
-  "sponsor": "Illini Union Board"
- },
  "cal-33563793": {
   "calendar": "ACES Study Abroad",
   "sponsor": "ACES Study Abroad"
@@ -58,5 +50,9 @@
  "cal-33564627": {
   "calendar": "CEAPS Events Calendar",
   "sponsor": "Center for East Asian and Pacific Studies"
+ },
+ "cal-33564877": {
+  "calendar": "Domestic Violence Awareness Month",
+  "sponsor": "Women's Resources Center & Courage Connection"
  }
 }
