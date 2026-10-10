@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { track } from "@/lib/analytics";
 
 export default function ShareButton({ className = "" }: { className?: string }) {
   const [copied, setCopied] = useState(false);
@@ -11,6 +12,7 @@ export default function ShareButton({ className = "" }: { className?: string }) 
       text: "Free food on campus 🍕 No swipes needed.",
       url: window.location.href,
     };
+    track("share_tapped", { method: typeof navigator.share === "function" ? "native" : "copy" });
     try {
       if (navigator.share) {
         await navigator.share(payload);

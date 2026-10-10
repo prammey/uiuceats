@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import Mascot from "@/components/final/Mascot";
 import ShareButton from "@/components/final/ShareButton";
+import { track } from "@/lib/analytics";
 import { mulberry32, useClientSeed } from "@/lib/seed";
 
 const LINES = [
@@ -229,9 +230,11 @@ export default function HeroFinal() {
   const foodIndex = pickedFood ?? start.food;
 
   function nextFood() {
+    const next = (foodIndex + 1) % FOODS.length;
     setNoticed(true);
     setJiggling(false);
-    setPickedFood((foodIndex + 1) % FOODS.length);
+    setPickedFood(next);
+    track("hand_food_tapped", { food: FOODS[next] });
   }
 
   return (
@@ -284,6 +287,7 @@ export default function HeroFinal() {
                 onClick={(event) => {
                   // Scroll without leaving "#menu" in the address bar.
                   event.preventDefault();
+                  track("find_food_clicked");
                   document.getElementById("menu")?.scrollIntoView({ behavior: "smooth", block: "start" });
                 }}
                 className="brut-press flex items-center justify-center py-3 sm:justify-start sm:py-0 rounded-lg border-2 border-brut bg-[#6cbcff] px-3 sm:px-5 font-swash text-base leading-none text-[#ffa05c] shadow-[3px_3px_0_#111] [text-shadow:0_1px_3px_rgba(19,41,75,0.35)] transition-colors hover:bg-[#4faeff] sm:text-2xl"

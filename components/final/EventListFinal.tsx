@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import DayStripFinal from "@/components/final/DayStripFinal";
 import EventCardFinal from "@/components/final/EventCardFinal";
+import { track } from "@/lib/analytics";
 import { dayKey, formatDayHeading, type FoodEvent } from "@/lib/events";
 import { useNow, useWeekView } from "@/lib/week";
 
@@ -61,6 +62,7 @@ export default function EventListFinal({ events, reportTemplate }: Props) {
     if (options.length === 0) return;
     const choice = options[Math.floor(Math.random() * options.length)];
     lastSurprise.current = choice.id;
+    track("surprise_me", { event_id: choice.id });
     setPicked(dayKey(new Date(choice.start)));
     setSpotlight({ id: choice.id, at: Date.now() });
   }
@@ -79,7 +81,15 @@ export default function EventListFinal({ events, reportTemplate }: Props) {
         </button>
       </div>
 
-      <DayStripFinal days={view.days} counts={view.counts} selected={view.selected} onSelect={setPicked} />
+      <DayStripFinal
+        days={view.days}
+        counts={view.counts}
+        selected={view.selected}
+        onSelect={(key) => {
+          track("day_picked", { day: key, listings: view.counts[key] ?? 0 });
+          setPicked(key);
+        }}
+      />
 
       <div className="mt-8 flex items-center gap-3 font-body-f">
         <h3 className="text-xs font-bold uppercase tracking-[0.25em] text-brut">

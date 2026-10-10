@@ -72,6 +72,14 @@ npm run build      # static export to out/
 The collector can still hide listings automatically from a reports sheet: publish it as CSV
 and set the GitHub variable `REPORTS_CSV_URL`. Leave it unset to keep reports manual.
 
+## Analytics
+
+PostHog, production only. Vercel env vars `NEXT_PUBLIC_POSTHOG_KEY` (the project's public
+key) and `NEXT_PUBLIC_POSTHOG_HOST` (`/ingest`, which `vercel.json` forwards to PostHog so
+ad blockers do not drop it). Clicks on links and buttons are captured automatically; the
+named events (`find_food_clicked`, `day_picked`, `surprise_me`, `share_tapped`,
+`hand_food_tapped`) are sent from `lib/analytics.ts`.
+
 ## Accuracy safeguards
 
 Every collector run starts with the test suite, and `collector/tests/fixtures/verdicts.json`
