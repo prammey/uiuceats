@@ -173,3 +173,45 @@ def test_audited_real_events_keep_their_verdicts():
     reason = rules.location_problem(case["location"]) or rules.exclusion_reason(case["title"], case["description"])
     got = reason or ("publish" if rules.find_evidence(case["title"], case["description"]) else "no_evidence")
     assert got == case["expect"], f"{case['title']}: expected {case['expect']}, got {got}"
+
+
+def _verdict(description, title="Event", location="Room 101"):
+  reason = rules.location_problem(location) or rules.exclusion_reason(title, description)
+  return reason or ("publish" if rules.find_evidence(title, description) else "no_evidence")
+
+
+def test_food_that_costs_money_is_never_published():
+  for text in [
+    "Gluten-free food will be sold at the table.",
+    "Gluten-free snacks available. Pizza $3 a slice.",
+    "Pizza will be served. Suggested donation $5.",
+    "Dinner will be served. Pay what you can.",
+    "Lunch provided. $10 per person.",
+    "Food trucks will be on site with lunch options.",
+    "Concessions and snacks available at the game.",
+    "Join us for dinner at the Illinois Street Dining Center.",
+    "Enjoy breakfast in the dining hall; meal swipes accepted.",
+    "Bake sale! Cookies and brownies, proceeds benefit the club.",
+    "Coffee and donuts fundraiser for the team.",
+    "Pizza will be provided. Bring cash for drinks and raffle.",
+    "Dinner included with your ticket.",
+    "Snacks will be served. Venmo @club to reserve your plate.",
+    "Lunch is on the menu, prices start at $8.",
+    "Free parking. Food available for purchase from vendors.",
+    "Come enjoy lunch, buy a plate to support us.",
+    "Dairy-free dinner options for sale.",
+    "Food vendors will be selling snacks and drinks.",
+  ]:
+    assert _verdict(text) != "publish", text
+
+
+def test_genuinely_free_food_still_publishes():
+  for text in [
+    "Free pizza while supplies last!",
+    "Lunch will be provided at no cost.",
+    "Complimentary coffee and bagels in the lobby.",
+    "Gluten-free and vegan snacks will be provided free of charge.",
+    "Free food and giveaways all afternoon.",
+    "Light refreshments will be served. Open to all students.",
+  ]:
+    assert _verdict(text) == "publish", text

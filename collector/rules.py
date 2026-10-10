@@ -15,7 +15,7 @@ FOOD = (
 )
 
 EVIDENCE_PATTERNS = [
-  re.compile(rf"\bfree\s+(?:\w+[\s-]+){{0,2}}?{FOOD}\b", re.I),
+  re.compile(rf"(?<![\w-])free\s+(?:\w+[\s-]+){{0,2}}?{FOOD}\b", re.I),
   re.compile(rf"\b(?:complimentary)\s+(?:\w+[\s-]+){{0,2}}?{FOOD}\b", re.I),
   re.compile(
     rf"\b{FOOD}\b[^.!?\n]{{0,60}}?\b(?:will be|are|is|to be|being)\s+"
@@ -70,7 +70,15 @@ EXCLUSIONS = [
   )),
   ("paid", re.compile(
     r"\$\s?(?!0\b)\d|\b\d+ dollars\b|\bcost:(?!\s*(?:free|no |\$?0\b))|\b(?:admission|entry) fee\b|"
-    r"\bfor purchase\b|\bfor sale\b|\bpurchase (?:a |your )?(?:ticket|meal|plate)",
+    r"\bfor purchase\b|\bfor sale\b|\bpurchase (?:a |your )?(?:ticket|meal|plate)|"
+    r"\b(?:will be|are|is) sold\b|\bon sale\b|\bbake sale\b|\bfood sale\b|\bselling\b|"
+    r"\bbuy (?:a |your |some )?(?:ticket|meal|plate|food|lunch|dinner|slice|snack)|"
+    r"\bpay what you can\b|\bsuggested donation\b|\bdonations? (?:accepted|welcome|encouraged|appreciated|requested)\b|"
+    r"\bper person\b|\bcover charge\b|\bticket prices?\b|\bprices? (?:start|range|vary)\b|"
+    r"\bfundrais\w*|\braise (?:funds|money)\b|\bproceeds\b|"
+    r"\bfood trucks?\b|\bconcessions?\b|\bfood vendors?\b|\bvendors? (?:will be )?(?:selling|on site)\b|"
+    r"\bdining (?:hall|center)\b|\bmeal (?:swipes?|plan|credits?)\b|"
+    r"\bbring (?:cash|money)\b|\bvenmo\b|\bzelle\b|\bcash ?app\b|\bcash only\b",
     re.I,
   )),
   ("closed", re.compile(
