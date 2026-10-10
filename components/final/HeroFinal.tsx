@@ -236,7 +236,7 @@ export default function HeroFinal() {
                   track("find_food_clicked");
                   document.getElementById("menu")?.scrollIntoView({ behavior: "smooth", block: "start" });
                 }}
-                className="brut-press flex items-center justify-center py-3 sm:justify-start sm:py-0 rounded-lg border-2 border-brut bg-[#6cbcff] px-3 sm:px-5 font-swash text-base leading-none text-illini-blue shadow-[3px_3px_0_#111] [text-shadow:1px_1px_0_#ffffff] transition-colors hover:bg-[#4faeff] sm:text-2xl"
+                className="brut-press flex items-center justify-center py-3 sm:justify-start sm:py-0 rounded-lg border-2 border-brut bg-[#6cbcff] px-3 sm:px-5 font-swash text-base leading-none text-illini-blue shadow-[3px_3px_0_#111] [text-shadow:0_0_6px_rgba(255,255,255,0.55)] transition-colors hover:bg-[#4faeff] sm:text-2xl"
               >
                 Find Food&thinsp; 👀
               </a>
