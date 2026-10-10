@@ -254,7 +254,7 @@ export default function HeroFinal() {
               on campus
             </h1>
             {/* The line changes width as it rotates, so its whole row is kept clear. */}
-            <p key={lineIndex} data-keepout="box" aria-live="polite" className="mt-8 animate-pop font-soft text-[clamp(1.125rem,5.6vw,1.5rem)] font-bold text-white drop-shadow-[2px_2px_0_#13294b] sm:mt-10 sm:text-3xl lg:text-4xl">
+            <p key={lineIndex} data-keepout="box" aria-live="polite" className="mt-8 animate-pop font-soft text-[clamp(1rem,5vw,1.5rem)] font-bold text-white drop-shadow-[2px_2px_0_#13294b] sm:mt-10 sm:text-3xl lg:text-4xl">
               {LINES[lineIndex]}
             </p>
             {/* Actions sit under the line instead of competing with the headline. Both buttons
