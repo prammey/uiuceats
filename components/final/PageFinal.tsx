@@ -97,7 +97,7 @@ export default function PageFinal() {
 
           <footer className="mt-16 text-center">
             <p className="text-xs font-bold uppercase tracking-widest text-brut">Made with 🧡💙 in Urbana-Champaign 🤗</p>
-            <p className="mx-auto mt-4 max-w-2xl text-[11px] leading-relaxed text-ink-muted/80">
+            <p className="mx-auto mt-4 max-w-2xl px-8 text-[11px] leading-relaxed text-ink-muted/80 sm:px-0">
               New and experimental. Listings come from official campus calendars and appear only when the source says
               food is provided, so confirm with the host before you go. Last checked {formatUpdated(events.generated_at)}{" "}
               (campus time) · Not affiliated with the University of Illinois.

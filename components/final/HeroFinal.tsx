@@ -30,6 +30,8 @@ const MASCOT = {
   inset: -40, // px between the bird and the right awning (tablet and up)
   phoneInset: 0, // same, on phones, where the bird must stay fully in view
   phoneGap: 16, // px of air between the buttons and the bird on phones
+  phoneSize: { min: 150, vw: 45, max: 190 }, // px: the bird is 45% of the phone's width, between these
+  phoneLift: 60, // px the bird rises beside the buttons on phones (they sit at the left)
   food: {
     x: 86, // % across the box where the food's center sits
     y: 37, // % down the box
@@ -38,6 +40,7 @@ const MASCOT = {
 };
 // Shrinks with the screen (30% of its width) between the two limits above.
 const MASCOT_SIZE = `clamp(${MASCOT.minSize}px, 30vw, ${MASCOT.size}px)`;
+const MASCOT_PHONE_SIZE = `clamp(${MASCOT.phoneSize.min}px, ${MASCOT.phoneSize.vw}vw, ${MASCOT.phoneSize.max}px)`;
 
 // ── Floater rules ─────────────────────────────────────────────────────────────
 // Background emojis land only in empty space: at least FLOATER_PAD px from anything
@@ -49,6 +52,12 @@ const FLOATER_GAP = 56;
 const FLOATER_EDGE = 24;
 const FLOATER_TRIES = 80;
 const FLOATER_COUNT = 6;
+// Phones get more, smaller floaters, and they may sit behind the text (not the buttons or bird).
+const PHONE_FLOATER_COUNT = 9;
+const PHONE_FLOATER_SCALE = 0.7;
+const PHONE_FLOATER_PAD = 10;
+const PHONE_FLOATER_GAP = 36;
+const PHONE_QUERY = "(max-width: 639px)";
 
 type FloaterPick = { emoji: string; size: number; slow: boolean };
 type Floater = FloaterPick & { left: number; top: number };
@@ -66,10 +75,11 @@ const floaterRect = (left: number, top: number, size: number): Rect => {
 // Everything the floaters must avoid, relative to the panel's top-left corner.
 // `data-keepout="text"` measures the glyphs line by line, so the space beside a
 // short line stays usable; anything else blocks its whole box.
-function keepOutRects(panel: HTMLElement): Rect[] {
+function keepOutRects(panel: HTMLElement, phone: boolean): Rect[] {
   const origin = panel.getBoundingClientRect();
   const rects: Rect[] = [];
   panel.querySelectorAll<HTMLElement>("[data-keepout]").forEach((el) => {
+    if (phone && el.tagName !== "DIV") return; // on phones only the buttons and the bird are kept clear
     let boxes: DOMRect[];
     if (el.dataset.keepout === "text") {
       const range = document.createRange();
@@ -87,9 +97,14 @@ function keepOutRects(panel: HTMLElement): Rect[] {
 }
 
 function placeFloaters(panel: HTMLElement, picks: FloaterPick[], rand: () => number): Floater[] {
-  const keepOut = keepOutRects(panel);
+  const phone = window.matchMedia(PHONE_QUERY).matches;
+  const keepOut = keepOutRects(panel, phone);
+  const pad = phone ? PHONE_FLOATER_PAD : FLOATER_PAD;
+  const gap = phone ? PHONE_FLOATER_GAP : FLOATER_GAP;
   const placed: Floater[] = [];
-  for (const pick of picks) {
+  const wanted = phone ? picks : picks.slice(0, FLOATER_COUNT);
+  for (const rawPick of wanted) {
+    const pick = phone ? { ...rawPick, size: Math.round(rawPick.size * PHONE_FLOATER_SCALE) } : rawPick;
     const box = pick.size * 1.25;
     const spanX = Math.max(0, panel.clientWidth - box - FLOATER_EDGE * 2);
     const spanY = Math.max(0, panel.clientHeight - box - FLOATER_EDGE * 2);
@@ -97,8 +112,8 @@ function placeFloaters(panel: HTMLElement, picks: FloaterPick[], rand: () => num
       const left = Math.round(FLOATER_EDGE + rand() * spanX);
       const top = Math.round(FLOATER_EDGE + rand() * spanY);
       const rect = floaterRect(left, top, pick.size);
-      if (keepOut.some((k) => overlaps(rect, k, FLOATER_PAD))) continue;
-      if (placed.some((p) => overlaps(rect, floaterRect(p.left, p.top, p.size), FLOATER_GAP))) continue;
+      if (keepOut.some((k) => overlaps(rect, k, pad))) continue;
+      if (placed.some((p) => overlaps(rect, floaterRect(p.left, p.top, p.size), gap))) continue;
       placed.push({ ...pick, left, top });
       break;
     }
@@ -122,7 +137,7 @@ export default function HeroFinal() {
     if (seed === null) return { line: 0, food: 0, picks: [] as FloaterPick[] };
     const rand = mulberry32(seed);
     const pool = [...FLOAT_POOL];
-    const picks: FloaterPick[] = Array.from({ length: FLOATER_COUNT }, () => ({
+    const picks: FloaterPick[] = Array.from({ length: PHONE_FLOATER_COUNT }, () => ({
       emoji: pool.splice(Math.floor(rand() * pool.length), 1)[0],
       size: FLOAT_SIZES[Math.floor(rand() * FLOAT_SIZES.length)],
       slow: rand() > 0.5,
@@ -225,7 +240,10 @@ export default function HeroFinal() {
             </span>
           ))}
 
-          <div className="relative mx-auto max-w-6xl px-4 pb-14 pt-8 sm:px-8 sm:pb-[97px] sm:pt-16 lg:pb-[81px] lg:pt-20">
+          <div
+            className="relative mx-auto max-w-6xl px-4 pb-14 pt-8 [--mascot-size:var(--mascot-phone)] sm:px-8 sm:pb-[97px] sm:pt-16 sm:[--mascot-size:var(--mascot-full)] lg:pb-[81px] lg:pt-20"
+            style={{ "--mascot-phone": MASCOT_PHONE_SIZE, "--mascot-full": MASCOT_SIZE } as CSSProperties}
+          >
             <p data-keepout="text" className="font-body-f text-[11px] font-bold uppercase tracking-[0.3em] text-white/90 sm:text-xs">
               ★ University of Illinois · Free food finder ★
             </p>
@@ -241,7 +259,7 @@ export default function HeroFinal() {
             </p>
             {/* Actions sit under the line instead of competing with the headline. Both buttons
                 share one height: the Share button sets it, Find food stretches to match. */}
-            <div data-keepout="box" className="mt-6 flex w-full flex-col items-stretch gap-3 sm:mt-[47px] sm:w-fit sm:flex-row">
+            <div data-keepout="box" className="mt-6 flex w-fit flex-col items-stretch gap-3 sm:mt-[47px] sm:flex-row">
               <a
                 href="#menu"
                 onClick={(event) => {
@@ -249,20 +267,20 @@ export default function HeroFinal() {
                   event.preventDefault();
                   document.getElementById("menu")?.scrollIntoView({ behavior: "smooth", block: "start" });
                 }}
-                className="brut-press flex items-center justify-center py-2.5 sm:justify-start sm:py-0 rounded-lg border-2 border-brut bg-[#6cbcff] px-5 font-swash text-xl leading-none text-[#ffa05c] shadow-[3px_3px_0_#111] [text-shadow:0_1px_3px_rgba(19,41,75,0.35)] transition-colors hover:bg-[#4faeff] sm:text-2xl"
+                className="brut-press flex items-center justify-center py-[11px] sm:justify-start sm:py-0 rounded-lg border-2 border-brut bg-[#6cbcff] px-3.5 sm:px-5 font-swash text-lg leading-none text-[#ffa05c] shadow-[3px_3px_0_#111] [text-shadow:0_1px_3px_rgba(19,41,75,0.35)] transition-colors hover:bg-[#4faeff] sm:text-2xl"
               >
                 Find Food&thinsp; 👀
               </a>
               <ShareButton />
             </div>
             {/* Keep room for the mascot on phones so it never sits on the text (56 is the pb-14 below). */}
-            <div className="sm:hidden" style={{ height: Math.max(0, MASCOT.minSize + MASCOT.raise + MASCOT.phoneGap - 56) }} />
+            <div className="sm:hidden" style={{ height: `calc(var(--mascot-size) + ${MASCOT.raise + MASCOT.phoneGap - MASCOT.phoneLift - 56}px)` }} />
 
             {/* Mascot box and the food in front of its raised hand; all numbers come from MASCOT above. */}
             <div
               data-keepout="box"
-              className="absolute right-(--inset-phone) sm:right-(--inset)"
-              style={{ width: MASCOT_SIZE, height: MASCOT_SIZE, bottom: MASCOT.raise, "--inset-phone": `${MASCOT.phoneInset}px`, "--inset": `${MASCOT.inset}px` } as CSSProperties}
+              className="absolute right-(--inset-phone) h-(--mascot-size) w-(--mascot-size) sm:right-(--inset)"
+              style={{ bottom: MASCOT.raise, "--inset-phone": `${MASCOT.phoneInset}px`, "--inset": `${MASCOT.inset}px` } as CSSProperties}
             >
               <Mascot className="h-full w-full object-contain drop-shadow-lg" />
               <div
@@ -275,7 +293,7 @@ export default function HeroFinal() {
                   onClick={nextFood}
                   aria-label="Food emoji. Tap to change it."
                   className="animate-pop select-none leading-none drop-shadow-lg transition hover:scale-110 active:scale-95"
-                  style={{ fontSize: `calc(${MASCOT_SIZE} * ${MASCOT.food.scale})` }}
+                  style={{ fontSize: `calc(var(--mascot-size) * ${MASCOT.food.scale})` }}
                 >
                   <span className={`inline-block ${jiggling ? "animate-jiggle" : ""}`} onAnimationEnd={() => setJiggling(false)}>
                     {FOODS[foodIndex]}
