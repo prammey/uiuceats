@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import Mascot from "@/components/final/Mascot";
 import ShareButton from "@/components/final/ShareButton";
 import { mulberry32, useClientSeed } from "@/lib/seed";
@@ -27,7 +27,9 @@ const MASCOT = {
   size: 415, // px on wide screens
   minSize: 160, // px floor on phones
   raise: 40, // px between the feet and the hero's bottom border
-  inset: -40, // px between the bird and the right awning
+  inset: -40, // px between the bird and the right awning (tablet and up)
+  phoneInset: 0, // same, on phones, where the bird must stay fully in view
+  phoneGap: 16, // px of air between the buttons and the bird on phones
   food: {
     x: 86, // % across the box where the food's center sits
     y: 37, // % down the box
@@ -227,19 +229,19 @@ export default function HeroFinal() {
             <p data-keepout="text" className="font-body-f text-[11px] font-bold uppercase tracking-[0.3em] text-white/90 sm:text-xs">
               ★ University of Illinois · Free food finder ★
             </p>
-            <h1 data-keepout="text" className="mt-6 font-swash text-5xl uppercase leading-[0.95] drop-shadow-[3px_3px_0_#13294b] sm:text-7xl lg:text-8xl xl:text-9xl">
+            <h1 data-keepout="text" className="mt-6 font-swash text-[clamp(2.1rem,11vw,3rem)] uppercase leading-[0.95] drop-shadow-[3px_3px_0_#13294b] sm:text-7xl lg:text-8xl xl:text-9xl">
               Free{" "}
               <span className="bg-linear-to-b from-[#d6f0ff] to-[#6cbcff] bg-clip-text text-transparent">Food</span>
               <br />
               on campus
             </h1>
             {/* The line changes width as it rotates, so its whole row is kept clear. */}
-            <p key={lineIndex} data-keepout="box" aria-live="polite" className="mt-8 animate-pop font-soft text-2xl font-bold text-white drop-shadow-[2px_2px_0_#13294b] sm:mt-10 sm:text-3xl lg:text-4xl">
+            <p key={lineIndex} data-keepout="box" aria-live="polite" className="mt-8 animate-pop font-soft text-[clamp(1.125rem,5.6vw,1.5rem)] font-bold text-white drop-shadow-[2px_2px_0_#13294b] sm:mt-10 sm:text-3xl lg:text-4xl">
               {LINES[lineIndex]}
             </p>
             {/* Actions sit under the line instead of competing with the headline. Both buttons
                 share one height: the Share button sets it, Find food stretches to match. */}
-            <div data-keepout="box" className="mt-6 flex w-fit items-stretch gap-3 sm:mt-[47px]">
+            <div data-keepout="box" className="mt-6 flex w-full flex-col items-stretch gap-3 sm:mt-[47px] sm:w-fit sm:flex-row">
               <a
                 href="#menu"
                 onClick={(event) => {
@@ -247,20 +249,20 @@ export default function HeroFinal() {
                   event.preventDefault();
                   document.getElementById("menu")?.scrollIntoView({ behavior: "smooth", block: "start" });
                 }}
-                className="brut-press flex items-center rounded-lg border-2 border-brut bg-[#6cbcff] px-5 font-swash text-xl leading-none text-[#ffa05c] shadow-[3px_3px_0_#111] [text-shadow:0_1px_3px_rgba(19,41,75,0.35)] transition-colors hover:bg-[#4faeff] sm:text-2xl"
+                className="brut-press flex items-center justify-center py-2.5 sm:justify-start sm:py-0 rounded-lg border-2 border-brut bg-[#6cbcff] px-5 font-swash text-xl leading-none text-[#ffa05c] shadow-[3px_3px_0_#111] [text-shadow:0_1px_3px_rgba(19,41,75,0.35)] transition-colors hover:bg-[#4faeff] sm:text-2xl"
               >
                 Find Food&thinsp; 👀
               </a>
               <ShareButton />
             </div>
             {/* Keep room for the mascot on phones so it never sits on the text (56 is the pb-14 below). */}
-            <div className="sm:hidden" style={{ height: Math.max(0, MASCOT.minSize + MASCOT.raise - 56) }} />
+            <div className="sm:hidden" style={{ height: Math.max(0, MASCOT.minSize + MASCOT.raise + MASCOT.phoneGap - 56) }} />
 
             {/* Mascot box and the food in front of its raised hand; all numbers come from MASCOT above. */}
             <div
               data-keepout="box"
-              className="absolute"
-              style={{ width: MASCOT_SIZE, height: MASCOT_SIZE, bottom: MASCOT.raise, right: MASCOT.inset }}
+              className="absolute right-(--inset-phone) sm:right-(--inset)"
+              style={{ width: MASCOT_SIZE, height: MASCOT_SIZE, bottom: MASCOT.raise, "--inset-phone": `${MASCOT.phoneInset}px`, "--inset": `${MASCOT.inset}px` } as CSSProperties}
             >
               <Mascot className="h-full w-full object-contain drop-shadow-lg" />
               <div
