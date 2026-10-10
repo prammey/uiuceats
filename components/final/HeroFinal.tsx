@@ -244,7 +244,7 @@ export default function HeroFinal() {
                 href="#menu"
                 className="brut-press flex items-center rounded-lg border-2 border-brut bg-[#6cbcff] px-5 font-swash text-xl leading-none text-[#ffad70] shadow-[3px_3px_0_#111] [text-shadow:0_1px_3px_rgba(19,41,75,0.35)] transition-colors hover:bg-[#4faeff] sm:text-2xl"
               >
-                Find food 👀
+                Find Food 👀
               </a>
               <ShareButton />
             </div>
