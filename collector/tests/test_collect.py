@@ -129,3 +129,11 @@ def test_dedupe_keeps_the_twins_text_for_the_rules():
   unique = merge.dedupe([kept, twin])
   assert len(unique) == 1
   assert "Registration is required." in unique[0]["extra_text"]
+
+
+def test_suspicious_growth_flags_a_doubling_but_not_normal_change():
+  assert merge.suspicious_growth(19, 45)
+  assert merge.suspicious_growth(5, 16)
+  assert not merge.suspicious_growth(19, 30)
+  assert not merge.suspicious_growth(5, 14)
+  assert not merge.suspicious_growth(0, 40)  # first run ever

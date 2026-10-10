@@ -160,3 +160,16 @@ def test_audience_words_in_passing_do_not_close_an_event():
   assert rules.exclusion_reason("Open House", "Refreshments served. Learn about opportunities for employees to go greener.") is None
   assert rules.exclusion_reason("Open House", "Refreshments served. Open to faculty, staff, and students.") is None
   assert rules.exclusion_reason("Reception", "Refreshments served. This event is intended for alumni.") == "closed"
+
+
+def test_audited_real_events_keep_their_verdicts():
+  """Real events checked by hand on 2026-10-10. A rule change that flips one of these
+  fails the collector run, so the site keeps its last good data until someone looks."""
+  import json
+  from pathlib import Path
+  cases = json.loads((Path(__file__).parent / "fixtures" / "verdicts.json").read_text(encoding="utf-8"))
+  assert len(cases) >= 25
+  for case in cases:
+    reason = rules.location_problem(case["location"]) or rules.exclusion_reason(case["title"], case["description"])
+    got = reason or ("publish" if rules.find_evidence(case["title"], case["description"]) else "no_evidence")
+    assert got == case["expect"], f"{case['title']}: expected {case['expect']}, got {got}"

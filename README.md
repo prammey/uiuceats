@@ -72,6 +72,15 @@ npm run build      # static export to out/
 The collector can still hide listings automatically from a reports sheet: publish it as CSV
 and set the GitHub variable `REPORTS_CSV_URL`. Leave it unset to keep reports manual.
 
+## Accuracy safeguards
+
+Every collector run starts with the test suite, and `collector/tests/fixtures/verdicts.json`
+holds real events checked by hand with the verdict each must keep (publish, or the reason it
+is excluded). A rule change that flips one of them fails the run, and the site keeps its last
+good data. The collector also refuses to publish when the card count more than doubles in one
+run, since a jump like that means a rule got too loose. Add new hand-checked events to the
+fixture whenever a rule changes.
+
 ## Adding the AI step later
 
 `collector/__main__.py` decides what to publish right after `rules.find_evidence`. A

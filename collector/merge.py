@@ -72,6 +72,18 @@ def dedupe(events):
   return unique
 
 
+# A sudden jump in cards means a rule got too loose, not that campus got generous.
+MAX_GROWTH_FACTOR = 2
+MAX_GROWTH_EXTRA = 10
+
+
+def suspicious_growth(previous_count, new_count):
+  """True when the new card count is more than double the last run's (and 10+ higher)."""
+  if not previous_count:
+    return False
+  return new_count > max(previous_count * MAX_GROWTH_FACTOR, previous_count + MAX_GROWTH_EXTRA)
+
+
 def fetch_csv(url):
   response = requests.get(url, headers={"User-Agent": USER_AGENT}, timeout=TIMEOUT_SECONDS)
   response.raise_for_status()

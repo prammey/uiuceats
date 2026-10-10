@@ -116,6 +116,16 @@ def main(argv=None):
       print(f"      says: {card['evidence']}")
     return 0
 
+  previous = 0
+  if EVENTS_PATH.exists():
+    try:
+      previous = int(json.loads(EVENTS_PATH.read_text(encoding="utf-8")).get("count", 0))
+    except (ValueError, AttributeError):
+      previous = 0
+  if merge.suspicious_growth(previous, len(cards)):
+    log.error("card count jumped from %d to %d; refusing to publish until someone checks the rules", previous, len(cards))
+    return 1
+
   DATA_DIR.mkdir(parents=True, exist_ok=True)
   EVENTS_PATH.write_text(json.dumps(output, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
   log.info("wrote %s", EVENTS_PATH)
