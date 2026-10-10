@@ -242,6 +242,11 @@ export default function HeroFinal() {
             <div data-keepout="box" className="mt-6 flex w-fit items-stretch gap-3 sm:mt-[47px]">
               <a
                 href="#menu"
+                onClick={(event) => {
+                  // Scroll without leaving "#menu" in the address bar.
+                  event.preventDefault();
+                  document.getElementById("menu")?.scrollIntoView({ behavior: "smooth", block: "start" });
+                }}
                 className="brut-press flex items-center rounded-lg border-2 border-brut bg-[#6cbcff] px-5 font-swash text-xl leading-none text-[#ffa05c] shadow-[3px_3px_0_#111] [text-shadow:0_1px_3px_rgba(19,41,75,0.35)] transition-colors hover:bg-[#4faeff] sm:text-2xl"
               >
                 Find Food&thinsp; 👀
