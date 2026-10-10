@@ -242,7 +242,7 @@ export default function HeroFinal() {
             <div data-keepout="box" className="mt-6 flex w-fit items-stretch gap-3 sm:mt-[47px]">
               <a
                 href="#menu"
-                className="brut-press flex items-center rounded-lg border-2 border-brut bg-linear-to-br from-[#e6f5ff] to-[#a4d6ff] px-5 font-swash text-xl leading-none text-[#ffad70] shadow-[3px_3px_0_#111] [text-shadow:0_1px_3px_rgba(19,41,75,0.35)] transition-colors hover:from-[#d6eeff] hover:to-[#8ccbff] sm:text-2xl"
+                className="brut-press flex items-center rounded-lg border-2 border-brut bg-[#6cbcff] px-5 font-swash text-xl leading-none text-[#ffad70] shadow-[3px_3px_0_#111] [text-shadow:0_1px_3px_rgba(19,41,75,0.35)] transition-colors hover:bg-[#4faeff] sm:text-2xl"
               >
                 Find Food&thinsp; 👀
               </a>
