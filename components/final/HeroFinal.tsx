@@ -237,8 +237,15 @@ export default function HeroFinal() {
             <p key={lineIndex} data-keepout="box" aria-live="polite" className="mt-8 animate-pop font-soft text-2xl font-bold text-white drop-shadow-[2px_2px_0_#13294b] sm:mt-10 sm:text-3xl lg:text-4xl">
               {LINES[lineIndex]}
             </p>
-            {/* Share is a secondary action, so it sits under the line instead of competing with the headline. */}
-            <div data-keepout="box" className="mt-6 flex w-fit sm:mt-[47px]">
+            {/* Actions sit under the line instead of competing with the headline. Both buttons
+                share one height: the Share button sets it, Find food stretches to match. */}
+            <div data-keepout="box" className="mt-6 flex w-fit items-stretch gap-3 sm:mt-[47px]">
+              <a
+                href="#menu"
+                className="brut-press flex items-center rounded-lg border-2 border-brut bg-[#6cbcff] px-5 font-swash text-xl leading-none text-[#ffad70] shadow-[3px_3px_0_#111] transition-colors hover:bg-[#4faeff] sm:text-2xl"
+              >
+                Find food 👀
+              </a>
               <ShareButton />
             </div>
             {/* Keep room for the mascot on phones so it never sits on the text (56 is the pb-14 below). */}
