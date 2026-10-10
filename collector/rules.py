@@ -4,6 +4,7 @@ Every published card shows the matched sentence, so nothing can be invented.
 Exclusions run first and win over evidence.
 """
 import re
+from datetime import timedelta
 
 FOOD = (
   r"(?:food|foods|pizza|pizzas|lunch|dinner|breakfast|brunch|snacks?|refreshments|"
@@ -154,6 +155,62 @@ def food_icon(text):
     if pattern.search(text):
       return icon
   return DEFAULT_ICON
+
+
+# ── Food time window ──────────────────────────────────────────────────────────
+# When the evidence sentence names a time range ("served between 9:15 - 9:45am",
+# "lunch from 11:30am to 1pm"), the card shows that window instead of the whole
+# event. Only a range that fits inside the event's own times is trusted, so a
+# stray number pair ("10 - 20 people") or another session's time is ignored.
+_CLOCK = r"(?:(\d{1,2})(?::(\d{2}))?\s*(?:([ap])\.?m\b\.?)?|(noon|midday))"
+_RANGE = re.compile(
+  rf"\b(?:between\s+)?{_CLOCK}\s*(?:-|–|—|to|until|till|through|thru|and)\s*{_CLOCK}\b",
+  re.I,
+)
+_SLACK = 15  # minutes of tolerance around the event's own start and end
+
+
+def _clock(hour, minute, meridiem, word, fallback):
+  """Minutes since midnight for one parsed time, or None when it can't be a time."""
+  if word:
+    return 12 * 60
+  hour, minute = int(hour), int(minute or 0)
+  if minute > 59:
+    return None
+  meridiem = (meridiem or fallback or "").lower()
+  if meridiem:
+    if not 1 <= hour <= 12:
+      return None
+    hour = hour % 12 + (12 if meridiem == "p" else 0)
+  elif hour > 23:
+    return None
+  return hour * 60 + minute
+
+
+def food_window(evidence, start, end, all_day=False):
+  """(start, end, all_day) narrowed to the food time named in the evidence, else None."""
+  if not evidence or start is None or end is None:
+    return None
+  day = start.replace(hour=0, minute=0, second=0, microsecond=0)
+  lo = (start - day).total_seconds() / 60 - _SLACK
+  hi = (end - day).total_seconds() / 60 + _SLACK
+  for match in _RANGE.finditer(evidence):
+    h1, m1, ap1, w1, h2, m2, ap2, w2 = match.groups()
+    # A missing am/pm borrows the other side's; if neither says, try the usual readings.
+    guesses = [(ap1, ap2)] if ap1 or ap2 else [("a", "a"), ("a", "p"), ("p", "p")]
+    if ap1 and not ap2:
+      guesses = [(ap1, ap1), (ap1, "p")]
+    if ap2 and not ap1:
+      guesses = [(ap2, ap2), ("a", ap2)]
+    for fallback1, fallback2 in guesses:
+      first = _clock(h1, m1, ap1, w1, fallback1)
+      second = _clock(h2, m2, ap2, w2, fallback2)
+      if first is None or second is None or first >= second:
+        continue
+      if first < lo or second > hi:
+        continue
+      return (day + timedelta(minutes=first), day + timedelta(minutes=second), False)
+  return None
 
 
 def food_text(evidence, text):

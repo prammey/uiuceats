@@ -1,3 +1,6 @@
+from datetime import datetime, timedelta
+from zoneinfo import ZoneInfo
+
 from collector import rules
 
 
@@ -87,3 +90,23 @@ def test_splitter_handles_missing_space_after_punctuation():
 
 def test_zero_dollars_is_not_paid():
   assert rules.exclusion_reason("Talk", "Cost: $0 for students.") is None
+
+
+def _at(hour, minute=0):
+  return datetime(2026, 10, 10, hour, minute, tzinfo=ZoneInfo("America/Chicago"))
+
+
+def test_food_window_narrows_to_the_stated_range():
+  evidence = "Complimentary continental breakfast served between 9:15 - 9:45am; the simulation will start promptly at 10am."
+  assert rules.food_window(evidence, _at(9, 15), _at(12)) == (_at(9, 15), _at(9, 45), False)
+  assert rules.food_window("Lunch will be provided from 11:30am to 1pm.", _at(9), _at(17)) == (_at(11, 30), _at(13), False)
+  assert rules.food_window("Free pizza from 6-7pm in the lobby.", _at(18), _at(20)) == (_at(18), _at(19), False)
+  assert rules.food_window("Snacks served from noon to 1 p.m.", _at(0), _at(0) + timedelta(days=1), True) == (_at(12), _at(13), False)
+  assert rules.food_window("Coffee and donuts 8 - 9 AM, talk follows.", _at(8), _at(11)) == (_at(8), _at(9), False)
+
+
+def test_food_window_leaves_events_alone_without_a_fitting_range():
+  assert rules.food_window("Pizza will be served at 5pm sharp.", _at(17), _at(19)) is None
+  assert rules.food_window("Dinner is served from 7-8pm.", _at(13), _at(15)) is None
+  assert rules.food_window("Refreshments for between 10 - 20 people.", _at(9), _at(12)) is None
+  assert rules.food_window("Free food!", _at(9), _at(12)) is None
