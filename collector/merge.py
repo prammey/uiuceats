@@ -61,6 +61,9 @@ def dedupe(events):
     twin = by_title.get(title_key) or (by_place.get(place_key) if place_key else None)
     if twin is not None:
       twin.setdefault("also_urls", []).append(event["url"])
+      # A second listing of the same event may carry a note the kept one lacks
+      # ("registration is required"), so its text still goes through the rules.
+      twin["extra_text"] = f"{twin.get('extra_text', '')}\n{event.get('description', '')}".strip()
       continue
     by_title[title_key] = event
     if place_key:

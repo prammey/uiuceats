@@ -146,3 +146,16 @@ def test_rsvp_only_for_the_zoom_link_is_not_an_exclusion():
 def test_placeholder_titles_are_excluded():
   assert rules.exclusion_reason("TBD", "Stay afterward for lunch.") == "placeholder_title"
   assert rules.exclusion_reason("Title TBA", "Pizza provided.") is None
+
+
+def test_audience_specific_and_check_in_events_are_excluded():
+  assert rules.exclusion_reason("Memory Café", "A tour for people living with dementia, followed by refreshments.") == "closed"
+  assert rules.exclusion_reason("Garden", "Join members of the Beckman community for coffee.") == "closed"
+  assert rules.exclusion_reason("Symposium", "Arrive early to check in and enjoy a light breakfast.") == "rsvp"
+  assert rules.exclusion_reason("Social", "Come enjoy coffee while connecting with members of the CS community.") is None
+
+
+def test_audience_words_in_passing_do_not_close_an_event():
+  assert rules.exclusion_reason("Open House", "Refreshments served. Learn about opportunities for employees to go greener.") is None
+  assert rules.exclusion_reason("Open House", "Refreshments served. Open to faculty, staff, and students.") is None
+  assert rules.exclusion_reason("Reception", "Refreshments served. This event is intended for alumni.") == "closed"

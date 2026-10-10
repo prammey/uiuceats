@@ -62,7 +62,7 @@ FREE_FOOD_TAG = "free food"
 EXCLUSIONS = [
   ("cancelled", re.compile(r"\b(?:cancell?ed|postponed)\b", re.I)),
   ("rsvp", re.compile(
-    r"\b(?:rsvp|pre-?regist\w*|registration|sign[- ]?ups?|tickets?|ticketed|"
+    r"\b(?:rsvp|pre-?regist\w*|registration|sign[- ]?ups?|tickets?|ticketed|check[- ]?in|"
     r"reserve (?:your|a) (?:spot|seat)|limited (?:spots|seats|capacity))\b|"
     r"\bregister\b(?! student)|\bregistered\b(?! student)",
     re.I,
@@ -75,7 +75,10 @@ EXCLUSIONS = [
   ("closed", re.compile(
     r"\b(?:members[- ]only|invite[- ]only|invitation[- ]only|by invitation|closed event|"
     r"private event|staff only|faculty only|faculty and staff only|employees only|"
-    r"for (?:our )?members\b|current members only)\b",
+    r"for (?:our )?members\b|current members only|join (?:fellow )?members of|residents only|"
+    r"for residents|(?:open|only|exclusively|intended|designed|reserved) (?:to|for) "
+    r"(?:faculty|staff|employees|alumni|parents|seniors|older adults)(?![^.!?\n]{0,40}\bstudents\b)|"
+    r"living with dementia|alzheimer|memory caf[eé]|care partners)\b",
     re.I,
   )),
   ("bring_your_own", re.compile(

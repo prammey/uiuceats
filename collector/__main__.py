@@ -54,17 +54,18 @@ def collect(now, fetch=sources.fetch, feed_list=None):
   reasons = Counter()
   published = []
   for event in window:
+    text = f"{event['description']}\n{event.get('extra_text', '')}".strip()
     reason = rules.location_problem(event["location"]) or rules.exclusion_reason(
-      event["title"], event["description"], event["status"]
+      event["title"], text, event["status"]
     )
     if reason:
       reasons[reason] += 1
       continue
-    evidence = rules.find_evidence(event["title"], event["description"], event["tags"])
+    evidence = rules.find_evidence(event["title"], text, event["tags"])
     if not evidence:
       reasons["no_evidence"] += 1
       continue
-    text = f"{event['title']}\n{event['description']}"
+    text = f"{event['title']}\n{text}"
     event["evidence"] = evidence
     # Show the food's own time when the source names one, not the whole event.
     window = rules.food_window(evidence, event["start"], event["end"], event["all_day"])

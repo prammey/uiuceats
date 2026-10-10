@@ -118,3 +118,14 @@ def test_optional_feed_failure_is_tolerated():
     return fake_fetch(url)
   published, counts, _ = collect(NOW, fetch=broken, feed_list=FEEDS)
   assert counts["published"] == 3  # the campus events still publish
+
+
+def test_dedupe_keeps_the_twins_text_for_the_rules():
+  tz = parse.CHICAGO
+  kept = {"id": "cal-1", "source": "calendars", "title": "WIE Info Session", "start": datetime(2026, 10, 14, 17, tzinfo=tz),
+          "url": "u1", "location": "2015 ECEB", "description": "Pizza will be served."}
+  twin = {"id": "one-2", "source": "one", "title": "WIE Info Session", "start": datetime(2026, 10, 14, 17, tzinfo=tz),
+          "url": "u2", "location": "Sign in to download the location", "description": "Registration is required."}
+  unique = merge.dedupe([kept, twin])
+  assert len(unique) == 1
+  assert "Registration is required." in unique[0]["extra_text"]
