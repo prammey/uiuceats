@@ -1,7 +1,7 @@
 """Feed definitions and polite HTTP fetching."""
 import requests
 
-USER_AGENT = "UIUCEats/0.1 (+https://uiucfood.vercel.app; campus free-food listing)"
+USER_AGENT = "UIUCEats/0.1 (+https://uiuceats.vercel.app; campus free-food listing)"
 TIMEOUT_SECONDS = 60
 
 CAL_FEED = "https://calendars.illinois.edu/icalOutlook/{cal_id}.ics?hourOffset=0&timeZone=America%2FChicago"

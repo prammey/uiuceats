@@ -1,8 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
-// Fonts are loaded per version (components/a/PageA.tsx, components/b/PageB.tsx)
-// so each look only ships the type it uses.
+// Fonts are loaded in components/final/PageFinal.tsx so the page only ships the type it uses.
 export const metadata: Metadata = {
   title: "UIUC Eats · Free food on campus this week",
   description:

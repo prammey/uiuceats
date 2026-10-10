@@ -25,6 +25,7 @@
   --animate-fall: fall 3.5s linear forwards;
   --animate-blob: blob 16s ease-in-out infinite alternate;
   --animate-wiggle: wiggle 0.5s ease-in-out;
+  --animate-jiggle: jiggle 0.7s ease-in-out;
   --animate-bounce-soft: bounce-soft 2.2s ease-in-out infinite;
   --animate-shine: shine 2.4s ease-in-out infinite;
 
@@ -56,6 +57,13 @@
     0%, 100% { transform: rotate(0deg); }
     25% { transform: rotate(-5deg); }
     75% { transform: rotate(5deg); }
+  }
+  @keyframes jiggle {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    20% { transform: rotate(-12deg) scale(1.12); }
+    40% { transform: rotate(10deg) scale(1.12); }
+    60% { transform: rotate(-6deg) scale(1.06); }
+    80% { transform: rotate(4deg) scale(1.02); }
   }
   @keyframes bounce-soft {
     0%, 100% { transform: translateY(0); }
@@ -158,9 +166,15 @@ body {
     var(--color-illini-blue) 72px 108px
   );
 }
-.b-spotlight {
-  outline: 4px solid var(--color-illini-orange);
+/* "Surprise me" ring: orange while the card is spotlighted, then fades out.
+   Repeats brut-hover's transitions because the shorthand replaces them. */
+.b-spotlight-ready {
+  outline: 4px solid transparent;
   outline-offset: 4px;
+  transition: transform 120ms ease, box-shadow 120ms ease, outline-color 500ms ease-out;
+}
+.b-spotlight {
+  outline-color: var(--color-illini-orange);
 }
 
 /* Highlight pulse used by "Surprise me". */

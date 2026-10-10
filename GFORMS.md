@@ -1,6 +1,6 @@
 # Google Forms for UIUC Eats
 
-Two forms power the optional features on uiucfood.vercel.app. Open a blank Google Form,
+Two forms power the optional features on uiuceats.vercel.app. Open a blank Google Form,
 paste the matching block into the Claude browser extension, and repeat for the second form.
 Question titles must match exactly because the collector reads spreadsheet columns by name.
 
@@ -20,7 +20,7 @@ You are editing a blank Google Form. Do the following in order.
 
 1. Click "Untitled form" and set the title to: UIUC Eats: Advertise your free-food event
 2. Set the form description to:
-   Get a highlighted spot on uiucfood.vercel.app. Rules: the food must be free and the event must be walk-in (no RSVP, tickets, or registration). Give a link to the official event page or post so students can verify it. Submissions that can't be verified are not shown.
+   Get a highlighted spot on uiuceats.vercel.app. Rules: the food must be free and the event must be walk-in (no RSVP, tickets, or registration). Give a link to the official event page or post so students can verify it. Submissions that can't be verified are not shown.
 
 3. Add these questions, in this order. For each: click the "+" (Add question) button, choose the type, type the exact title, and set Required as noted.
 
@@ -57,7 +57,7 @@ You are editing a blank Google Form. Do the following in order.
 
 1. Click "Untitled form" and set the title to: UIUC Eats: Report a problem
 2. Set the form description to:
-   Went somewhere from uiucfood.vercel.app and there was no food, or the listing was wrong? Tell us. Listings with two or more reports are hidden automatically.
+   Went somewhere from uiuceats.vercel.app and there was no food, or the listing was wrong? Tell us. Listings with two or more reports are hidden automatically.
 
 3. Add these questions in this order:
 

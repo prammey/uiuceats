@@ -25,7 +25,7 @@ export default function EventCardFinal({ event, now, reportTemplate, spotlight =
   return (
     <article
       id={`card-${event.id}`}
-      className={`brut brut-hover group flex flex-col rounded-2xl ${event.promoted ? "bg-b-yellow" : "bg-white"} ${
+      className={`brut brut-hover b-spotlight-ready group flex flex-col rounded-2xl ${event.promoted ? "bg-b-yellow" : "bg-white"} ${
         spotlight ? "b-spotlight" : ""
       }`}
     >

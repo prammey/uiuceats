@@ -2,7 +2,7 @@
 
 Free, walk-in food events at UIUC for the next 7 days, pulled automatically from
 official campus calendars. Every listing shows the sentence from its own source
-that says food is provided, plus a Proof link. Live at **https://uiucfood.vercel.app**.
+that says food is provided, plus a Proof link. Live at **https://uiuceats.vercel.app**.
 
 ## How it works
 
@@ -29,11 +29,9 @@ on one.illinois.edu).
 | `collector/tests/` | pytest suite with fixture feeds |
 | `data/events.json` | Published listings (committed by the bot) |
 | `data/details-cache.json` | Cached sponsor names for calendars.illinois.edu events |
-| `app/` | Routes: `/` serves the final merged version (`components/final/`), `/A` the playful emoji version, `/B` the neo-brutalist version, `/fonts` a private page of font pairings to compare. Swap the import in `app/page.tsx` to change which one the root shows. |
+| `app/` | Routes: `/` serves the site (`components/final/`). |
 | `components/final/` | Final look: B's marquee and menu board with A's hero energy (`PageFinal`, `TopBar`, `ShareButton`, `HeroFinal`, `DayStripFinal`, `EventCardFinal`, `EventListFinal`). |
-| `components/a/` | Version A, the playful emoji look (`PageA`, `Hero`, `Ticker`, `Banner`, `DayStrip`, `EventCard`, `EventList`). |
-| `components/b/` | Version B, neo-brutalist retro fast food (`PageB`, `HeroB`, `DayStripB`, `EventCardB`, `EventListB`). |
-| `components/FunLayer.tsx`, `lib/week.ts` | Shared easter eggs and the day-grouping hook both versions use. |
+| `components/FunLayer.tsx`, `lib/week.ts` | Easter eggs and the day-grouping hook the page uses. |
 | `lib/events.ts` | Next.js 16 static site helpers (App Router, Tailwind v4). `Hero` (floating food, rotating line, share), `Ticker` (CSS marquee), `DayStrip` (7-day picker, today ringed), `EventCard` (emoji, meal-time stripe, proof, add-to-calendar), `EventList` (live section, Surprise me), `FunLayer` (Konami / pizza-click confetti, tab-title nudge). All motion respects `prefers-reduced-motion`. |
 | `.github/workflows/collect.yml` | Scheduled collector run |
 
