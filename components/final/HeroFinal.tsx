@@ -42,6 +42,13 @@ const MASCOT = {
 const MASCOT_SIZE = `clamp(${MASCOT.minSize}px, 30vw, ${MASCOT.size}px)`;
 const MASCOT_PHONE_SIZE = `clamp(${MASCOT.phoneSize.min}px, ${MASCOT.phoneSize.vw}vw, ${MASCOT.phoneSize.max}px)`;
 
+// Phone headline: "FREE" and "FOOD" each take a line at the big size, "ON CAMPUS" the base
+// size. The space under the buttons gives up exactly what the headline grows, so the hero's
+// height and the bird do not move. Tablet and up ignore both values.
+const HERO_PHONE_BASE = "clamp(2.1rem, 11vw, 3rem)";
+const HERO_PHONE_BIG = "clamp(3rem, 18vw, 4.5rem)";
+const HERO_PHONE_GROWTH = "(1.9 * var(--hero-big) - 0.95 * var(--hero-base))";
+
 // ── Floater rules ─────────────────────────────────────────────────────────────
 // Background emojis land only in empty space: at least FLOATER_PAD px from anything
 // marked data-keepout (text, button, mascot), FLOATER_GAP px from each other, and
@@ -242,14 +249,15 @@ export default function HeroFinal() {
 
           <div
             className="relative mx-auto max-w-6xl px-4 pb-14 pt-8 [--mascot-size:var(--mascot-phone)] sm:px-8 sm:pb-[97px] sm:pt-16 sm:[--mascot-size:var(--mascot-full)] lg:pb-[81px] lg:pt-20"
-            style={{ "--mascot-phone": MASCOT_PHONE_SIZE, "--mascot-full": MASCOT_SIZE } as CSSProperties}
+            style={{ "--mascot-phone": MASCOT_PHONE_SIZE, "--mascot-full": MASCOT_SIZE, "--hero-base": HERO_PHONE_BASE, "--hero-big": HERO_PHONE_BIG } as CSSProperties}
           >
             <p data-keepout="text" className="font-body-f text-[11px] font-bold uppercase tracking-[0.3em] text-white/90 sm:text-xs">
               ★ University of Illinois · Free food finder ★
             </p>
-            <h1 data-keepout="text" className="mt-6 font-swash text-[clamp(2.1rem,11vw,3rem)] uppercase leading-[0.95] drop-shadow-[3px_3px_0_#13294b] sm:text-7xl lg:text-8xl xl:text-9xl">
-              Free{" "}
-              <span className="bg-linear-to-b from-[#d6f0ff] to-[#6cbcff] bg-clip-text text-transparent">Food</span>
+            <h1 data-keepout="text" className="mt-6 font-swash text-(length:--hero-base) uppercase leading-[0.95] drop-shadow-[3px_3px_0_#13294b] sm:text-7xl lg:text-8xl xl:text-9xl">
+              <span className="text-(length:--hero-big) sm:text-[1em]">Free</span>{" "}
+              <br className="sm:hidden" />
+              <span className="bg-linear-to-b from-[#d6f0ff] to-[#6cbcff] bg-clip-text text-transparent text-(length:--hero-big) sm:text-[1em]">Food</span>
               <br />
               on campus
             </h1>
@@ -267,14 +275,14 @@ export default function HeroFinal() {
                   event.preventDefault();
                   document.getElementById("menu")?.scrollIntoView({ behavior: "smooth", block: "start" });
                 }}
-                className="brut-press flex items-center justify-center py-[11px] sm:justify-start sm:py-0 rounded-lg border-2 border-brut bg-[#6cbcff] px-3.5 sm:px-5 font-swash text-lg leading-none text-[#ffa05c] shadow-[3px_3px_0_#111] [text-shadow:0_1px_3px_rgba(19,41,75,0.35)] transition-colors hover:bg-[#4faeff] sm:text-2xl"
+                className="brut-press flex items-center justify-center py-3 sm:justify-start sm:py-0 rounded-lg border-2 border-brut bg-[#6cbcff] px-3 sm:px-5 font-swash text-base leading-none text-[#ffa05c] shadow-[3px_3px_0_#111] [text-shadow:0_1px_3px_rgba(19,41,75,0.35)] transition-colors hover:bg-[#4faeff] sm:text-2xl"
               >
                 Find Food&thinsp; 👀
               </a>
               <ShareButton />
             </div>
             {/* Keep room for the mascot on phones so it never sits on the text (56 is the pb-14 below). */}
-            <div className="sm:hidden" style={{ height: `calc(var(--mascot-size) + ${MASCOT.raise + MASCOT.phoneGap - MASCOT.phoneLift - 56}px)` }} />
+            <div className="sm:hidden" style={{ height: `calc(var(--mascot-size) + ${MASCOT.raise + MASCOT.phoneGap - MASCOT.phoneLift - 56}px - ${HERO_PHONE_GROWTH})` }} />
 
             {/* Mascot box and the food in front of its raised hand; all numbers come from MASCOT above. */}
             <div
