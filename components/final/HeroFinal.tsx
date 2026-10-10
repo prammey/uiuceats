@@ -48,6 +48,10 @@ const MASCOT_PHONE_SIZE = `clamp(${MASCOT.phoneSize.min}px, ${MASCOT.phoneSize.v
 const HERO_PHONE_BASE = "clamp(2.1rem, 11vw, 3rem)";
 const HERO_PHONE_BIG = "clamp(3rem, 18vw, 4.5rem)";
 const HERO_PHONE_GROWTH = "(1.9 * var(--hero-big) - 0.95 * var(--hero-base))";
+const HERO_PHONE_LINE_GAP = 12; // px between "ON CAMPUS" and the rotating line on phones (32 from tablet up)
+// The rotating line's box is 1.5 × 0.4vw shorter since its font went from 5vw to 4.6vw;
+// the spacer takes that back so the hero's height stays where it was.
+const HERO_PHONE_LINE_SHRINK = "0.6vw";
 
 // ── Floater rules ─────────────────────────────────────────────────────────────
 // Background emojis land only in empty space: at least FLOATER_PAD px from anything
@@ -59,8 +63,9 @@ const FLOATER_GAP = 56;
 const FLOATER_EDGE = 24;
 const FLOATER_TRIES = 80;
 const FLOATER_COUNT = 6;
-// Phones get more, smaller floaters, and they may sit behind the text (not the buttons or bird).
-const PHONE_FLOATER_COUNT = 9;
+// Phones: background floaters are switched off for now (set a count to bring them back; they
+// would be smaller and allowed behind the text, but never on the buttons or bird).
+const PHONE_FLOATER_COUNT = 0;
 const PHONE_FLOATER_SCALE = 0.7;
 const PHONE_FLOATER_PAD = 10;
 const PHONE_FLOATER_GAP = 36;
@@ -109,7 +114,7 @@ function placeFloaters(panel: HTMLElement, picks: FloaterPick[], rand: () => num
   const pad = phone ? PHONE_FLOATER_PAD : FLOATER_PAD;
   const gap = phone ? PHONE_FLOATER_GAP : FLOATER_GAP;
   const placed: Floater[] = [];
-  const wanted = phone ? picks : picks.slice(0, FLOATER_COUNT);
+  const wanted = picks.slice(0, phone ? PHONE_FLOATER_COUNT : FLOATER_COUNT);
   for (const rawPick of wanted) {
     const pick = phone ? { ...rawPick, size: Math.round(rawPick.size * PHONE_FLOATER_SCALE) } : rawPick;
     const box = pick.size * 1.25;
@@ -144,7 +149,7 @@ export default function HeroFinal() {
     if (seed === null) return { line: 0, food: 0, picks: [] as FloaterPick[] };
     const rand = mulberry32(seed);
     const pool = [...FLOAT_POOL];
-    const picks: FloaterPick[] = Array.from({ length: PHONE_FLOATER_COUNT }, () => ({
+    const picks: FloaterPick[] = Array.from({ length: Math.max(FLOATER_COUNT, PHONE_FLOATER_COUNT) }, () => ({
       emoji: pool.splice(Math.floor(rand() * pool.length), 1)[0],
       size: FLOAT_SIZES[Math.floor(rand() * FLOAT_SIZES.length)],
       slow: rand() > 0.5,
@@ -249,7 +254,7 @@ export default function HeroFinal() {
 
           <div
             className="relative mx-auto max-w-6xl px-4 pb-14 pt-8 [--mascot-size:var(--mascot-phone)] sm:px-8 sm:pb-[97px] sm:pt-16 sm:[--mascot-size:var(--mascot-full)] lg:pb-[81px] lg:pt-20"
-            style={{ "--mascot-phone": MASCOT_PHONE_SIZE, "--mascot-full": MASCOT_SIZE, "--hero-base": HERO_PHONE_BASE, "--hero-big": HERO_PHONE_BIG } as CSSProperties}
+            style={{ "--mascot-phone": MASCOT_PHONE_SIZE, "--mascot-full": MASCOT_SIZE, "--hero-base": HERO_PHONE_BASE, "--hero-big": HERO_PHONE_BIG, "--line-gap": `${HERO_PHONE_LINE_GAP}px` } as CSSProperties}
           >
             <p data-keepout="text" className="font-body-f text-[11px] font-bold uppercase tracking-[0.3em] text-white/90 sm:text-xs">
               ★ University of Illinois · Free food finder ★
@@ -262,7 +267,7 @@ export default function HeroFinal() {
               on campus
             </h1>
             {/* The line changes width as it rotates, so its whole row is kept clear. */}
-            <p key={lineIndex} data-keepout="box" aria-live="polite" className="mt-8 animate-pop font-soft text-[clamp(1rem,5vw,1.5rem)] font-bold text-white drop-shadow-[2px_2px_0_#13294b] sm:mt-10 sm:text-3xl lg:text-4xl">
+            <p key={lineIndex} data-keepout="box" aria-live="polite" className="mt-(--line-gap) animate-pop font-soft text-[clamp(0.95rem,4.6vw,1.5rem)] font-bold text-white drop-shadow-[2px_2px_0_#13294b] sm:mt-10 sm:text-3xl lg:text-4xl">
               {LINES[lineIndex]}
             </p>
             {/* Actions sit under the line instead of competing with the headline. Both buttons
@@ -282,7 +287,7 @@ export default function HeroFinal() {
               <ShareButton />
             </div>
             {/* Keep room for the mascot on phones so it never sits on the text (56 is the pb-14 below). */}
-            <div className="sm:hidden" style={{ height: `calc(var(--mascot-size) + ${MASCOT.raise + MASCOT.phoneGap - MASCOT.phoneLift - 56}px - ${HERO_PHONE_GROWTH})` }} />
+            <div className="sm:hidden" style={{ height: `calc(var(--mascot-size) + ${MASCOT.raise + MASCOT.phoneGap - MASCOT.phoneLift - 56 + (32 - HERO_PHONE_LINE_GAP)}px + ${HERO_PHONE_LINE_SHRINK} - ${HERO_PHONE_GROWTH})` }} />
 
             {/* Mascot box and the food in front of its raised hand; all numbers come from MASCOT above. */}
             <div
