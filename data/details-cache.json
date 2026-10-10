@@ -1,4 +1,16 @@
 {
+ "cal-33539653": {
+  "calendar": "IMMERSE Seminar Series",
+  "sponsor": "IMMERSE Center for Immersive Computing"
+ },
+ "cal-33554659": {
+  "calendar": "Beckman Institute Calendar (internal events only)",
+  "sponsor": "Beckman Connect and Engage Committee"
+ },
+ "cal-33556100": {
+  "calendar": "CPSC Seminars CSPC",
+  "sponsor": "Department of Crop Sciences, University of Illinois"
+ },
  "cal-33556159": {
   "calendar": "Food For The Soul",
   "sponsor": "Bruce D. Nesbitt African American Cultural Center"
@@ -11,6 +23,10 @@
   "calendar": "La Casa Cultural Latina",
   "sponsor": "La Casa Cultural Latina and Student Cultural Programming Fee."
  },
+ "cal-33559262": {
+  "calendar": "Siebel School CARES Office Hours",
+  "sponsor": "CS CARES Committee"
+ },
  "cal-33559293": {
   "calendar": "First Generation Student Initiatives FGSI Calendar",
   "sponsor": "The Jeffries Center"
@@ -18,6 +34,10 @@
  "cal-33559863": {
   "calendar": "iSEE Sustainability Calendar",
   "sponsor": "Institute for Sustainability, Energy, and Environment"
+ },
+ "cal-33560190": {
+  "calendar": "SBSI Calendar",
+  "sponsor": "Social & Behavioral Science Institute, School of Labor & Employment Relations, Siebel School of Computing & Data Science"
  },
  "cal-33560562": {
   "calendar": "Center for the Study of Global Gender Equity",
@@ -27,13 +47,25 @@
   "calendar": "Association of Women in Mathematics - Illinois Graduate Chapter",
   "sponsor": "Association for Women in Mathematics"
  },
+ "cal-33561607": {
+  "calendar": "Asian American Studies",
+  "sponsor": "Department of Asian American Studies"
+ },
  "cal-33562043": {
   "calendar": "Library Calendar",
   "sponsor": "University Library | Illinois History and Lincoln Collections"
  },
+ "cal-33562599": {
+  "calendar": "Department of French and Italian (EVENTS)",
+  "sponsor": "Department of French & Italian"
+ },
  "cal-33562615": {
   "calendar": "Campus Humanities Calendar",
   "sponsor": "Centers and Strategic Initiatives, College of Education"
+ },
+ "cal-33563608": {
+  "calendar": "Beckman Institute Calendar (internal events only)",
+  "sponsor": "Beckman Connect and Engage Committee"
  },
  "cal-33563793": {
   "calendar": "ACES Study Abroad",
@@ -47,9 +79,21 @@
   "calendar": "Women in Engineering",
   "sponsor": "Women in Engineering"
  },
+ "cal-33564615": {
+  "calendar": "College of Media Department of Advertising Events",
+  "sponsor": "Charles H. Sandage Department of Advertising"
+ },
  "cal-33564627": {
   "calendar": "CEAPS Events Calendar",
   "sponsor": "Center for East Asian and Pacific Studies"
+ },
+ "cal-33564672": {
+  "calendar": "Campus Humanities Calendar",
+  "sponsor": "Library, University Archives"
+ },
+ "cal-33564674": {
+  "calendar": "Campus Humanities Calendar",
+  "sponsor": "Krannert Art Museum and Family Service of Champaign County"
  },
  "cal-33564877": {
   "calendar": "Domestic Violence Awareness Month",
