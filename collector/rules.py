@@ -62,7 +62,8 @@ FREE_FOOD_TAG = "free food"
 EXCLUSIONS = [
   ("cancelled", re.compile(r"\b(?:cancell?ed|postponed)\b", re.I)),
   ("rsvp", re.compile(
-    r"\b(?:rsvp|pre-?regist\w*|registration|sign[- ]?ups?|tickets?|ticketed|check[- ]?in|"
+    r"\b(?:rsvp|pre-?regist\w*|registration|sign[- ]?ups?|tickets?|ticketed|"
+    r"(?:to|please|must) check[- ]?in|check[- ]?in (?:at|begins|opens|starts|desk|table)|"
     r"reserve (?:your|a) (?:spot|seat)|limited (?:spots|seats|capacity))\b|"
     r"\bregister\b(?! student)|\bregistered\b(?! student)",
     re.I,

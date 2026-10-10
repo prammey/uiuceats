@@ -152,6 +152,7 @@ def test_audience_specific_and_check_in_events_are_excluded():
   assert rules.exclusion_reason("Memory Café", "A tour for people living with dementia, followed by refreshments.") == "closed"
   assert rules.exclusion_reason("Garden", "Join members of the Beckman community for coffee.") == "closed"
   assert rules.exclusion_reason("Symposium", "Arrive early to check in and enjoy a light breakfast.") == "rsvp"
+  assert rules.exclusion_reason("Info Session", "Pizza will be served. 5:00-5:30 Check In and Pizza.") is None
   assert rules.exclusion_reason("Social", "Come enjoy coffee while connecting with members of the CS community.") is None
 
 
