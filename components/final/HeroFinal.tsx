@@ -35,7 +35,9 @@ const MASCOT = {
   size: 415, // px on wide screens
   minSize: 160, // px floor (tablet)
   raise: 40, // px between the feet and the hero's bottom border
-  inset: -40, // px between the bird and the right awning (tablet and up)
+  inset: -40, // px the bird's box reaches past the text column's right edge on wide screens
+  edgeGap: 0, // px kept between the box and the right awning when the column fills the panel (the image has ~4% empty space on its right)
+  textRoom: 380, // px of the panel the buttons keep on the narrowest tablets; the bird shrinks to fit beside them
   phoneInset: 0, // same, on phones, where the bird must stay fully in view
   phoneGap: 16, // px of air between the buttons and the bird on phones
   phoneSize: { min: 150, vw: 45, max: 190 }, // px: the bird is 45% of the phone's width, between these
@@ -46,9 +48,15 @@ const MASCOT = {
     scale: 0.17, // food size as a fraction of the bird's size
   },
 };
-// Tablet and up: shrinks with the screen (30% of its width) between the two limits.
-const MASCOT_SIZE = `clamp(${MASCOT.minSize}px, 30vw, ${MASCOT.size}px)`;
+// Tablet and up: shrinks with the screen (30% of its width) between the two limits, and on
+// the narrowest tablets also fits in whatever the panel (100cqw) has left beside the buttons.
+const MASCOT_SIZE = `clamp(${MASCOT.minSize}px, min(30vw, 100cqw - ${MASCOT.textRoom}px), ${MASCOT.size}px)`;
 const MASCOT_PHONE_SIZE = `clamp(${MASCOT.phoneSize.min}px, ${MASCOT.phoneSize.vw}vw, ${MASCOT.phoneSize.max}px)`;
+// The text column is centered and capped at 72rem (max-w-6xl). On screens wide enough the
+// bird reaches `inset` px past the column's edge; on narrower ones the column fills the panel,
+// so the bird stays `edgeGap` px inside it and the hand and food are never cut off by the
+// awning. 100cqw is the panel's width (it is a size container).
+const MASCOT_INSET = `clamp(${MASCOT.inset}px, (72rem - 100cqw) / 2 + ${MASCOT.edgeGap}px, ${MASCOT.edgeGap}px)`;
 
 // ── Phone typography ─────────────────────────────────────────────────────────
 // Phone text sizes scale with the width left for text (the screen minus the two 36 px
@@ -188,7 +196,7 @@ export default function HeroFinal() {
       {/* Awning columns on both sides of the gradient, same width as the checkerboard columns below. */}
       <div aria-hidden className="diag-stripes w-9 shrink-0 border-r-[3px] border-brut sm:w-12 lg:w-[60px]" />
 
-      <div ref={panelRef} className="relative min-w-0 flex-1 overflow-hidden bg-linear-to-br from-illini-orange via-[#ff8a3d] to-b-yellow text-white">
+      <div ref={panelRef} className="@container relative min-w-0 flex-1 overflow-hidden bg-linear-to-br from-illini-orange via-[#ff8a3d] to-b-yellow text-white">
         <div aria-hidden className="pointer-events-none absolute -right-16 -top-16 h-72 w-72 rounded-full bg-white/20 blur-3xl animate-blob" />
         <div aria-hidden className="pointer-events-none absolute -bottom-24 left-1/3 h-64 w-64 rounded-full bg-illini-blue/20 blur-3xl animate-blob [animation-delay:-8s]" />
 
@@ -250,7 +258,7 @@ export default function HeroFinal() {
             <div
               data-keepout="box"
               className="absolute right-(--inset-phone) h-(--mascot-size) w-(--mascot-size) sm:right-(--inset)"
-              style={{ bottom: MASCOT.raise, "--inset-phone": `${MASCOT.phoneInset}px`, "--inset": `${MASCOT.inset}px` } as CSSProperties}
+              style={{ bottom: MASCOT.raise, "--inset-phone": `${MASCOT.phoneInset}px`, "--inset": MASCOT_INSET } as CSSProperties}
             >
               <Mascot className="h-full w-full object-contain drop-shadow-lg" />
               <div
