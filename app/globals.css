@@ -16,6 +16,10 @@
   --color-neon: #58ff6a;
   --color-orange-bright: #ff6a14;
 
+  /* `wide:` breakpoint (1360 px). The hero headline takes its biggest size here instead
+     of at Tailwind's xl (1280 px) so a 1280 px monitor keeps the shorter hero. */
+  --breakpoint-wide: 85rem;
+
   /* Motion. Each `--animate-*` becomes an `animate-*` utility. */
   --animate-float: float 7s ease-in-out infinite;
   --animate-float-slow: float 11s ease-in-out infinite;

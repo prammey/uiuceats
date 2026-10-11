@@ -222,7 +222,9 @@ export default function HeroFinal() {
             <p data-keepout="text" className="font-body-f text-[11px] font-bold uppercase tracking-[0.3em] text-white/90 sm:text-xs">
               ★ University of Illinois · Free food finder ★
             </p>
-            <h1 data-keepout="text" className="mt-6 font-swash text-(length:--hero-base) uppercase leading-[0.95] drop-shadow-[3px_3px_0_#13294b] sm:text-7xl lg:text-8xl xl:text-9xl">
+            {/* The biggest headline waits for the `wide` breakpoint (1360 px, set in globals.css) rather than
+                xl (1280) so a 1280 px wide monitor keeps the shorter hero and its stripe row stays on screen. */}
+            <h1 data-keepout="text" className="mt-6 font-swash text-(length:--hero-base) uppercase leading-[0.95] drop-shadow-[3px_3px_0_#13294b] sm:text-7xl lg:text-8xl wide:text-9xl">
               <span className="text-(length:--hero-big) sm:text-[1em]">Free</span>{" "}
               <br className="sm:hidden" />
               <span className="bg-linear-to-b from-[#d6f0ff] to-[#6cbcff] bg-clip-text text-transparent text-(length:--hero-big) sm:text-[1em]">Food</span>
