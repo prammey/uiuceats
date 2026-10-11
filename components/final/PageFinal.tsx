@@ -18,9 +18,12 @@ const events = data as EventsFile;
 // Where "Support Us" at the bottom of the page goes. Paste the Buy Me a Coffee page link here.
 const SUPPORT_URL = "https://buymeacoffee.com/uiuceats";
 
-// The Buy Me a Coffee cup, served from public/coffee-cup.png.
-function CoffeeCupIcon() {
-  return <Image src="/coffee-cup.png" alt="" aria-hidden width={24} height={24} className="h-6 w-6" />;
+// Icon on the "Support Us" button: the Buy Me a Coffee cup by default, or the
+// hat-in-hand smiley used by the /a variant. Both live in public/.
+type SupportIcon = "cup" | "please";
+function SupportIconImage({ icon }: { icon: SupportIcon }) {
+  const src = icon === "please" ? "/please.png" : "/coffee-cup.png";
+  return <Image src={src} alt="" aria-hidden width={24} height={24} className="h-6 w-6" />;
 }
 
 // Google Form links, set in Vercel's environment variables (see README).
@@ -30,8 +33,8 @@ const REPORT_TEMPLATE = process.env.NEXT_PUBLIC_REPORT_FORM_URL;
 const REPORT_URL = REPORT_TEMPLATE ? REPORT_TEMPLATE.replace("EVENT_ID", "") : "#";
 
 // The whole page, top to bottom: marquee, hero, stripes, day picker and cards, the
-// purpose/report/advertise block, footer.
-export default function PageFinal() {
+// purpose/report/advertise block, footer. `/` and `/a` differ only in the support icon.
+export default function PageFinal({ supportIcon = "cup" }: { supportIcon?: SupportIcon } = {}) {
   return (
     <div className={`${shrikhand.variable} ${dmSans.variable} ${fredoka.variable} relative min-h-dvh bg-cream font-body-f text-brut`}>
       <div aria-hidden className="bg-dots pointer-events-none fixed inset-0 -z-10" />
@@ -110,7 +113,7 @@ export default function PageFinal() {
               rel="noopener noreferrer"
               className="brut-sm brut-press mt-8 inline-flex items-center gap-2 rounded-xl bg-[#ffdd00] px-5 py-2.5 font-swash text-base text-brut transition-colors hover:bg-b-yellow"
             >
-              <CoffeeCupIcon />
+              <SupportIconImage icon={supportIcon} />
               Support Us
             </a>
           </footer>
