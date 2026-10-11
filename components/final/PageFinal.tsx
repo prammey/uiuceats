@@ -22,8 +22,10 @@ const SUPPORT_URL = "https://buymeacoffee.com/uiuceats";
 // hat-in-hand smiley used by the /a variant. Both live in public/.
 type SupportIcon = "cup" | "please";
 function SupportIconImage({ icon }: { icon: SupportIcon }) {
-  const src = icon === "please" ? "/please.png" : "/coffee-cup.png";
-  return <Image src={src} alt="" aria-hidden width={24} height={24} className="h-6 w-6" />;
+  if (icon === "please") {
+    return <Image src="/please.png" alt="" aria-hidden width={32} height={32} className="h-8 w-8 drop-shadow-[0_0_3px_rgba(255,255,255,0.45)]" />;
+  }
+  return <Image src="/coffee-cup.png" alt="" aria-hidden width={24} height={24} className="h-6 w-6" />;
 }
 
 // Google Form links, set in Vercel's environment variables (see README).
