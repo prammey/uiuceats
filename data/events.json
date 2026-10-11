@@ -1,9 +1,28 @@
 {
- "generated_at": "2026-10-10T16:47:28.646856-05:00",
+ "generated_at": "2026-10-11T00:51:11.732204-05:00",
  "timezone": "America/Chicago",
  "window_days": 7,
- "count": 19,
+ "count": 20,
  "events": [
+  {
+   "id": "cal-33563852",
+   "title": "Japan House Fall Open House - Japan House's Past, Present, and Future",
+   "host": "Japan House",
+   "start": "2026-10-10T11:00:00-05:00",
+   "end": "2026-10-11T16:00:00-05:00",
+   "all_day": false,
+   "location": "Japan House (2000 S Lincoln Ave Urbana, IL 61802)",
+   "maps_url": "https://www.google.com/maps/search/?api=1&query=Japan%20House%20%282000%20S%20Lincoln%20Ave%20Urbana%2C%20IL%2061802%29",
+   "food_text": "Tea",
+   "evidence": "Traditional Japanese tea ceremonies will be offered at 11am, 1pm, 2pm, and 3pm.",
+   "icon": "🍱",
+   "dietary": [],
+   "proof_url": "https://calendars.illinois.edu/detail/6991/33563852?key=200001012000010133563852",
+   "also_urls": [],
+   "source": "calendars",
+   "source_label": "calendars.illinois.edu",
+   "promoted": false
+  },
   {
    "id": "cal-33564877",
    "title": "Dish It Up: A House Doesn’t Make a Home: Domestic Violence & Housing in Champaign-Urbana  |  Katie Harmon, Courage Connection",
