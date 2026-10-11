@@ -48,9 +48,10 @@ const MASCOT = {
     scale: 0.17, // food size as a fraction of the bird's size
   },
 };
-// Tablet and up: shrinks with the screen (30% of its width) between the two limits, and on
-// the narrowest tablets also fits in whatever the panel (100cqw) has left beside the buttons.
-const MASCOT_SIZE = `clamp(${MASCOT.minSize}px, min(30vw, 100cqw - ${MASCOT.textRoom}px), ${MASCOT.size}px)`;
+// Tablet and up: shrinks with the screen (30% of its width) between the two limits, on the
+// narrowest tablets also fits in whatever the panel (100cqw) has left beside the buttons, and
+// follows `--fit` on short windows (see FIT).
+const MASCOT_SIZE = `calc(clamp(${MASCOT.minSize}px, min(30vw, 100cqw - ${MASCOT.textRoom}px), ${MASCOT.size}px) * var(--fit))`;
 const MASCOT_PHONE_SIZE = `clamp(${MASCOT.phoneSize.min}px, ${MASCOT.phoneSize.vw}vw, ${MASCOT.phoneSize.max}px)`;
 // The text column is centered and capped at 72rem (max-w-6xl). On screens wide enough the
 // bird reaches `inset` px past the column's edge; on narrower ones the column fills the panel,
@@ -75,6 +76,24 @@ const HERO_PHONE_LINE_GAP = 12; // px between "ON CAMPUS" and the rotating line 
 // The rotating line's box used to be 1.5 × 5vw tall; the spacer takes back whatever the
 // smaller line gives up, so the hero's height stays where it was.
 const HERO_PHONE_LINE_SHRINK = "(1.5 * (5vw - var(--line-size)))";
+
+// ── Short windows ────────────────────────────────────────────────────────────
+// On a short window (a 1280×720 monitor leaves about 570 px for the page) the hero must
+// still end above the stripe row with the top bar in view. When it would not, the headline,
+// the bird, and the vertical spacing shrink together by one factor, `--fit`. It is 1 on any
+// window tall enough, so laptops and phones never change. `fixed` is everything that does
+// not shrink: top bar, stripe row, hero border, eyebrow, rotating line, buttons. `scaled`
+// is the normal-size total of what does: paddings, gaps, headline. Re-measure both if
+// those sizes change.
+const FIT = {
+  sm: { fixed: 168, scaled: 409 }, // 640–1023 px wide
+  lg: { fixed: 172, scaled: 454 }, // 1024–1279
+  xl: { fixed: 172, scaled: 515 }, // 1280 and up
+  min: 0.6, // never shrink below 60%
+};
+// tan(atan2(a, b)) is how CSS divides one length by another to get a plain number.
+const fitFor = ({ fixed, scaled }: { fixed: number; scaled: number }) =>
+  `clamp(${FIT.min}, tan(atan2(100vh - ${fixed}px, ${scaled}px)), 1)`;
 
 // ── Background emojis ────────────────────────────────────────────────────────
 // They land only in empty space (see lib/floaters.ts). `pad` includes the 14 px the
@@ -216,13 +235,13 @@ export default function HeroFinal() {
           ))}
 
           <div
-            className="relative mx-auto max-w-6xl px-4 pb-14 pt-8 [--mascot-size:var(--mascot-phone)] sm:px-8 sm:pb-[97px] sm:pt-16 sm:[--mascot-size:var(--mascot-full)] lg:pb-[81px] lg:pt-20"
-            style={{ "--mascot-phone": MASCOT_PHONE_SIZE, "--mascot-full": MASCOT_SIZE, "--hero-base": HERO_PHONE_BASE, "--hero-big": HERO_PHONE_BIG, "--line-gap": `${HERO_PHONE_LINE_GAP}px`, "--line-size": LINE_PHONE_SIZE } as CSSProperties}
+            className="relative mx-auto max-w-6xl px-4 pb-14 pt-8 [--mascot-size:var(--mascot-phone)] sm:px-8 sm:pb-[calc(97px*var(--fit))] sm:pt-[calc(4rem*var(--fit))] sm:[--fit:var(--fit-sm)] sm:[--mascot-size:var(--mascot-full)] lg:pb-[calc(81px*var(--fit))] lg:pt-[calc(5rem*var(--fit))] lg:[--fit:var(--fit-lg)] xl:[--fit:var(--fit-xl)]"
+            style={{ "--fit-sm": fitFor(FIT.sm), "--fit-lg": fitFor(FIT.lg), "--fit-xl": fitFor(FIT.xl), "--mascot-phone": MASCOT_PHONE_SIZE, "--mascot-full": MASCOT_SIZE, "--hero-base": HERO_PHONE_BASE, "--hero-big": HERO_PHONE_BIG, "--line-gap": `${HERO_PHONE_LINE_GAP}px`, "--line-size": LINE_PHONE_SIZE } as CSSProperties}
           >
             <p data-keepout="text" className="font-body-f text-[11px] font-bold uppercase tracking-[0.3em] text-white/90 sm:text-xs">
               ★ University of Illinois · Free food finder ★
             </p>
-            <h1 data-keepout="text" className="mt-6 font-swash text-(length:--hero-base) uppercase leading-[0.95] drop-shadow-[3px_3px_0_#13294b] sm:text-7xl lg:text-8xl xl:text-9xl">
+            <h1 data-keepout="text" className="mt-6 font-swash text-(length:--hero-base) uppercase leading-[0.95] drop-shadow-[3px_3px_0_#13294b] sm:mt-[calc(1.5rem*var(--fit))] sm:text-[length:calc(4.5rem*var(--fit))] lg:text-[length:calc(6rem*var(--fit))] xl:text-[length:calc(8rem*var(--fit))]">
               <span className="text-(length:--hero-big) sm:text-[1em]">Free</span>{" "}
               <br className="sm:hidden" />
               <span className="bg-linear-to-b from-[#d6f0ff] to-[#6cbcff] bg-clip-text text-transparent text-(length:--hero-big) sm:text-[1em]">Food</span>
@@ -230,12 +249,12 @@ export default function HeroFinal() {
               on campus
             </h1>
             {/* The line changes width as it rotates, so its whole row is kept clear. */}
-            <p key={lineIndex} data-keepout="box" aria-live="polite" className="mt-(--line-gap) animate-pop font-soft text-(length:--line-size) font-bold text-white drop-shadow-[2px_2px_0_#13294b] sm:mt-10 sm:text-3xl lg:text-4xl">
+            <p key={lineIndex} data-keepout="box" aria-live="polite" className="mt-(--line-gap) animate-pop font-soft text-(length:--line-size) font-bold text-white drop-shadow-[2px_2px_0_#13294b] sm:mt-[calc(2.5rem*var(--fit))] sm:text-3xl lg:text-4xl">
               {LINES[lineIndex]}
             </p>
             {/* Actions: stacked and left-aligned on phones, a row from tablet up (where the
                 Share button sets the height and Find Food stretches to match). */}
-            <div data-keepout="box" className="mt-6 flex w-fit flex-col items-stretch gap-3 sm:mt-[47px] sm:flex-row">
+            <div data-keepout="box" className="mt-6 flex w-fit flex-col items-stretch gap-3 sm:mt-[calc(47px*var(--fit))] sm:flex-row">
               <a
                 href="#menu"
                 onClick={(event) => {
