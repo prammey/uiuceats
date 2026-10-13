@@ -47,10 +47,6 @@
   "calendar": "Family & Graduate Housing - Event Calendar (Apartments)",
   "sponsor": "Family & Graduate Housing"
  },
- "cal-33562599": {
-  "calendar": "Department of French and Italian (EVENTS)",
-  "sponsor": "Department of French & Italian"
- },
  "cal-33563793": {
   "calendar": "ACES Study Abroad",
   "sponsor": "ACES Study Abroad"
@@ -70,5 +66,9 @@
  "cal-33564672": {
   "calendar": "Campus Humanities Calendar",
   "sponsor": "Library, University Archives"
+ },
+ "cal-33564699": {
+  "calendar": "Transfer Student Appreciation Week Events!",
+  "sponsor": "New Student and Family Experiences"
  }
 }
