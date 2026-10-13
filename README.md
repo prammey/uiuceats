@@ -52,6 +52,27 @@ npm run dev        # http://localhost:3000
 npm run build      # static export to out/
 ```
 
+## Pinger (keeps the collector on its 3-hour schedule)
+
+GitHub delays `schedule:` runs on free repos, often by hours. A free [cron-job.org](https://cron-job.org)
+job calls the workflow's dispatch API every 3 hours instead. The `schedule:` in `collect.yml`
+stays as a fallback, and the workflow's `concurrency` group queues any overlapping runs.
+
+1. GitHub → Settings → Developer settings → Personal access tokens → **Fine-grained tokens** →
+   Generate new token. Repository access: only `foodplease`. Repository permissions:
+   **Actions: Read and write**. Pick the longest expiration offered and note the date: when it
+   expires the pinger fails silently and GitHub's own schedule takes over. Copy the token once.
+   Never paste it into this repo.
+2. cron-job.org → Create cronjob:
+   - URL: `https://api.github.com/repos/prammey/foodplease/actions/workflows/collect.yml/dispatches`
+   - Schedule: custom, minutes `47`, hours `*/3` (offset from GitHub's own `17`)
+   - Advanced → Request method **POST**, request body `{"ref":"main"}`, headers:
+     `Accept: application/vnd.github+json`, `Authorization: Bearer <the token>`,
+     `X-GitHub-Api-Version: 2022-11-28`
+   - Success is HTTP 204 (empty response); cron-job.org counts any 2xx as success.
+3. Press "Test run" on cron-job.org, then check GitHub → Actions for a new run marked
+   `workflow_dispatch`.
+
 ## Google Forms (optional, turns on two features)
 
 **Advertise your event** → highlighted "Promoted by host" cards.
