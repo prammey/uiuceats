@@ -1,4 +1,8 @@
 {
+ "cal-33555550": {
+  "calendar": "Native American House",
+  "sponsor": "Native American House"
+ },
  "cal-33556159": {
   "calendar": "Food For The Soul",
   "sponsor": "Bruce D. Nesbitt African American Cultural Center"
@@ -43,6 +47,10 @@
   "calendar": "Family & Graduate Housing - Event Calendar (Apartments)",
   "sponsor": "Family & Graduate Housing"
  },
+ "cal-33563649": {
+  "calendar": "College of Law - Lectures Calendar",
+  "sponsor": "University of Illinois College of Law Business Law Program"
+ },
  "cal-33563793": {
   "calendar": "ACES Study Abroad",
   "sponsor": "ACES Study Abroad"
@@ -51,20 +59,16 @@
   "calendar": "ACES Study Abroad",
   "sponsor": "ACES Study Abroad"
  },
- "cal-33564615": {
-  "calendar": "College of Media Department of Advertising Events",
-  "sponsor": "Charles H. Sandage Department of Advertising"
- },
  "cal-33564627": {
   "calendar": "CEAPS Events Calendar",
   "sponsor": "Center for East Asian and Pacific Studies"
  },
- "cal-33564672": {
-  "calendar": "Campus Humanities Calendar",
-  "sponsor": "Library, University Archives"
- },
  "cal-33564699": {
   "calendar": "Transfer Student Appreciation Week Events!",
   "sponsor": "New Student and Family Experiences"
+ },
+ "cal-33564701": {
+  "calendar": "Transfer Student Appreciation Week Events!",
+  "sponsor": "New Student and Family Experiences & The Gender & Sexuality Resource Center (GSRC)"
  }
 }
