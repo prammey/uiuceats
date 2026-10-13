@@ -59,12 +59,12 @@ job calls the workflow's dispatch API every 3 hours instead. The `schedule:` in 
 stays as a fallback, and the workflow's `concurrency` group queues any overlapping runs.
 
 1. GitHub → Settings → Developer settings → Personal access tokens → **Fine-grained tokens** →
-   Generate new token. Repository access: only `foodplease`. Repository permissions:
+   Generate new token. Repository access: only `uiuceats`. Repository permissions:
    **Actions: Read and write**. Pick the longest expiration offered and note the date: when it
    expires the pinger fails silently and GitHub's own schedule takes over. Copy the token once.
    Never paste it into this repo.
 2. cron-job.org → Create cronjob:
-   - URL: `https://api.github.com/repos/prammey/foodplease/actions/workflows/collect.yml/dispatches`
+   - URL: `https://api.github.com/repos/prammey/uiuceats/actions/workflows/collect.yml/dispatches`
    - Schedule: custom, minutes `47`, hours `*/3` (offset from GitHub's own `17`)
    - Advanced → Request method **POST**, request body `{"ref":"main"}`, headers:
      `Accept: application/vnd.github+json`, `Authorization: Bearer <the token>`,
