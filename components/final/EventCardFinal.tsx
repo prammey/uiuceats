@@ -29,7 +29,7 @@ export default function EventCardFinal({ event, now, reportTemplate, spotlight =
       id={`card-${event.id}`}
       className={`brut brut-hover b-spotlight-ready group flex flex-col rounded-2xl ${event.promoted ? "bg-b-yellow" : "bg-white"} ${
         spotlight ? "b-spotlight" : ""
-      } ${ended ? "opacity-70" : ""}`}
+      } ${ended ? "opacity-40" : ""}`}
     >
       <div className="flex items-stretch border-b-[3px] border-brut">
         <div className="checker-light flex w-20 shrink-0 items-center justify-center rounded-tl-[13px] border-r-[3px] border-brut">
