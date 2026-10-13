@@ -3,6 +3,7 @@ import {
   PERIOD_META,
   formatTimeRange,
   googleCalendarUrl,
+  hasEnded,
   isHappeningNow,
   mealPeriod,
   reportLink,
@@ -19,6 +20,7 @@ type Props = {
 // Receipt card: checker tile, signage labels, swash title, button bar.
 export default function EventCardFinal({ event, now, reportTemplate, spotlight = false }: Props) {
   const live = isHappeningNow(event, now);
+  const ended = hasEnded(event, now);
   const report = reportLink(reportTemplate, event.id);
   const period = PERIOD_META[mealPeriod(event)];
 
@@ -45,9 +47,10 @@ export default function EventCardFinal({ event, now, reportTemplate, spotlight =
             </span>
             <span className="text-illini-blue">{formatTimeRange(event)}</span>
           </div>
-          {(live || event.promoted) && (
+          {(live || ended || event.promoted) && (
             <div className="flex flex-wrap gap-1.5">
               {live && <span className="rounded-md bg-illini-orange px-1.5 py-0.5 text-white">● Now</span>}
+              {ended && <span className="rounded-md bg-ink-muted px-1.5 py-0.5 text-white">Ended</span>}
               {event.promoted && <span className="rounded-md bg-brut px-1.5 py-0.5 text-b-yellow">Highlighted</span>}
             </div>
           )}

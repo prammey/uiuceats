@@ -39,9 +39,12 @@ export function useWeekView(events: FoodEvent[], picked: string | null, now: Dat
     const byDay: Record<string, FoodEvent[]> = {};
     const upcoming: FoodEvent[] = [];
     for (const event of events) {
-      if (hasEnded(event, now)) continue;
-      upcoming.push(event);
       const key = dayKey(new Date(event.start));
+      const ended = hasEnded(event, now);
+      if (!ended) upcoming.push(event);
+      // Today keeps its finished events so visitors can see what already happened;
+      // every other day only lists what is still to come.
+      if (ended && key !== todayKey) continue;
       counts[key] = (counts[key] ?? 0) + 1;
       (byDay[key] ??= []).push(event);
     }
