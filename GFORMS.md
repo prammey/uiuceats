@@ -81,5 +81,5 @@ You are editing a blank Google Form. Do the following in order.
 | Link | Where to set it | Name |
 |---|---|---|
 | Promoted sheet CSV | GitHub → repo → Settings → Secrets and variables → Actions → Variables | `PROMOTED_CSV_URL` |
-| Advertise form link | Vercel → uiucfood → Settings → Environment Variables | `NEXT_PUBLIC_ADVERTISE_FORM_URL` |
+| Advertise form link | Vercel → uiuceats → Settings → Environment Variables | `NEXT_PUBLIC_ADVERTISE_FORM_URL` |
 | Report form link | same place | `NEXT_PUBLIC_REPORT_FORM_URL` |
