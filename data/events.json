@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-13T01:49:40.075296-05:00",
+ "generated_at": "2026-10-13T11:58:06.555084-05:00",
  "timezone": "America/Chicago",
  "window_days": 7,
- "count": 18,
+ "count": 17,
  "events": [
   {
    "id": "cal-33564672",
@@ -208,25 +208,6 @@
    "icon": "☕",
    "dietary": [],
    "proof_url": "https://calendars.illinois.edu/detail/6991/33559262?key=200001012000010133559262",
-   "also_urls": [],
-   "source": "calendars",
-   "source_label": "calendars.illinois.edu",
-   "promoted": false
-  },
-  {
-   "id": "cal-33539653",
-   "title": "IMMERSE Seminar - Shenlong Wang: May the Force Be with Your Pixels",
-   "host": "IMMERSE Center for Immersive Computing",
-   "start": "2026-10-15T16:00:00-05:00",
-   "end": "2026-10-15T17:00:00-05:00",
-   "all_day": false,
-   "location": "Siebel School of Computing and Data Science Room 2405",
-   "maps_url": "https://www.google.com/maps/search/?api=1&query=Siebel%20School%20of%20Computing%20and%20Data%20Science%20Room%202405%2C%20University%20of%20Illinois%20Urbana-Champaign",
-   "food_text": "Refreshments",
-   "evidence": "Refreshments will be provided.",
-   "icon": "🍱",
-   "dietary": [],
-   "proof_url": "https://calendars.illinois.edu/detail/6991/33539653?key=200001012000010133539653",
    "also_urls": [],
    "source": "calendars",
    "source_label": "calendars.illinois.edu",
