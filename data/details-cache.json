@@ -7,10 +7,6 @@
   "calendar": "CPSC Seminars CSPC",
   "sponsor": "Department of Crop Sciences, University of Illinois"
  },
- "cal-33556159": {
-  "calendar": "Food For The Soul",
-  "sponsor": "Bruce D. Nesbitt African American Cultural Center"
- },
  "cal-33556160": {
   "calendar": "Food For The Soul",
   "sponsor": "Bruce D. Nesbitt African American Cultural Center"
@@ -30,10 +26,6 @@
  "cal-33559262": {
   "calendar": "Siebel School CARES Office Hours",
   "sponsor": "CS CARES Committee"
- },
- "cal-33559293": {
-  "calendar": "First Generation Student Initiatives FGSI Calendar",
-  "sponsor": "The Jeffries Center"
  },
  "cal-33559863": {
   "calendar": "iSEE Sustainability Calendar",
@@ -86,5 +78,9 @@
  "cal-33564701": {
   "calendar": "Transfer Student Appreciation Week Events!",
   "sponsor": "New Student and Family Experiences & The Gender & Sexuality Resource Center (GSRC)"
+ },
+ "cal-33565355": {
+  "calendar": "Center for Latin American and Caribbean Studies (CLACS)",
+  "sponsor": "LAS Office of Inclusive Excellence"
  }
 }
