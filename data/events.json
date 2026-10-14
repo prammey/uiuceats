@@ -1,28 +1,9 @@
 {
- "generated_at": "2026-10-13T17:48:16.351349-05:00",
+ "generated_at": "2026-10-13T23:57:37.046741-05:00",
  "timezone": "America/Chicago",
  "window_days": 7,
- "count": 18,
+ "count": 20,
  "events": [
-  {
-   "id": "cal-33563793",
-   "title": "Info Session: ANSC 398 - Animal Exploration in Sri Lanka",
-   "host": "ACES Study Abroad",
-   "start": "2026-10-13T17:00:00-05:00",
-   "end": "2026-10-13T18:00:00-05:00",
-   "all_day": false,
-   "location": "102 Animal Science Lab",
-   "maps_url": "https://www.google.com/maps/search/?api=1&query=102%20Animal%20Science%20Lab%2C%20University%20of%20Illinois%20Urbana-Champaign",
-   "food_text": "Pizza",
-   "evidence": "Pizza will be provided while supplies last!",
-   "icon": "🍕",
-   "dietary": [],
-   "proof_url": "https://calendars.illinois.edu/detail/6991/33563793?key=200001012000010133563793",
-   "also_urls": [],
-   "source": "calendars",
-   "source_label": "calendars.illinois.edu",
-   "promoted": false
-  },
   {
    "id": "cal-33559293",
    "title": "10-Point Financial Planning Checklist for Young Professionals",
@@ -235,6 +216,25 @@
    "promoted": false
   },
   {
+   "id": "cal-33557775",
+   "title": "International Meet & Greet at the Women's Resources Center \"Crafternoons\"",
+   "host": "International Education and Women's Resources Center",
+   "start": "2026-10-16T14:00:00-05:00",
+   "end": "2026-10-16T16:00:00-05:00",
+   "all_day": false,
+   "location": "WRC, 616 E. Green Street; Suite 213, Champaign",
+   "maps_url": "https://www.google.com/maps/search/?api=1&query=WRC%2C%20616%20E.%20Green%20Street%3B%20Suite%20213%2C%20Champaign",
+   "food_text": "Snacks",
+   "evidence": "Snacks provided.",
+   "icon": "🍪",
+   "dietary": [],
+   "proof_url": "https://calendars.illinois.edu/detail/6991/33557775?key=200001012000010133557775",
+   "also_urls": [],
+   "source": "calendars",
+   "source_label": "calendars.illinois.edu",
+   "promoted": false
+  },
+  {
    "id": "cal-33561297",
    "title": "AWM Craft Circle/Math & Art Talk Series",
    "host": "Association for Women in Mathematics",
@@ -311,6 +311,27 @@
    "promoted": false
   },
   {
+   "id": "cal-33564670",
+   "title": "Can Privacy Survive AI?",
+   "host": "Informatics",
+   "start": "2026-10-20T16:00:00-05:00",
+   "end": "2026-10-20T17:00:00-05:00",
+   "all_day": false,
+   "location": "Room 4045, iSchool HUB Building, 614 E. Daniel St., Champaign, IL 61820",
+   "maps_url": "https://www.google.com/maps/search/?api=1&query=Room%204045%2C%20iSchool%20HUB%20Building%2C%20614%20E.%20Daniel%20St.%2C%20Champaign%2C%20IL%2061820",
+   "food_text": "Refreshments",
+   "evidence": "Light refreshments will be provided.",
+   "icon": "🍱",
+   "dietary": [],
+   "proof_url": "https://calendars.illinois.edu/detail/6991/33564670?key=200001012000010133564670",
+   "also_urls": [
+    "https://calendars.illinois.edu/detail/6991/33565140?key=200001012000010133565140"
+   ],
+   "source": "calendars",
+   "source_label": "calendars.illinois.edu",
+   "promoted": false
+  },
+  {
    "id": "cal-33564701",
    "title": "Transfer Treats and Crafts!",
    "host": "New Student and Family Experiences & The Gender & Sexuality Resource Center (GSRC)",
@@ -343,6 +364,27 @@
    "icon": "🍲",
    "dietary": [],
    "proof_url": "https://calendars.illinois.edu/detail/6991/33555550?key=200001012000010133555550",
+   "also_urls": [],
+   "source": "calendars",
+   "source_label": "calendars.illinois.edu",
+   "promoted": false
+  },
+  {
+   "id": "cal-33563012",
+   "title": "Dinner & Dialogue",
+   "host": "Family & Graduate Housing",
+   "start": "2026-10-20T19:00:00-05:00",
+   "end": "2026-10-20T20:00:00-05:00",
+   "all_day": false,
+   "location": "Orchard Downs Community Center",
+   "maps_url": "https://www.google.com/maps/search/?api=1&query=Orchard%20Downs%20Community%20Center%2C%20University%20of%20Illinois%20Urbana-Champaign",
+   "food_text": "Dinner",
+   "evidence": "Join us each month for Dinner & Dialogue!",
+   "icon": "🍣",
+   "dietary": [
+    "vegetarian"
+   ],
+   "proof_url": "https://calendars.illinois.edu/detail/6991/33563012?key=200001012000010133563012",
    "also_urls": [],
    "source": "calendars",
    "source_label": "calendars.illinois.edu",

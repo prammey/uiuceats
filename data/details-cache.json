@@ -11,6 +11,10 @@
   "calendar": "International Education",
   "sponsor": "International Education, Nepali Student Association, and Asian American Cultural Center"
  },
+ "cal-33557775": {
+  "calendar": "International Education",
+  "sponsor": "International Education and Women's Resources Center"
+ },
  "cal-33558682": {
   "calendar": "La Casa Cultural Latina",
   "sponsor": "La Casa Cultural Latina and Student Cultural Programming Fee."
@@ -47,13 +51,13 @@
   "calendar": "Family & Graduate Housing - Event Calendar (Apartments)",
   "sponsor": "Family & Graduate Housing"
  },
+ "cal-33563012": {
+  "calendar": "Family & Graduate Housing - Event Calendar (Apartments)",
+  "sponsor": "Family & Graduate Housing"
+ },
  "cal-33563649": {
   "calendar": "College of Law - Lectures Calendar",
   "sponsor": "University of Illinois College of Law Business Law Program"
- },
- "cal-33563793": {
-  "calendar": "ACES Study Abroad",
-  "sponsor": "ACES Study Abroad"
  },
  "cal-33564339": {
   "calendar": "ACES Study Abroad",
@@ -62,6 +66,10 @@
  "cal-33564627": {
   "calendar": "CEAPS Events Calendar",
   "sponsor": "Center for East Asian and Pacific Studies"
+ },
+ "cal-33564670": {
+  "calendar": "Campus Humanities Calendar",
+  "sponsor": "Informatics"
  },
  "cal-33564699": {
   "calendar": "Transfer Student Appreciation Week Events!",
