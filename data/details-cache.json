@@ -19,6 +19,10 @@
   "calendar": "La Casa Cultural Latina",
   "sponsor": "La Casa Cultural Latina and Student Cultural Programming Fee."
  },
+ "cal-33558683": {
+  "calendar": "La Casa Cultural Latina",
+  "sponsor": "La Casa Cultural Latina and Student Cultural Programming Fee."
+ },
  "cal-33559262": {
   "calendar": "Siebel School CARES Office Hours",
   "sponsor": "CS CARES Committee"
@@ -26,6 +30,10 @@
  "cal-33559863": {
   "calendar": "iSEE Sustainability Calendar",
   "sponsor": "Institute for Sustainability, Energy, and Environment"
+ },
+ "cal-33560484": {
+  "calendar": "ACES Study Abroad",
+  "sponsor": "ACES Study Abroad"
  },
  "cal-33560562": {
   "calendar": "Center for the Study of Global Gender Equity",
@@ -63,10 +71,6 @@
   "calendar": "CEAPS Events Calendar",
   "sponsor": "Center for East Asian and Pacific Studies"
  },
- "cal-33564670": {
-  "calendar": "Campus Humanities Calendar",
-  "sponsor": "Informatics"
- },
  "cal-33564699": {
   "calendar": "Transfer Student Appreciation Week Events!",
   "sponsor": "New Student and Family Experiences"
@@ -74,6 +78,10 @@
  "cal-33564701": {
   "calendar": "Transfer Student Appreciation Week Events!",
   "sponsor": "New Student and Family Experiences & The Gender & Sexuality Resource Center (GSRC)"
+ },
+ "cal-33565140": {
+  "calendar": "Informatics Programs",
+  "sponsor": "Informatics Programs"
  },
  "cal-33565201": {
   "calendar": "Siebel School Speakers Calendar",
