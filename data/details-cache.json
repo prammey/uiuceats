@@ -11,13 +11,17 @@
   "calendar": "Food For The Soul",
   "sponsor": "Bruce D. Nesbitt African American Cultural Center"
  },
+ "cal-33557548": {
+  "calendar": "Center for Civic Education & Justice",
+  "sponsor": "Center for Civic Education & Justice and the University YMCA"
+ },
  "cal-33557682": {
   "calendar": "International Education",
   "sponsor": "International Education, Asian American Cultural Center"
  },
- "cal-33557775": {
-  "calendar": "International Education",
-  "sponsor": "International Education and Women's Resources Center"
+ "cal-33557746": {
+  "calendar": "Department of Aerospace Engineering Events",
+  "sponsor": "Department of Aerospace Engineering"
  },
  "cal-33558683": {
   "calendar": "La Casa Cultural Latina",
@@ -27,17 +31,9 @@
   "calendar": "Siebel School CARES Office Hours",
   "sponsor": "CS CARES Committee"
  },
- "cal-33559863": {
-  "calendar": "iSEE Sustainability Calendar",
-  "sponsor": "Institute for Sustainability, Energy, and Environment"
- },
  "cal-33560484": {
   "calendar": "ACES Study Abroad",
   "sponsor": "ACES Study Abroad"
- },
- "cal-33560562": {
-  "calendar": "Center for the Study of Global Gender Equity",
-  "sponsor": "YMCA of the University of Illinois, co-sponsored by the Center for the Study of Global Gender Equity and others"
  },
  "cal-33561297": {
   "calendar": "Association of Women in Mathematics - Illinois Graduate Chapter",
@@ -63,9 +59,9 @@
   "calendar": "Family & Graduate Housing - Event Calendar (Apartments)",
   "sponsor": "Family & Graduate Housing and College of ACES"
  },
- "cal-33564670": {
-  "calendar": "Campus Humanities Calendar",
-  "sponsor": "Informatics"
+ "cal-33564644": {
+  "calendar": "CEAPS Events Calendar",
+  "sponsor": "Center for East Asian & Pacific Studies"
  },
  "cal-33564699": {
   "calendar": "Transfer Student Appreciation Week Events!",
@@ -75,13 +71,13 @@
   "calendar": "Transfer Student Appreciation Week Events!",
   "sponsor": "New Student and Family Experiences & The Gender & Sexuality Resource Center (GSRC)"
  },
- "cal-33565201": {
-  "calendar": "Siebel School Speakers Calendar",
-  "sponsor": "Siebel School of Computing and Data Science"
+ "cal-33565140": {
+  "calendar": "Informatics Programs",
+  "sponsor": "Informatics Programs"
  },
- "cal-33565212": {
-  "calendar": "Crafternoons",
-  "sponsor": "Women's Resources Center & International Education"
+ "cal-33565251": {
+  "calendar": "Chez Veterans Center",
+  "sponsor": "Chez Veterans Center"
  },
  "cal-33565355": {
   "calendar": "Center for Latin American and Caribbean Studies (CLACS)",
