@@ -35,10 +35,6 @@
   "calendar": "ACES Study Abroad",
   "sponsor": "ACES Study Abroad"
  },
- "cal-33561297": {
-  "calendar": "Association of Women in Mathematics - Illinois Graduate Chapter",
-  "sponsor": "Association for Women in Mathematics"
- },
  "cal-33561608": {
   "calendar": "Asian American Studies",
   "sponsor": "Department of Asian American Studies"
@@ -63,6 +59,10 @@
   "calendar": "CEAPS Events Calendar",
   "sponsor": "Center for East Asian & Pacific Studies"
  },
+ "cal-33564670": {
+  "calendar": "Campus Humanities Calendar",
+  "sponsor": "Informatics"
+ },
  "cal-33564699": {
   "calendar": "Transfer Student Appreciation Week Events!",
   "sponsor": "New Student and Family Experiences"
@@ -70,10 +70,6 @@
  "cal-33564701": {
   "calendar": "Transfer Student Appreciation Week Events!",
   "sponsor": "New Student and Family Experiences & The Gender & Sexuality Resource Center (GSRC)"
- },
- "cal-33565140": {
-  "calendar": "Informatics Programs",
-  "sponsor": "Informatics Programs"
  },
  "cal-33565251": {
   "calendar": "Chez Veterans Center",
