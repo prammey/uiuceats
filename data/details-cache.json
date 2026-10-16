@@ -11,6 +11,10 @@
   "calendar": "Food For The Soul",
   "sponsor": "Bruce D. Nesbitt African American Cultural Center"
  },
+ "cal-33557682": {
+  "calendar": "International Education",
+  "sponsor": "International Education, Asian American Cultural Center"
+ },
  "cal-33557775": {
   "calendar": "International Education",
   "sponsor": "International Education and Women's Resources Center"
@@ -18,10 +22,6 @@
  "cal-33558683": {
   "calendar": "La Casa Cultural Latina",
   "sponsor": "La Casa Cultural Latina and Student Cultural Programming Fee."
- },
- "cal-33559262": {
-  "calendar": "Siebel School CARES Office Hours",
-  "sponsor": "CS CARES Committee"
  },
  "cal-33559263": {
   "calendar": "Siebel School CARES Office Hours",
@@ -47,10 +47,6 @@
   "calendar": "Asian American Studies",
   "sponsor": "Department of Asian American Studies"
  },
- "cal-33562043": {
-  "calendar": "Library Calendar",
-  "sponsor": "University Library | Illinois History and Lincoln Collections"
- },
  "cal-33562267": {
   "calendar": "Family & Graduate Housing - Event Calendar (Apartments)",
   "sponsor": "Family & Graduate Housing"
@@ -62,6 +58,10 @@
  "cal-33563649": {
   "calendar": "College of Law - Lectures Calendar",
   "sponsor": "University of Illinois College of Law Business Law Program"
+ },
+ "cal-33564101": {
+  "calendar": "Family & Graduate Housing - Event Calendar (Apartments)",
+  "sponsor": "Family & Graduate Housing and College of ACES"
  },
  "cal-33564627": {
   "calendar": "CEAPS Events Calendar",
