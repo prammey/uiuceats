@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-17T05:48:49.706352-05:00",
+ "generated_at": "2026-10-17T10:38:26.464856-05:00",
  "timezone": "America/Chicago",
  "window_days": 7,
- "count": 21,
+ "count": 22,
  "events": [
   {
    "id": "cal-33562267",
@@ -410,6 +410,25 @@
     "https://calendars.illinois.edu/detail/6991/33565215?key=200001012000010133565215",
     "https://calendars.illinois.edu/detail/6991/33564817?key=200001012000010133564817"
    ],
+   "source": "calendars",
+   "source_label": "calendars.illinois.edu",
+   "promoted": false
+  },
+  {
+   "id": "cal-33557748",
+   "title": "Pregame Pancake Breakfast",
+   "host": "Department of Aerospace Engineering",
+   "start": "2026-10-24T10:00:00-05:00",
+   "end": "2026-10-24T12:00:00-05:00",
+   "all_day": false,
+   "location": "Seibel Center for Design",
+   "maps_url": "https://www.google.com/maps/search/?api=1&query=Seibel%20Center%20for%20Design%2C%20University%20of%20Illinois%20Urbana-Champaign",
+   "food_text": "Breakfast",
+   "evidence": "Join us for a pregame pancake breakfast featuring flipping and flying pancakes from Chris Cakes.",
+   "icon": "🥞",
+   "dietary": [],
+   "proof_url": "https://calendars.illinois.edu/detail/6991/33557748?key=200001012000010133557748",
+   "also_urls": [],
    "source": "calendars",
    "source_label": "calendars.illinois.edu",
    "promoted": false
