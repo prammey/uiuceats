@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-17T18:09:24.252746-05:00",
+ "generated_at": "2026-10-17T23:38:26.415838-05:00",
  "timezone": "America/Chicago",
  "window_days": 7,
- "count": 21,
+ "count": 22,
  "events": [
   {
    "id": "cal-33564699",
@@ -250,6 +250,25 @@
    "icon": "☕",
    "dietary": [],
    "proof_url": "https://calendars.illinois.edu/detail/6991/33559263?key=200001012000010133559263",
+   "also_urls": [],
+   "source": "calendars",
+   "source_label": "calendars.illinois.edu",
+   "promoted": false
+  },
+  {
+   "id": "cal-33559816",
+   "title": "IMMERSE Seminar - Minjia Zhang: Towards High-Performance and Cost-Effective LLM Inference",
+   "host": "IMMERSE Center for Immersive Computing",
+   "start": "2026-10-22T16:00:00-05:00",
+   "end": "2026-10-22T17:00:00-05:00",
+   "all_day": false,
+   "location": "Siebel School of Computing and Data Science Room 2405",
+   "maps_url": "https://www.google.com/maps/search/?api=1&query=Siebel%20School%20of%20Computing%20and%20Data%20Science%20Room%202405%2C%20University%20of%20Illinois%20Urbana-Champaign",
+   "food_text": "Refreshments",
+   "evidence": "Refreshments will be provided.",
+   "icon": "🍱",
+   "dietary": [],
+   "proof_url": "https://calendars.illinois.edu/detail/6991/33559816?key=200001012000010133559816",
    "also_urls": [],
    "source": "calendars",
    "source_label": "calendars.illinois.edu",
