@@ -11,6 +11,10 @@
   "calendar": "Food For The Soul",
   "sponsor": "Bruce D. Nesbitt African American Cultural Center"
  },
+ "cal-33557215": {
+  "calendar": "Dish It Up",
+  "sponsor": "Women's Resources Center"
+ },
  "cal-33557548": {
   "calendar": "Center for Civic Education & Justice",
   "sponsor": "Center for Civic Education & Justice and the University YMCA"
@@ -86,5 +90,9 @@
  "cal-33565355": {
   "calendar": "Center for Latin American and Caribbean Studies (CLACS)",
   "sponsor": "LAS Office of Inclusive Excellence"
+ },
+ "cal-33565537": {
+  "calendar": "Campus Humanities Calendar",
+  "sponsor": "Women's Resources Center"
  }
 }
