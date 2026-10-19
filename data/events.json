@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-18T18:16:03.123779-05:00",
+ "generated_at": "2026-10-18T23:45:10.603303-05:00",
  "timezone": "America/Chicago",
  "window_days": 7,
  "count": 22,
@@ -288,7 +288,9 @@
    "icon": "🍲",
    "dietary": [],
    "proof_url": "https://calendars.illinois.edu/detail/6991/33557682?key=200001012000010133557682",
-   "also_urls": [],
+   "also_urls": [
+    "https://calendars.illinois.edu/detail/6991/33565618?key=200001012000010133565618"
+   ],
    "source": "calendars",
    "source_label": "calendars.illinois.edu",
    "promoted": false
