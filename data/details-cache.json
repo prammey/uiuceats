@@ -55,10 +55,6 @@
   "calendar": "Family & Graduate Housing - Event Calendar (Apartments)",
   "sponsor": "Family & Graduate Housing"
  },
- "cal-33563649": {
-  "calendar": "College of Law - Lectures Calendar",
-  "sponsor": "University of Illinois College of Law Business Law Program"
- },
  "cal-33563731": {
   "calendar": "European Union Center Events",
   "sponsor": "European Union Center"
@@ -70,6 +66,10 @@
  "cal-33564413": {
   "calendar": "Russian, E. European & Eurasian Center: Outreach",
   "sponsor": "Russian, East European, and Eurasian Center"
+ },
+ "cal-33564429": {
+  "calendar": "Asian American Cultural Center Events",
+  "sponsor": "Asian American Cultural Center"
  },
  "cal-33564644": {
   "calendar": "CEAPS Events Calendar",
