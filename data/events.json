@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-20T03:36:30.269116-05:00",
+ "generated_at": "2026-10-20T09:19:52.512725-05:00",
  "timezone": "America/Chicago",
  "window_days": 7,
  "count": 23,
@@ -237,21 +237,21 @@
    "promoted": false
   },
   {
-   "id": "cal-33565618",
+   "id": "cal-33557682",
    "title": "iCU Presents: Uzbekistan Through Our Experience: Culture, Heritage, and Everyday Life",
    "host": "International Education, Asian American Cultural Center",
    "start": "2026-10-22T17:30:00-05:00",
    "end": "2026-10-22T19:00:00-05:00",
    "all_day": false,
-   "location": "1210 W. Nevada St., Urbana, IL 61801",
-   "maps_url": "https://www.google.com/maps/search/?api=1&query=1210%20W.%20Nevada%20St.%2C%20Urbana%2C%20IL%2061801",
+   "location": "1210 West Nevada Street, Urbana (AACC and International Education)",
+   "maps_url": "https://www.google.com/maps/search/?api=1&query=1210%20West%20Nevada%20Street%2C%20Urbana%20%28AACC%20and%20International%20Education%29",
    "food_text": "Dinner",
    "evidence": "Dinner provided.",
    "icon": "🍲",
    "dietary": [],
-   "proof_url": "https://calendars.illinois.edu/detail/6991/33565618?key=200001012000010133565618",
+   "proof_url": "https://calendars.illinois.edu/detail/6991/33557682?key=200001012000010133557682",
    "also_urls": [
-    "https://calendars.illinois.edu/detail/6991/33557682?key=200001012000010133557682"
+    "https://calendars.illinois.edu/detail/6991/33565618?key=200001012000010133565618"
    ],
    "source": "calendars",
    "source_label": "calendars.illinois.edu",

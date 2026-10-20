@@ -19,6 +19,10 @@
   "calendar": "Center for Civic Education & Justice",
   "sponsor": "Center for Civic Education & Justice and the University YMCA"
  },
+ "cal-33557682": {
+  "calendar": "International Education",
+  "sponsor": "International Education, Asian American Cultural Center"
+ },
  "cal-33557746": {
   "calendar": "Department of Aerospace Engineering Events",
   "sponsor": "Department of Aerospace Engineering"
@@ -86,9 +90,5 @@
  "cal-33565537": {
   "calendar": "Campus Humanities Calendar",
   "sponsor": "Women's Resources Center"
- },
- "cal-33565618": {
-  "calendar": "Asian American Cultural Center Events",
-  "sponsor": "International Education, Asian American Cultural Center"
  }
 }
