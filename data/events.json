@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-19T19:23:14.311176-05:00",
+ "generated_at": "2026-10-20T03:36:30.269116-05:00",
  "timezone": "America/Chicago",
  "window_days": 7,
- "count": 24,
+ "count": 23,
  "events": [
   {
    "id": "cal-33563649",
@@ -40,25 +40,6 @@
    "also_urls": [
     "https://calendars.illinois.edu/detail/6991/33565140?key=200001012000010133565140"
    ],
-   "source": "calendars",
-   "source_label": "calendars.illinois.edu",
-   "promoted": false
-  },
-  {
-   "id": "cal-33564701",
-   "title": "Transfer Treats and Crafts!",
-   "host": "New Student and Family Experiences & The Gender & Sexuality Resource Center (GSRC)",
-   "start": "2026-10-20T17:00:00-05:00",
-   "end": "2026-10-20T19:00:00-05:00",
-   "all_day": false,
-   "location": "Gender & Sexuality Resource Center (GSRC) - 616 East Green Street, Suite 202",
-   "maps_url": "https://www.google.com/maps/search/?api=1&query=Gender%20%26%20Sexuality%20Resource%20Center%20%28GSRC%29%20-%20616%20East%20Green%20Street%2C%20Suite%20202%2C%20University%20of%20Illinois%20Urbana-Champaign",
-   "food_text": "Treats",
-   "evidence": "Enjoy treats, get creative with crafts, and hang out with fellow Illinois transfer students in a welcoming, relaxed space.",
-   "icon": "🍪",
-   "dietary": [],
-   "proof_url": "https://calendars.illinois.edu/detail/6991/33564701?key=200001012000010133564701",
-   "also_urls": [],
    "source": "calendars",
    "source_label": "calendars.illinois.edu",
    "promoted": false
@@ -256,21 +237,21 @@
    "promoted": false
   },
   {
-   "id": "cal-33557682",
+   "id": "cal-33565618",
    "title": "iCU Presents: Uzbekistan Through Our Experience: Culture, Heritage, and Everyday Life",
    "host": "International Education, Asian American Cultural Center",
    "start": "2026-10-22T17:30:00-05:00",
    "end": "2026-10-22T19:00:00-05:00",
    "all_day": false,
-   "location": "1210 West Nevada Street, Urbana (AACC and International Education)",
-   "maps_url": "https://www.google.com/maps/search/?api=1&query=1210%20West%20Nevada%20Street%2C%20Urbana%20%28AACC%20and%20International%20Education%29",
+   "location": "1210 W. Nevada St., Urbana, IL 61801",
+   "maps_url": "https://www.google.com/maps/search/?api=1&query=1210%20W.%20Nevada%20St.%2C%20Urbana%2C%20IL%2061801",
    "food_text": "Dinner",
    "evidence": "Dinner provided.",
    "icon": "🍲",
    "dietary": [],
-   "proof_url": "https://calendars.illinois.edu/detail/6991/33557682?key=200001012000010133557682",
+   "proof_url": "https://calendars.illinois.edu/detail/6991/33565618?key=200001012000010133565618",
    "also_urls": [
-    "https://calendars.illinois.edu/detail/6991/33565618?key=200001012000010133565618"
+    "https://calendars.illinois.edu/detail/6991/33557682?key=200001012000010133557682"
    ],
    "source": "calendars",
    "source_label": "calendars.illinois.edu",
