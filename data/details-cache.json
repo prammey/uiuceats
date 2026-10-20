@@ -1,5 +1,5 @@
 {
- "cal-33555550": {
+ "cal-33555554": {
   "calendar": "Native American House",
   "sponsor": "Native American House"
  },
@@ -59,6 +59,10 @@
   "calendar": "European Union Center Events",
   "sponsor": "European Union Center"
  },
+ "cal-33564065": {
+  "calendar": "Persian Events Calender",
+  "sponsor": "Persian Language - Department of Linguistics"
+ },
  "cal-33564101": {
   "calendar": "Family & Graduate Housing - Event Calendar (Apartments)",
   "sponsor": "Family & Graduate Housing and College of ACES"
@@ -75,10 +79,6 @@
   "calendar": "CEAPS Events Calendar",
   "sponsor": "Center for East Asian & Pacific Studies"
  },
- "cal-33564670": {
-  "calendar": "Campus Humanities Calendar",
-  "sponsor": "Informatics"
- },
  "cal-33565251": {
   "calendar": "Chez Veterans Center",
   "sponsor": "Chez Veterans Center"
@@ -90,5 +90,9 @@
  "cal-33565537": {
   "calendar": "Campus Humanities Calendar",
   "sponsor": "Women's Resources Center"
+ },
+ "cal-33565755": {
+  "calendar": "Illinois ECE Calendar",
+  "sponsor": "Information Trust Institute"
  }
 }
