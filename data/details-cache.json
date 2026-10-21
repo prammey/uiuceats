@@ -3,17 +3,9 @@
   "calendar": "Native American House",
   "sponsor": "Native American House"
  },
- "cal-33556101": {
-  "calendar": "CPSC Seminars CSPC",
-  "sponsor": "Department of Crop Sciences, University of Illinois"
- },
  "cal-33556102": {
   "calendar": "CPSC Seminars CSPC",
   "sponsor": "Department of Crop Sciences, University of Illinois"
- },
- "cal-33556160": {
-  "calendar": "Food For The Soul",
-  "sponsor": "Bruce D. Nesbitt African American Cultural Center"
  },
  "cal-33556161": {
   "calendar": "Food For The Soul",
@@ -26,6 +18,10 @@
  "cal-33557548": {
   "calendar": "Center for Civic Education & Justice",
   "sponsor": "Center for Civic Education & Justice and the University YMCA"
+ },
+ "cal-33557682": {
+  "calendar": "International Education",
+  "sponsor": "International Education, Asian American Cultural Center"
  },
  "cal-33557746": {
   "calendar": "Department of Aerospace Engineering Events",
@@ -87,17 +83,9 @@
   "calendar": "Chez Veterans Center",
   "sponsor": "Chez Veterans Center"
  },
- "cal-33565291": {
-  "calendar": "Jewish Studies Calendar",
-  "sponsor": "The Program in Jewish Culture and Society"
- },
  "cal-33565537": {
   "calendar": "Campus Humanities Calendar",
   "sponsor": "Women's Resources Center"
- },
- "cal-33565618": {
-  "calendar": "Asian American Cultural Center Events",
-  "sponsor": "International Education, Asian American Cultural Center"
  },
  "cal-33565755": {
   "calendar": "Illinois ECE Calendar",
