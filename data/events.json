@@ -1,30 +1,9 @@
 {
- "generated_at": "2026-10-20T18:55:04.541989-05:00",
+ "generated_at": "2026-10-20T23:53:08.035825-05:00",
  "timezone": "America/Chicago",
  "window_days": 7,
  "count": 24,
  "events": [
-  {
-   "id": "cal-33563012",
-   "title": "Dinner & Dialogue",
-   "host": "Family & Graduate Housing",
-   "start": "2026-10-20T19:00:00-05:00",
-   "end": "2026-10-20T20:00:00-05:00",
-   "all_day": false,
-   "location": "Orchard Downs Community Center",
-   "maps_url": "https://www.google.com/maps/search/?api=1&query=Orchard%20Downs%20Community%20Center%2C%20University%20of%20Illinois%20Urbana-Champaign",
-   "food_text": "Dinner",
-   "evidence": "Join us each month for Dinner & Dialogue!",
-   "icon": "🍣",
-   "dietary": [
-    "vegetarian"
-   ],
-   "proof_url": "https://calendars.illinois.edu/detail/6991/33563012?key=200001012000010133563012",
-   "also_urls": [],
-   "source": "calendars",
-   "source_label": "calendars.illinois.edu",
-   "promoted": false
-  },
   {
    "id": "cal-33565355",
    "title": "LAS Faculty Success Program - Funding Your Future: The Arts and Humanities",
@@ -212,6 +191,25 @@
    "icon": "🍕",
    "dietary": [],
    "proof_url": "https://calendars.illinois.edu/detail/6991/33564101?key=200001012000010133564101",
+   "also_urls": [],
+   "source": "calendars",
+   "source_label": "calendars.illinois.edu",
+   "promoted": false
+  },
+  {
+   "id": "cal-33563850",
+   "title": "AWM Graduate Student Colloquium",
+   "host": "Association for Women in Mathematics",
+   "start": "2026-10-23T12:00:00-05:00",
+   "end": "2026-10-23T13:00:00-05:00",
+   "all_day": false,
+   "location": "313 Davenport Hall",
+   "maps_url": "https://www.google.com/maps/search/?api=1&query=313%20Davenport%20Hall%2C%20University%20of%20Illinois%20Urbana-Champaign",
+   "food_text": "Pizza",
+   "evidence": "Pizza will be served before the talk at 11:30 in Davenport 318.",
+   "icon": "🍕",
+   "dietary": [],
+   "proof_url": "https://calendars.illinois.edu/detail/6991/33563850?key=200001012000010133563850",
    "also_urls": [],
    "source": "calendars",
    "source_label": "calendars.illinois.edu",
