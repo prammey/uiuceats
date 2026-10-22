@@ -35,10 +35,6 @@
   "calendar": "International Education",
   "sponsor": "International Education, LAS International Programs and Polish Club Zagłoba"
  },
- "cal-33558683": {
-  "calendar": "La Casa Cultural Latina",
-  "sponsor": "La Casa Cultural Latina and Student Cultural Programming Fee."
- },
  "cal-33558684": {
   "calendar": "La Casa Cultural Latina",
   "sponsor": "La Casa Cultural Latina and Student Cultural Programming Fee."
@@ -47,15 +43,15 @@
   "calendar": "Siebel School CARES Office Hours",
   "sponsor": "CS CARES Committee"
  },
+ "cal-33559264": {
+  "calendar": "Siebel School CARES Office Hours",
+  "sponsor": "CS CARES Committee"
+ },
  "cal-33559816": {
   "calendar": "IMMERSE Seminar Series",
   "sponsor": "IMMERSE Center for Immersive Computing"
  },
- "cal-33560484": {
-  "calendar": "ACES Study Abroad",
-  "sponsor": "ACES Study Abroad"
- },
- "cal-33561608": {
+ "cal-33561609": {
   "calendar": "Asian American Studies",
   "sponsor": "Department of Asian American Studies"
  },
