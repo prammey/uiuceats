@@ -31,6 +31,10 @@
   "calendar": "Department of Aerospace Engineering Events",
   "sponsor": "Department of Aerospace Engineering"
  },
+ "cal-33557776": {
+  "calendar": "International Education",
+  "sponsor": "International Education, LAS International Programs and Polish Club Zagłoba"
+ },
  "cal-33558683": {
   "calendar": "La Casa Cultural Latina",
   "sponsor": "La Casa Cultural Latina and Student Cultural Programming Fee."
@@ -83,6 +87,10 @@
   "calendar": "Chez Veterans Center",
   "sponsor": "Chez Veterans Center"
  },
+ "cal-33565291": {
+  "calendar": "Jewish Studies Calendar",
+  "sponsor": "The Program in Jewish Culture and Society"
+ },
  "cal-33565537": {
   "calendar": "Campus Humanities Calendar",
   "sponsor": "Women's Resources Center"
@@ -90,5 +98,13 @@
  "cal-33565755": {
   "calendar": "Illinois ECE Calendar",
   "sponsor": "Information Trust Institute"
+ },
+ "cal-33565830": {
+  "calendar": "ACES Study Abroad",
+  "sponsor": "ACES Study Abroad"
+ },
+ "cal-33565862": {
+  "calendar": "Germanic Events",
+  "sponsor": "Department of German Languages and Literatures"
  }
 }
