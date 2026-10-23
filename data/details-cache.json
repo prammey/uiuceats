@@ -19,10 +19,6 @@
   "calendar": "Dish It Up",
   "sponsor": "Women's Resources Center"
  },
- "cal-33557548": {
-  "calendar": "Center for Civic Education & Justice",
-  "sponsor": "Center for Civic Education & Justice and the University YMCA"
- },
  "cal-33557550": {
   "calendar": "Center for Civic Education & Justice",
   "sponsor": "Center for Civic Education & Justice and the University YMCA"
@@ -58,10 +54,6 @@
  "cal-33563731": {
   "calendar": "European Union Center Events",
   "sponsor": "European Union Center"
- },
- "cal-33563850": {
-  "calendar": "Association of Women in Mathematics - Illinois Graduate Chapter",
-  "sponsor": "Association for Women in Mathematics"
  },
  "cal-33564065": {
   "calendar": "Persian Events Calender",
@@ -122,5 +114,9 @@
  "cal-33565961": {
   "calendar": "Illinois School of Architecture Lecture Series",
   "sponsor": "School of Architecture"
+ },
+ "cal-33565980": {
+  "calendar": "General Events - Department of Mathematics",
+  "sponsor": "Department of Mathematics"
  }
 }
