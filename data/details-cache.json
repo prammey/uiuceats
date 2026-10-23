@@ -19,10 +19,6 @@
   "calendar": "Center for Civic Education & Justice",
   "sponsor": "Center for Civic Education & Justice and the University YMCA"
  },
- "cal-33557682": {
-  "calendar": "International Education",
-  "sponsor": "International Education, Asian American Cultural Center"
- },
  "cal-33557746": {
   "calendar": "Department of Aerospace Engineering Events",
   "sponsor": "Department of Aerospace Engineering"
@@ -39,17 +35,9 @@
   "calendar": "La Casa Cultural Latina",
   "sponsor": "La Casa Cultural Latina and Student Cultural Programming Fee."
  },
- "cal-33559263": {
-  "calendar": "Siebel School CARES Office Hours",
-  "sponsor": "CS CARES Committee"
- },
  "cal-33559264": {
   "calendar": "Siebel School CARES Office Hours",
   "sponsor": "CS CARES Committee"
- },
- "cal-33559816": {
-  "calendar": "IMMERSE Seminar Series",
-  "sponsor": "IMMERSE Center for Immersive Computing"
  },
  "cal-33561609": {
   "calendar": "Asian American Studies",
@@ -67,7 +55,7 @@
   "calendar": "Persian Events Calender",
   "sponsor": "Persian Language - Department of Linguistics"
  },
- "cal-33564101": {
+ "cal-33564102": {
   "calendar": "Family & Graduate Housing - Event Calendar (Apartments)",
   "sponsor": "Family & Graduate Housing and College of ACES"
  },
@@ -110,5 +98,17 @@
  "cal-33565862": {
   "calendar": "Germanic Events",
   "sponsor": "Department of German Languages and Literatures"
+ },
+ "cal-33565949": {
+  "calendar": "LAS International Programs Events",
+  "sponsor": "LAS International Programs"
+ },
+ "cal-33565960": {
+  "calendar": "Family & Graduate Housing - Event Calendar (Apartments)",
+  "sponsor": "Family & Graduate Housing and College of ACES"
+ },
+ "cal-33565961": {
+  "calendar": "Illinois School of Architecture Lecture Series",
+  "sponsor": "School of Architecture"
  }
 }
