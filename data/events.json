@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-25T23:51:39.567348-05:00",
+ "generated_at": "2026-10-26T08:08:43.663599-05:00",
  "timezone": "America/Chicago",
  "window_days": 7,
  "count": 27,
@@ -442,21 +442,21 @@
    "promoted": false
   },
   {
-   "id": "cal-33553339",
+   "id": "cal-33565533",
    "title": "2026 iSchool Research Showcase",
    "host": "School of Information Sciences",
    "start": "2026-10-30T11:30:00-05:00",
    "end": "2026-10-30T16:45:00-05:00",
    "all_day": false,
-   "location": "Illini Union, Illini Rooms A & B",
-   "maps_url": "https://www.google.com/maps/search/?api=1&query=Illini%20Union%2C%20Illini%20Rooms%20A%20%26%20B%2C%20University%20of%20Illinois%20Urbana-Champaign",
+   "location": "Illini Rooms A & B, Illini Union",
+   "maps_url": "https://www.google.com/maps/search/?api=1&query=Illini%20Rooms%20A%20%26%20B%2C%20Illini%20Union%2C%20University%20of%20Illinois%20Urbana-Champaign",
    "food_text": "Refreshments",
    "evidence": "Refreshments will be served.",
    "icon": "🍱",
    "dietary": [],
-   "proof_url": "https://calendars.illinois.edu/detail/6991/33553339?key=200001012000010133553339",
+   "proof_url": "https://calendars.illinois.edu/detail/6991/33565533?key=200001012000010133565533",
    "also_urls": [
-    "https://calendars.illinois.edu/detail/6991/33565533?key=200001012000010133565533"
+    "https://calendars.illinois.edu/detail/6991/33553339?key=200001012000010133553339"
    ],
    "source": "calendars",
    "source_label": "calendars.illinois.edu",
