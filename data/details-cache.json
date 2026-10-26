@@ -1,4 +1,8 @@
 {
+ "cal-33553339": {
+  "calendar": "School of Information Sciences",
+  "sponsor": "School of Information Sciences"
+ },
  "cal-33555554": {
   "calendar": "Native American House",
   "sponsor": "Native American House"
@@ -11,17 +15,9 @@
   "calendar": "Food For The Soul",
   "sponsor": "Bruce D. Nesbitt African American Cultural Center"
  },
- "cal-33557215": {
-  "calendar": "Dish It Up",
-  "sponsor": "Women's Resources Center"
- },
  "cal-33557550": {
   "calendar": "Center for Civic Education & Justice",
   "sponsor": "Center for Civic Education & Justice and the University YMCA"
- },
- "cal-33557776": {
-  "calendar": "International Education",
-  "sponsor": "International Education, LAS International Programs and Polish Club Zagłoba"
  },
  "cal-33558684": {
   "calendar": "La Casa Cultural Latina",
@@ -63,21 +59,21 @@
   "calendar": "Asian American Cultural Center Events",
   "sponsor": "Asian American Cultural Center"
  },
+ "cal-33564474": {
+  "calendar": "Program in Medieval Studies",
+  "sponsor": "Program in Medieval Studies"
+ },
  "cal-33565291": {
   "calendar": "Jewish Studies Calendar",
   "sponsor": "The Program in Jewish Culture and Society"
  },
- "cal-33565533": {
-  "calendar": "Campus Humanities Calendar",
-  "sponsor": "School of Information Sciences"
- },
- "cal-33565537": {
-  "calendar": "Campus Humanities Calendar",
-  "sponsor": "Women's Resources Center"
- },
  "cal-33565755": {
   "calendar": "Illinois ECE Calendar",
   "sponsor": "Information Trust Institute"
+ },
+ "cal-33565759": {
+  "calendar": "Gender & Sexuality Resource Center",
+  "sponsor": "Gender and Sexuality Resource Center; Student Success Inclusion and Belonging"
  },
  "cal-33565830": {
   "calendar": "ACES Study Abroad",
@@ -102,9 +98,5 @@
  "cal-33565980": {
   "calendar": "General Events - Department of Mathematics",
   "sponsor": "Department of Mathematics"
- },
- "cal-33566006": {
-  "calendar": "Illinois School of Architecture Events",
-  "sponsor": "School of Architecture"
  }
 }
