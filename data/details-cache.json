@@ -3,10 +3,6 @@
   "calendar": "School of Information Sciences",
   "sponsor": "School of Information Sciences"
  },
- "cal-33555554": {
-  "calendar": "Native American House",
-  "sponsor": "Native American House"
- },
  "cal-33556102": {
   "calendar": "CPSC Seminars CSPC",
   "sponsor": "Department of Crop Sciences, University of Illinois"
@@ -51,10 +47,6 @@
   "calendar": "ACES Study Abroad",
   "sponsor": "ACES Study Abroad"
  },
- "cal-33564065": {
-  "calendar": "Persian Events Calender",
-  "sponsor": "Persian Language - Department of Linguistics"
- },
  "cal-33564102": {
   "calendar": "Family & Graduate Housing - Event Calendar (Apartments)",
   "sponsor": "Family & Graduate Housing and College of ACES"
@@ -62,6 +54,10 @@
  "cal-33564140": {
   "calendar": "Life of the Department",
   "sponsor": "Department of English"
+ },
+ "cal-33564282": {
+  "calendar": "Access, Civil Rights & Community – Events",
+  "sponsor": "Office of the Vice Chancellor for Access, Civil Rights & Community"
  },
  "cal-33564474": {
   "calendar": "Program in Medieval Studies",
@@ -71,10 +67,6 @@
   "calendar": "Jewish Studies Calendar",
   "sponsor": "The Program in Jewish Culture and Society"
  },
- "cal-33565755": {
-  "calendar": "Illinois ECE Calendar",
-  "sponsor": "Information Trust Institute"
- },
  "cal-33565759": {
   "calendar": "Gender & Sexuality Resource Center",
   "sponsor": "Gender and Sexuality Resource Center; Student Success Inclusion and Belonging"
@@ -83,10 +75,6 @@
   "calendar": "ACES Study Abroad",
   "sponsor": "ACES Study Abroad"
  },
- "cal-33565862": {
-  "calendar": "Germanic Events",
-  "sponsor": "Department of German Languages and Literatures"
- },
  "cal-33565949": {
   "calendar": "LAS International Programs Events",
   "sponsor": "LAS International Programs"
@@ -94,5 +82,9 @@
  "cal-33565980": {
   "calendar": "General Events - Department of Mathematics",
   "sponsor": "Department of Mathematics"
+ },
+ "cal-33566207": {
+  "calendar": "Illinois International's Global and Intercultural Events",
+  "sponsor": "Praneetha Ankisettipalli and Illinois International"
  }
 }
