@@ -3,6 +3,10 @@
   "calendar": "School of Information Sciences",
   "sponsor": "School of Information Sciences"
  },
+ "cal-33555253": {
+  "calendar": "Counseling Center Events",
+  "sponsor": "Counseling Center and Women's Resource Center"
+ },
  "cal-33556103": {
   "calendar": "CPSC Seminars CSPC",
   "sponsor": "Department of Crop Sciences, University of Illinois"
@@ -15,7 +19,7 @@
   "calendar": "Center for Civic Education & Justice",
   "sponsor": "Center for Civic Education & Justice and the University YMCA"
  },
- "cal-33558684": {
+ "cal-33558685": {
   "calendar": "La Casa Cultural Latina",
   "sponsor": "La Casa Cultural Latina and Student Cultural Programming Fee."
  },
@@ -32,6 +36,10 @@
   "sponsor": "YMCA of the University of Illinois, co-sponsored by the Center for the Study of Global Gender Equity and others"
  },
  "cal-33561609": {
+  "calendar": "Asian American Studies",
+  "sponsor": "Department of Asian American Studies"
+ },
+ "cal-33561610": {
   "calendar": "Asian American Studies",
   "sponsor": "Department of Asian American Studies"
  },
@@ -66,10 +74,6 @@
  "cal-33564102": {
   "calendar": "Family & Graduate Housing - Event Calendar (Apartments)",
   "sponsor": "Family & Graduate Housing and College of ACES"
- },
- "cal-33564140": {
-  "calendar": "Life of the Department",
-  "sponsor": "Department of English"
  },
  "cal-33564282": {
   "calendar": "Access, Civil Rights & Community – Events",
