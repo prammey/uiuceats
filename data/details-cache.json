@@ -15,10 +15,6 @@
   "calendar": "Center for Civic Education & Justice",
   "sponsor": "Center for Civic Education & Justice and the University YMCA"
  },
- "cal-33557776": {
-  "calendar": "International Education",
-  "sponsor": "International Education, LAS International Programs and Polish Club Zagłoba"
- },
  "cal-33558684": {
   "calendar": "La Casa Cultural Latina",
   "sponsor": "La Casa Cultural Latina and Student Cultural Programming Fee."
@@ -39,6 +35,14 @@
   "calendar": "Asian American Studies",
   "sponsor": "Department of Asian American Studies"
  },
+ "cal-33561753": {
+  "calendar": "CEAPS Events Calendar",
+  "sponsor": "Presented by The Center for Advanced Study George A. Miller Programs | Hosted By: The Center for East Asian & Pacific Studies | Co-Sponsored By: Krannert Art Museum, Department of East Asian Languages & Cultures, Illinois Global Institute, School of Art + Design, Illinois International Programs Global Relations, Asian American Cultural Center, Center for Global Studies, LAS Global Studies, Department of Political Science, Department of Anthropology, Humanities Research Institute, and Initiative in Holocaust, Genocide, and Memory Studies"
+ },
+ "cal-33562083": {
+  "calendar": "Center for Advanced Study",
+  "sponsor": "Center for Advanced Study (CAS)"
+ },
  "cal-33563236": {
   "calendar": "Program in Medieval Studies",
   "sponsor": "Program in Medieval Studies"
@@ -47,9 +51,17 @@
   "calendar": "ACES Study Abroad",
   "sponsor": "ACES Study Abroad"
  },
+ "cal-33563461": {
+  "calendar": "Sexual Violence Prevention Events",
+  "sponsor": "Women's Resources Center"
+ },
  "cal-33563755": {
   "calendar": "LAS Office of Research",
   "sponsor": "College of Liberal Arts & Sciences"
+ },
+ "cal-33563788": {
+  "calendar": "ACES Study Abroad",
+  "sponsor": "ACES Study Abroad"
  },
  "cal-33564102": {
   "calendar": "Family & Graduate Housing - Event Calendar (Apartments)",
@@ -70,14 +82,6 @@
  "cal-33565759": {
   "calendar": "Gender & Sexuality Resource Center",
   "sponsor": "Gender and Sexuality Resource Center; Student Success Inclusion and Belonging"
- },
- "cal-33565830": {
-  "calendar": "ACES Study Abroad",
-  "sponsor": "ACES Study Abroad"
- },
- "cal-33565949": {
-  "calendar": "LAS International Programs Events",
-  "sponsor": "LAS International Programs"
  },
  "cal-33565980": {
   "calendar": "General Events - Department of Mathematics",
