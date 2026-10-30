@@ -1,8 +1,4 @@
 {
- "cal-33553339": {
-  "calendar": "School of Information Sciences",
-  "sponsor": "School of Information Sciences"
- },
  "cal-33555253": {
   "calendar": "Counseling Center Events",
   "sponsor": "Counseling Center and Women's Resource Center"
@@ -67,20 +63,20 @@
   "calendar": "Grainger International Student Community (GISC)",
   "sponsor": "Grainger International Student Community (GISC)"
  },
+ "cal-33564838": {
+  "calendar": "Dads Weekend 2026",
+  "sponsor": "The Jeffries Center First-Generation Student Initiatives"
+ },
+ "cal-33565695": {
+  "calendar": "Family & Graduate Housing - Event Calendar (Apartments)",
+  "sponsor": "Family & Graduate Housing"
+ },
  "cal-33565759": {
   "calendar": "Gender & Sexuality Resource Center",
   "sponsor": "Gender and Sexuality Resource Center; Student Success Inclusion and Belonging"
  },
- "cal-33565980": {
-  "calendar": "General Events - Department of Mathematics",
-  "sponsor": "Department of Mathematics"
- },
  "cal-33566014": {
   "calendar": "Campus Humanities Calendar",
   "sponsor": "Krannert Art Museum and Center for East Asian and Pacific Studies at the Un"
- },
- "cal-33566207": {
-  "calendar": "Illinois International's Global and Intercultural Events",
-  "sponsor": "Praneetha Ankisettipalli and Illinois International"
  }
 }
