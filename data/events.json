@@ -1,29 +1,9 @@
 {
- "generated_at": "2026-10-30T09:18:03.366963-05:00",
+ "generated_at": "2026-10-30T14:56:18.618544-05:00",
  "timezone": "America/Chicago",
  "window_days": 7,
  "count": 25,
  "events": [
-  {
-   "id": "one-475601",
-   "title": "Coffee Tent",
-   "host": "Illini Life Student Fellowship",
-   "start": "2026-10-30T10:00:00-05:00",
-   "end": "2026-10-30T12:00:00-05:00",
-   "all_day": false,
-   "location": "Room on one.illinois.edu (sign in with your NetID)",
-   "location_hidden": true,
-   "maps_url": "",
-   "food_text": "Coffee, Hot chocolate",
-   "evidence": "We serve lemonade, coffee and hot chocolate to anyone passing by",
-   "icon": "☕",
-   "dietary": [],
-   "proof_url": "https://one.illinois.edu/rsvp?id=475601",
-   "also_urls": [],
-   "source": "one",
-   "source_label": "one.illinois.edu",
-   "promoted": false
-  },
   {
    "id": "cal-33553339",
    "title": "2026 iSchool Research Showcase",
@@ -41,28 +21,6 @@
    "proof_url": "https://calendars.illinois.edu/detail/6991/33553339?key=200001012000010133553339",
    "also_urls": [
     "https://calendars.illinois.edu/detail/6991/33565533?key=200001012000010133565533"
-   ],
-   "source": "calendars",
-   "source_label": "calendars.illinois.edu",
-   "promoted": false
-  },
-  {
-   "id": "cal-33560580",
-   "title": "Friday Forum & Conversation Café: Fighting Oligarchy and Fascism in the 21st Century",
-   "host": "YMCA of the University of Illinois, co-sponsored by the Center for the Study of Global Gender Equity and others",
-   "start": "2026-10-30T12:00:00-05:00",
-   "end": "2026-10-30T13:00:00-05:00",
-   "all_day": false,
-   "location": "University YMCA, 1001 S Wright St, Champaign",
-   "location_hidden": false,
-   "maps_url": "https://www.google.com/maps/search/?api=1&query=University%20YMCA%2C%201001%20S%20Wright%20St%2C%20Champaign",
-   "food_text": "Lunch",
-   "evidence": "Title: Fighting Oligarchy and Fascism in the 21st Century Time: October 30 at 12 PMLocation: University YMCA, 1001 S Wright St, Champaign FREE LUNCH PROVIDED",
-   "icon": "🥪",
-   "dietary": [],
-   "proof_url": "https://calendars.illinois.edu/detail/6991/33560580?key=200001012000010133560580",
-   "also_urls": [
-    "https://calendars.illinois.edu/detail/6991/33557550?key=200001012000010133557550"
    ],
    "source": "calendars",
    "source_label": "calendars.illinois.edu",
@@ -520,6 +478,48 @@
    "also_urls": [],
    "source": "one",
    "source_label": "one.illinois.edu",
+   "promoted": false
+  },
+  {
+   "id": "one-475602",
+   "title": "Coffee Tent",
+   "host": "Illini Life Student Fellowship",
+   "start": "2026-11-06T10:00:00-06:00",
+   "end": "2026-11-06T12:00:00-06:00",
+   "all_day": false,
+   "location": "Room on one.illinois.edu (sign in with your NetID)",
+   "location_hidden": true,
+   "maps_url": "",
+   "food_text": "Coffee, Hot chocolate",
+   "evidence": "We serve lemonade, coffee and hot chocolate to anyone passing by",
+   "icon": "☕",
+   "dietary": [],
+   "proof_url": "https://one.illinois.edu/rsvp?id=475602",
+   "also_urls": [],
+   "source": "one",
+   "source_label": "one.illinois.edu",
+   "promoted": false
+  },
+  {
+   "id": "cal-33560442",
+   "title": "Friday Forum and Conversation Café: Vine City as the World Trade Center: Subproletarianization as Structural Violence from Atlanta to Champaign",
+   "host": "YMCA of the University of Illinois, co-sponsored by the Center for the Study of Global Gender Equity and others",
+   "start": "2026-11-06T12:00:00-06:00",
+   "end": "2026-11-06T13:00:00-06:00",
+   "all_day": false,
+   "location": "University YMCA, 1001 S Wright St, Champaign",
+   "location_hidden": false,
+   "maps_url": "https://www.google.com/maps/search/?api=1&query=University%20YMCA%2C%201001%20S%20Wright%20St%2C%20Champaign",
+   "food_text": "Lunch",
+   "evidence": "Vine City as the World Trade Center: Subproletarianization as Structural Violence from Atlanta to Champaign Time: November 6 at 12 PMLocation: University YMCA, 1001 S Wright St, Champaign FREE LUNCH PROVIDED",
+   "icon": "🥪",
+   "dietary": [],
+   "proof_url": "https://calendars.illinois.edu/detail/6991/33560442?key=200001012000010133560442",
+   "also_urls": [
+    "https://calendars.illinois.edu/detail/6991/33557551?key=200001012000010133557551"
+   ],
+   "source": "calendars",
+   "source_label": "calendars.illinois.edu",
    "promoted": false
   }
  ]
