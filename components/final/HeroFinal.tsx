@@ -211,7 +211,7 @@ export default function HeroFinal() {
   }
 
   return (
-    <section className="flex border-b-[3px] border-brut">
+    <header className="flex border-b-[3px] border-brut">
       {/* Awning columns on both sides of the gradient, same width as the checkerboard columns below. */}
       <div aria-hidden className="diag-stripes w-9 shrink-0 border-r-[3px] border-brut sm:w-12 lg:w-[60px]" />
 
@@ -303,6 +303,6 @@ export default function HeroFinal() {
         </div>
       </div>
       <div aria-hidden className="diag-stripes w-9 shrink-0 border-l-[3px] border-brut sm:w-12 lg:w-[60px]" />
-    </section>
+    </header>
   );
 }

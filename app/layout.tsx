@@ -32,7 +32,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col">
         {children}
         {ANALYTICS_ON && (
-          <Script id="posthog" strategy="afterInteractive">
+          // Not id="posthog": browsers expose elements with an id as window globals, so that id
+          // made window.posthog the <script> tag itself, and every track() call threw until
+          // PostHog's own script replaced it (forever, when an ad blocker stopped it).
+          <Script id="posthog-init" strategy="afterInteractive">
             {`${POSTHOG_LOADER}
 posthog.init(${JSON.stringify(POSTHOG_KEY)}, { api_host: ${JSON.stringify(POSTHOG_HOST)}, ui_host: "https://us.posthog.com", defaults: "2026-05-30", person_profiles: "identified_only", disable_session_recording: true });`}
           </Script>

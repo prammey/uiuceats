@@ -8,7 +8,12 @@ declare global {
   }
 }
 
+// Analytics must never break the page: a blocked or half-loaded PostHog is ignored.
 export function track(event: string, properties?: Record<string, unknown>) {
   if (typeof window === "undefined") return;
-  window.posthog?.capture(event, properties);
+  try {
+    window.posthog?.capture?.(event, properties);
+  } catch {
+    // ignore
+  }
 }

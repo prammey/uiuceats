@@ -27,7 +27,6 @@ export default function DayStripFinal({ days, counts, selected, onSelect }: Prop
             role="tab"
             type="button"
             aria-selected={active}
-            aria-label={`${day.isToday ? "Today, " : ""}${day.weekday} ${day.dayNumber}, ${count} ${count === 1 ? "event" : "events"}`}
             onClick={() => onSelect(day.key)}
             className={`brut-sm flex flex-col items-center rounded-xl py-2 transition-all duration-200 hover:-translate-y-1 hover:animate-wiggle sm:py-3 ${fill}`}
           >
@@ -35,7 +34,9 @@ export default function DayStripFinal({ days, counts, selected, onSelect }: Prop
               {day.isToday ? "Today" : day.weekday}
             </span>
             <span className="font-swash text-2xl leading-none sm:text-4xl">{day.dayNumber}</span>
-            <span className="mt-1 font-body-f text-[10px] font-bold sm:text-xs">{count > 0 ? `×${count}` : "—"}</span>
+            <span aria-hidden className="mt-1 font-body-f text-[10px] font-bold sm:text-xs">{count > 0 ? `×${count}` : "—"}</span>
+            {/* Spoken name is the visible text plus the count: "Today 30, 5 events". */}
+            <span className="sr-only">, {count} {count === 1 ? "event" : "events"}</span>
           </button>
         );
       })}
