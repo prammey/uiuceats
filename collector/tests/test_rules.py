@@ -215,3 +215,20 @@ def test_genuinely_free_food_still_publishes():
     "Light refreshments will be served. Open to all students.",
   ]:
     assert _verdict(text) == "publish", text
+
+
+def test_one_illinois_auto_link_is_not_an_rsvp():
+  # Every one.illinois.edu description ends with this link (real feed, 2026-10-30).
+  text = "We serve lemonade, coffee and hot chocolate to anyone passing by --- Event Details: https://one.illinois.edu/rsvp?id=475601"
+  clean = rules.strip_links(text)
+  assert "rsvp" not in clean
+  assert rules.exclusion_reason("Coffee Tent", clean) is None
+  assert rules.find_evidence("Coffee Tent", clean) == "We serve lemonade, coffee and hot chocolate to anyone passing by"
+  assert rules.exclusion_reason("Pizza", rules.strip_links("Pizza will be served. Please RSVP by Friday.")) == "rsvp"
+
+
+def test_first_person_food_phrasing():
+  for sentence in ["We'll have pizza after the meeting!", "We will be serving tacos.", "We're serving boba on the Quad."]:
+    assert rules.find_evidence("Event", sentence) == sentence, sentence
+  for sentence in ["We have lunch together every Friday.", "We bring our own lunch."]:
+    assert rules.find_evidence("Event", sentence) is None, sentence

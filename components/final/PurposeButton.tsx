@@ -1,13 +1,18 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // "Our purpose" opens a retro pop-up window inside the page.
 export default function PurposeButton() {
   const [open, setOpen] = useState(false);
+  const openerRef = useRef<HTMLButtonElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     if (!open) return;
+    // Keyboard and screen-reader users land inside the pop-up, and go back to the button after.
+    const opener = openerRef.current;
+    closeRef.current?.focus();
     const onKey = (event: KeyboardEvent) => {
       if (event.key === "Escape") setOpen(false);
     };
@@ -17,12 +22,14 @@ export default function PurposeButton() {
     return () => {
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = previous;
+      opener?.focus();
     };
   }, [open]);
 
   return (
     <>
       <button
+        ref={openerRef}
         type="button"
         onClick={() => setOpen(true)}
         className="brut brut-press flex items-center justify-center gap-2 rounded-2xl bg-[#4ea8ff] px-4 py-4 text-center font-swash text-lg text-white transition-colors hover:bg-[#2f8fe6]"
@@ -48,6 +55,7 @@ export default function PurposeButton() {
                 Purpose
               </h2>
               <button
+                ref={closeRef}
                 type="button"
                 onClick={() => setOpen(false)}
                 aria-label="Close"

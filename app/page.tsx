@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
 };
 
-// The root serves the final merged version. /A and /B keep the earlier looks.
+// The site is a single page, built from components/final/.
 export default function Home() {
   return <PageFinal />;
 }

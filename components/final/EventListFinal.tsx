@@ -4,15 +4,16 @@ import { useEffect, useRef, useState } from "react";
 import DayStripFinal from "@/components/final/DayStripFinal";
 import EventCardFinal from "@/components/final/EventCardFinal";
 import { track } from "@/lib/analytics";
-import { dayKey, formatDayHeading, type FoodEvent } from "@/lib/events";
+import { dayKey, formatDayHeading, formatUpdated, isStale, type FoodEvent } from "@/lib/events";
 import { useNow, useWeekView } from "@/lib/week";
 
 type Props = {
   events: FoodEvent[];
+  generatedAt: string;
   reportTemplate?: string;
 };
 
-export default function EventListFinal({ events, reportTemplate }: Props) {
+export default function EventListFinal({ events, generatedAt, reportTemplate }: Props) {
   const now = useNow();
   const [picked, setPicked] = useState<string | null>(null);
   // `at` makes every press a fresh spotlight, even if the same card is chosen again.
@@ -80,6 +81,13 @@ export default function EventListFinal({ events, reportTemplate }: Props) {
           🎲 Surprise me
         </button>
       </div>
+
+      {isStale(generatedAt, now) && (
+        <p role="status" className="brut-sm mb-4 rounded-xl bg-b-yellow px-4 py-2 text-center font-body-f text-xs font-bold text-brut">
+          Heads up: listings were last refreshed {formatUpdated(generatedAt)} (campus time), so some may have changed.
+          Check the Proof link before you go.
+        </p>
+      )}
 
       <DayStripFinal
         days={view.days}

@@ -21,7 +21,7 @@ type Props = {
 export default function EventCardFinal({ event, now, reportTemplate, spotlight = false }: Props) {
   const live = isHappeningNow(event, now);
   const ended = hasEnded(event, now);
-  const report = reportLink(reportTemplate, event.id);
+  const report = reportLink(reportTemplate, event);
   const period = PERIOD_META[mealPeriod(event)];
 
   return (
@@ -65,14 +65,26 @@ export default function EventCardFinal({ event, now, reportTemplate, spotlight =
           <div className="flex gap-3">
             <dt className="w-12 shrink-0 pt-0.5 text-[11px] font-bold uppercase tracking-wider text-ink-muted">Where</dt>
             <dd>
-              <a
-                href={event.maps_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold underline decoration-2 underline-offset-2 hover:bg-b-yellow"
-              >
-                {event.location}
-              </a>
+              {event.location_hidden || !event.maps_url ? (
+                // one.illinois.edu shows the room only after a NetID sign-in.
+                <a
+                  href={event.proof_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold underline decoration-2 underline-offset-2 hover:bg-b-yellow"
+                >
+                  {event.location_hidden ? "Room on the event page (NetID sign-in)" : event.location}
+                </a>
+              ) : (
+                <a
+                  href={event.maps_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold underline decoration-2 underline-offset-2 hover:bg-b-yellow"
+                >
+                  {event.location}
+                </a>
+              )}
             </dd>
           </div>
           <div className="flex gap-3">

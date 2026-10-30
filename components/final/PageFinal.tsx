@@ -25,9 +25,16 @@ function CoffeeCupIcon() {
 
 // Google Form links, set in Vercel's environment variables (see README).
 const ADVERTISE_URL = process.env.NEXT_PUBLIC_ADVERTISE_FORM_URL;
-const REPORT_TEMPLATE = process.env.NEXT_PUBLIC_REPORT_FORM_URL;
-// The general "Report a problem" button opens the same form with no event pre-filled.
-const REPORT_URL = REPORT_TEMPLATE ? REPORT_TEMPLATE.replace("EVENT_ID", "") : "#";
+const REPORT_FORM = process.env.NEXT_PUBLIC_REPORT_FORM_URL;
+// Each card's ⚑ opens the Report form with "Which listing?" filled in. That needs the form's
+// pre-filled link with EVENT_ID as the answer (Google Forms → ⋮ → Get pre-filled link). If the
+// Vercel variable is already such a link it wins; otherwise this one, made for the current
+// "UIUC Eats: Report a problem" form, is used. Update it if the form is ever replaced.
+const REPORT_PREFILLED =
+  "https://docs.google.com/forms/d/e/1FAIpQLScQ6BsE-7OzFKRkx-BnGcFY16OZDgbopg_3YkpsNxGP7QgiXQ/viewform?usp=pp_url&entry.1087228447=EVENT_ID";
+const REPORT_TEMPLATE = REPORT_FORM?.includes("EVENT_ID") ? REPORT_FORM : REPORT_PREFILLED;
+// The general "Report a problem" button opens the form with nothing filled in.
+const REPORT_URL = REPORT_FORM ? REPORT_FORM.replace("EVENT_ID", "") : REPORT_PREFILLED.replace(/&entry\.\d+=EVENT_ID/, "");
 
 // The whole page, top to bottom: marquee, hero, stripes, day picker and cards, the
 // purpose/report/advertise block, footer.
@@ -54,7 +61,7 @@ export default function PageFinal() {
         />
 
         <main className="relative z-10 mx-auto w-full max-w-6xl px-4 pb-16 pt-10 sm:px-8 sm:pt-14">
-          <EventListFinal events={events.events} reportTemplate={REPORT_TEMPLATE} />
+          <EventListFinal events={events.events} generatedAt={events.generated_at} reportTemplate={REPORT_TEMPLATE} />
 
           {/* One block: two stacked buttons on the left, the advertise panel on the right. */}
           <section className="mt-16 grid gap-4 sm:grid-cols-[15rem_1fr]">
@@ -62,8 +69,8 @@ export default function PageFinal() {
               <PurposeButton />
               <a
                 href={REPORT_URL}
-                target={REPORT_TEMPLATE ? "_blank" : undefined}
-                rel={REPORT_TEMPLATE ? "noopener noreferrer" : undefined}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="brut brut-press flex items-center justify-center gap-2 rounded-2xl bg-[#ff9f55] px-4 py-4 text-center font-swash text-lg text-white transition-colors hover:bg-[#f0812e]"
               >
                 Report a problem <span aria-hidden>→</span>

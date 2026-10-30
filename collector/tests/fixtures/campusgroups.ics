@@ -13,7 +13,7 @@ UID:aaa1@campusgroups.com
 SUMMARY;ENCODING=QUOTED-PRINTABLE:Welcome Event Invitation
 LOCATION: Sign in to download the location
 URL:https://one.illinois.edu/rsvp?id=484581
-DESCRIPTION:You are invited! Starting college can be exciting.
+DESCRIPTION:You are invited! Starting college can be exciting. --- Event Details: https://one.illinois.edu/rsvp?id=484581
 END:VEVENT
 BEGIN:VEVENT
 DTSTAMP:20261008T210041Z
@@ -26,7 +26,7 @@ UID:aaa2@campusgroups.com
 SUMMARY;ENCODING=QUOTED-PRINTABLE:Quench Series (Lunch On US)
 LOCATION:Illini Union Room 314
 URL:https://one.illinois.edu/rsvp?id=492852
-DESCRIPTION:Come connect with other students over a midday meal.
+DESCRIPTION:Come connect with other students over a midday meal. --- Event Details: https://one.illinois.edu/rsvp?id=492852
 END:VEVENT
 BEGIN:VEVENT
 DTSTAMP:20261008T210041Z
@@ -39,7 +39,7 @@ UID:aaa3@campusgroups.com
 SUMMARY;ENCODING=QUOTED-PRINTABLE:Incoming Exchange Boba Social =F0=9F=A7=8B
 LOCATION:Coble Hall Lobby
 URL:https://one.illinois.edu/rsvp?id=500001
-DESCRIPTION:Free boba for the first 50 students who show up. Halal snacks too.
+DESCRIPTION:Free boba for the first 50 students who show up. Halal snacks too. --- Event Details: https://one.illinois.edu/rsvp?id=500001
 END:VEVENT
 BEGIN:VEVENT
 DTSTAMP:20261008T210041Z
@@ -51,6 +51,6 @@ UID:aaa4@campusgroups.com
 SUMMARY;ENCODING=QUOTED-PRINTABLE:ACS Pizza Lecture
 LOCATION:Noyes Lab 100
 URL:https://one.illinois.edu/rsvp?id=500002
-DESCRIPTION:Pizza will be served. Please RSVP so we order enough.
+DESCRIPTION:Pizza will be served. Please RSVP so we order enough. --- Event Details: https://one.illinois.edu/rsvp?id=500002
 END:VEVENT
 END:VCALENDAR

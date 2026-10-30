@@ -1,5 +1,5 @@
 import { useMemo, useSyncExternalStore } from "react";
-import { dayKey, hasEnded, shiftDays, weekDays, type DayInfo, type FoodEvent } from "@/lib/events";
+import { dayKey, hasEnded, weekDays, type DayInfo, type FoodEvent } from "@/lib/events";
 
 // The clock only exists in the browser. The server snapshot is null, so the static
 // HTML and the first client render both show a placeholder, then the real time
@@ -34,7 +34,7 @@ export function useWeekView(events: FoodEvent[], picked: string | null, now: Dat
     if (!now) return null;
     const days = weekDays(now);
     const todayKey = days[0].key;
-    const tomorrowKey = dayKey(shiftDays(now, 1));
+    const tomorrowKey = days[1].key;
     const counts: Record<string, number> = {};
     const byDay: Record<string, FoodEvent[]> = {};
     const upcoming: FoodEvent[] = [];

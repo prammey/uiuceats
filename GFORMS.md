@@ -44,7 +44,9 @@ You are editing a blank Google Form. Do the following in order.
 
 5. Click the "Responses" tab at the top. Click "Link to Sheets", choose "Create a new spreadsheet", keep the default name, click "Create". A Google Sheet opens in a new tab.
 
-6. In that Google Sheet: click File → Share → Publish to web. In the dialog, on the "Link" tab, set the first dropdown to "Form Responses 1" and the second dropdown to "Comma-separated values (.csv)". Click "Publish", confirm "OK". Copy the link shown and report it back as: PROMOTED_CSV_URL = <link>
+6. In that Google Sheet, click the first empty cell in row 1 to the right of the form's columns and type: Approved
+   Submissions only appear on the site after you type yes in their Approved cell, so check each proof link first.
+   Then click File → Share → Publish to web. In the dialog, on the "Link" tab, set the first dropdown to "Form Responses 1" and the second dropdown to "Comma-separated values (.csv)". Click "Publish", confirm "OK". Copy the link shown and report it back as: PROMOTED_CSV_URL = <link>
 
 7. Go back to the form tab. Click "Send" (top right), click the link icon, click "Copy". Report it back as: ADVERTISE_FORM_URL = <link>
 ```

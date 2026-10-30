@@ -26,6 +26,12 @@ EVIDENCE_PATTERNS = [
     rf"\b(?:served|provided|providing|offering|serving)\b[^.!?\n]{{0,40}}?\b{FOOD}\b",
     re.I,
   ),
+  # Student orgs write in the first person: "We serve lemonade, coffee and hot chocolate".
+  re.compile(
+    rf"\b(?:we(?:'ll| will|'re| are)?\s+(?:serve|serving)|we(?:'ll| will)\s+(?:have|bring|be bringing|be serving))\b"
+    rf"[^.!?\n]{{0,40}}?\b{FOOD}\b",
+    re.I,
+  ),
   re.compile(rf"\b{FOOD}\s+(?:provided|included|on us|is on us|available)\b", re.I),
   re.compile(rf"\b{FOOD}\b[^.!?\n]{{0,60}}?\b(?:at no cost|free of charge|no charge)\b", re.I),
   re.compile(
@@ -120,6 +126,15 @@ RSVP_OPTIONAL = re.compile(
   re.I,
 )
 HIDDEN_LOCATION = re.compile(r"sign in to (?:download|see|view) the location", re.I)
+
+# one.illinois.edu appends "--- Event Details: https://one.illinois.edu/rsvp?id=..." to every
+# description. The "rsvp" in that link is not an RSVP requirement, so links are removed before
+# any rule reads the text.
+AUTO_LINK = re.compile(r"-{2,}\s*Event Details:\s*\S+|https?://\S+|\bwww\.\S+", re.I)
+
+
+def strip_links(text):
+  return re.sub(r"[ \t]{2,}", " ", AUTO_LINK.sub(" ", text or "")).strip()
 
 SENTENCE_SPLIT = re.compile(r"(?<=[.!?])\s+|(?<=[.!?])(?=[A-Z\u201c\"])|\n+")
 

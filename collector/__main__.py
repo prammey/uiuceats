@@ -54,10 +54,15 @@ def collect(now, fetch=sources.fetch, feed_list=None):
   reasons = Counter()
   published = []
   for event in window:
-    text = f"{event['description']}\n{event.get('extra_text', '')}".strip()
-    reason = rules.location_problem(event["location"]) or rules.exclusion_reason(
-      event["title"], text, event["status"]
-    )
+    text = rules.strip_links(f"{event['description']}\n{event.get('extra_text', '')}")
+    problem = rules.location_problem(event["location"])
+    if problem == "hidden_location" and event["source"] == "one":
+      # one.illinois.edu hides most rooms behind a NetID sign-in, which every student has.
+      # Keep the event and send people to its page for the room instead of dropping it.
+      event["location"] = merge.HIDDEN_LOCATION_LABEL
+      event["location_hidden"] = True
+      problem = None
+    reason = problem or rules.exclusion_reason(event["title"], text, event["status"])
     if reason:
       reasons[reason] += 1
       continue
@@ -75,6 +80,9 @@ def collect(now, fetch=sources.fetch, feed_list=None):
     event["icon"] = rules.food_icon(f"{evidence}\n{text}")
     event["food_text"] = rules.food_text(evidence, text)
     published.append(event)
+  # The same occasion is often posted twice (a reception and its lecture, a series page and
+  # the week's page). Keep one card per occasion.
+  published = merge.collapse_twins(published)
   counts["published"] = len(published)
   return published, counts, reasons
 

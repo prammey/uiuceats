@@ -7,6 +7,9 @@ export type FoodEvent = {
   end: string;
   all_day: boolean;
   location: string;
+  // True when one.illinois.edu keeps the room behind a NetID sign-in; the card then links
+  // to the event page instead of a map.
+  location_hidden?: boolean;
   maps_url: string;
   food_text: string;
   evidence: string;
@@ -100,18 +103,30 @@ export function dayKey(date: Date): string {
   return dayFormatter.format(date);
 }
 
-export function shiftDays(date: Date, days: number): Date {
-  return new Date(date.getTime() + days * 86_400_000);
+// The day `days` after a "2026-10-10" key, counted on the calendar. Adding 24-hour blocks to a
+// timestamp goes wrong around daylight-saving changes (a day repeats or goes missing), so
+// day arithmetic happens on the date itself.
+export function addDaysToKey(key: string, days: number): string {
+  const [year, month, day] = key.split("-").map(Number);
+  return new Date(Date.UTC(year, month - 1, day + days)).toISOString().slice(0, 10);
+}
+
+// Midday UTC on a campus day (6 or 7 AM in Chicago), safe to format with the campus formatters.
+function middayOf(key: string): Date {
+  const [year, month, day] = key.split("-").map(Number);
+  return new Date(Date.UTC(year, month - 1, day, 12));
 }
 
 // Today plus the next six days.
 export function weekDays(now: Date, count = 7): DayInfo[] {
+  const today = dayKey(now);
   return Array.from({ length: count }, (_, index) => {
-    const date = shiftDays(now, index);
+    const key = addDaysToKey(today, index);
+    const midday = middayOf(key);
     return {
-      key: dayKey(date),
-      weekday: weekdayFormatter.format(date),
-      dayNumber: Number(dayNumberFormatter.format(date)),
+      key,
+      weekday: weekdayFormatter.format(midday),
+      dayNumber: Number(dayNumberFormatter.format(midday)),
       isToday: index === 0,
     };
   });
@@ -169,11 +184,27 @@ export function hasEnded(event: FoodEvent, now: Date): boolean {
   return new Date(event.end) <= now;
 }
 
-// The Report form link; a template containing EVENT_ID gets the id filled in.
-export function reportLink(template: string | undefined, eventId: string): string | null {
+// The Report form link for one card. A template containing EVENT_ID gets a readable label
+// filled in, "Narcan Training · Thu Nov 5 [cal-33566100]"; the collector can read the id
+// in brackets back out of the responses sheet.
+const shortDayFormatter = new Intl.DateTimeFormat("en-US", {
+  timeZone: CAMPUS_TZ,
+  weekday: "short",
+  month: "short",
+  day: "numeric",
+});
+
+export function reportLink(template: string | undefined, event: FoodEvent): string | null {
   if (!template) return null;
-  if (template.includes("EVENT_ID")) return template.replace("EVENT_ID", encodeURIComponent(eventId));
-  return template;
+  if (!template.includes("EVENT_ID")) return template;
+  const day = shortDayFormatter.format(new Date(event.start)).replace(",", "");
+  const label = `${event.title} · ${day} [${event.id}]`;
+  return template.replace("EVENT_ID", encodeURIComponent(label));
+}
+
+// True when the published data is old enough that listings may have changed.
+export function isStale(generatedAt: string, now: Date, hours = 12): boolean {
+  return now.getTime() - new Date(generatedAt).getTime() > hours * 3_600_000;
 }
 
 function gcalStamp(iso: string): string {

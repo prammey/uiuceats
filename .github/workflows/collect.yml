@@ -2,7 +2,10 @@ name: Collect free food events
 
 on:
   schedule:
-    - cron: "17 */3 * * *"   # every 3 hours (UTC)
+    # Hourly: GitHub skips or delays many scheduled runs on free repos, so checking every
+    # hour keeps the site within ~3 hours. collector/publish_gate.py only commits (and so only
+    # redeploys) when listings change or the last published refresh is ~3 hours old.
+    - cron: "17 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -45,5 +48,10 @@ jobs:
             echo "No data changes."
             exit 0
           fi
+          if ! python -m collector.publish_gate; then
+            exit 0
+          fi
           git commit -m "data: refresh events $(date -u +'%Y-%m-%d %H:%M UTC')"
+          # Someone may have pushed code while this run was collecting.
+          git pull --rebase origin main
           git push

@@ -249,7 +249,8 @@ export default function HeroFinal() {
               on campus
             </h1>
             {/* The line changes width as it rotates, so its whole row is kept clear. */}
-            <p key={lineIndex} data-keepout="box" aria-live="polite" className="mt-(--line-gap) animate-pop font-soft text-(length:--line-size) font-bold text-white drop-shadow-[2px_2px_0_#13294b] sm:mt-[calc(2.5rem*var(--fit))] sm:text-3xl lg:text-4xl">
+            {/* Decorative and changes every 1.7 s, so screen readers are not told about each change. */}
+            <p key={lineIndex} data-keepout="box" className="mt-(--line-gap) animate-pop font-soft text-(length:--line-size) font-bold text-white drop-shadow-[2px_2px_0_#13294b] sm:mt-[calc(2.5rem*var(--fit))] sm:text-3xl lg:text-4xl">
               {LINES[lineIndex]}
             </p>
             {/* Actions: stacked and left-aligned on phones, a row from tablet up (where the

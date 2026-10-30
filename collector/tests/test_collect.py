@@ -19,14 +19,15 @@ def fake_fetch(url):
 def test_collect_publishes_only_evidence_backed_walk_in_events():
   published, counts, reasons = collect(NOW, fetch=fake_fetch, feed_list=FEEDS)
   ids = sorted(e["id"] for e in published)
-  assert ids == ["cal-1001", "cal-1006", "cal-1007", "one-492852", "one-500001"]
+  # one-484581's room is behind a NetID sign-in; it is kept with a pointer to its page.
+  assert ids == ["cal-1001", "cal-1006", "cal-1007", "one-484581", "one-492852", "one-500001"]
   assert reasons["rsvp"] == 2        # symposium registration, ACS RSVP
   assert reasons["paid"] == 1        # taco fundraiser
   assert reasons["off_topic"] == 1   # FSHN food safety seminar
   assert reasons["bring_your_own"] == 1
-  assert reasons["hidden_location"] == 1
+  assert reasons["hidden_location"] == 0
   assert reasons["no_evidence"] == 1  # studio reviews
-  assert counts["published"] == 5
+  assert counts["published"] == 6
 
 
 def test_published_events_carry_card_fields():
@@ -80,6 +81,10 @@ def test_promoted_and_reports_from_csv_rows():
     "What food": "Samosas, chai",
     "Dietary notes": "Vegetarian",
     "Proof link": "https://one.illinois.edu/rsvp?id=1",
+    "Approved": "yes",
+  }, {
+    "Timestamp": "10/9/2026 11:00:00", "Event name": "Not yet checked", "Date": "10/12/2026",
+    "Start time": "6:00 PM", "Location": "Somewhere", "Proof link": "https://example.com/e",
   }, {
     "Timestamp": "x", "Event name": "Missing proof", "Date": "10/12/2026",
     "Start time": "6:00 PM", "Location": "Somewhere", "Proof link": "",
@@ -137,3 +142,82 @@ def test_suspicious_growth_flags_a_doubling_but_not_normal_change():
   assert not merge.suspicious_growth(19, 30)
   assert not merge.suspicious_growth(5, 14)
   assert not merge.suspicious_growth(0, 40)  # first run ever
+
+
+def test_hidden_location_student_org_events_get_a_sign_in_pointer():
+  published, _, _ = collect(NOW, fetch=fake_fetch, feed_list=FEEDS)
+  welcome = {e["id"]: e for e in published}["one-484581"]
+  card = merge.to_card(welcome)
+  assert card["location"] == merge.HIDDEN_LOCATION_LABEL
+  assert card["location_hidden"] is True
+  assert card["maps_url"] == ""
+  assert card["proof_url"] == "https://one.illinois.edu/rsvp?id=484581"
+
+
+def _published(eid, title, start, location, evidence, description="", source="calendars"):
+  return {"id": eid, "source": source, "title": title, "start": start, "end": start, "all_day": False,
+          "location": location, "url": f"https://x/{eid}", "evidence": evidence, "description": description}
+
+
+def test_collapse_twins_keeps_the_listing_whose_text_confirms_its_time():
+  tz = parse.CHICAGO
+  # Real pair from 2026-10-30: one entry says 8:30 am, the other's text says 12 PM.
+  early = _published("cal-1", "Fighting Oligarchy and Fascism in the 21st Century", datetime(2026, 10, 30, 8, 30, tzinfo=tz),
+                     "University YMCA, 1001 S. Wright St., Champaign", "Lunch is provided from the Y Thai Eatery at no cost.")
+  noon = _published("cal-2", "Friday Forum & Conversation Café: Fighting Oligarchy and Fascism in the 21st Century",
+                    datetime(2026, 10, 30, 12, 0, tzinfo=tz), "University YMCA, 1001 S Wright St, Champaign",
+                    "Time: October 30 at 12 PMLocation: University YMCA FREE LUNCH PROVIDED")
+  kept = merge.collapse_twins([early, noon])
+  assert [e["id"] for e in kept] == ["cal-2"]
+  assert kept[0]["also_urls"] == ["https://x/cal-1"]
+
+
+def test_collapse_twins_merges_shared_evidence_and_keeps_unrelated_events():
+  tz = parse.CHICAGO
+  at5 = datetime(2026, 11, 5, 17, 0, tzinfo=tz)
+  says = "Be among the first to experience the exhibition, enjoy live music, light refreshments, and remarks from curators."
+  a = _published("cal-1", "Opening Reception | Ink Shower", at5, "Krannert Art Museum, 500 E. Peabody Dr., Champaign", says)
+  b = _published("cal-2", "Opening Reception | Ink Shower: Contemporary Taiwanese Artists", at5, "Krannert Art Museum", says)
+  c = _published("cal-3", "Chess Club Pizza Night", at5, "Krannert Art Museum", "Pizza will be served.")
+  d = _published("cal-4", "Opening Reception | Ink Shower", datetime(2026, 11, 6, 17, 0, tzinfo=tz), "Krannert Art Museum", says)
+  kept = merge.collapse_twins([a, b, c, d])
+  assert sorted(e["id"] for e in kept) == ["cal-1", "cal-3", "cal-4"]  # d is another day
+
+
+def test_reports_read_the_listing_id_from_the_prefilled_answer():
+  col = "Which listing? Type N/A if this isn't a listing issue."
+  rows = [{col: "Narcan Training · Thu Nov 5 [cal-33566100]"}, {col: "narcan training [CAL-33566100]"},
+          {col: "N/A"}, {col: "Pizza thing [one-1]"}]
+  assert merge.reported_ids("", rows=rows) == {"cal-33566100"}
+
+
+def test_collapse_twins_prefers_the_feed_that_shows_the_room():
+  tz = parse.CHICAGO
+  noon = datetime(2026, 11, 2, 12, 0, tzinfo=tz)
+  cal = _published("cal-9", "Quench: Living Authentically, Knowing Your Rights, Claiming Your Future", noon,
+                   "GSRC, 616 E. Green Street, Suite 202", "Lunch on Us programming.")
+  one = _published("one-492853", "GSRC's Quench Series (Lunch On US): Living Authentically, Knowing Your Rights, Claiming Your Future",
+                   noon, merge.HIDDEN_LOCATION_LABEL, "GSRC's Quench Series (Lunch On US)", source="one")
+  one["location_hidden"] = True
+  kept = merge.collapse_twins([one, cal])
+  assert [e["id"] for e in kept] == ["cal-9"]
+  assert kept[0]["also_urls"] == ["https://x/one-492853"]
+
+
+def test_collapse_twins_ignores_short_generic_evidence():
+  tz = parse.CHICAGO
+  a = _published("cal-1", "Algebra Seminar", datetime(2026, 11, 4, 11, tzinfo=tz), "Altgeld Hall 243", "Refreshments will be served.")
+  b = _published("cal-2", "Topology Seminar", datetime(2026, 11, 4, 15, tzinfo=tz), "Altgeld Hall 243", "Light refreshments will be served.")
+  assert len(merge.collapse_twins([a, b])) == 2
+
+
+def test_publish_gate_publishes_changes_and_three_hourly_refreshes():
+  from collector.publish_gate import should_publish
+  old = {"generated_at": "2026-10-30T09:00:00-05:00", "count": 1, "events": [{"id": "cal-1"}]}
+  same_soon = {**old, "generated_at": "2026-10-30T10:00:00-05:00"}
+  same_later = {**old, "generated_at": "2026-10-30T11:50:00-05:00"}
+  changed = {**old, "generated_at": "2026-10-30T09:30:00-05:00", "count": 2, "events": [{"id": "cal-1"}, {"id": "cal-2"}]}
+  assert not should_publish(same_soon, old)
+  assert should_publish(same_later, old)
+  assert should_publish(changed, old)
+  assert should_publish(old, None)
