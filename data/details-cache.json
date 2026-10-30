@@ -1,7 +1,7 @@
 {
- "cal-33553339": {
-  "calendar": "School of Information Sciences",
-  "sponsor": "School of Information Sciences"
+ "cal-33551426": {
+  "calendar": "CEAPS Events Calendar",
+  "sponsor": "Center for East Asian and Pacific Studies, Krannert Art Museum"
  },
  "cal-33555253": {
   "calendar": "Counseling Center Events",
@@ -23,21 +23,13 @@
   "calendar": "La Casa Cultural Latina",
   "sponsor": "La Casa Cultural Latina and Student Cultural Programming Fee."
  },
- "cal-33559264": {
+ "cal-33559265": {
   "calendar": "Siebel School CARES Office Hours",
   "sponsor": "CS CARES Committee"
- },
- "cal-33559817": {
-  "calendar": "IMMERSE Seminar Series",
-  "sponsor": "IMMERSE Center for Immersive Computing"
  },
  "cal-33560580": {
   "calendar": "Center for the Study of Global Gender Equity",
   "sponsor": "YMCA of the University of Illinois, co-sponsored by the Center for the Study of Global Gender Equity and others"
- },
- "cal-33561609": {
-  "calendar": "Asian American Studies",
-  "sponsor": "Department of Asian American Studies"
  },
  "cal-33561610": {
   "calendar": "Asian American Studies",
@@ -71,10 +63,6 @@
   "calendar": "ACES Study Abroad",
   "sponsor": "ACES Study Abroad"
  },
- "cal-33564102": {
-  "calendar": "Family & Graduate Housing - Event Calendar (Apartments)",
-  "sponsor": "Family & Graduate Housing and College of ACES"
- },
  "cal-33564282": {
   "calendar": "Access, Civil Rights & Community – Events",
   "sponsor": "Office of the Vice Chancellor for Access, Civil Rights & Community"
@@ -83,6 +71,14 @@
   "calendar": "Program in Medieval Studies",
   "sponsor": "Program in Medieval Studies"
  },
+ "cal-33564704": {
+  "calendar": "Grainger International Student Community (GISC)",
+  "sponsor": "Grainger International Student Community (GISC)"
+ },
+ "cal-33565533": {
+  "calendar": "Campus Humanities Calendar",
+  "sponsor": "School of Information Sciences"
+ },
  "cal-33565759": {
   "calendar": "Gender & Sexuality Resource Center",
   "sponsor": "Gender and Sexuality Resource Center; Student Success Inclusion and Belonging"
@@ -90,6 +86,10 @@
  "cal-33565980": {
   "calendar": "General Events - Department of Mathematics",
   "sponsor": "Department of Mathematics"
+ },
+ "cal-33566014": {
+  "calendar": "Campus Humanities Calendar",
+  "sponsor": "Krannert Art Museum and Center for East Asian and Pacific Studies at the Un"
  },
  "cal-33566207": {
   "calendar": "Illinois International's Global and Intercultural Events",
