@@ -1,29 +1,9 @@
 {
- "generated_at": "2026-10-31T12:46:02.215860-05:00",
+ "generated_at": "2026-10-31T16:37:44.820563-05:00",
  "timezone": "America/Chicago",
  "window_days": 7,
- "count": 24,
+ "count": 23,
  "events": [
-  {
-   "id": "cal-33563236",
-   "title": "Workshop: Performing the Plays of Hrotsvitha (10th c.)",
-   "host": "Program in Medieval Studies",
-   "start": "2026-10-31T13:00:00-05:00",
-   "end": "2026-10-31T16:00:00-05:00",
-   "all_day": false,
-   "location": "Lucy Ellis Lounge -- room 1080, Literatures, Cultures, and Linguistics Building",
-   "location_hidden": false,
-   "maps_url": "https://www.google.com/maps/search/?api=1&query=Lucy%20Ellis%20Lounge%20--%20room%201080%2C%20Literatures%2C%20Cultures%2C%20and%20Linguistics%20Building%2C%20University%20of%20Illinois%20Urbana-Champaign",
-   "food_text": "Refreshments",
-   "evidence": "Refreshments will be served.",
-   "icon": "🍱",
-   "dietary": [],
-   "proof_url": "https://calendars.illinois.edu/detail/6991/33563236?key=200001012000010133563236",
-   "also_urls": [],
-   "source": "calendars",
-   "source_label": "calendars.illinois.edu",
-   "promoted": false
-  },
   {
    "id": "cal-33564474",
    "title": "Lunchtime workshop with Prof. Shane Bobrycki",
