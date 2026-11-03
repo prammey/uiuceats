@@ -39,10 +39,6 @@
   "calendar": "Department of French and Italian (EVENTS)",
   "sponsor": "Department of French & Italian"
  },
- "cal-33563304": {
-  "calendar": "ACES Study Abroad",
-  "sponsor": "ACES Study Abroad"
- },
  "cal-33563461": {
   "calendar": "Sexual Violence Prevention Events",
   "sponsor": "Women's Resources Center"
@@ -58,6 +54,10 @@
  "cal-33564282": {
   "calendar": "Access, Civil Rights & Community – Events",
   "sponsor": "Office of the Vice Chancellor for Access, Civil Rights & Community"
+ },
+ "cal-33564431": {
+  "calendar": "Asian American Cultural Center Events",
+  "sponsor": "Asian American Cultural Center"
  },
  "cal-33564704": {
   "calendar": "Grainger International Student Community (GISC)",
