@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-02T17:33:29.012678-06:00",
+ "generated_at": "2026-11-03T00:51:28.579031-06:00",
  "timezone": "America/Chicago",
  "window_days": 7,
  "count": 23,
@@ -295,23 +295,25 @@
    "promoted": false
   },
   {
-   "id": "one-500234",
-   "title": "Queer Bowling Night with NetworQ (LGBTQ+ Graduate Students)",
-   "host": "Gender & Sexuality Resource Center (GSRC)",
+   "id": "cal-33566680",
+   "title": "Queer Bowling with NetworQ (LGBTQ+ Graduate Students)",
+   "host": "Gender and Sexuality Resource Center; Student Success Inclusion and Belonging",
    "start": "2026-11-05T17:00:00-06:00",
    "end": "2026-11-05T18:30:00-06:00",
    "all_day": false,
-   "location": "Room on one.illinois.edu (sign in with your NetID)",
-   "location_hidden": true,
-   "maps_url": "",
+   "location": "Illini Union, Rec Room (lower level)",
+   "location_hidden": false,
+   "maps_url": "https://www.google.com/maps/search/?api=1&query=Illini%20Union%2C%20Rec%20Room%20%28lower%20level%29%2C%20University%20of%20Illinois%20Urbana-Champaign",
    "food_text": "Pizza, Refreshments",
    "evidence": "Pizza and refreshments will be provided while supplies last.",
    "icon": "🍕",
    "dietary": [],
-   "proof_url": "https://one.illinois.edu/rsvp?id=500234",
-   "also_urls": [],
-   "source": "one",
-   "source_label": "one.illinois.edu",
+   "proof_url": "https://calendars.illinois.edu/detail/6991/33566680?key=200001012000010133566680",
+   "also_urls": [
+    "https://one.illinois.edu/rsvp?id=500234"
+   ],
+   "source": "calendars",
+   "source_label": "calendars.illinois.edu",
    "promoted": false
   },
   {
