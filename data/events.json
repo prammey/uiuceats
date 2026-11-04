@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-03T19:24:08.572596-06:00",
+ "generated_at": "2026-11-04T03:17:24.704706-06:00",
  "timezone": "America/Chicago",
  "window_days": 7,
- "count": 24,
+ "count": 25,
  "events": [
   {
    "id": "cal-33563755",
@@ -148,22 +148,22 @@
    "promoted": false
   },
   {
-   "id": "cal-33555286",
+   "id": "cal-33555253",
    "title": "Narcan Training",
-   "host": "Women's Resources Center & Counseling Center",
+   "host": "Counseling Center and Women's Resource Center",
    "start": "2026-11-05T12:00:00-06:00",
    "end": "2026-11-05T13:00:00-06:00",
    "all_day": false,
-   "location": "Women's Resources Center - 616 E Green St, Suite #213, Champaign IL 61820",
+   "location": "WRC @ 616 E Green St. Suite 213",
    "location_hidden": false,
-   "maps_url": "https://www.google.com/maps/search/?api=1&query=Women%27s%20Resources%20Center%20-%20616%20E%20Green%20St%2C%20Suite%20%23213%2C%20Champaign%20IL%2061820",
+   "maps_url": "https://www.google.com/maps/search/?api=1&query=WRC%20%40%20616%20E%20Green%20St.%20Suite%20213%2C%20University%20of%20Illinois%20Urbana-Champaign",
    "food_text": "Pizza",
-   "evidence": "Pizza will be provided for the first 20 participants.",
+   "evidence": "Pizza provided for first 20 attendees.",
    "icon": "🍕",
    "dietary": [],
-   "proof_url": "https://calendars.illinois.edu/detail/6991/33555286?key=200001012000010133555286",
+   "proof_url": "https://calendars.illinois.edu/detail/6991/33555253?key=200001012000010133555253",
    "also_urls": [
-    "https://calendars.illinois.edu/detail/6991/33555253?key=200001012000010133555253"
+    "https://calendars.illinois.edu/detail/6991/33555286?key=200001012000010133555286"
    ],
    "source": "calendars",
    "source_label": "calendars.illinois.edu",
@@ -224,6 +224,26 @@
    "icon": "☕",
    "dietary": [],
    "proof_url": "https://calendars.illinois.edu/detail/6991/33559265?key=200001012000010133559265",
+   "also_urls": [],
+   "source": "calendars",
+   "source_label": "calendars.illinois.edu",
+   "promoted": false
+  },
+  {
+   "id": "cal-33566358",
+   "title": "\"Have You Eaten?\": The Korean Way of Saying \"How Are You?\"",
+   "host": "Mason (Minsung) Kim and Illinois International",
+   "start": "2026-11-05T17:00:00-06:00",
+   "end": "2026-11-05T18:00:00-06:00",
+   "all_day": false,
+   "location": "Murphy Lounge, University YMCA",
+   "location_hidden": false,
+   "maps_url": "https://www.google.com/maps/search/?api=1&query=Murphy%20Lounge%2C%20University%20YMCA%2C%20University%20of%20Illinois%20Urbana-Champaign",
+   "food_text": "Free food",
+   "evidence": "Food and space are available on a first come, first serve basis.",
+   "icon": "🍲",
+   "dietary": [],
+   "proof_url": "https://calendars.illinois.edu/detail/6991/33566358?key=200001012000010133566358",
    "also_urls": [],
    "source": "calendars",
    "source_label": "calendars.illinois.edu",
