@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-04T03:17:24.704706-06:00",
+ "generated_at": "2026-11-04T11:59:36.421171-06:00",
  "timezone": "America/Chicago",
  "window_days": 7,
  "count": 25,
@@ -65,29 +65,6 @@
    "promoted": false
   },
   {
-   "id": "cal-33561753",
-   "title": "Reception & MillerComm Lecture Series | \"The Journey of Yao's Black Divine Comedy\" | Yao Jui-Chung in Dialogue with Kao Chen-Hui",
-   "host": "Presented by The Center for Advanced Study George A. Miller Programs | Hosted By: The Center for East Asian & Pacific Studies | Co-Sponsored By: Krannert Art Museum, Department of East Asian Languages & Cultures, Illinois Global Institute, School of Art + Design, Illinois International Programs Global Relations, Asian American Cultural Center, Center for Global Studies, LAS Global Studies, Department of Political Science, Department of Anthropology, Humanities Research Institute, and Initiative in Holocaust, Genocide, and Memory Studies",
-   "start": "2026-11-04T16:00:00-06:00",
-   "end": "2026-11-04T17:00:00-06:00",
-   "all_day": false,
-   "location": "Levis Faculty Center, Room 210",
-   "location_hidden": false,
-   "maps_url": "https://www.google.com/maps/search/?api=1&query=Levis%20Faculty%20Center%2C%20Room%20210%2C%20University%20of%20Illinois%20Urbana-Champaign",
-   "food_text": "Refreshments",
-   "evidence": "4:00pm - 5:00pm Reception with light refreshments, hosted by UAAT Mandarin Education Program Liaison Office for the University of Illinois System 5:00pm - 6:30pm MillerComm Lecture with Yao Jui-Chung in Dialogue with...",
-   "icon": "🍱",
-   "dietary": [],
-   "proof_url": "https://calendars.illinois.edu/detail/6991/33561753?key=200001012000010133561753",
-   "also_urls": [
-    "https://calendars.illinois.edu/detail/6991/33562083?key=200001012000010133562083",
-    "https://calendars.illinois.edu/detail/6991/33563248?key=200001012000010133563248"
-   ],
-   "source": "calendars",
-   "source_label": "calendars.illinois.edu",
-   "promoted": false
-  },
-  {
    "id": "cal-33563788",
    "title": "Info Session: ETMA 199 - Construction Methods: Past, Present, and Future - Italy",
    "host": "ACES Study Abroad",
@@ -103,6 +80,28 @@
    "dietary": [],
    "proof_url": "https://calendars.illinois.edu/detail/6991/33563788?key=200001012000010133563788",
    "also_urls": [],
+   "source": "calendars",
+   "source_label": "calendars.illinois.edu",
+   "promoted": false
+  },
+  {
+   "id": "cal-33562083",
+   "title": "Jui-Chung Yao and Chien-Hui Kao in conversation: Landscape as Storytelling: The Journey of \"Yao’s Black Divine Comedy\"",
+   "host": "Center for Advanced Study (CAS)",
+   "start": "2026-11-04T17:00:00-06:00",
+   "end": "2026-11-04T18:00:00-06:00",
+   "all_day": false,
+   "location": "Levis Faculty Center, Room 210, 919 W Illinois St",
+   "location_hidden": false,
+   "maps_url": "https://www.google.com/maps/search/?api=1&query=Levis%20Faculty%20Center%2C%20Room%20210%2C%20919%20W%20Illinois%20St",
+   "food_text": "Refreshments",
+   "evidence": "4:00-5:00 PM: Reception with light refreshments, hosted by the UAAT Mandarin Education Program Liaison Office for the University of Illinois System Presented in tandem with Ink Shower: Contemporary Taiwanese Artists R...",
+   "icon": "🍱",
+   "dietary": [],
+   "proof_url": "https://calendars.illinois.edu/detail/6991/33562083?key=200001012000010133562083",
+   "also_urls": [
+    "https://calendars.illinois.edu/detail/6991/33563248?key=200001012000010133563248"
+   ],
    "source": "calendars",
    "source_label": "calendars.illinois.edu",
    "promoted": false
