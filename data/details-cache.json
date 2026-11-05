@@ -1,8 +1,4 @@
 {
- "cal-33555286": {
-  "calendar": "Changemaker Certificate Program",
-  "sponsor": "Women's Resources Center & Counseling Center"
- },
  "cal-33556163": {
   "calendar": "Food For The Soul",
   "sponsor": "Bruce D. Nesbitt African American Cultural Center"
@@ -15,7 +11,11 @@
   "calendar": "Dish It Up",
   "sponsor": "Women's Resources Center"
  },
- "cal-33558685": {
+ "cal-33557815": {
+  "calendar": "Rare Book & Manuscript Library Events",
+  "sponsor": "The Rare Book & Manuscript Library"
+ },
+ "cal-33558686": {
   "calendar": "La Casa Cultural Latina",
   "sponsor": "La Casa Cultural Latina and Student Cultural Programming Fee."
  },
@@ -23,11 +23,19 @@
   "calendar": "Siebel School CARES Office Hours",
   "sponsor": "CS CARES Committee"
  },
+ "cal-33559266": {
+  "calendar": "Siebel School CARES Office Hours",
+  "sponsor": "CS CARES Committee"
+ },
+ "cal-33559820": {
+  "calendar": "IMMERSE Seminar Series",
+  "sponsor": "IMMERSE Center for Immersive Computing"
+ },
  "cal-33560442": {
   "calendar": "Center for the Study of Global Gender Equity",
   "sponsor": "YMCA of the University of Illinois, co-sponsored by the Center for the Study of Global Gender Equity and others"
  },
- "cal-33561610": {
+ "cal-33561611": {
   "calendar": "Asian American Studies",
   "sponsor": "Department of Asian American Studies"
  },
@@ -55,6 +63,10 @@
   "calendar": "Family & Graduate Housing - Event Calendar (Apartments)",
   "sponsor": "Family & Graduate Housing"
  },
+ "cal-33566007": {
+  "calendar": "NRES Events",
+  "sponsor": "Department of Natural Resources and Environmental Sciences"
+ },
  "cal-33566014": {
   "calendar": "Campus Humanities Calendar",
   "sponsor": "Krannert Art Museum and Center for East Asian and Pacific Studies at the Un"
@@ -62,6 +74,10 @@
  "cal-33566358": {
   "calendar": "Illinois International's Global and Intercultural Events",
   "sponsor": "Mason (Minsung) Kim and Illinois International"
+ },
+ "cal-33566453": {
+  "calendar": "Illinois International's Global and Intercultural Events",
+  "sponsor": "Jayleen Kim and Illinois International"
  },
  "cal-33566680": {
   "calendar": "Gender & Sexuality Resource Center",
