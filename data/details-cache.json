@@ -11,6 +11,10 @@
   "calendar": "Dish It Up",
   "sponsor": "Women's Resources Center"
  },
+ "cal-33557815": {
+  "calendar": "Rare Book & Manuscript Library Events",
+  "sponsor": "The Rare Book & Manuscript Library"
+ },
  "cal-33558686": {
   "calendar": "La Casa Cultural Latina",
   "sponsor": "La Casa Cultural Latina and Student Cultural Programming Fee."
@@ -19,17 +23,9 @@
   "calendar": "Siebel School CARES Office Hours",
   "sponsor": "CS CARES Committee"
  },
- "cal-33559820": {
-  "calendar": "IMMERSE Seminar Series",
-  "sponsor": "IMMERSE Center for Immersive Computing"
- },
  "cal-33560442": {
   "calendar": "Center for the Study of Global Gender Equity",
   "sponsor": "YMCA of the University of Illinois, co-sponsored by the Center for the Study of Global Gender Equity and others"
- },
- "cal-33561263": {
-  "calendar": "Campus Humanities Calendar",
-  "sponsor": "The Rare Book & Manuscript Library"
  },
  "cal-33561611": {
   "calendar": "Asian American Studies",
@@ -50,6 +46,10 @@
  "cal-33565372": {
   "calendar": "Native American House",
   "sponsor": "Native American House and the Center for Civic Education & Justice"
+ },
+ "cal-33565375": {
+  "calendar": "Native American House",
+  "sponsor": "Native American House"
  },
  "cal-33565695": {
   "calendar": "Family & Graduate Housing - Event Calendar (Apartments)",

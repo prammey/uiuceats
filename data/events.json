@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-06T04:56:17.670837-06:00",
+ "generated_at": "2026-11-06T11:59:20.393455-06:00",
  "timezone": "America/Chicago",
  "window_days": 7,
- "count": 20,
+ "count": 21,
  "events": [
   {
    "id": "one-475602",
@@ -309,7 +309,7 @@
    "promoted": false
   },
   {
-   "id": "cal-33561263",
+   "id": "cal-33557815",
    "title": "Decoding the Page: Emblems, Ornaments, and Early Modern Reading",
    "host": "The Rare Book & Manuscript Library",
    "start": "2026-11-12T15:00:00-06:00",
@@ -322,9 +322,9 @@
    "evidence": "Refreshments will be served.",
    "icon": "🍱",
    "dietary": [],
-   "proof_url": "https://calendars.illinois.edu/detail/6991/33561263?key=200001012000010133561263",
+   "proof_url": "https://calendars.illinois.edu/detail/6991/33557815?key=200001012000010133557815",
    "also_urls": [
-    "https://calendars.illinois.edu/detail/6991/33557815?key=200001012000010133557815"
+    "https://calendars.illinois.edu/detail/6991/33561263?key=200001012000010133561263"
    ],
    "source": "calendars",
    "source_label": "calendars.illinois.edu",
@@ -345,26 +345,6 @@
    "icon": "☕",
    "dietary": [],
    "proof_url": "https://calendars.illinois.edu/detail/6991/33559266?key=200001012000010133559266",
-   "also_urls": [],
-   "source": "calendars",
-   "source_label": "calendars.illinois.edu",
-   "promoted": false
-  },
-  {
-   "id": "cal-33559820",
-   "title": "IMMERSE Distinguished Lecture- Barry Silverstein: The Future of Human Computer Connection",
-   "host": "IMMERSE Center for Immersive Computing",
-   "start": "2026-11-12T16:00:00-06:00",
-   "end": "2026-11-12T17:00:00-06:00",
-   "all_day": false,
-   "location": "Siebel School of Computing and Data Science Room 2405",
-   "location_hidden": false,
-   "maps_url": "https://www.google.com/maps/search/?api=1&query=Siebel%20School%20of%20Computing%20and%20Data%20Science%20Room%202405%2C%20University%20of%20Illinois%20Urbana-Champaign",
-   "food_text": "Refreshments",
-   "evidence": "Refreshments will be provided.",
-   "icon": "🍱",
-   "dietary": [],
-   "proof_url": "https://calendars.illinois.edu/detail/6991/33559820?key=200001012000010133559820",
    "also_urls": [],
    "source": "calendars",
    "source_label": "calendars.illinois.edu",
@@ -408,6 +388,46 @@
    "also_urls": [
     "https://calendars.illinois.edu/detail/6991/33566390?key=200001012000010133566390"
    ],
+   "source": "calendars",
+   "source_label": "calendars.illinois.edu",
+   "promoted": false
+  },
+  {
+   "id": "one-475603",
+   "title": "Coffee Tent",
+   "host": "Illini Life Student Fellowship",
+   "start": "2026-11-13T10:00:00-06:00",
+   "end": "2026-11-13T12:00:00-06:00",
+   "all_day": false,
+   "location": "Room on one.illinois.edu (sign in with your NetID)",
+   "location_hidden": true,
+   "maps_url": "",
+   "food_text": "Coffee, Hot chocolate",
+   "evidence": "We serve lemonade, coffee and hot chocolate to anyone passing by",
+   "icon": "☕",
+   "dietary": [],
+   "proof_url": "https://one.illinois.edu/rsvp?id=475603",
+   "also_urls": [],
+   "source": "one",
+   "source_label": "one.illinois.edu",
+   "promoted": false
+  },
+  {
+   "id": "cal-33565375",
+   "title": "Realizing Indigenous Futurity in Higher Education: Stories from Indigenous Tribal Relations Administrators",
+   "host": "Native American House",
+   "start": "2026-11-13T11:00:00-06:00",
+   "end": "2026-11-13T13:00:00-06:00",
+   "all_day": false,
+   "location": "ACRC (Office of the Vice Chancellor for Access, Civil Rights, and Community) Hub, Conference Room 3070 (614 E. Daniel Street, Third Floor, Champaign)",
+   "location_hidden": false,
+   "maps_url": "https://www.google.com/maps/search/?api=1&query=ACRC%20%28Office%20of%20the%20Vice%20Chancellor%20for%20Access%2C%20Civil%20Rights%2C%20and%20Community%29%20Hub%2C%20Conference%20Room%203070%20%28614%20E.%20Daniel%20Street%2C%20Third%20Floor%2C%20Champaign%29",
+   "food_text": "Lunch",
+   "evidence": "Lunch will be served at noon following the workshop and will be available on a first-come, first-served basis.",
+   "icon": "🥪",
+   "dietary": [],
+   "proof_url": "https://calendars.illinois.edu/detail/6991/33565375?key=200001012000010133565375",
+   "also_urls": [],
    "source": "calendars",
    "source_label": "calendars.illinois.edu",
    "promoted": false
