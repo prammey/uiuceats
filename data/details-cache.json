@@ -19,10 +19,6 @@
   "calendar": "La Casa Cultural Latina",
   "sponsor": "La Casa Cultural Latina and Student Cultural Programming Fee."
  },
- "cal-33559265": {
-  "calendar": "Siebel School CARES Office Hours",
-  "sponsor": "CS CARES Committee"
- },
  "cal-33559266": {
   "calendar": "Siebel School CARES Office Hours",
   "sponsor": "CS CARES Committee"
@@ -43,13 +39,13 @@
   "calendar": "Department of French and Italian (EVENTS)",
   "sponsor": "Department of French & Italian"
  },
+ "cal-33563396": {
+  "calendar": "ACES Study Abroad",
+  "sponsor": "ACES Study Abroad"
+ },
  "cal-33564431": {
   "calendar": "Asian American Cultural Center Events",
   "sponsor": "Asian American Cultural Center"
- },
- "cal-33564704": {
-  "calendar": "Grainger International Student Community (GISC)",
-  "sponsor": "Grainger International Student Community (GISC)"
  },
  "cal-33564838": {
   "calendar": "Dads Weekend 2026",
@@ -67,20 +63,12 @@
   "calendar": "NRES Events",
   "sponsor": "Department of Natural Resources and Environmental Sciences"
  },
- "cal-33566014": {
-  "calendar": "Campus Humanities Calendar",
-  "sponsor": "Krannert Art Museum and Center for East Asian and Pacific Studies at the Un"
- },
- "cal-33566358": {
-  "calendar": "Illinois International's Global and Intercultural Events",
-  "sponsor": "Mason (Minsung) Kim and Illinois International"
+ "cal-33566256": {
+  "calendar": "College of Media Department of Media & Cinema Studies Events",
+  "sponsor": "Department of Media & Cinema Studies and Humanities Research Institute"
  },
  "cal-33566453": {
   "calendar": "Illinois International's Global and Intercultural Events",
   "sponsor": "Jayleen Kim and Illinois International"
- },
- "cal-33566680": {
-  "calendar": "Gender & Sexuality Resource Center",
-  "sponsor": "Gender and Sexuality Resource Center; Student Success Inclusion and Belonging"
  }
 }
