@@ -23,13 +23,13 @@
   "calendar": "Siebel School CARES Office Hours",
   "sponsor": "CS CARES Committee"
  },
- "cal-33560442": {
-  "calendar": "Center for the Study of Global Gender Equity",
-  "sponsor": "YMCA of the University of Illinois, co-sponsored by the Center for the Study of Global Gender Equity and others"
- },
  "cal-33561611": {
   "calendar": "Asian American Studies",
   "sponsor": "Department of Asian American Studies"
+ },
+ "cal-33562359": {
+  "calendar": "Women in Engineering",
+  "sponsor": "Women in Engineering"
  },
  "cal-33562601": {
   "calendar": "Department of French and Italian (EVENTS)",
@@ -59,6 +59,10 @@
   "calendar": "NRES Events",
   "sponsor": "Department of Natural Resources and Environmental Sciences"
  },
+ "cal-33566044": {
+  "calendar": "ACES ODEI (Events)",
+  "sponsor": "ACES Office of Diversity, Equity, & Inclusion"
+ },
  "cal-33566256": {
   "calendar": "College of Media Department of Media & Cinema Studies Events",
   "sponsor": "Department of Media & Cinema Studies and Humanities Research Institute"
@@ -66,5 +70,9 @@
  "cal-33566453": {
   "calendar": "Illinois International's Global and Intercultural Events",
   "sponsor": "Jayleen Kim and Illinois International"
+ },
+ "cal-33566565": {
+  "calendar": "Persian Events Calender",
+  "sponsor": "Persian Language Studies, Department of Linguistics"
  }
 }
