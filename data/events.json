@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-05T20:29:25.136446-06:00",
+ "generated_at": "2026-11-06T04:56:17.670837-06:00",
  "timezone": "America/Chicago",
  "window_days": 7,
  "count": 20,
@@ -129,26 +129,6 @@
    "promoted": false
   },
   {
-   "id": "cal-33564431",
-   "title": "Food for Thought: Experimentalism in Indian Classical Music, KCPA",
-   "host": "Asian American Cultural Center",
-   "start": "2026-11-10T12:00:00-06:00",
-   "end": "2026-11-10T13:00:00-06:00",
-   "all_day": false,
-   "location": "1210 W. Nevada St., Urbana, IL 61801",
-   "location_hidden": false,
-   "maps_url": "https://www.google.com/maps/search/?api=1&query=1210%20W.%20Nevada%20St.%2C%20Urbana%2C%20IL%2061801",
-   "food_text": "Lunch",
-   "evidence": "Come enjoy lunch, listen, ask questions, and join the conversation.",
-   "icon": "🥪",
-   "dietary": [],
-   "proof_url": "https://calendars.illinois.edu/detail/6991/33564431?key=200001012000010133564431",
-   "also_urls": [],
-   "source": "calendars",
-   "source_label": "calendars.illinois.edu",
-   "promoted": false
-  },
-  {
    "id": "one-488516",
    "title": "Peer Perspectives - Ask Away!",
    "host": "Grainger International Programs in Engineering (IPENG)",
@@ -186,6 +166,26 @@
    "also_urls": [],
    "source": "calendars",
    "source_label": "calendars.illinois.edu",
+   "promoted": false
+  },
+  {
+   "id": "one-502044",
+   "title": "ABE 398 Disaster Resilience in Puerto Rico - Info Session",
+   "host": "Grainger International Programs in Engineering (IPENG)",
+   "start": "2026-11-11T12:00:00-06:00",
+   "end": "2026-11-11T13:00:00-06:00",
+   "all_day": false,
+   "location": "Room on one.illinois.edu (sign in with your NetID)",
+   "location_hidden": true,
+   "maps_url": "",
+   "food_text": "Pizza",
+   "evidence": "Pizza provided!",
+   "icon": "🍕",
+   "dietary": [],
+   "proof_url": "https://one.illinois.edu/rsvp?id=502044",
+   "also_urls": [],
+   "source": "one",
+   "source_label": "one.illinois.edu",
    "promoted": false
   },
   {
@@ -309,7 +309,7 @@
    "promoted": false
   },
   {
-   "id": "cal-33557815",
+   "id": "cal-33561263",
    "title": "Decoding the Page: Emblems, Ornaments, and Early Modern Reading",
    "host": "The Rare Book & Manuscript Library",
    "start": "2026-11-12T15:00:00-06:00",
@@ -322,9 +322,9 @@
    "evidence": "Refreshments will be served.",
    "icon": "🍱",
    "dietary": [],
-   "proof_url": "https://calendars.illinois.edu/detail/6991/33557815?key=200001012000010133557815",
+   "proof_url": "https://calendars.illinois.edu/detail/6991/33561263?key=200001012000010133561263",
    "also_urls": [
-    "https://calendars.illinois.edu/detail/6991/33561263?key=200001012000010133561263"
+    "https://calendars.illinois.edu/detail/6991/33557815?key=200001012000010133557815"
    ],
    "source": "calendars",
    "source_label": "calendars.illinois.edu",

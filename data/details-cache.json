@@ -11,10 +11,6 @@
   "calendar": "Dish It Up",
   "sponsor": "Women's Resources Center"
  },
- "cal-33557815": {
-  "calendar": "Rare Book & Manuscript Library Events",
-  "sponsor": "The Rare Book & Manuscript Library"
- },
  "cal-33558686": {
   "calendar": "La Casa Cultural Latina",
   "sponsor": "La Casa Cultural Latina and Student Cultural Programming Fee."
@@ -31,6 +27,10 @@
   "calendar": "Center for the Study of Global Gender Equity",
   "sponsor": "YMCA of the University of Illinois, co-sponsored by the Center for the Study of Global Gender Equity and others"
  },
+ "cal-33561263": {
+  "calendar": "Campus Humanities Calendar",
+  "sponsor": "The Rare Book & Manuscript Library"
+ },
  "cal-33561611": {
   "calendar": "Asian American Studies",
   "sponsor": "Department of Asian American Studies"
@@ -42,10 +42,6 @@
  "cal-33563396": {
   "calendar": "ACES Study Abroad",
   "sponsor": "ACES Study Abroad"
- },
- "cal-33564431": {
-  "calendar": "Asian American Cultural Center Events",
-  "sponsor": "Asian American Cultural Center"
  },
  "cal-33564838": {
   "calendar": "Dads Weekend 2026",
