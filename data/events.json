@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-09T00:36:08.570438-06:00",
+ "generated_at": "2026-11-09T11:31:54.381871-06:00",
  "timezone": "America/Chicago",
  "window_days": 7,
  "count": 23,
@@ -265,7 +265,7 @@
    "promoted": false
   },
   {
-   "id": "cal-33557815",
+   "id": "cal-33561263",
    "title": "Decoding the Page: Emblems, Ornaments, and Early Modern Reading",
    "host": "The Rare Book & Manuscript Library",
    "start": "2026-11-12T15:00:00-06:00",
@@ -278,10 +278,8 @@
    "evidence": "Refreshments will be served.",
    "icon": "🍱",
    "dietary": [],
-   "proof_url": "https://calendars.illinois.edu/detail/6991/33557815?key=200001012000010133557815",
-   "also_urls": [
-    "https://calendars.illinois.edu/detail/6991/33561263?key=200001012000010133561263"
-   ],
+   "proof_url": "https://calendars.illinois.edu/detail/6991/33561263?key=200001012000010133561263",
+   "also_urls": [],
    "source": "calendars",
    "source_label": "calendars.illinois.edu",
    "promoted": false
