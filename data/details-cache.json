@@ -7,6 +7,10 @@
   "calendar": "International Education",
   "sponsor": "International Education and The Counseling Center"
  },
+ "cal-33557815": {
+  "calendar": "Rare Book & Manuscript Library Events",
+  "sponsor": "The Rare Book & Manuscript Library"
+ },
  "cal-33558686": {
   "calendar": "La Casa Cultural Latina",
   "sponsor": "La Casa Cultural Latina and Student Cultural Programming Fee."
@@ -18,10 +22,6 @@
  "cal-33559820": {
   "calendar": "IMMERSE Seminar Series",
   "sponsor": "IMMERSE Center for Immersive Computing"
- },
- "cal-33561263": {
-  "calendar": "Campus Humanities Calendar",
-  "sponsor": "The Rare Book & Manuscript Library"
  },
  "cal-33561611": {
   "calendar": "Asian American Studies",
@@ -35,9 +35,17 @@
   "calendar": "ACES Study Abroad",
   "sponsor": "ACES Study Abroad"
  },
+ "cal-33563612": {
+  "calendar": "Beckman Institute Calendar (internal events only)",
+  "sponsor": "Beckman Connect and Engage Committee"
+ },
  "cal-33564431": {
   "calendar": "Asian American Cultural Center Events",
   "sponsor": "Asian American Cultural Center"
+ },
+ "cal-33565294": {
+  "calendar": "CPSC Seminars CSPC",
+  "sponsor": "Department of Crop Sciences, University of Illinois"
  },
  "cal-33565372": {
   "calendar": "Native American House",
@@ -74,5 +82,9 @@
  "cal-33566873": {
   "calendar": "Asian American Cultural Center Events",
   "sponsor": "Asian American Cultural Center and SKY Meditation"
+ },
+ "cal-33566890": {
+  "calendar": "Illinois ECE Student Events Calendar",
+  "sponsor": "GradSWE"
  }
 }

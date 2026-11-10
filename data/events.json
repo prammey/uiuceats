@@ -1,9 +1,29 @@
 {
- "generated_at": "2026-11-09T19:34:26.218955-06:00",
+ "generated_at": "2026-11-10T03:53:54.722222-06:00",
  "timezone": "America/Chicago",
  "window_days": 7,
- "count": 24,
+ "count": 27,
  "events": [
+  {
+   "id": "cal-33563612",
+   "title": "Gather in the Garden: Now featuring a plant swap!",
+   "host": "Beckman Connect and Engage Committee",
+   "start": "2026-11-10T10:00:00-06:00",
+   "end": "2026-11-10T10:30:00-06:00",
+   "all_day": false,
+   "location": "Beckman Institute Garden",
+   "location_hidden": false,
+   "maps_url": "https://www.google.com/maps/search/?api=1&query=Beckman%20Institute%20Garden%2C%20University%20of%20Illinois%20Urbana-Champaign",
+   "food_text": "Coffee",
+   "evidence": "Come enjoy coffee, say hello to colleagues and bring your houseplants to swap.",
+   "icon": "☕",
+   "dietary": [],
+   "proof_url": "https://calendars.illinois.edu/detail/6991/33563612?key=200001012000010133563612",
+   "also_urls": [],
+   "source": "calendars",
+   "source_label": "calendars.illinois.edu",
+   "promoted": false
+  },
   {
    "id": "cal-33564431",
    "title": "Food for Thought: Experimentalism in Indian Classical Music, KCPA",
@@ -105,6 +125,26 @@
    "promoted": false
   },
   {
+   "id": "cal-33565294",
+   "title": "From Research to Recommendations: Balancing Agronomic, Economic, and Environmental Goals in Nutrient Management",
+   "host": "Department of Crop Sciences, University of Illinois",
+   "start": "2026-11-11T12:00:00-06:00",
+   "end": "2026-11-11T13:00:00-06:00",
+   "all_day": false,
+   "location": "W109 - Turner Hall",
+   "location_hidden": false,
+   "maps_url": "https://www.google.com/maps/search/?api=1&query=W109%20-%20Turner%20Hall%2C%20University%20of%20Illinois%20Urbana-Champaign",
+   "food_text": "Lunch",
+   "evidence": "Stay afterward for lunch and an oppertunity to meet and interact with the speaker.",
+   "icon": "🥪",
+   "dietary": [],
+   "proof_url": "https://calendars.illinois.edu/detail/6991/33565294?key=200001012000010133565294",
+   "also_urls": [],
+   "source": "calendars",
+   "source_label": "calendars.illinois.edu",
+   "promoted": false
+  },
+  {
    "id": "cal-33556301",
    "title": "Global Engagement Lounge (GEL) - Dating Across Cultures: Understanding & Navigating Differences",
    "host": "International Education and The Counseling Center",
@@ -119,6 +159,26 @@
    "icon": "🥪",
    "dietary": [],
    "proof_url": "https://calendars.illinois.edu/detail/6991/33556301?key=200001012000010133556301",
+   "also_urls": [],
+   "source": "calendars",
+   "source_label": "calendars.illinois.edu",
+   "promoted": false
+  },
+  {
+   "id": "cal-33566890",
+   "title": "Agentic AI in STEM",
+   "host": "GradSWE",
+   "start": "2026-11-11T13:00:00-06:00",
+   "end": "2026-11-11T14:30:00-06:00",
+   "all_day": false,
+   "location": "Armory Room 425",
+   "location_hidden": false,
+   "maps_url": "https://www.google.com/maps/search/?api=1&query=Armory%20Room%20425%2C%20University%20of%20Illinois%20Urbana-Champaign",
+   "food_text": "Lunch",
+   "evidence": "Join us for a Professional Development Lunch on Agentic AI in Science and Engineering with MATLAB!",
+   "icon": "🥪",
+   "dietary": [],
+   "proof_url": "https://calendars.illinois.edu/detail/6991/33566890?key=200001012000010133566890",
    "also_urls": [],
    "source": "calendars",
    "source_label": "calendars.illinois.edu",
@@ -225,7 +285,7 @@
    "promoted": false
   },
   {
-   "id": "cal-33561263",
+   "id": "cal-33557815",
    "title": "Decoding the Page: Emblems, Ornaments, and Early Modern Reading",
    "host": "The Rare Book & Manuscript Library",
    "start": "2026-11-12T15:00:00-06:00",
@@ -238,8 +298,10 @@
    "evidence": "Refreshments will be served.",
    "icon": "🍱",
    "dietary": [],
-   "proof_url": "https://calendars.illinois.edu/detail/6991/33561263?key=200001012000010133561263",
-   "also_urls": [],
+   "proof_url": "https://calendars.illinois.edu/detail/6991/33557815?key=200001012000010133557815",
+   "also_urls": [
+    "https://calendars.illinois.edu/detail/6991/33561263?key=200001012000010133561263"
+   ],
    "source": "calendars",
    "source_label": "calendars.illinois.edu",
    "promoted": false
