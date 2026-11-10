@@ -1,29 +1,9 @@
 {
- "generated_at": "2026-11-10T03:53:54.722222-06:00",
+ "generated_at": "2026-11-10T11:52:28.706094-06:00",
  "timezone": "America/Chicago",
  "window_days": 7,
  "count": 27,
  "events": [
-  {
-   "id": "cal-33563612",
-   "title": "Gather in the Garden: Now featuring a plant swap!",
-   "host": "Beckman Connect and Engage Committee",
-   "start": "2026-11-10T10:00:00-06:00",
-   "end": "2026-11-10T10:30:00-06:00",
-   "all_day": false,
-   "location": "Beckman Institute Garden",
-   "location_hidden": false,
-   "maps_url": "https://www.google.com/maps/search/?api=1&query=Beckman%20Institute%20Garden%2C%20University%20of%20Illinois%20Urbana-Champaign",
-   "food_text": "Coffee",
-   "evidence": "Come enjoy coffee, say hello to colleagues and bring your houseplants to swap.",
-   "icon": "☕",
-   "dietary": [],
-   "proof_url": "https://calendars.illinois.edu/detail/6991/33563612?key=200001012000010133563612",
-   "also_urls": [],
-   "source": "calendars",
-   "source_label": "calendars.illinois.edu",
-   "promoted": false
-  },
   {
    "id": "cal-33564431",
    "title": "Food for Thought: Experimentalism in Indian Classical Music, KCPA",
@@ -551,6 +531,26 @@
    "also_urls": [],
    "source": "one",
    "source_label": "one.illinois.edu",
+   "promoted": false
+  },
+  {
+   "id": "cal-33563613",
+   "title": "Gather in the Garden: Now featuring a plant swap!",
+   "host": "Beckman Connect and Engage Committee",
+   "start": "2026-11-17T10:00:00-06:00",
+   "end": "2026-11-17T10:30:00-06:00",
+   "all_day": false,
+   "location": "Beckman Institute Garden",
+   "location_hidden": false,
+   "maps_url": "https://www.google.com/maps/search/?api=1&query=Beckman%20Institute%20Garden%2C%20University%20of%20Illinois%20Urbana-Champaign",
+   "food_text": "Coffee",
+   "evidence": "Come enjoy coffee, say hello to colleagues and bring your houseplants to swap.",
+   "icon": "☕",
+   "dietary": [],
+   "proof_url": "https://calendars.illinois.edu/detail/6991/33563613?key=200001012000010133563613",
+   "also_urls": [],
+   "source": "calendars",
+   "source_label": "calendars.illinois.edu",
    "promoted": false
   }
  ]
