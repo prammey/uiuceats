@@ -7,10 +7,6 @@
   "calendar": "International Education",
   "sponsor": "International Education and The Counseling Center"
  },
- "cal-33557216": {
-  "calendar": "Dish It Up",
-  "sponsor": "Women's Resources Center"
- },
  "cal-33558686": {
   "calendar": "La Casa Cultural Latina",
   "sponsor": "La Casa Cultural Latina and Student Cultural Programming Fee."
@@ -34,10 +30,6 @@
  "cal-33562359": {
   "calendar": "Women in Engineering",
   "sponsor": "Women in Engineering"
- },
- "cal-33562601": {
-  "calendar": "Department of French and Italian (EVENTS)",
-  "sponsor": "Department of French & Italian"
  },
  "cal-33563396": {
   "calendar": "ACES Study Abroad",
@@ -74,6 +66,10 @@
  "cal-33566565": {
   "calendar": "Persian Events Calender",
   "sponsor": "Persian Language Studies, Department of Linguistics"
+ },
+ "cal-33566682": {
+  "calendar": "Gender & Sexuality Resource Center",
+  "sponsor": "Gender and Sexuality Resource Center; Student Success Inclusion and Belonging"
  },
  "cal-33566873": {
   "calendar": "Asian American Cultural Center Events",
