@@ -39,10 +39,6 @@
   "calendar": "Beckman Institute Calendar (internal events only)",
   "sponsor": "Beckman Connect and Engage Committee"
  },
- "cal-33564431": {
-  "calendar": "Asian American Cultural Center Events",
-  "sponsor": "Asian American Cultural Center"
- },
  "cal-33565294": {
   "calendar": "CPSC Seminars CSPC",
   "sponsor": "Department of Crop Sciences, University of Illinois"
@@ -74,6 +70,10 @@
  "cal-33566565": {
   "calendar": "Persian Events Calender",
   "sponsor": "Persian Language Studies, Department of Linguistics"
+ },
+ "cal-33566595": {
+  "calendar": "Beckman Institute Calendar (internal events only)",
+  "sponsor": "Beckman Institute for Advanced Science and Technology"
  },
  "cal-33566682": {
   "calendar": "Gender & Sexuality Resource Center",
