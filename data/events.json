@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-11T00:27:16.973968-06:00",
+ "generated_at": "2026-11-11T09:15:13.237782-06:00",
  "timezone": "America/Chicago",
  "window_days": 7,
- "count": 26,
+ "count": 28,
  "events": [
   {
    "id": "one-502044",
@@ -414,6 +414,26 @@
    "promoted": false
   },
   {
+   "id": "one-502670",
+   "title": "Chicago Pre-College Science & Engineering Saturday STEM Mentors",
+   "host": "Grainger Outreach & Public Engagement",
+   "start": "2026-11-14T07:00:00-06:00",
+   "end": "2026-11-14T16:00:00-06:00",
+   "all_day": false,
+   "location": "Room on one.illinois.edu (sign in with your NetID)",
+   "location_hidden": true,
+   "maps_url": "",
+   "food_text": "Lunch",
+   "evidence": "Transportation is provided to and from Chicago, and lunch is provided.",
+   "icon": "🥪",
+   "dietary": [],
+   "proof_url": "https://one.illinois.edu/rsvp?id=502670",
+   "also_urls": [],
+   "source": "one",
+   "source_label": "one.illinois.edu",
+   "promoted": false
+  },
+  {
    "id": "one-492854",
    "title": "GSRC's Quench Series (Lunch On US): Queer Identities Across Cultures",
    "host": "Gender & Sexuality Resource Center (GSRC)",
@@ -460,9 +480,9 @@
    "start": "2026-11-16T17:00:00-06:00",
    "end": "2026-11-16T18:00:00-06:00",
    "all_day": false,
-   "location": "CIF 1350, 1405 W. Springfield Ave., Urbana, IL 61801, United States",
+   "location": "CIF 4025, 1405 W. Springfield Ave., Urbana, IL 61801, United States",
    "location_hidden": false,
-   "maps_url": "https://www.google.com/maps/search/?api=1&query=CIF%201350%2C%201405%20W.%20Springfield%20Ave.%2C%20Urbana%2C%20IL%2061801%2C%20United%20States",
+   "maps_url": "https://www.google.com/maps/search/?api=1&query=CIF%204025%2C%201405%20W.%20Springfield%20Ave.%2C%20Urbana%2C%20IL%2061801%2C%20United%20States",
    "food_text": "Pizza",
    "evidence": "Join us for a slice of pizza and learn more about The Hoeft Technology & Management (T&M) Program, a competitive academic minor that brings together top students from Gies College of Business and The Grainger College...",
    "icon": "🍕",
@@ -511,6 +531,26 @@
    "also_urls": [],
    "source": "calendars",
    "source_label": "calendars.illinois.edu",
+   "promoted": false
+  },
+  {
+   "id": "one-502306",
+   "title": "Bloom and Unwind: Study Social",
+   "host": "BloomHer Health",
+   "start": "2026-11-17T18:00:00-06:00",
+   "end": "2026-11-17T19:30:00-06:00",
+   "all_day": false,
+   "location": "Room on one.illinois.edu (sign in with your NetID)",
+   "location_hidden": true,
+   "maps_url": "",
+   "food_text": "Snacks",
+   "evidence": "Enjoy an evening of snacks, music, movies, and great company.",
+   "icon": "🍪",
+   "dietary": [],
+   "proof_url": "https://one.illinois.edu/rsvp?id=502306",
+   "also_urls": [],
+   "source": "one",
+   "source_label": "one.illinois.edu",
    "promoted": false
   },
   {
