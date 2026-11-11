@@ -1,11 +1,11 @@
 {
- "cal-33556163": {
+ "cal-33556099": {
+  "calendar": "CPSC Seminars CSPC",
+  "sponsor": "Department of Crop Sciences, University of Illinois"
+ },
+ "cal-33556164": {
   "calendar": "Food For The Soul",
   "sponsor": "Bruce D. Nesbitt African American Cultural Center"
- },
- "cal-33556301": {
-  "calendar": "International Education",
-  "sponsor": "International Education and The Counseling Center"
  },
  "cal-33557815": {
   "calendar": "Rare Book & Manuscript Library Events",
@@ -38,10 +38,6 @@
  "cal-33563613": {
   "calendar": "Beckman Institute Calendar (internal events only)",
   "sponsor": "Beckman Connect and Engage Committee"
- },
- "cal-33565294": {
-  "calendar": "CPSC Seminars CSPC",
-  "sponsor": "Department of Crop Sciences, University of Illinois"
  },
  "cal-33565375": {
   "calendar": "Native American House",
@@ -83,8 +79,8 @@
   "calendar": "Asian American Cultural Center Events",
   "sponsor": "Asian American Cultural Center and SKY Meditation"
  },
- "cal-33566890": {
-  "calendar": "Illinois ECE Student Events Calendar",
-  "sponsor": "GradSWE"
+ "cal-33567176": {
+  "calendar": "Gender & Sexuality Resource Center",
+  "sponsor": "Gender and Sexuality Resource Center; Student Success Inclusion and Belonging"
  }
 }
