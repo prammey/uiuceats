@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-11T21:02:12.292763-06:00",
+ "generated_at": "2026-11-12T05:16:16.656552-06:00",
  "timezone": "America/Chicago",
  "window_days": 7,
- "count": 28,
+ "count": 29,
  "events": [
   {
    "id": "cal-33558686",
@@ -288,6 +288,26 @@
    "also_urls": [],
    "source": "calendars",
    "source_label": "calendars.illinois.edu",
+   "promoted": false
+  },
+  {
+   "id": "one-502916",
+   "title": "Incoming Exchange Card and Board Game Social",
+   "host": "Grainger International Programs in Engineering (IPENG)",
+   "start": "2026-11-13T13:00:00-06:00",
+   "end": "2026-11-13T13:50:00-06:00",
+   "all_day": false,
+   "location": "Room on one.illinois.edu (sign in with your NetID)",
+   "location_hidden": true,
+   "maps_url": "",
+   "food_text": "Snacks",
+   "evidence": "Snacks provided!",
+   "icon": "🍪",
+   "dietary": [],
+   "proof_url": "https://one.illinois.edu/rsvp?id=502916",
+   "also_urls": [],
+   "source": "one",
+   "source_label": "one.illinois.edu",
    "promoted": false
   },
   {
