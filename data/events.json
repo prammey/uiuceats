@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-12T05:16:16.656552-06:00",
+ "generated_at": "2026-11-12T12:59:10.304149-06:00",
  "timezone": "America/Chicago",
  "window_days": 7,
- "count": 29,
+ "count": 31,
  "events": [
   {
    "id": "cal-33558686",
@@ -595,6 +595,49 @@
    "also_urls": [
     "https://one.illinois.edu/rsvp?id=502476"
    ],
+   "source": "calendars",
+   "source_label": "calendars.illinois.edu",
+   "promoted": false
+  },
+  {
+   "id": "cal-33565561",
+   "title": "2026 Charles C. Stewart Young Humanitarian Speaker Series",
+   "host": "Illinois International, UI Alumni Association, EntreCorps at the Gies College of Business",
+   "start": "2026-11-19T11:00:00-06:00",
+   "end": "2026-11-19T12:15:00-06:00",
+   "all_day": false,
+   "location": "Illini Union Bookstore Author's Corner",
+   "location_hidden": false,
+   "maps_url": "https://www.google.com/maps/search/?api=1&query=Illini%20Union%20Bookstore%20Author%27s%20Corner%2C%20University%20of%20Illinois%20Urbana-Champaign",
+   "food_text": "Refreshments",
+   "evidence": "Light refreshments will be provided.",
+   "icon": "🍱",
+   "dietary": [],
+   "proof_url": "https://calendars.illinois.edu/detail/6991/33565561?key=200001012000010133565561",
+   "also_urls": [
+    "https://calendars.illinois.edu/detail/6991/33565500?key=200001012000010133565500",
+    "https://calendars.illinois.edu/detail/6991/33566866?key=200001012000010133566866"
+   ],
+   "source": "calendars",
+   "source_label": "calendars.illinois.edu",
+   "promoted": false
+  },
+  {
+   "id": "cal-33558687",
+   "title": "Lunch on Us",
+   "host": "La Casa Cultural Latina and Student Cultural Programming Fee.",
+   "start": "2026-11-19T12:00:00-06:00",
+   "end": "2026-11-19T13:00:00-06:00",
+   "all_day": false,
+   "location": "La Casa Cultural Latina  1203 W. Nevada Street, Urbana, IL 61801, United States",
+   "location_hidden": false,
+   "maps_url": "https://www.google.com/maps/search/?api=1&query=La%20Casa%20Cultural%20Latina%20%201203%20W.%20Nevada%20Street%2C%20Urbana%2C%20IL%2061801%2C%20United%20States",
+   "food_text": "Lunch",
+   "evidence": "Lunch on Us",
+   "icon": "🥪",
+   "dietary": [],
+   "proof_url": "https://calendars.illinois.edu/detail/6991/33558687?key=200001012000010133558687",
+   "also_urls": [],
    "source": "calendars",
    "source_label": "calendars.illinois.edu",
    "promoted": false
