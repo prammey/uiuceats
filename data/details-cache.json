@@ -75,6 +75,10 @@
   "calendar": "Gender & Sexuality Resource Center",
   "sponsor": "Gender and Sexuality Resource Center; Student Success Inclusion and Belonging"
  },
+ "cal-33566684": {
+  "calendar": "College of Law - Lectures Calendar",
+  "sponsor": "Illinois Program in Comparative Criminal Procedure and Policing and Illinois Program in Legal History"
+ },
  "cal-33566873": {
   "calendar": "Asian American Cultural Center Events",
   "sponsor": "Asian American Cultural Center and SKY Meditation"
@@ -82,5 +86,9 @@
  "cal-33567176": {
   "calendar": "Gender & Sexuality Resource Center",
   "sponsor": "Gender and Sexuality Resource Center; Student Success Inclusion and Belonging"
+ },
+ "cal-33567300": {
+  "calendar": "Siebel School Undergraduate Calendar",
+  "sponsor": "AI Alignment @ Illinois"
  }
 }
