@@ -11,10 +11,6 @@
   "calendar": "La Casa Cultural Latina",
   "sponsor": "La Casa Cultural Latina and Student Cultural Programming Fee."
  },
- "cal-33559267": {
-  "calendar": "Siebel School CARES Office Hours",
-  "sponsor": "CS CARES Committee"
- },
  "cal-33561612": {
   "calendar": "Asian American Studies",
   "sponsor": "Department of Asian American Studies"
@@ -51,10 +47,6 @@
   "calendar": "ACES ODEI (Events)",
   "sponsor": "ACES Office of Diversity, Equity, & Inclusion"
  },
- "cal-33566256": {
-  "calendar": "College of Media Department of Media & Cinema Studies Events",
-  "sponsor": "Department of Media & Cinema Studies and Humanities Research Institute"
- },
  "cal-33566565": {
   "calendar": "Persian Events Calender",
   "sponsor": "Persian Language Studies, Department of Linguistics"
@@ -75,12 +67,12 @@
   "calendar": "Gender & Sexuality Resource Center",
   "sponsor": "Gender and Sexuality Resource Center; Student Success Inclusion and Belonging"
  },
+ "cal-33567294": {
+  "calendar": "Siebel School Events Calendar",
+  "sponsor": "CS CARES Committee"
+ },
  "cal-33567298": {
   "calendar": "Music and Performing Arts Library Events Calendar",
   "sponsor": "Music & Performing Arts Library"
- },
- "cal-33567300": {
-  "calendar": "Siebel School Undergraduate Calendar",
-  "sponsor": "AI Alignment @ Illinois"
  }
 }

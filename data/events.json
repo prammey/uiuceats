@@ -1,51 +1,9 @@
 {
- "generated_at": "2026-11-12T18:28:15.221778-06:00",
+ "generated_at": "2026-11-13T02:01:37.268363-06:00",
  "timezone": "America/Chicago",
  "window_days": 7,
- "count": 28,
+ "count": 26,
  "events": [
-  {
-   "id": "cal-33567300",
-   "title": "Q&A with Aryan Bhatt (Redwood Research)",
-   "host": "AI Alignment @ Illinois",
-   "start": "2026-11-12T18:45:00-06:00",
-   "end": "2026-11-12T20:45:00-06:00",
-   "all_day": false,
-   "location": "Siebel 0218/0220",
-   "location_hidden": false,
-   "maps_url": "https://www.google.com/maps/search/?api=1&query=Siebel%200218/0220%2C%20University%20of%20Illinois%20Urbana-Champaign",
-   "food_text": "Pizza",
-   "evidence": "Location: Siebel 0218 / 0220 (Aryan joins by video) Food: Free pizza and drinks Length: About an hour.",
-   "icon": "🍕",
-   "dietary": [],
-   "proof_url": "https://calendars.illinois.edu/detail/6991/33567300?key=200001012000010133567300",
-   "also_urls": [],
-   "source": "calendars",
-   "source_label": "calendars.illinois.edu",
-   "promoted": false
-  },
-  {
-   "id": "cal-33566256",
-   "title": "Free Film Screening: \"Moonage Daydream\" (2022)",
-   "host": "Department of Media & Cinema Studies and Humanities Research Institute",
-   "start": "2026-11-12T19:00:00-06:00",
-   "end": "2026-11-12T20:00:00-06:00",
-   "all_day": false,
-   "location": "Knight Auditorium, Spurlock Museum, 600 S. Gregory, Urbana",
-   "location_hidden": false,
-   "maps_url": "https://www.google.com/maps/search/?api=1&query=Knight%20Auditorium%2C%20Spurlock%20Museum%2C%20600%20S.%20Gregory%2C%20Urbana",
-   "food_text": "Snacks",
-   "evidence": "Free snacks and drinks provided.",
-   "icon": "🍪",
-   "dietary": [],
-   "proof_url": "https://calendars.illinois.edu/detail/6991/33566256?key=200001012000010133566256",
-   "also_urls": [
-    "https://calendars.illinois.edu/detail/6991/33566390?key=200001012000010133566390"
-   ],
-   "source": "calendars",
-   "source_label": "calendars.illinois.edu",
-   "promoted": false
-  },
   {
    "id": "one-475603",
    "title": "Coffee Tent",
@@ -521,11 +479,11 @@
    "promoted": false
   },
   {
-   "id": "cal-33559267",
+   "id": "cal-33567294",
    "title": "CS CARES Coffee Social",
    "host": "CS CARES Committee",
    "start": "2026-11-19T16:00:00-06:00",
-   "end": "2026-11-19T17:30:00-06:00",
+   "end": "2026-11-19T17:00:00-06:00",
    "all_day": false,
    "location": "4401 Siebel Center",
    "location_hidden": false,
@@ -534,9 +492,9 @@
    "evidence": "Come enjoy coffee, cookies, and good conversation while connecting with members of the CS community!",
    "icon": "☕",
    "dietary": [],
-   "proof_url": "https://calendars.illinois.edu/detail/6991/33559267?key=200001012000010133559267",
+   "proof_url": "https://calendars.illinois.edu/detail/6991/33567294?key=200001012000010133567294",
    "also_urls": [
-    "https://calendars.illinois.edu/detail/6991/33567294?key=200001012000010133567294"
+    "https://calendars.illinois.edu/detail/6991/33559267?key=200001012000010133559267"
    ],
    "source": "calendars",
    "source_label": "calendars.illinois.edu",
