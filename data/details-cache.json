@@ -7,27 +7,15 @@
   "calendar": "Food For The Soul",
   "sponsor": "Bruce D. Nesbitt African American Cultural Center"
  },
- "cal-33557815": {
-  "calendar": "Rare Book & Manuscript Library Events",
-  "sponsor": "The Rare Book & Manuscript Library"
- },
- "cal-33558686": {
-  "calendar": "La Casa Cultural Latina",
-  "sponsor": "La Casa Cultural Latina and Student Cultural Programming Fee."
- },
  "cal-33558687": {
   "calendar": "La Casa Cultural Latina",
   "sponsor": "La Casa Cultural Latina and Student Cultural Programming Fee."
  },
- "cal-33559266": {
+ "cal-33559267": {
   "calendar": "Siebel School CARES Office Hours",
   "sponsor": "CS CARES Committee"
  },
- "cal-33559820": {
-  "calendar": "IMMERSE Seminar Series",
-  "sponsor": "IMMERSE Center for Immersive Computing"
- },
- "cal-33561611": {
+ "cal-33561612": {
   "calendar": "Asian American Studies",
   "sponsor": "Department of Asian American Studies"
  },
@@ -35,9 +23,9 @@
   "calendar": "Women in Engineering",
   "sponsor": "Women in Engineering"
  },
- "cal-33563396": {
-  "calendar": "ACES Study Abroad",
-  "sponsor": "ACES Study Abroad"
+ "cal-33562603": {
+  "calendar": "Department of French and Italian (EVENTS)",
+  "sponsor": "Department of French & Italian"
  },
  "cal-33563613": {
   "calendar": "Beckman Institute Calendar (internal events only)",
@@ -55,9 +43,9 @@
   "calendar": "Family & Graduate Housing - Event Calendar (Apartments)",
   "sponsor": "Family & Graduate Housing"
  },
- "cal-33566007": {
-  "calendar": "NRES Events",
-  "sponsor": "Department of Natural Resources and Environmental Sciences"
+ "cal-33565832": {
+  "calendar": "Department of the Classics",
+  "sponsor": "Department of the Classics"
  },
  "cal-33566044": {
   "calendar": "ACES ODEI (Events)",
@@ -66,10 +54,6 @@
  "cal-33566256": {
   "calendar": "College of Media Department of Media & Cinema Studies Events",
   "sponsor": "Department of Media & Cinema Studies and Humanities Research Institute"
- },
- "cal-33566453": {
-  "calendar": "Illinois International's Global and Intercultural Events",
-  "sponsor": "Jayleen Kim and Illinois International"
  },
  "cal-33566565": {
   "calendar": "Persian Events Calender",
@@ -87,13 +71,13 @@
   "calendar": "College of Law - Lectures Calendar",
   "sponsor": "Illinois Program in Comparative Criminal Procedure and Policing and Illinois Program in Legal History"
  },
- "cal-33566873": {
-  "calendar": "Asian American Cultural Center Events",
-  "sponsor": "Asian American Cultural Center and SKY Meditation"
- },
  "cal-33567176": {
   "calendar": "Gender & Sexuality Resource Center",
   "sponsor": "Gender and Sexuality Resource Center; Student Success Inclusion and Belonging"
+ },
+ "cal-33567298": {
+  "calendar": "Music and Performing Arts Library Events Calendar",
+  "sponsor": "Music & Performing Arts Library"
  },
  "cal-33567300": {
   "calendar": "Siebel School Undergraduate Calendar",
