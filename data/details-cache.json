@@ -11,13 +11,13 @@
   "calendar": "La Casa Cultural Latina",
   "sponsor": "La Casa Cultural Latina and Student Cultural Programming Fee."
  },
+ "cal-33559267": {
+  "calendar": "Siebel School CARES Office Hours",
+  "sponsor": "CS CARES Committee"
+ },
  "cal-33561612": {
   "calendar": "Asian American Studies",
   "sponsor": "Department of Asian American Studies"
- },
- "cal-33562359": {
-  "calendar": "Women in Engineering",
-  "sponsor": "Women in Engineering"
  },
  "cal-33562603": {
   "calendar": "Department of French and Italian (EVENTS)",
@@ -47,6 +47,10 @@
   "calendar": "ACES ODEI (Events)",
   "sponsor": "ACES Office of Diversity, Equity, & Inclusion"
  },
+ "cal-33566515": {
+  "calendar": "Illinois ECE Student Events Calendar",
+  "sponsor": "WIE"
+ },
  "cal-33566565": {
   "calendar": "Persian Events Calender",
   "sponsor": "Persian Language Studies, Department of Linguistics"
@@ -66,10 +70,6 @@
  "cal-33567176": {
   "calendar": "Gender & Sexuality Resource Center",
   "sponsor": "Gender and Sexuality Resource Center; Student Success Inclusion and Belonging"
- },
- "cal-33567294": {
-  "calendar": "Siebel School Events Calendar",
-  "sponsor": "CS CARES Committee"
  },
  "cal-33567298": {
   "calendar": "Music and Performing Arts Library Events Calendar",

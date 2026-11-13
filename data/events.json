@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-13T02:01:37.268363-06:00",
+ "generated_at": "2026-11-13T10:27:52.563952-06:00",
  "timezone": "America/Chicago",
  "window_days": 7,
- "count": 26,
+ "count": 27,
  "events": [
   {
    "id": "one-475603",
@@ -85,9 +85,9 @@
    "promoted": false
   },
   {
-   "id": "cal-33562359",
+   "id": "cal-33566515",
    "title": "WIE Coffee Chat",
-   "host": "Women in Engineering",
+   "host": "WIE",
    "start": "2026-11-13T15:00:00-06:00",
    "end": "2026-11-13T16:30:00-06:00",
    "all_day": false,
@@ -98,9 +98,9 @@
    "evidence": "A variety of snacks, baked goods, and coffee/tea will be served.",
    "icon": "🥞",
    "dietary": [],
-   "proof_url": "https://calendars.illinois.edu/detail/6991/33562359?key=200001012000010133562359",
+   "proof_url": "https://calendars.illinois.edu/detail/6991/33566515?key=200001012000010133566515",
    "also_urls": [
-    "https://calendars.illinois.edu/detail/6991/33566515?key=200001012000010133566515",
+    "https://calendars.illinois.edu/detail/6991/33562359?key=200001012000010133562359",
     "https://one.illinois.edu/rsvp?id=494870"
    ],
    "source": "calendars",
@@ -479,11 +479,11 @@
    "promoted": false
   },
   {
-   "id": "cal-33567294",
+   "id": "cal-33559267",
    "title": "CS CARES Coffee Social",
    "host": "CS CARES Committee",
    "start": "2026-11-19T16:00:00-06:00",
-   "end": "2026-11-19T17:00:00-06:00",
+   "end": "2026-11-19T17:30:00-06:00",
    "all_day": false,
    "location": "4401 Siebel Center",
    "location_hidden": false,
@@ -492,9 +492,9 @@
    "evidence": "Come enjoy coffee, cookies, and good conversation while connecting with members of the CS community!",
    "icon": "☕",
    "dietary": [],
-   "proof_url": "https://calendars.illinois.edu/detail/6991/33567294?key=200001012000010133567294",
+   "proof_url": "https://calendars.illinois.edu/detail/6991/33559267?key=200001012000010133559267",
    "also_urls": [
-    "https://calendars.illinois.edu/detail/6991/33559267?key=200001012000010133559267"
+    "https://calendars.illinois.edu/detail/6991/33567294?key=200001012000010133567294"
    ],
    "source": "calendars",
    "source_label": "calendars.illinois.edu",
@@ -535,6 +535,26 @@
    "icon": "🍲",
    "dietary": [],
    "proof_url": "https://one.illinois.edu/rsvp?id=502673",
+   "also_urls": [],
+   "source": "one",
+   "source_label": "one.illinois.edu",
+   "promoted": false
+  },
+  {
+   "id": "one-475604",
+   "title": "Coffee Tent",
+   "host": "Illini Life Student Fellowship",
+   "start": "2026-11-20T10:00:00-06:00",
+   "end": "2026-11-20T12:00:00-06:00",
+   "all_day": false,
+   "location": "Room on one.illinois.edu (sign in with your NetID)",
+   "location_hidden": true,
+   "maps_url": "",
+   "food_text": "Coffee, Hot chocolate",
+   "evidence": "We serve lemonade, coffee and hot chocolate to anyone passing by",
+   "icon": "☕",
+   "dietary": [],
+   "proof_url": "https://one.illinois.edu/rsvp?id=475604",
    "also_urls": [],
    "source": "one",
    "source_label": "one.illinois.edu",
