@@ -35,10 +35,6 @@
   "calendar": "Department of the Classics",
   "sponsor": "Department of the Classics"
  },
- "cal-33566565": {
-  "calendar": "Persian Events Calender",
-  "sponsor": "Persian Language Studies, Department of Linguistics"
- },
  "cal-33566595": {
   "calendar": "Beckman Institute Calendar (internal events only)",
   "sponsor": "Beckman Institute for Advanced Science and Technology"
@@ -58,5 +54,9 @@
  "cal-33567298": {
   "calendar": "Music and Performing Arts Library Events Calendar",
   "sponsor": "Music & Performing Arts Library"
+ },
+ "cal-33567357": {
+  "calendar": "Illinois ECE Student Events Calendar",
+  "sponsor": "Engineering Council & Engineering Career Services"
  }
 }
