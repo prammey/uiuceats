@@ -1,29 +1,9 @@
 {
- "generated_at": "2026-11-14T12:06:06.691679-06:00",
+ "generated_at": "2026-11-14T16:27:04.842057-06:00",
  "timezone": "America/Chicago",
  "window_days": 7,
- "count": 21,
+ "count": 20,
  "events": [
-  {
-   "id": "one-502670",
-   "title": "Chicago Pre-College Science & Engineering Saturday STEM Mentors",
-   "host": "Grainger Outreach & Public Engagement",
-   "start": "2026-11-14T07:00:00-06:00",
-   "end": "2026-11-14T16:00:00-06:00",
-   "all_day": false,
-   "location": "Room on one.illinois.edu (sign in with your NetID)",
-   "location_hidden": true,
-   "maps_url": "",
-   "food_text": "Lunch",
-   "evidence": "Transportation is provided to and from Chicago, and lunch is provided.",
-   "icon": "🥪",
-   "dietary": [],
-   "proof_url": "https://one.illinois.edu/rsvp?id=502670",
-   "also_urls": [],
-   "source": "one",
-   "source_label": "one.illinois.edu",
-   "promoted": false
-  },
   {
    "id": "one-492854",
    "title": "GSRC's Quench Series (Lunch On US): Queer Identities Across Cultures",
