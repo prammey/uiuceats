@@ -1,29 +1,9 @@
 {
- "generated_at": "2026-11-19T21:19:21.014077-06:00",
+ "generated_at": "2026-11-20T06:56:18.611425-06:00",
  "timezone": "America/Chicago",
  "window_days": 7,
- "count": 2,
+ "count": 1,
  "events": [
-  {
-   "id": "one-502673",
-   "title": "IMAGINE Family STEM Nights",
-   "host": "Grainger Outreach & Public Engagement",
-   "start": "2026-11-19T17:30:00-06:00",
-   "end": "2026-11-19T21:30:00-06:00",
-   "all_day": false,
-   "location": "Room on one.illinois.edu (sign in with your NetID)",
-   "location_hidden": true,
-   "maps_url": "",
-   "food_text": "Dinner",
-   "evidence": "Dinner will be provided.",
-   "icon": "🍲",
-   "dietary": [],
-   "proof_url": "https://one.illinois.edu/rsvp?id=502673",
-   "also_urls": [],
-   "source": "one",
-   "source_label": "one.illinois.edu",
-   "promoted": false
-  },
   {
    "id": "one-475604",
    "title": "Coffee Tent",
