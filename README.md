@@ -69,21 +69,22 @@ leaves a cache entry named after its hour), and `collector/publish_gate.py` comm
 listings change or the last refresh is ~3 hours old. The repo is public, so Actions minutes are free.
 
 Check it is working: GitHub → Actions should show a run of "Collect free food events" with a
-`collect` job at least every 2-3 hours. If gaps stay longer than that, add the optional pinger below.
+`collect` job at least every 2-3 hours, and runs marked `workflow_dispatch` every hour from the pinger below.
 
-### Optional pinger
+### Pinger (set up 2026-11-22)
 
-A free [cron-job.org](https://cron-job.org) job calling the dispatch API adds runs that do not
+A free [cron-job.org](https://cron-job.org) job ("UIUC Eats collector") calls the dispatch API every hour, adding runs that do not
 depend on GitHub's scheduler; the workflow's `concurrency` group queues any overlapping runs.
 
 1. GitHub → Settings → Developer settings → Personal access tokens → **Fine-grained tokens** →
    Generate new token. Repository access: only `uiuceats`. Repository permissions:
-   **Actions: Read and write**. Pick the longest expiration offered and note the date: when it
-   expires the pinger fails silently and GitHub's own schedule takes over. Copy the token once.
-   Never paste it into this repo.
+   **Actions: Read and write**. The current token ("uiuc pinger") has no expiration; it can only
+   start, cancel, or delete workflow runs on this repo, and deleting it on that page revokes it at
+   once. Copy the token once. Never paste it into this repo.
 2. cron-job.org → Create cronjob:
    - URL: `https://api.github.com/repos/prammey/uiuceats/actions/workflows/collect.yml/dispatches`
-   - Schedule: custom, minutes `47`, hours `*/3` (offset from GitHub's own `17`)
+   - Schedule: every 1 hour. A run in an hour that was already collected is skipped in seconds by the `gate` job.
+   - Notifications: on failure and on auto-disable, so an expired or revoked token is noticed.
    - Advanced → Request method **POST**, request body `{"ref":"main"}`, headers:
      `Accept: application/vnd.github+json`, `Authorization: Bearer <the token>`,
      `X-GitHub-Api-Version: 2022-11-28`
