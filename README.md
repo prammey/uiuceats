@@ -7,7 +7,7 @@ that says food is provided, plus a Proof link. Live at **https://uiuceats.vercel
 ## How it works
 
 ```
-GitHub Actions (hourly; publishes at least every ~3 hours)
+GitHub Actions (scheduled four times an hour, collects at most hourly; publishes at least every ~3 hours)
   └─ collector/ (Python) reads public .ics feeds
        ├─ calendars.illinois.edu master calendar 6991 + 5 gap calendars
        └─ one.illinois.edu school-wide student-org feed
@@ -36,10 +36,12 @@ on one.illinois.edu).
 | `data/events.json` | Published listings (committed by the bot) |
 | `data/details-cache.json` | Cached sponsor names for calendars.illinois.edu events |
 | `app/` | Routes: `/` serves the site (`components/final/`). |
-| `components/final/` | Final look: B's marquee and menu board with A's hero energy (`PageFinal`, `TopBar`, `ShareButton`, `HeroFinal`, `DayStripFinal`, `EventCardFinal`, `EventListFinal`). |
+| `components/final/` | The page: `PageFinal` (layout, footer), `TopBar` (marquee), `HeroFinal` (headline, rotating line, mascot, background emojis), `ShareButton`, `DayStripFinal` (7-day picker), `EventListFinal` (selected day, Surprise me), `EventCardFinal`, `PurposeButton` (pop-up), `Mascot`. Motion respects `prefers-reduced-motion`. |
 | `components/FunLayer.tsx`, `lib/week.ts` | Easter eggs and the day-grouping hook the page uses. |
 | `lib/floaters.ts`, `lib/analytics.ts` | Placement of the hero's background emojis; PostHog event helper. |
-| `lib/events.ts` | Next.js 16 static site helpers (App Router, Tailwind v4). `Hero` (floating food, rotating line, share), `Ticker` (CSS marquee), `DayStrip` (7-day picker, today ringed), `EventCard` (emoji, meal-time stripe, proof, add-to-calendar), `EventList` (live section, Surprise me), `FunLayer` (Konami / pizza-click confetti, tab-title nudge). All motion respects `prefers-reduced-motion`. |
+| `lib/events.ts` | The listing type plus date, time, meal-period, calendar-link, and report-link helpers. All times are campus time (America/Chicago). |
+| `lib/seed.ts` | One random seed per page load, so the hero's opening line, food, and background emojis vary without a hydration mismatch. |
+| `public/robots.txt`, `public/sitemap.xml` | Tell search engines the one page exists. |
 | `.github/workflows/collect.yml` | Scheduled collector run |
 
 ## Run locally
@@ -58,14 +60,21 @@ npm run dev        # http://localhost:3000
 npm run build      # static export to out/
 ```
 
-## Pinger (keeps the collector on its 3-hour schedule)
+## Schedule (how the collector stays on its 3-hour promise)
 
-GitHub delays or skips `schedule:` runs on free repos, often by hours (Oct 2026: only half of the
-3-hourly runs happened). The workflow now runs hourly and `collector/publish_gate.py` commits only
-when listings change or the last refresh is ~3 hours old, so skipped runs no longer leave the site
-stale. A free [cron-job.org](https://cron-job.org) job calling the dispatch API adds more runs on top;
-the workflow's `concurrency` group queues any overlapping runs. Hourly runs use roughly 1,000 Actions
-minutes a month, inside the free 2,000 for a private repo.
+GitHub delays or skips `schedule:` runs on free repos (Nov 2026: an hourly schedule ran only 3-4
+times a day, leaving gaps of 5-10 hours). The workflow is therefore scheduled four times an hour.
+Its `gate` job lets only the first run in each clock hour fetch the feeds (a finished collection
+leaves a cache entry named after its hour), and `collector/publish_gate.py` commits only when
+listings change or the last refresh is ~3 hours old. The repo is public, so Actions minutes are free.
+
+Check it is working: GitHub → Actions should show a run of "Collect free food events" with a
+`collect` job at least every 2-3 hours. If gaps stay longer than that, add the optional pinger below.
+
+### Optional pinger
+
+A free [cron-job.org](https://cron-job.org) job calling the dispatch API adds runs that do not
+depend on GitHub's scheduler; the workflow's `concurrency` group queues any overlapping runs.
 
 1. GitHub → Settings → Developer settings → Personal access tokens → **Fine-grained tokens** →
    Generate new token. Repository access: only `uiuceats`. Repository permissions:

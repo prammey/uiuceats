@@ -219,8 +219,9 @@ export default function HeroFinal() {
         <div aria-hidden className="pointer-events-none absolute -right-16 -top-16 h-72 w-72 rounded-full bg-white/20 blur-3xl animate-blob" />
         <div aria-hidden className="pointer-events-none absolute -bottom-24 left-1/3 h-64 w-64 rounded-full bg-illini-blue/20 blur-3xl animate-blob [animation-delay:-8s]" />
 
-        {/* Everything in front of the gradient fades in at once; see `ready`. */}
-        <div className={`transition-opacity duration-700 ease-out ${ready ? "opacity-100" : "opacity-0"}`}>
+        {/* Everything in front of the gradient fades in at once; see `ready`. animate-reveal-late
+            shows it after 2 s regardless, so a slow image or blocked script never hides the headline. */}
+        <div className={`animate-reveal-late transition-opacity duration-700 ease-out ${ready ? "opacity-100" : "opacity-0"}`}>
           {floaters.map((f, index) => (
             <span
               key={`${f.emoji}-${index}`}

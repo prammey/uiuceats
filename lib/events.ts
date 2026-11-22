@@ -40,11 +40,12 @@ export type DayInfo = {
 };
 
 // Card header label, chosen by the event's start time (see mealPeriod).
-export type MealPeriod = "breakfast" | "lunch" | "dinner" | "late";
+export type MealPeriod = "breakfast" | "lunch" | "afternoon" | "dinner" | "late";
 
 export const PERIOD_META: Record<MealPeriod, { label: string; emoji: string }> = {
   breakfast: { label: "Breakfast", emoji: "🌅" },
   lunch: { label: "Lunch", emoji: "☀️" },
+  afternoon: { label: "Afternoon", emoji: "🌤️" },
   dinner: { label: "Dinner", emoji: "🌆" },
   late: { label: "Late night", emoji: "🌙" },
 };
@@ -149,7 +150,7 @@ export function formatTimeRange(event: FoodEvent): string {
   return `${start.hm} ${start.period}–${end.hm} ${end.period}`;
 }
 
-// Breakfast before 10:30, lunch before 3, dinner before 9, late after that.
+// Breakfast before 10:30, lunch before 2, afternoon before 5, dinner before 9, late after that.
 export function mealPeriod(event: FoodEvent): MealPeriod {
   if (event.all_day) return "lunch";
   const parts = hour23Formatter.formatToParts(new Date(event.start));
@@ -157,7 +158,8 @@ export function mealPeriod(event: FoodEvent): MealPeriod {
   const minute = Number(parts.find((p) => p.type === "minute")?.value ?? 0);
   const decimal = hour + minute / 60;
   if (decimal < 10.5) return "breakfast";
-  if (decimal < 15) return "lunch";
+  if (decimal < 14) return "lunch";
+  if (decimal < 17) return "afternoon";
   if (decimal < 21) return "dinner";
   return "late";
 }

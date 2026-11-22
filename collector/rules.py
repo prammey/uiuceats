@@ -152,6 +152,7 @@ ICONS = [
   ("🍩", re.compile(r"\b(?:donut|doughnut)", re.I)),
   ("🌮", re.compile(r"\b(?:taco|burrito)", re.I)),
   ("🍦", re.compile(r"\bice cream\b", re.I)),
+  ("🍿", re.compile(r"\bpopcorn\b", re.I)),
   ("🍔", re.compile(r"\b(?:bbq|barbecue|cookout|burger|hot ?dog)", re.I)),
   ("🍣", re.compile(r"\b(?:sushi|ramen|noodle|dumpling)", re.I)),
   ("🍛", re.compile(r"\b(?:curry|biryani|samosa)", re.I)),
@@ -160,6 +161,7 @@ ICONS = [
   ("🍪", re.compile(r"\b(?:cookie|cupcake|cake|dessert|treat|snack)", re.I)),
   ("🥪", re.compile(r"\b(?:lunch|sandwich)", re.I)),
   ("🍲", re.compile(r"\b(?:dinner|meal|catered|catering)\b", re.I)),
+  ("🥤", re.compile(r"\b(?:refreshments|smoothies?|lemonade|punch)\b", re.I)),
 ]
 DEFAULT_ICON = "🍱"
 
@@ -281,6 +283,28 @@ def food_window(evidence, start, end, all_day=False):
       if first < lo or second > hi:
         continue
       return (day + timedelta(minutes=first), day + timedelta(minutes=second), False)
+  return None
+
+
+# "Food will be served in the atrium prior to the lecture, 5:00 pm." The food is out before
+# the listed start, so the card runs from that time to the start. Only a time with am/pm
+# that falls in the two hours before the event counts, and never one that is itself the
+# deadline ("before 5pm").
+_BEFORE_EVENT = re.compile(r"\b(?:prior to|before|preceding|ahead of)\s+(?:the|our|each|this)\b", re.I)
+_SINGLE_TIME = re.compile(r"(?<![\d:])(\d{1,2})(?::(\d{2}))?\s*([ap])\.?m\b", re.I)
+_LEAD_LIMIT = 120  # minutes
+
+
+def food_before_start(evidence, start, all_day=False):
+  """(start, end, all_day) for food served shortly before the event begins, else None."""
+  if not evidence or start is None or all_day or not _BEFORE_EVENT.search(evidence):
+    return None
+  day = start.replace(hour=0, minute=0, second=0, microsecond=0)
+  begins = (start - day).total_seconds() / 60
+  for match in _SINGLE_TIME.finditer(evidence):
+    minutes = _clock(match.group(1), match.group(2), match.group(3), None, None)
+    if minutes is not None and 0 < begins - minutes <= _LEAD_LIMIT:
+      return (day + timedelta(minutes=minutes), start, False)
   return None
 
 

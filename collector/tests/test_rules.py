@@ -232,3 +232,26 @@ def test_first_person_food_phrasing():
     assert rules.find_evidence("Event", sentence) == sentence, sentence
   for sentence in ["We have lunch together every Friday.", "We bring our own lunch."]:
     assert rules.find_evidence("Event", sentence) is None, sentence
+
+
+def test_food_before_start_uses_the_stated_earlier_time():
+  evidence = "Food will be served in the Temple Buell Hall Atrium prior to the lecture, 5:00 pm."
+  assert rules.food_before_start(evidence, _at(17, 30)) == (_at(17), _at(17, 30), False)
+  assert rules.food_before_start("Pizza at 6pm before the show.", _at(19)) == (_at(18), _at(19), False)
+
+
+def test_food_before_start_ignores_deadlines_and_unrelated_times():
+  # "before 5pm" is a deadline, not a serving time.
+  assert rules.food_before_start("Grab free pizza before 5pm.", _at(17, 30)) is None
+  # The time named is the event's own start, or after it, or too long before it.
+  assert rules.food_before_start("Snacks before the 5:30 pm lecture.", _at(17, 30)) is None
+  assert rules.food_before_start("Dinner before the talk; we wrap up at 8 pm.", _at(18)) is None
+  assert rules.food_before_start("Breakfast before the workshop, 8 am.", _at(14)) is None
+  assert rules.food_before_start("Refreshments will be served at 5:00 pm.", _at(17, 30)) is None
+  assert rules.food_before_start("Food before the game, 5 pm.", _at(0), all_day=True) is None
+
+
+def test_icons_for_popcorn_and_refreshments():
+  assert rules.food_icon("Popcorn provided!") == "🍿"
+  assert rules.food_icon("Refreshments will be provided.") == "🥤"
+  assert rules.food_icon("Lunch and refreshments will be served.") == "🥪"

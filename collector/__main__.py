@@ -73,7 +73,9 @@ def collect(now, fetch=sources.fetch, feed_list=None):
     text = f"{event['title']}\n{text}"
     event["evidence"] = evidence
     # Show the food's own time when the source names one, not the whole event.
-    food_time = rules.food_window(evidence, event["start"], event["end"], event["all_day"])
+    food_time = rules.food_window(evidence, event["start"], event["end"], event["all_day"]) or rules.food_before_start(
+      evidence, event["start"], event["all_day"]
+    )
     if food_time:
       event["start"], event["end"], event["all_day"] = food_time
     event["dietary"] = rules.dietary_tags(text)

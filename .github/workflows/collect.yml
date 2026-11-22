@@ -2,10 +2,11 @@ name: Collect free food events
 
 on:
   schedule:
-    # Hourly: GitHub skips or delays many scheduled runs on free repos, so checking every
-    # hour keeps the site within ~3 hours. collector/publish_gate.py only commits (and so only
-    # redeploys) when listings change or the last published refresh is ~3 hours old.
-    - cron: "17 * * * *"
+    # Four times an hour: GitHub skips most scheduled runs on free repos (Nov 2026: an hourly
+    # schedule ran only 3-4 times a day), so each hour gets four chances. The `gate` job lets
+    # only the first run in each clock hour fetch the feeds, and collector/publish_gate.py only
+    # commits (and so only redeploys) when listings change or the last refresh is ~3 hours old.
+    - cron: "7,22,37,52 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -16,7 +17,26 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # Has this clock hour (UTC) already been collected? A finished collection leaves a cache
+  # entry named after its hour; finding it means the campus feeds need not be fetched again.
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      stamp: ${{ steps.hour.outputs.stamp }}
+      done: ${{ steps.marker.outputs.cache-hit }}
+    steps:
+      - id: hour
+        run: echo "stamp=$(date -u +%Y%m%d%H)" >> "$GITHUB_OUTPUT"
+      - id: marker
+        uses: actions/cache/restore@v4
+        with:
+          path: .collected
+          key: collected-${{ steps.hour.outputs.stamp }}
+          lookup-only: true
+
   collect:
+    needs: gate
+    if: needs.gate.outputs.done != 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -55,3 +75,10 @@ jobs:
           # Someone may have pushed code while this run was collecting.
           git pull --rebase origin main
           git push
+
+      - name: Mark this hour as collected
+        run: date -u > .collected
+      - uses: actions/cache/save@v4
+        with:
+          path: .collected
+          key: collected-${{ needs.gate.outputs.stamp }}

@@ -26,6 +26,7 @@
   --animate-wiggle: wiggle 0.5s ease-in-out;
   --animate-jiggle: jiggle 0.7s ease-in-out;
   --animate-bounce-soft: bounce-soft 2.2s ease-in-out infinite;
+  --animate-reveal-late: reveal-late 0.7s ease-out 2s forwards;
 
   /* Hero background emojis drift and tilt. */
   @keyframes float {
@@ -65,6 +66,11 @@
     40% { transform: rotate(10deg) scale(1.12); }
     60% { transform: rotate(-6deg) scale(1.06); }
     80% { transform: rotate(4deg) scale(1.02); }
+  }
+  /* Safety net for the hero: if its script has not shown the content after 2 s (slow
+     wifi, scripts blocked), show it anyway. Does nothing once the content is visible. */
+  @keyframes reveal-late {
+    to { opacity: 1; }
   }
   /* The food in the mascot's hand, always. */
   @keyframes bounce-soft {
