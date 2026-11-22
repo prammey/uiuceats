@@ -27,9 +27,13 @@ export default function EventCardFinal({ event, now, reportTemplate, spotlight =
   return (
     <article
       id={`card-${event.id}`}
-      className={`brut brut-hover b-spotlight-ready group flex flex-col rounded-2xl ${event.promoted ? "bg-b-yellow" : "bg-white"} ${
-        spotlight ? "b-spotlight" : ""
-      } ${ended ? "opacity-40" : ""}`}
+      // An ended card fades its contents and frame but keeps a solid background: fading the
+      // whole card let the green checkerboard behind it show through on phones.
+      className={`brut brut-hover b-spotlight-ready group flex flex-col rounded-2xl ${
+        ended ? (event.promoted ? "bg-[#fff0cc]" : "bg-white") : event.promoted ? "bg-b-yellow" : "bg-white"
+      } ${spotlight ? "b-spotlight" : ""} ${
+        ended ? "border-[#a09c95]! shadow-[6px_6px_0_#a09c95]! [&>*]:opacity-40" : ""
+      }`}
     >
       <div className="flex items-stretch border-b-[3px] border-brut">
         <div className="checker-light flex w-20 shrink-0 items-center justify-center rounded-tl-[13px] border-r-[3px] border-brut">
@@ -57,7 +61,7 @@ export default function EventCardFinal({ event, now, reportTemplate, spotlight =
         </div>
       </div>
 
-      <div className="flex-1 p-4 font-body-f">
+      <div className="flex-1 p-4 font-body-f [overflow-wrap:anywhere]">
         <h3 className="font-swash text-2xl leading-tight text-brut">{event.title}</h3>
         {event.host && <p className="mt-1 text-sm font-semibold text-ink-muted">{event.host}</p>}
 

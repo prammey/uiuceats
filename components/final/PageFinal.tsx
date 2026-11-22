@@ -78,7 +78,7 @@ export default function PageFinal() {
             </div>
 
             <div className="group brut rounded-2xl bg-illini-blue p-6 text-white">
-              <h2 className="font-swash text-2xl sm:whitespace-nowrap sm:text-3xl">
+              <h2 className="font-swash text-2xl sm:text-3xl lg:whitespace-nowrap">
                 Want to advertise your event?
                 <span
                   aria-hidden
