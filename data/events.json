@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-25T15:00:30.214534-06:00",
+ "generated_at": "2026-11-25T16:00:30.206086-06:00",
  "timezone": "America/Chicago",
  "window_days": 7,
- "count": 9,
+ "count": 10,
  "events": [
   {
    "id": "cal-33565381",
@@ -182,6 +182,28 @@
    "dietary": [],
    "proof_url": "https://calendars.illinois.edu/detail/6991/33556166?key=200001012000010133556166",
    "also_urls": [],
+   "source": "calendars",
+   "source_label": "calendars.illinois.edu",
+   "promoted": false
+  },
+  {
+   "id": "cal-33567241",
+   "title": "Annual Open House – Cookies at the Clearinghouse",
+   "host": "Early Intervention Clearinghouse",
+   "start": "2026-12-02T15:30:00-06:00",
+   "end": "2026-12-02T17:30:00-06:00",
+   "all_day": false,
+   "location": "2202 Kirk Dr. Champaign, IL 61820 - Children’s Research Center, Room 20",
+   "location_hidden": false,
+   "maps_url": "https://www.google.com/maps/search/?api=1&query=2202%20Kirk%20Dr.%20Champaign%2C%20IL%2061820%20-%20Children%E2%80%99s%20Research%20Center%2C%20Room%2020",
+   "food_text": "Cookies, Hot chocolate",
+   "evidence": "We will have a variety of homemade cookies, hot chocolate and holiday punch.",
+   "icon": "☕",
+   "dietary": [],
+   "proof_url": "https://calendars.illinois.edu/detail/6991/33567241?key=200001012000010133567241",
+   "also_urls": [
+    "https://calendars.illinois.edu/detail/6991/33567539?key=200001012000010133567539"
+   ],
    "source": "calendars",
    "source_label": "calendars.illinois.edu",
    "promoted": false
