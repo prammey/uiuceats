@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-26T12:00:35.343283-06:00",
+ "generated_at": "2026-11-26T13:00:27.221289-06:00",
  "timezone": "America/Chicago",
  "window_days": 7,
- "count": 10,
+ "count": 12,
  "events": [
   {
    "id": "cal-33565381",
@@ -206,6 +206,48 @@
    "also_urls": [
     "https://calendars.illinois.edu/detail/6991/33567539?key=200001012000010133567539"
    ],
+   "source": "calendars",
+   "source_label": "calendars.illinois.edu",
+   "promoted": false
+  },
+  {
+   "id": "cal-33565507",
+   "title": "Coffee Across Cultures",
+   "host": "Global Communications and ISSS",
+   "start": "2026-12-03T12:30:00-06:00",
+   "end": "2026-12-03T13:30:00-06:00",
+   "all_day": false,
+   "location": "Siebel Center for Design",
+   "location_hidden": false,
+   "maps_url": "https://www.google.com/maps/search/?api=1&query=Siebel%20Center%20for%20Design%2C%20University%20of%20Illinois%20Urbana-Champaign",
+   "food_text": "Coffee",
+   "evidence": "Join us for Coffee Across Cultures Hour from 12:30 p.m.",
+   "icon": "🥞",
+   "dietary": [],
+   "proof_url": "https://calendars.illinois.edu/detail/6991/33565507?key=200001012000010133565507",
+   "also_urls": [
+    "https://calendars.illinois.edu/detail/6991/33558083?key=200001012000010133558083"
+   ],
+   "source": "calendars",
+   "source_label": "calendars.illinois.edu",
+   "promoted": false
+  },
+  {
+   "id": "cal-33561614",
+   "title": "Snack & Study",
+   "host": "Department of Asian American Studies",
+   "start": "2026-12-03T13:00:00-06:00",
+   "end": "2026-12-03T16:00:00-06:00",
+   "all_day": false,
+   "location": "1208 W Nevada St",
+   "location_hidden": false,
+   "maps_url": "https://www.google.com/maps/search/?api=1&query=1208%20W%20Nevada%20St%2C%20University%20of%20Illinois%20Urbana-Champaign",
+   "food_text": "Snack",
+   "evidence": "Starting Thursday, September 3rd, join us for our weekly Snack & Study!",
+   "icon": "🍪",
+   "dietary": [],
+   "proof_url": "https://calendars.illinois.edu/detail/1249/33561614?key=200001012000010133561614",
+   "also_urls": [],
    "source": "calendars",
    "source_label": "calendars.illinois.edu",
    "promoted": false
