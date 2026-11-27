@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-27T08:00:28.407248-06:00",
+ "generated_at": "2026-11-27T10:00:32.308756-06:00",
  "timezone": "America/Chicago",
  "window_days": 7,
- "count": 16,
+ "count": 17,
  "events": [
   {
    "id": "cal-33565381",
@@ -334,6 +334,26 @@
    "also_urls": [],
    "source": "calendars",
    "source_label": "calendars.illinois.edu",
+   "promoted": false
+  },
+  {
+   "id": "one-475605",
+   "title": "Coffee Tent",
+   "host": "Illini Life Student Fellowship",
+   "start": "2026-12-04T10:00:00-06:00",
+   "end": "2026-12-04T12:00:00-06:00",
+   "all_day": false,
+   "location": "Room on one.illinois.edu (sign in with your NetID)",
+   "location_hidden": true,
+   "maps_url": "",
+   "food_text": "Coffee, Hot chocolate",
+   "evidence": "We serve lemonade, coffee and hot chocolate to anyone passing by",
+   "icon": "☕",
+   "dietary": [],
+   "proof_url": "https://one.illinois.edu/rsvp?id=475605",
+   "also_urls": [],
+   "source": "one",
+   "source_label": "one.illinois.edu",
    "promoted": false
   }
  ]
