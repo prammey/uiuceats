@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-27T16:00:26.483449-06:00",
+ "generated_at": "2026-11-27T18:00:28.594694-06:00",
  "timezone": "America/Chicago",
  "window_days": 7,
- "count": 17,
+ "count": 18,
  "events": [
   {
    "id": "cal-33565381",
@@ -354,6 +354,26 @@
    "also_urls": [],
    "source": "one",
    "source_label": "one.illinois.edu",
+   "promoted": false
+  },
+  {
+   "id": "cal-33567341",
+   "title": "Hobby Night: Fleece Blanket Making",
+   "host": "Family & Graduate Housing",
+   "start": "2026-12-04T18:00:00-06:00",
+   "end": "2026-12-04T19:00:00-06:00",
+   "all_day": false,
+   "location": "Orchard Downs Community Center",
+   "location_hidden": false,
+   "maps_url": "https://www.google.com/maps/search/?api=1&query=Orchard%20Downs%20Community%20Center%2C%20University%20of%20Illinois%20Urbana-Champaign",
+   "food_text": "Sandwiches",
+   "evidence": "Sandwiches from Potbelly and materials will be provided, while supplies last!",
+   "icon": "🥪",
+   "dietary": [],
+   "proof_url": "https://calendars.illinois.edu/detail/6991/33567341?key=200001012000010133567341",
+   "also_urls": [],
+   "source": "calendars",
+   "source_label": "calendars.illinois.edu",
    "promoted": false
   }
  ]
